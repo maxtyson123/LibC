@@ -1,5 +1,8 @@
 TODO: Add readme once project is bit more mature
 
+A libc  that is POSIX.1-2017 compilant 
+
+
 Credits:
 DuckOS - link
 NewLib - link

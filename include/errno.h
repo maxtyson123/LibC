@@ -124,6 +124,8 @@ extern int *__errno_location(void);
 
 #define EWOULDBLOCK EAGAIN  ///< Operation cannot be performed immediately
 
+#define RETURN_ERR(e) do { errno = (e); return -1; } while (0)
+
 CPP_END
 
 #endif //LIBC_ERRNO_H
