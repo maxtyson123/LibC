@@ -18,7 +18,7 @@
  * @param code The outcome of the process (0 is success, fail otherwise)
  * @return Nothing, error code if failed to close
  */
-int _exit(int code) {
+int _platform_exit(int code) {
 
     // Spin forever
     while (1)
@@ -35,7 +35,7 @@ int _exit(int code) {
  * @param env The environment variables to pass to the new process
  * @return Won't return on success otherwise -1 on error
  */
-int execve(char* name, char** argv, char** env) {
+int _platform_execve(char* name, char** argv, char** env) {
     errno = ENOMEM;
     return -1;
 }
@@ -46,7 +46,7 @@ int execve(char* name, char** argv, char** env) {
  *
  * @return 0 for parent (current), new PID for child (the copy) or -1 on an error
  */
-int fork(void) {
+int _platform_fork(void) {
     errno = EAGAIN;
     return -1;
 }
@@ -58,7 +58,7 @@ int fork(void) {
  * @param file The file descriptor for the file requesting to be closed
  * @return
  */
-int close(int file) {
+int _platform_close(int file) {
     return -1;
 }
 
@@ -70,7 +70,7 @@ int close(int file) {
  * @param st The buffer to put the status information into
  * @return 0 for success or -1 on error
  */
-int fstat(int file, struct stat* st) {
+int _platform_fstat(int file, struct stat* st) {
     st->st_mode = S_IFCHR;
     return 0;
 }

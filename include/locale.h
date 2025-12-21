@@ -9,6 +9,8 @@
  */
 
 #include <libc_common.h>
+#include <stddef.h>
+#include <platform.h>
 
 #ifndef LIBC_LOCALE_H
 #define LIBC_LOCALE_H
@@ -95,16 +97,7 @@ struct lconv {
  * @typedef locale_t
  * @brief Alais for the __local struct
  */
-typedef struct __locale {
-
-    const char* collate;
-    const char* ctype;
-    const char* messages;
-    const char* monetary;
-    const char* numeric;
-    const char* time;
-
-} locale_t;
+typedef _platform_locale locale_t;
 
 locale_t        duplocale(locale_t);
 void            freelocale(locale_t);

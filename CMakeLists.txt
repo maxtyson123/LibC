@@ -12,17 +12,7 @@ SET_SOURCE_FILES_PROPERTIES(${ASM_SRCS} PROPERTIES LANGUAGE ASM)
 FILE(GLOB_RECURSE LIBC_SOURCES src/*.c src/*.s)
 
 # Build LibC
-ADD_LIBRARY(libc STATIC ${LIBC_SOURCES}
-        include/errno.h
-        src/errno.c
-        include/sys/stat.h
-        src/sys/stat.c
-        include/sys/types.h
-        include/stdint.h
-        include/time.h
-        src/time.c
-        include/locale.h
-        src/locale.c)
+ADD_LIBRARY(libc STATIC ${LIBC_SOURCES})
 TARGET_INCLUDE_DIRECTORIES(libc PUBLIC include)
 
 # On MaxOS install it to the fs

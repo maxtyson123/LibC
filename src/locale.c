@@ -7,6 +7,7 @@
  */
 
 #include <locale.h>
+#include <stdlib.h>
 
 /**
  * @brief Create a duplicate locale_t from a given one

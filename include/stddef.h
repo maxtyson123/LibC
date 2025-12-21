@@ -15,7 +15,12 @@
 
 CPP_START
 
-#define NULL	((void*)0)	///< Null pointer constant.
+#ifdef __cplusplus
+	#define NULL 0				///< Null pointer constant.
+#else
+	#define NULL ((void*)0)		///< Null pointer constant.
+#endif
+
 #define offsetof(type, member) ((size_t)( (char *)&(((type *)0)->member) - (char *)0 )) ///< Offest in bytes of a member from the start of the struct
 
 typedef __PTRDIFF_TYPE__	ptrdiff_t;

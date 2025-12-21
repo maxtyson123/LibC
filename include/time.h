@@ -9,7 +9,9 @@
  */
 
 #include <libc_common.h>
+#include <locale.h>
 #include <sys/types.h>
+#include <signal.h>
 
 #ifndef LIBC_TIME_H
 #define LIBC_TIME_H
@@ -56,12 +58,12 @@ struct itimerspec {
 
 };
 
-#define CLOCKS_PER_SEC 1000000      ///< Used to convert clocks into seconds
-#define CLOCK_MONOTONIC 1           ///< Identifies a clock measuring realtime and cannot be set
-#define CLOCK_PROCESS_CPUTIME_ID 2  ///< Identifies a clock that represents the amount of time taken by this process
-#define CLOCK_REALTIME 3            ///< Identifies a clock measuring realtime
-#define CLOCK_THREAD_CPUTIME_ID 4   ///< Identifies a clock that represents the amount of time taken by this thread
-#define TIMER_ABSTIME 1             ///< Flag to treat the time as an absolute timestamp and not a relative duration
+#define CLOCKS_PER_SEC              1000000 ///< Used to convert clocks into seconds
+#define CLOCK_MONOTONIC             1       ///< Identifies a clock measuring realtime and cannot be set
+#define CLOCK_PROCESS_CPUTIME_ID    2       ///< Identifies a clock that represents the amount of time taken by this process
+#define CLOCK_REALTIME              3       ///< Identifies a clock measuring realtime
+#define CLOCK_THREAD_CPUTIME_ID     4       ///< Identifies a clock that represents the amount of time taken by this thread
+#define TIMER_ABSTIME               1        ///< Flag to treat the time as an absolute timestamp and not a relative duration
 
 extern int getdate_err;
 
