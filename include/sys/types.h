@@ -23,7 +23,7 @@ typedef uint64_t    fsfilcnt_t;     ///< Number of inodes in the whole filesyste
 typedef uint64_t    ino_t;          ///< Inode number
 typedef uint64_t    nlink_t;        ///< Hardlink count
 typedef uint64_t    off_t;          ///< How many bytes offset into a file
-typedef uint32_t    mode_t;         ///< File type and permissions
+typedef uint32_t    mode_t;         ///< File type and permissions (bitfield: type | permissions)
 
 typedef int64_t     clock_t;        ///< CPU time in ticks
 typedef int32_t     clockid_t;      ///< Clock selector ID

@@ -5,7 +5,7 @@
  * @date 14 December 2025
  * @author Max Tyson
  *
- * @todo Linux port
+ * @todo Linux port / remove specifics
  */
 
 #include <libc_common.h>

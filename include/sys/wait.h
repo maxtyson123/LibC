@@ -6,6 +6,8 @@
  *
  * @date 16 December 2025
  * @author Max Tyson
+ *
+ * @todo status layout is linux specific, fix
  */
 
 #include <libc_common.h>
@@ -23,7 +25,7 @@ CPP_START
 #define WUNTRACED		(1 << 2)	///< Report stopped children (that arent being traced)
 
 // waittid() flags
-#define WEXITED			(1 << 0)\	///< Report children that exited normally
+#define WEXITED			(1 << 0)	///< Report children that exited normally
 #define WNOWAIT			(1 << 1)	///< Peek the child status
 #define WSTOPPED		(1 << 2)	///< Report children that were stopped
 
