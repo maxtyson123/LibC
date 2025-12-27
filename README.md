@@ -201,11 +201,3 @@ Distributed under the BSD 3-Clause License. See `LICENSE` for more information.
 [wakatime-shield]: https://wakatime.com/badge/github/maxtyson123/LibC.svg?style=for-the-badge
 
 [wakatime-url]: https://wakatime.com/badge/github/maxtyson123/LibC
-
-
-
-
-A libc  that is POSIX.1-2017 compilant 
-
-
-Credits:
