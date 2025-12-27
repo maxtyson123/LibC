@@ -20,3 +20,9 @@ int _start(int argc, char* argv[], char* env[]) {
     // Failed to exit
     return -1;
 }
+
+
+// TODO: Add readme once project is bit more mature
+// TODO: Make less specific
+// TODO: CI tests
+// TODO: threaded stuff
