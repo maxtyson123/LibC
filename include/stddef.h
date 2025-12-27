@@ -28,6 +28,7 @@ typedef __WCHAR_TYPE__		wchar_t;
 typedef __SIZE_TYPE__		size_t;
 
 
+
 CPP_END
 
 #endif //LIBC_STDDEF_H
