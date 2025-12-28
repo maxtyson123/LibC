@@ -101,10 +101,42 @@ Currently, LibC cant build yet, will be updated later.
 
 ### Prerequisites
 
-Todo
+To build LibC needs a valid compiler and cmake version 3.31 or higher. 
 
-### Installation
-Todo
+You will also need to pick a target from the following:
+
+| Target  | Description                                                  |
+|---------|--------------------------------------------------------------|
+| example | Minmal stub implementation, will compile but most will error |
+| MaxOS   | Native LibC for MaxOS kernel and userspace                   |
+
+
+### Build
+
+1. Clone the repo
+    ```shell
+    git clone https://github.com/maxtyson123/LibC.git
+    cd LibC
+    ```
+   
+2. Choose a target and sysroot (can be anypath, doesnt have to follow format below)
+    ```shell
+    SYSROOT="$HOME/{target}/sysroot"
+    mkdir -p $SYSROOT
+    ```
+
+3. Configure the build
+    ```shell
+    mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Release -DLIBC_TARGET=example -DCMAKE_INSTALL_PREFIX=$SYSROOT ..
+    ```
+
+4. Build and install
+    ```shell
+    cmake --build .
+    cmake --install .
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,7 +145,19 @@ Todo
 <!-- USAGE EXAMPLES -->
 
 ## Usage
-Todo
+
+- Option A:
+   To use in a CMAKE project add the following lines to your CMAKELists.txt:
+   ```cmake
+    FIND_PACKAGE(LibC REQUIRED)
+    TARGET_LINK_LIBRARIES(proj PRIVATE LibC::c)
+   ```
+- Option B:
+   To use in a cross compiler:
+   ```shell
+    x86_64-elf-gcc --sysroot=$SYSROOT -ffreestanding -nostdlib main.c -lc -o main.elf
+   ```
+   _Note: Ensure -nostdlib and -ffreestanding are passed to avoid linking against the host libc._
 
 <!-- Add your own platform -->
 
@@ -123,7 +167,8 @@ platform specific features. Whilst the example platform should compile, it is no
 standard functions will error.
 
 When adding your own platform, it is recommended to copy the example and replace each part with the specific values and 
-implementations that your platform offers.
+implementations that your platform offers. Additionally, you will have to setup the build options for your target in the 
+CMakeLists.txt file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

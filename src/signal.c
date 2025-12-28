@@ -9,7 +9,7 @@
 #include <signal.h>
 #include <platform.h>
 #include <errno.h>
-#include <unistd.h>
+// #include <unistd.h>
 
 /**
  * @brief Send a sig to a process
@@ -73,6 +73,6 @@ int raise(int sig){
 	if(sig < 0 || sig >= _NSIG)
 		RETURN_ERR(EINVAL);
 
-	return kill(getpid(), sig);
+	return kill(_platform_getpid(), sig);
 
 }

@@ -11,7 +11,8 @@
 #include <libc_common.h>
 #include <stddef.h>
 #include <sys/wait.h>
-#include <fcntl.h>
+// #include <fcntl.h>
+
 
 #ifndef LIBC_STDLIB_H
 #define LIBC_STDLIB_H

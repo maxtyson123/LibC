@@ -59,8 +59,8 @@ typedef uint32_t    trace_event_id_t;   ///< The ID of a trace event
 typedef uintptr_t   trace_attr_t;       ///< The object containing the trace atributes
 typedef uintptr_t   trace_event_set_t;  ///< The object containing the event type
 
-typedef uint64_t    size_t;     ///< Largest size this system can store
-typedef int64_t     ssize_t;    ///< Largest signed size this system can store
+typedef __SIZE_TYPE__				size_t;		///< Largest size this system can store
+typedef __typeof__( (size_t)0 - 1 ) ssize_t;    ///< Largest signed size this system can store
 
 CPP_END
 

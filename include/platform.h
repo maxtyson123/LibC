@@ -5,12 +5,18 @@
 #ifndef LIBC_PLATFORM_H
 #define LIBC_PLATFORM_H
 
-#ifdef _PLATFORM_MAC_OS
+#ifdef _PLATFORM_MacOS
 	#include <_platforms/macos.h>
-#elifdef _PLATFORM_MAX_OS
+#endif
+
+
+#ifdef _PLATFORM_MaxOS
 	#include <_platforms/maxos.h>
-#else
+#endif
+
+
+#ifdef _PLATFORM_example
 	#include <_platforms/example.h>
 #endif
 
-#endif //LIBC_PLATFORM_PLATFORM_H
+#endif //LIBC_PLATFORM_H

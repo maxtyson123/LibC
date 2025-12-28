@@ -22,16 +22,27 @@ CPP_START
 #define SIG_ERR 2	///< Call to signal() resulted in an error
 #define SIG_IGN 3	///< Ignore the signal
 
-typedef __SIG_ATOMIC_TYPE__ sig_atomic_t;
-typedef unsigned long sigset_t;
+typedef int				sig_atomic_t;
+typedef unsigned long	sigset_t;
 
 // Forward defs
 struct timespec;
 
 // Function typdefs
-typedef void (*sigev_notify_function_t)(union sigval);
+
 typedef void (*sighandler_t)(int);
-typedef void (*sigaction_handler_t)(int, siginfo_t*, void *);
+
+
+/**
+ * @union sigval
+ * @brief A payload to pass along with a signal
+ */
+union  sigval
+{
+	int		sival_int;
+	void*	sival_ptr;
+};
+typedef void (*sigev_notify_function_t)(union sigval);
 
 /**
  * @struct sigevent
@@ -50,16 +61,6 @@ struct sigevent
 #define SIGEV_NONE		///< Dont notify the process
 #define SIGEV_SIGNAL	///< Queue a signal with a value
 #define SIGEV_THREAD	///< Spin up a thread and call a function
-
-/**
- * @union sigval
- * @brief A payload to pass along with a signal
- */
-union  sigval
-{
-	int		sival_int;
-	void*	sival_ptr;
-};
 
 #define _NSIG		64			///< How many signals this LibC supports
 #define SIGRTMIN	32			///< Lowest possible signal value (0-31 are reserved)
@@ -97,6 +98,28 @@ union  sigval
 #define SIGWINCH    28  ///< Window size change 
 #define SIGSYS      31  ///< Bad system call
 
+
+/**
+ * @struct _siginfo
+ * @brief Defines the cause and origin of a signal
+ *
+ * @typedef ucontext_t
+ * @brief Public alais of _siginfo
+ */
+typedef struct _siginfo
+{
+	int				si_signo;	///< Signal number
+	int				si_code;	///< Signal code.
+	int				si_errno;	///< If non-zero, an errno value associated with  this signal, as described in <errno.h>.
+	pid_t			si_pid;		///< Sending process ID.
+	uid_t			si_uid;		///< User ID of sending process.
+	void*			si_addr;	///< Address that caused fault.
+	int				si_status;	///< Exit value or signal.
+	union sigval	si_value;	///< Signal value.
+} siginfo_t;
+
+typedef void (*sigaction_handler_t)(int, siginfo_t*, void *);
+
 /**
  * @struct sigaction
  * @brief Define what happens when receiving a specific signal
@@ -111,6 +134,7 @@ struct sigaction
 	sigaction_handler_t sa_sigaction;	///< Pointer to a signal-catching function. (legacy/fast)
 
 };
+
 
 // Used by sigprocmask()/pthread_sigmask() to set sigaction::sa_mask
 #define SIG_BLOCK	1	///< Add the signals to the block mask
@@ -164,24 +188,6 @@ typedef struct _ucontext
 	mcontext_t			uc_mcontext;	///<  A machine-specific representation of the saved context.
 } ucontext_t;
 
-/**
- * @struct _siginfo
- * @brief Defines the cause and origin of a signal
- *
- * @typedef ucontext_t
- * @brief Public alais of _siginfo
- */
-typedef struct _siginfo
-{
-	int				si_signo;	///< Signal number
-	int				si_code;	///< Signal code.
-	int				si_errno;	///< If non-zero, an errno value associated with  this signal, as described in <errno.h>.
-	pid_t			si_pid;		///< Sending process ID.
-	uid_t			si_uid;		///< User ID of sending process.
-	void*			si_addr;	///< Address that caused fault.
-	int				si_status;	///< Exit value or signal.
-	union sigval	si_value;	///< Signal value.
-} siginfo_t;
 
 // SIGILL
 #define ILL_ILLOPC		1	///< Illegal opcode
