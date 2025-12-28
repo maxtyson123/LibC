@@ -1,10 +1,12 @@
 /**
  * @file libc_common.h
- * @brief Functions and macros that are used often throughout this implmentaion of LibC
+ * @brief Functions and macros that are used often throughout this implementation of LibC
  *
  * @date 14 December 2025
  * @author Max Tyson
  */
+
+#include <platform.h>
 
 #ifndef LIBC_COMMON_H
 #define LIBC_COMMON_H

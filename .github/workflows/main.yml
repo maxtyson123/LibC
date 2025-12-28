@@ -80,6 +80,11 @@ jobs:
           cd toolchain
           ./progress.sh --output jsons
 
+      - name: Update LOC
+        run: |
+          cd toolchain
+          ./lines.sh
+
       - name: Upload to branch
 
         # Only upload if this is not a pull request (i.e., it's a push to main)

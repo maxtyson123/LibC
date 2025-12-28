@@ -29,7 +29,7 @@ CPP_START
 #define WNOWAIT			(1 << 1)	///< Peek the child status
 #define WSTOPPED		(1 << 2)	///< Report children that were stopped
 
-// Internal: status layout (signal | core | exit code)
+// Internal: status layout (signal | core | exit code) @todo: platform specific
 #define __WSTATUS_SIGNAL_BITS		7												///< How many bits allocated for the sumbol
 #define __WSTATUS_SIGNAL_MASK		((1u << __WSTATUS_SIGNAL_BITS) - 1)				///< Masks the low bites to get the signal
 #define __WSTATUS_COREDUMP_BIT		__WSTATUS_SIGNAL_BITS							///< Bit index for the core dump

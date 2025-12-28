@@ -9,7 +9,7 @@
 #include <signal.h>
 #include <platform.h>
 #include <errno.h>
-// #include <unistd.h>
+#include <unistd.h>
 
 /**
  * @brief Send a sig to a process

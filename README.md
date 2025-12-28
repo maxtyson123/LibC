@@ -239,7 +239,7 @@ Distributed under the BSD 3-Clause License. See `LICENSE` for more information.
 
 [built-url]: https://github.com/maxtyson123/LibC/actions/workflows/main.yml
 
-[loc-shield]: https://tokei.rs/b1/github/maxtyson123/LibC?style=for-the-badge
+[loc-shield]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/maxtyson123/LibC/refs/heads/docs/metrics/lines.json
 
 [loc-url]: https://github.com/maxtyson123/LibC
 
