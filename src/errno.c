@@ -1,6 +1,6 @@
 /**
  * @file errno.c
- * @breif Implements where the error codes are stored
+ * @brief Implements where the error codes are stored
  *
  * @date 14 December 2025
  * @author Max Tyson

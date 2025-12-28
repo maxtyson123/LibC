@@ -1,6 +1,6 @@
 /**
  * @file libc_platform_specifics.h
- * @breif Functions that are specific to the platform that this libc is compiled for
+ * @brief Functions that are specific to the platform that this libc is compiled for
  *
  * @date 14 December 2025
  * @author Max Tyson

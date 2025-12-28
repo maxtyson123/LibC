@@ -1,6 +1,6 @@
 /**
  * @file libc_common.h
- * @breif Functions and macros that are used often throughout this implmentaion of LibC
+ * @brief Functions and macros that are used often throughout this implmentaion of LibC
  *
  * @date 14 December 2025
  * @author Max Tyson

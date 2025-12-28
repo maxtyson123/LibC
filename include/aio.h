@@ -1,6 +1,6 @@
 /**
  * @file aio.h
- * @breif Defines functions to handle asynchronous input and output
+ * @brief Defines functions to handle asynchronous input and output
  *
  * @date 28 December 2025
  * @author Max Tyson

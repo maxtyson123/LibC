@@ -11,11 +11,17 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build-libc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    env:
+      SYSROOT: ${{ github.workspace }}/example/sysroot
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -24,7 +30,7 @@ jobs:
 
       - name: Build LibC (Release)
         run: |
-          SYSROOT="$HOME/example/sysroot"
+          echo "SYSROOT=$SYSROOT"
           mkdir -p $SYSROOT
           
           mkdir build
@@ -34,14 +40,18 @@ jobs:
           cmake --build .
           cmake --install .
 
+      - name: Package sysroot
+        run: |
+          cd "$(dirname "$SYSROOT")"
+          zip -r sysroot.zip "$(basename "$SYSROOT")"
+
       - name: Upload library
         uses: actions/upload-artifact@v4
         with:
-          name: LibC Library
-          path: libc.a
+          name: example-sysroot
+          path: ${{ github.workspace }}/example/sysroot.zip
 
   generate-docs:
-    if: false #todo
 
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -59,7 +69,16 @@ jobs:
       - name: Generate Docs
         run: |
           cd toolchain
+          ls
+          ls ../
+          ls ../docs
+          ls ../docs/doxy
           ./make_documentation.sh
+
+      - name: Update Progress
+        run: |
+          cd toolchain
+          ./progress.sh --output jsons
 
       - name: Upload to branch
 

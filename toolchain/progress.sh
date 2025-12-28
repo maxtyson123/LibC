@@ -2,10 +2,10 @@
 
 #TODO Maxos only
 SCRIPTDIR=$(dirname "$BASH_SOURCE")
-source $SCRIPTDIR/../../../toolchain/MaxOS.sh
+source $SCRIPTDIR/common.sh
 
 # Input variables
-OUTPUT_DEST="readme"
+OUTPUT_DEST="print"
 SHOULD_CHECK="all"
 HANDLE_MISSING="ignore"
 
@@ -32,8 +32,8 @@ done
 
 # Validate the args
 case "$OUTPUT_DEST" in
-    print|readme) ;;
-    *) fail "Error: Invalid argument $OUTPUT_DEST must be one of print|readme" ;;
+    print|readme|jsons) ;;
+    *) fail "Error: Invalid argument $OUTPUT_DEST must be one of print|readme|jsons" ;;
 esac
 case "$SHOULD_CHECK" in
     headers|functions|all) ;;
@@ -116,7 +116,15 @@ for func in $functions; do
     esac
 done
 
+# Output files
 README_FILE="../README.md"
+JSON_DIR="../docs/doxy/metrics"
+HEADERS_JSON="$JSON_DIR/headers.json"
+FUNCTIONS_JSON="$JSON_DIR/functions.json"
+
+mkdir -p $JSON_DIR
+touch $HEADERS_JSON
+touch $FUNCTIONS_JSON
 
 # Headers totals & percentage
 total_headers=$((correct_headers + missing_headers))
@@ -186,4 +194,35 @@ case "$OUTPUT_DEST" in
                 ;;
         esac
         ;;
+        jsons)
+            case "$SHOULD_CHECK" in
+                headers|all)
+                    cat > "$HEADERS_JSON" <<EOF
+                    {
+                      "schemaVersion": 1,
+                      "label": "Headers",
+                      "message": "$correct_headers/$total_headers ($percent_headers%)",
+                      "color": "$color_headers",
+                      "style": "for-the-badge"
+                    }
+EOF
+                    ;;
+            esac
+
+            case "$SHOULD_CHECK" in
+                functions|all)
+                    cat > "$FUNCTIONS_JSON" <<EOF
+                    {
+                      "schemaVersion": 1,
+                      "label": "Functions",
+                      "message": "$correct_functions/$total_functions ($percent_functions%)",
+                      "color": "$color_functions",
+                      "style": "for-the-badge"
+                    }
+EOF
+                    ;;
+            esac
+            ;;
+
+
 esac

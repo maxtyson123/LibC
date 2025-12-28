@@ -1,5 +1,5 @@
 /**
- * @file sig.c
+ * @file signal.c
  * @brief Defines functions to handle async events in a proc
  *
  * @date 16 December 2025

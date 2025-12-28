@@ -1,6 +1,6 @@
 /**
- * @file example.h
- * @breif Exampe implementations of functions that are specific to an platform that this libc is compiled for
+ * @file example.c
+ * @brief Example implementations of functions that are specific to an platform that this libc is compiled for
  *
  * @date 14 December 2025
  * @author Max Tyson

@@ -227,11 +227,11 @@ Distributed under the BSD 3-Clause License. See `LICENSE` for more information.
 
 [contributors-url]: https://github.com/maxtyson123/MaxOS/graphs/contributors
 
-[headers-shield]: https://img.shields.io/badge/Headers-10%2F86%20(11.63%25)-orange?style=for-the-badge
+[headers-shield]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/maxtyson123/LibC/refs/heads/docs/metrics/headers.json
 
 [headers-url]: https://github.com/maxtyson123/LibC/tree/main/include
 
-[functions-shield]: https://img.shields.io/badge/Functions-3%2F1227%20(0.24%25)-orange?style=for-the-badge
+[functions-shield]:https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/maxtyson123/LibC/refs/heads/docs/metrics/functions.json
 
 [functions-url]: https://github.com/maxtyson123/LibC/tree/main/src
 

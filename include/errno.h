@@ -1,6 +1,6 @@
 /**
  * @file errno.h
- * @breif Defines the standard error codes that report why a call fails
+ * @brief Defines the standard error codes that report why a call fails
  *
  * @date 14 December 2025
  * @author Max Tyson

@@ -1,6 +1,6 @@
 /**
  * @file example.h
- * @breif Exampe definitions of functions that are specific to an platform that this libc is compiled for
+ * @brief Example definitions of functions that are specific to an platform that this libc is compiled for
  *
  * @date 14 December 2025
  * @author Max Tyson
@@ -42,15 +42,21 @@ int _platform_write(int file, char* ptr, int len);
 void* _platform_sbrk(int incr);
 
 // Environment variables
-extern char* __env[1];
-extern char** environ;
+extern char* __env[1];		///< Platform specific storage for the environment variables
+extern char** environ;		///< Environment pointer @todo this isnt platform specific
 
 // CPU state for signals
 struct _platform_mcontext {
 	//...
 };
 
-// Local information storage
+/**
+ * @struct _struct_platform_locale
+ * @brief Platform specific implementation for storing locale information
+ *
+ * @typedef _platform_locale
+ * @brief Alais for _struct_platform_locale
+ */
 typedef struct _struct_platform_locale {
 
 	const char* collate;
