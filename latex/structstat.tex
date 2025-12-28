@@ -1,0 +1,241 @@
+\doxysection{stat Struct Reference}
+\hypertarget{structstat}{}\label{structstat}\index{stat@{stat}}
+
+
+The status of file.  
+
+
+
+
+{\ttfamily \#include $<$stat.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{types_8h_a25ab4acd63db23ce8ebc580b48d6c32f}{dev\+\_\+t}} \mbox{\hyperlink{structstat_ac5b90090ae323741ae4c9e4f3683a29f}{st\+\_\+dev}}
+\begin{DoxyCompactList}\small\item\em Device ID of device containing file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a05e26458c6a667897adbdb68b1ad6857}{ino\+\_\+t}} \mbox{\hyperlink{structstat_a9769ed8f0d4c5a9f329c32bc92479d56}{st\+\_\+ino}}
+\begin{DoxyCompactList}\small\item\em File serial number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}} \mbox{\hyperlink{structstat_a5cbdd829011af82ba61e83773bbcbc7d}{st\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Mode of file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_aae921edb33395034051c64191932476a}{nlink\+\_\+t}} \mbox{\hyperlink{structstat_a0ed9092fa6c77a3251b9b9a4738ef84f}{st\+\_\+nlink}}
+\begin{DoxyCompactList}\small\item\em Number of hard links to the file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a2cb84cf5f02a29b7e8f237ff151a9225}{off\+\_\+t}} \mbox{\hyperlink{structstat_a040e19c8b9766f841fde8786ce9297bf}{st\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em In bytes, the file size / symbolic link path size / memory length. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_ac3a43da508f85d45f051350c795555e9}{uid\+\_\+t}} \mbox{\hyperlink{structstat_a4a8708a3d18be60ee7b2f06c4cab0c70}{st\+\_\+uid}}
+\begin{DoxyCompactList}\small\item\em User ID of file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a9582384179b9d7b209d2e5b0cd0ab240}{gid\+\_\+t}} \mbox{\hyperlink{structstat_ab864f16f436cec370f0ced585d897698}{st\+\_\+gid}}
+\begin{DoxyCompactList}\small\item\em Group ID of file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a25ab4acd63db23ce8ebc580b48d6c32f}{dev\+\_\+t}} \mbox{\hyperlink{structstat_aa61e6c1a8a91c69f1d26f6700a0546cb}{st\+\_\+rdev}}
+\begin{DoxyCompactList}\small\item\em Device ID (if file is character or block special). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtimespec}{timespec}} \mbox{\hyperlink{structstat_a8447c545451bec2b95f9d67787404934}{st\+\_\+atim}}
+\begin{DoxyCompactList}\small\item\em Last data access timestamp. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtimespec}{timespec}} \mbox{\hyperlink{structstat_a78eca07da5a8a88b1c3dd8be5a32821e}{st\+\_\+mtim}}
+\begin{DoxyCompactList}\small\item\em Last data modification timestamp. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtimespec}{timespec}} \mbox{\hyperlink{structstat_a8fcf65727b775d92b773776ed1210c8b}{st\+\_\+ctim}}
+\begin{DoxyCompactList}\small\item\em Last file status change timestamp. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a54a3f3432318e662fb6d146a8fb6583e}{blksize\+\_\+t}} \mbox{\hyperlink{structstat_a38d474e1ae3cf6fbdde89ac3c3e308f1}{st\+\_\+blksize}}
+\begin{DoxyCompactList}\small\item\em The preferred block size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_adb459904d3e5fc81ad4c7cc8f47fd845}{blkcnt\+\_\+t}} \mbox{\hyperlink{structstat_a42dd716b2f9234f961d949fc9500eefb}{st\+\_\+blocks}}
+\begin{DoxyCompactList}\small\item\em Number of blocks allocated for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The status of file. 
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00026}{26}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structstat_a8447c545451bec2b95f9d67787404934}\label{structstat_a8447c545451bec2b95f9d67787404934} 
+\index{stat@{stat}!st\_atim@{st\_atim}}
+\index{st\_atim@{st\_atim}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_atim}{st\_atim}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtimespec}{timespec}} stat\+::st\+\_\+atim}
+
+
+
+Last data access timestamp. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00039}{39}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a38d474e1ae3cf6fbdde89ac3c3e308f1}\label{structstat_a38d474e1ae3cf6fbdde89ac3c3e308f1} 
+\index{stat@{stat}!st\_blksize@{st\_blksize}}
+\index{st\_blksize@{st\_blksize}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_blksize}{st\_blksize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a54a3f3432318e662fb6d146a8fb6583e}{blksize\+\_\+t}} stat\+::st\+\_\+blksize}
+
+
+
+The preferred block size. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00043}{43}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a42dd716b2f9234f961d949fc9500eefb}\label{structstat_a42dd716b2f9234f961d949fc9500eefb} 
+\index{stat@{stat}!st\_blocks@{st\_blocks}}
+\index{st\_blocks@{st\_blocks}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_blocks}{st\_blocks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_adb459904d3e5fc81ad4c7cc8f47fd845}{blkcnt\+\_\+t}} stat\+::st\+\_\+blocks}
+
+
+
+Number of blocks allocated for this object. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00044}{44}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a8fcf65727b775d92b773776ed1210c8b}\label{structstat_a8fcf65727b775d92b773776ed1210c8b} 
+\index{stat@{stat}!st\_ctim@{st\_ctim}}
+\index{st\_ctim@{st\_ctim}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_ctim}{st\_ctim}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtimespec}{timespec}} stat\+::st\+\_\+ctim}
+
+
+
+Last file status change timestamp. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00041}{41}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_ac5b90090ae323741ae4c9e4f3683a29f}\label{structstat_ac5b90090ae323741ae4c9e4f3683a29f} 
+\index{stat@{stat}!st\_dev@{st\_dev}}
+\index{st\_dev@{st\_dev}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_dev}{st\_dev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a25ab4acd63db23ce8ebc580b48d6c32f}{dev\+\_\+t}} stat\+::st\+\_\+dev}
+
+
+
+Device ID of device containing file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00028}{28}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_ab864f16f436cec370f0ced585d897698}\label{structstat_ab864f16f436cec370f0ced585d897698} 
+\index{stat@{stat}!st\_gid@{st\_gid}}
+\index{st\_gid@{st\_gid}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_gid}{st\_gid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a9582384179b9d7b209d2e5b0cd0ab240}{gid\+\_\+t}} stat\+::st\+\_\+gid}
+
+
+
+Group ID of file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00036}{36}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a9769ed8f0d4c5a9f329c32bc92479d56}\label{structstat_a9769ed8f0d4c5a9f329c32bc92479d56} 
+\index{stat@{stat}!st\_ino@{st\_ino}}
+\index{st\_ino@{st\_ino}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_ino}{st\_ino}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a05e26458c6a667897adbdb68b1ad6857}{ino\+\_\+t}} stat\+::st\+\_\+ino}
+
+
+
+File serial number. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00029}{29}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a5cbdd829011af82ba61e83773bbcbc7d}\label{structstat_a5cbdd829011af82ba61e83773bbcbc7d} 
+\index{stat@{stat}!st\_mode@{st\_mode}}
+\index{st\_mode@{st\_mode}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_mode}{st\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}} stat\+::st\+\_\+mode}
+
+
+
+Mode of file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00031}{31}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{example_8c_source_l00122}{\+\_\+platform\+\_\+fstat()}}, and \mbox{\hyperlink{example_8c_source_l00200}{\+\_\+platform\+\_\+stat()}}.
+
+\Hypertarget{structstat_a78eca07da5a8a88b1c3dd8be5a32821e}\label{structstat_a78eca07da5a8a88b1c3dd8be5a32821e} 
+\index{stat@{stat}!st\_mtim@{st\_mtim}}
+\index{st\_mtim@{st\_mtim}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_mtim}{st\_mtim}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtimespec}{timespec}} stat\+::st\+\_\+mtim}
+
+
+
+Last data modification timestamp. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00040}{40}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a0ed9092fa6c77a3251b9b9a4738ef84f}\label{structstat_a0ed9092fa6c77a3251b9b9a4738ef84f} 
+\index{stat@{stat}!st\_nlink@{st\_nlink}}
+\index{st\_nlink@{st\_nlink}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_nlink}{st\_nlink}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aae921edb33395034051c64191932476a}{nlink\+\_\+t}} stat\+::st\+\_\+nlink}
+
+
+
+Number of hard links to the file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00032}{32}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_aa61e6c1a8a91c69f1d26f6700a0546cb}\label{structstat_aa61e6c1a8a91c69f1d26f6700a0546cb} 
+\index{stat@{stat}!st\_rdev@{st\_rdev}}
+\index{st\_rdev@{st\_rdev}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_rdev}{st\_rdev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a25ab4acd63db23ce8ebc580b48d6c32f}{dev\+\_\+t}} stat\+::st\+\_\+rdev}
+
+
+
+Device ID (if file is character or block special). 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00037}{37}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a040e19c8b9766f841fde8786ce9297bf}\label{structstat_a040e19c8b9766f841fde8786ce9297bf} 
+\index{stat@{stat}!st\_size@{st\_size}}
+\index{st\_size@{st\_size}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_size}{st\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a2cb84cf5f02a29b7e8f237ff151a9225}{off\+\_\+t}} stat\+::st\+\_\+size}
+
+
+
+In bytes, the file size / symbolic link path size / memory length. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00033}{33}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{structstat_a4a8708a3d18be60ee7b2f06c4cab0c70}\label{structstat_a4a8708a3d18be60ee7b2f06c4cab0c70} 
+\index{stat@{stat}!st\_uid@{st\_uid}}
+\index{st\_uid@{st\_uid}!stat@{stat}}
+\doxysubsubsection{\texorpdfstring{st\_uid}{st\_uid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_ac3a43da508f85d45f051350c795555e9}{uid\+\_\+t}} stat\+::st\+\_\+uid}
+
+
+
+User ID of file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00035}{35}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Lib\+C/\+Lib\+C/include/sys/\mbox{\hyperlink{stat_8h}{stat.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\doxysection{sigevent Struct Reference}
+\hypertarget{structsigevent}{}\label{structsigevent}\index{sigevent@{sigevent}}
+
+
+Define how to notify the process when an event is fired.  
+
+
+
+
+{\ttfamily \#include $<$signal.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structsigevent_aae9a19d879c38e0c4e8a9bf738c5081e}{sigev\+\_\+notify}}
+\begin{DoxyCompactList}\small\item\em How to notify upon signaling. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structsigevent_a5c645ec1d12bb46efc3f4097c52b665d}{sigev\+\_\+signo}}
+\begin{DoxyCompactList}\small\item\em The signal this event is linked to. \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{unionsigval}{sigval}} \mbox{\hyperlink{structsigevent_a757af1e34b87e3f66bbc08c514017a2c}{sigev\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em The signal payload. \end{DoxyCompactList}\item 
+sigev\+\_\+notify\+\_\+function\+\_\+t \mbox{\hyperlink{structsigevent_a9424c5f3dd1dd43769262e80856f26ab}{sigev\+\_\+notify\+\_\+function}}
+\begin{DoxyCompactList}\small\item\em Function to handle the signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a97e6d323c24b1e1345abe5a1b3f8e1f1}{pthread\+\_\+attr\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structsigevent_a5a687d2092b237d76eb08e2d46a5115f}{sigev\+\_\+notify\+\_\+attributes}}
+\begin{DoxyCompactList}\small\item\em Defines the thread to be created to handle the signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define how to notify the process when an event is fired. 
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00051}{51}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structsigevent_aae9a19d879c38e0c4e8a9bf738c5081e}\label{structsigevent_aae9a19d879c38e0c4e8a9bf738c5081e} 
+\index{sigevent@{sigevent}!sigev\_notify@{sigev\_notify}}
+\index{sigev\_notify@{sigev\_notify}!sigevent@{sigevent}}
+\doxysubsubsection{\texorpdfstring{sigev\_notify}{sigev\_notify}}
+{\footnotesize\ttfamily int sigevent\+::sigev\+\_\+notify}
+
+
+
+How to notify upon signaling. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00053}{53}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{structsigevent_a5a687d2092b237d76eb08e2d46a5115f}\label{structsigevent_a5a687d2092b237d76eb08e2d46a5115f} 
+\index{sigevent@{sigevent}!sigev\_notify\_attributes@{sigev\_notify\_attributes}}
+\index{sigev\_notify\_attributes@{sigev\_notify\_attributes}!sigevent@{sigevent}}
+\doxysubsubsection{\texorpdfstring{sigev\_notify\_attributes}{sigev\_notify\_attributes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a97e6d323c24b1e1345abe5a1b3f8e1f1}{pthread\+\_\+attr\+\_\+t}}\texorpdfstring{$\ast$}{*} sigevent\+::sigev\+\_\+notify\+\_\+attributes}
+
+
+
+Defines the thread to be created to handle the signal. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00057}{57}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{structsigevent_a9424c5f3dd1dd43769262e80856f26ab}\label{structsigevent_a9424c5f3dd1dd43769262e80856f26ab} 
+\index{sigevent@{sigevent}!sigev\_notify\_function@{sigev\_notify\_function}}
+\index{sigev\_notify\_function@{sigev\_notify\_function}!sigevent@{sigevent}}
+\doxysubsubsection{\texorpdfstring{sigev\_notify\_function}{sigev\_notify\_function}}
+{\footnotesize\ttfamily sigev\+\_\+notify\+\_\+function\+\_\+t sigevent\+::sigev\+\_\+notify\+\_\+function}
+
+
+
+Function to handle the signal. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00056}{56}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{structsigevent_a5c645ec1d12bb46efc3f4097c52b665d}\label{structsigevent_a5c645ec1d12bb46efc3f4097c52b665d} 
+\index{sigevent@{sigevent}!sigev\_signo@{sigev\_signo}}
+\index{sigev\_signo@{sigev\_signo}!sigevent@{sigevent}}
+\doxysubsubsection{\texorpdfstring{sigev\_signo}{sigev\_signo}}
+{\footnotesize\ttfamily int sigevent\+::sigev\+\_\+signo}
+
+
+
+The signal this event is linked to. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00054}{54}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{structsigevent_a757af1e34b87e3f66bbc08c514017a2c}\label{structsigevent_a757af1e34b87e3f66bbc08c514017a2c} 
+\index{sigevent@{sigevent}!sigev\_value@{sigev\_value}}
+\index{sigev\_value@{sigev\_value}!sigevent@{sigevent}}
+\doxysubsubsection{\texorpdfstring{sigev\_value}{sigev\_value}}
+{\footnotesize\ttfamily union \mbox{\hyperlink{unionsigval}{sigval}} sigevent\+::sigev\+\_\+value}
+
+
+
+The signal payload. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00055}{55}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Lib\+C/\+Lib\+C/include/\mbox{\hyperlink{signal_8h}{signal.\+h}}\end{DoxyCompactItemize}

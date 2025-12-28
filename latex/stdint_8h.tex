@@ -1,0 +1,1016 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/stdint.h File Reference}
+\hypertarget{stdint_8h}{}\label{stdint_8h}\index{/home/runner/work/LibC/LibC/include/stdint.h@{/home/runner/work/LibC/LibC/include/stdint.h}}
+
+
+Defines sets of integer types having specified widths.  
+
+
+{\ttfamily \#include $<$libc\+\_\+common.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{INT8\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT8\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aadcf2a81af243df333b31efa6461ab8e}{INT8\+\_\+\+MIN}}~(-\/INT8\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aa05109908fb2770f632d2b646b9f85bf}{INT\+\_\+\+LEAST8\+\_\+\+MAX}}~INT8\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a3e986cad833f63f420962ff60eda87e5}{INT\+\_\+\+LEAST8\+\_\+\+MIN}}~INT8\+\_\+\+MIN
+\item 
+\#define \mbox{\hyperlink{stdint_8h_acbcdb3bee0f5f904da5df8de69a80ca3}{INT\+\_\+\+FAST8\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT\+\_\+\+FAST8\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aad8fb982cb19143efd5ee9a1a7a89390}{INT\+\_\+\+FAST8\+\_\+\+MIN}}~(-\/INT\+\_\+\+FAST8\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a6b76c8f233c61e6ea05b19b59a6e3549}{INT8\+\_\+C}}(c)~\+\_\+\+\_\+\+INT8\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aeb4e270a084ee26fe73e799861bd0252}{UINT8\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT8\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}{UINT\+\_\+\+LEAST8\+\_\+\+MAX}}~UINT8\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a2c6f97ea2d76d0cf6260c84046cdb44e}{UINT\+\_\+\+FAST8\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT\+\_\+\+FAST8\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_af77373faf472a16283aad2014724192d}{UINT8\+\_\+C}}(c)~\+\_\+\+\_\+\+UINT8\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{INT16\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT16\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ad4e9955955b27624963643eac448118a}{INT16\+\_\+\+MIN}}~(-\/INT16\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}{INT\+\_\+\+LEAST16\+\_\+\+MAX}}~INT16\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}{INT\+\_\+\+LEAST16\+\_\+\+MIN}}~INT16\+\_\+\+MIN
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a2fd35d0ea091e04caec504ff0042cf00}{INT\+\_\+\+FAST16\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT\+\_\+\+FAST16\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a169460a4e2a79138723d68d99372d958}{INT\+\_\+\+FAST16\+\_\+\+MIN}}~(-\/INT\+\_\+\+FAST16\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ae80ec61658b3f58afc31ee67ccd27805}{INT16\+\_\+C}}(c)~\+\_\+\+\_\+\+INT16\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}{UINT16\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT16\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}{UINT\+\_\+\+LEAST16\+\_\+\+MAX}}~UINT16\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aed28ca63d9b222f6f1377358fe73a183}{UINT\+\_\+\+FAST16\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT\+\_\+\+FAST16\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_af525dddf7f072ee85c953107123ff1f6}{UINT16\+\_\+C}}(c)~\+\_\+\+\_\+\+UINT16\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a181807730d4a375f848ba139813ce04f}{INT32\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT32\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}{INT32\+\_\+\+MIN}}~(-\/INT32\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a5618711a0a54f722190a3a1219e278c2}{INT\+\_\+\+LEAST32\+\_\+\+MAX}}~INT32\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a2360a536116dd734820a6b5b3d560ce7}{INT\+\_\+\+LEAST32\+\_\+\+MIN}}~INT32\+\_\+\+MIN
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ac96fa0f41b19e89f109e4f9913ca6635}{INT\+\_\+\+FAST32\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT\+\_\+\+FAST32\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ad93df1652ed0635513d5efe4f1219926}{INT\+\_\+\+FAST32\+\_\+\+MIN}}~(-\/INT\+\_\+\+FAST32\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a5391a63e4d2c8c8a39b3c6f8fdbd8763}{INT32\+\_\+C}}(c)~\+\_\+\+\_\+\+INT32\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{UINT32\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT32\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}{UINT\+\_\+\+LEAST32\+\_\+\+MAX}}~UINT32\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ad51246a178143208b2db3315efd21c45}{UINT\+\_\+\+FAST32\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT\+\_\+\+FAST32\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a87b9ec7df1524edf020b074bbae32d6d}{UINT32\+\_\+C}}(c)~\+\_\+\+\_\+\+UINT32\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ad0d744f05898e32d01f73f8af3cd2071}{INT64\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT64\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ab21f12f372f67b8ff0aa3432336ede67}{INT64\+\_\+\+MIN}}~(-\/INT64\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a35d0f98a2e507fd1be779d49da92724e}{INT\+\_\+\+LEAST64\+\_\+\+MAX}}~INT64\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ac12b4f6966b57ad82feb683b284b4060}{INT\+\_\+\+LEAST64\+\_\+\+MIN}}~INT64\+\_\+\+MIN
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a13c95cf9c209d8daacb36cbf0d5ba275}{INT\+\_\+\+FAST64\+\_\+\+MAX}}~\+\_\+\+\_\+\+INT\+\_\+\+FAST64\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a50f0fdcb00ea2500cec0f3d6d45c36f3}{INT\+\_\+\+FAST64\+\_\+\+MIN}}~(-\/INT\+\_\+\+FAST64\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a22369e5d04efcda4162fdb0f5759318e}{INT64\+\_\+C}}(c)~\+\_\+\+\_\+\+INT64\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a30654b4b67d97c42ca3f9b6052dda916}{UINT64\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT64\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aab530113fa96e280e49c3c138b0f917d}{UINT\+\_\+\+LEAST64\+\_\+\+MAX}}~UINT64\+\_\+\+MAX
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aeb74410af7781bc84b5f64ae7a8f4a17}{UINT\+\_\+\+FAST64\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINT\+\_\+\+FAST64\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a26a7bac63d90ef61175acb9f6fc4f2ca}{UINT64\+\_\+C}}(c)~\+\_\+\+\_\+\+UINT64\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a9e5742f2bae4a5283431a3c03499e3a9}{INTPTR\+\_\+\+MAX}}~\+\_\+\+\_\+\+INTPTR\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a2aaa6d3aa1d7d1e0e326955aa24db752}{INTPTR\+\_\+\+MIN}}~(-\/INTPTR\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_ab2355300ea19395357e62d780f4dd073}{UINTPTR\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINTPTR\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a022b9b0a3564d786244a4631847c37a3}{INTMAX\+\_\+\+MAX}}~\+\_\+\+\_\+\+INTMAX\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a2b0a3edfc672154f606dc3ad26277b61}{INTMAX\+\_\+\+MIN}}~(-\/INTMAX\+\_\+\+MAX -\/ 1)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a1b955596bdc3e4b6ef339f16e468d55f}{INTMAX\+\_\+C}}(c)~\+\_\+\+\_\+\+INTMAX\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_aa54fd5210434219e9027bfa0f0e325c8}{UINTMAX\+\_\+\+MAX}}~\+\_\+\+\_\+\+UINTMAX\+\_\+\+MAX\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a00d3f5dd8a8cbd9433d74390bfb2ecef}{UINTMAX\+\_\+C}}(c)~\+\_\+\+\_\+\+UINTMAX\+\_\+C(c)
+\item 
+\#define \mbox{\hyperlink{stdint_8h_a3c75bb398badb69c7577b21486f9963f}{SIZE\+\_\+\+MAX}}~\+\_\+\+\_\+\+SIZE\+\_\+\+MAX\+\_\+\+\_\+
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int8\+\_\+t \mbox{\hyperlink{stdint_8h_aadfd725efbf565422ab13db91ccca53c}{int\+\_\+least8\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST8\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a98f573ff8187ff09c9594a3f2af7be0d}{int\+\_\+fast8\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT8\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d}{uint8\+\_\+t}}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{stdint_8h_ac76e2383debd5a3b100514044828961a}{uint\+\_\+least8\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST8\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a2464ed69ccd3fd2b3b4c93cb78f6fa20}{uint\+\_\+fast8\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INT16\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_afe270aee8d96ad7f279a4020b9d58bdf}{int16\+\_\+t}}
+\item 
+typedef int16\+\_\+t \mbox{\hyperlink{stdint_8h_a17f379713bed2a28ac431760401253cd}{int\+\_\+least16\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST16\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a888269be199d49b7f40006aaafa5a350}{int\+\_\+fast16\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT16\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a5debae8b2a1ec20a6694c0c443ee399e}{uint16\+\_\+t}}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{stdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{uint\+\_\+least16\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST16\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_aaabed6e034edb01c259c003894d7f7c8}{uint\+\_\+fast16\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INT32\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a0c18914b3041c2f583aba76f418399c2}{int32\+\_\+t}}
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{stdint_8h_a2676b57a778795e5d0598970f1407f38}{int\+\_\+least32\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST32\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a530ba8ffc89f6393d2d0e2fb2db38b54}{int\+\_\+fast32\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT32\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a0a8582351ac627ee8bde2973c825e47f}{uint32\+\_\+t}}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{stdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{uint\+\_\+least32\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST32\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_aa44ff507c3d9a49e27fac64e9fadf062}{uint\+\_\+fast32\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INT64\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_ac714c0d2c1a4adb10e73cab29623314b}{int64\+\_\+t}}
+\item 
+typedef int64\+\_\+t \mbox{\hyperlink{stdint_8h_a2073b30b3170d509bc756bf5c7862caf}{int\+\_\+least64\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST64\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_abcdb0a9f6e7d139ad4f521ab8f4efdc0}{int\+\_\+fast64\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT64\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a2095b9bffea4b2656950c6c0419edbf1}{uint64\+\_\+t}}
+\item 
+typedef uint64\+\_\+t \mbox{\hyperlink{stdint_8h_ab604f73dd823867b43702ae88b4f4445}{uint\+\_\+least64\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST64\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a62c711f66c6d29c81429aeafdc4bc592}{uint\+\_\+fast64\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INTPTR\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a0bd5dec00e345e69027427f8621d6a6c}{intptr\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINTPTR\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a4788399d1d0b37ccf098a7da82254808}{uintptr\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+INTMAX\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_ae26fa513a7dfed63221f72d93de2a021}{intmax\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+UINTMAX\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_a4e5632221b295f0fcdcb2233f3f60515}{uintmax\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+CPP\+\_\+\+START typedef \+\_\+\+\_\+\+INT8\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stdint_8h_ab09203266e610c3fcec48c52849b5659}{int8\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines sets of integer types having specified widths. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdint.h.html}{\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/stdint.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+15 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{stdint_8h_ae80ec61658b3f58afc31ee67ccd27805}\label{stdint_8h_ae80ec61658b3f58afc31ee67ccd27805} 
+\index{stdint.h@{stdint.h}!INT16\_C@{INT16\_C}}
+\index{INT16\_C@{INT16\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT16\_C}{INT16\_C}}
+{\footnotesize\ttfamily \#define INT16\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+INT16\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00049}{49}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}\label{stdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca} 
+\index{stdint.h@{stdint.h}!INT16\_MAX@{INT16\_MAX}}
+\index{INT16\_MAX@{INT16\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT16\_MAX}{INT16\_MAX}}
+{\footnotesize\ttfamily \#define INT16\+\_\+\+MAX~\+\_\+\+\_\+\+INT16\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00043}{43}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ad4e9955955b27624963643eac448118a}\label{stdint_8h_ad4e9955955b27624963643eac448118a} 
+\index{stdint.h@{stdint.h}!INT16\_MIN@{INT16\_MIN}}
+\index{INT16\_MIN@{INT16\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT16\_MIN}{INT16\_MIN}}
+{\footnotesize\ttfamily \#define INT16\+\_\+\+MIN~(-\/INT16\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00044}{44}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a5391a63e4d2c8c8a39b3c6f8fdbd8763}\label{stdint_8h_a5391a63e4d2c8c8a39b3c6f8fdbd8763} 
+\index{stdint.h@{stdint.h}!INT32\_C@{INT32\_C}}
+\index{INT32\_C@{INT32\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT32\_C}{INT32\_C}}
+{\footnotesize\ttfamily \#define INT32\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+INT32\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00070}{70}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a181807730d4a375f848ba139813ce04f}\label{stdint_8h_a181807730d4a375f848ba139813ce04f} 
+\index{stdint.h@{stdint.h}!INT32\_MAX@{INT32\_MAX}}
+\index{INT32\_MAX@{INT32\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT32\_MAX}{INT32\_MAX}}
+{\footnotesize\ttfamily \#define INT32\+\_\+\+MAX~\+\_\+\+\_\+\+INT32\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00064}{64}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}\label{stdint_8h_a688eb21a22db27c2b2bd5836943cdcbe} 
+\index{stdint.h@{stdint.h}!INT32\_MIN@{INT32\_MIN}}
+\index{INT32\_MIN@{INT32\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT32\_MIN}{INT32\_MIN}}
+{\footnotesize\ttfamily \#define INT32\+\_\+\+MIN~(-\/INT32\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00065}{65}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a22369e5d04efcda4162fdb0f5759318e}\label{stdint_8h_a22369e5d04efcda4162fdb0f5759318e} 
+\index{stdint.h@{stdint.h}!INT64\_C@{INT64\_C}}
+\index{INT64\_C@{INT64\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT64\_C}{INT64\_C}}
+{\footnotesize\ttfamily \#define INT64\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+INT64\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00091}{91}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ad0d744f05898e32d01f73f8af3cd2071}\label{stdint_8h_ad0d744f05898e32d01f73f8af3cd2071} 
+\index{stdint.h@{stdint.h}!INT64\_MAX@{INT64\_MAX}}
+\index{INT64\_MAX@{INT64\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT64\_MAX}{INT64\_MAX}}
+{\footnotesize\ttfamily \#define INT64\+\_\+\+MAX~\+\_\+\+\_\+\+INT64\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00085}{85}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ab21f12f372f67b8ff0aa3432336ede67}\label{stdint_8h_ab21f12f372f67b8ff0aa3432336ede67} 
+\index{stdint.h@{stdint.h}!INT64\_MIN@{INT64\_MIN}}
+\index{INT64\_MIN@{INT64\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT64\_MIN}{INT64\_MIN}}
+{\footnotesize\ttfamily \#define INT64\+\_\+\+MIN~(-\/INT64\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00086}{86}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a6b76c8f233c61e6ea05b19b59a6e3549}\label{stdint_8h_a6b76c8f233c61e6ea05b19b59a6e3549} 
+\index{stdint.h@{stdint.h}!INT8\_C@{INT8\_C}}
+\index{INT8\_C@{INT8\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT8\_C}{INT8\_C}}
+{\footnotesize\ttfamily \#define INT8\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+INT8\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00028}{28}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}\label{stdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a} 
+\index{stdint.h@{stdint.h}!INT8\_MAX@{INT8\_MAX}}
+\index{INT8\_MAX@{INT8\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT8\_MAX}{INT8\_MAX}}
+{\footnotesize\ttfamily \#define INT8\+\_\+\+MAX~\+\_\+\+\_\+\+INT8\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00022}{22}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aadcf2a81af243df333b31efa6461ab8e}\label{stdint_8h_aadcf2a81af243df333b31efa6461ab8e} 
+\index{stdint.h@{stdint.h}!INT8\_MIN@{INT8\_MIN}}
+\index{INT8\_MIN@{INT8\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT8\_MIN}{INT8\_MIN}}
+{\footnotesize\ttfamily \#define INT8\+\_\+\+MIN~(-\/INT8\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00023}{23}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2fd35d0ea091e04caec504ff0042cf00}\label{stdint_8h_a2fd35d0ea091e04caec504ff0042cf00} 
+\index{stdint.h@{stdint.h}!INT\_FAST16\_MAX@{INT\_FAST16\_MAX}}
+\index{INT\_FAST16\_MAX@{INT\_FAST16\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST16\_MAX}{INT\_FAST16\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST16\+\_\+\+MAX~\+\_\+\+\_\+\+INT\+\_\+\+FAST16\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00047}{47}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a169460a4e2a79138723d68d99372d958}\label{stdint_8h_a169460a4e2a79138723d68d99372d958} 
+\index{stdint.h@{stdint.h}!INT\_FAST16\_MIN@{INT\_FAST16\_MIN}}
+\index{INT\_FAST16\_MIN@{INT\_FAST16\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST16\_MIN}{INT\_FAST16\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST16\+\_\+\+MIN~(-\/INT\+\_\+\+FAST16\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00048}{48}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ac96fa0f41b19e89f109e4f9913ca6635}\label{stdint_8h_ac96fa0f41b19e89f109e4f9913ca6635} 
+\index{stdint.h@{stdint.h}!INT\_FAST32\_MAX@{INT\_FAST32\_MAX}}
+\index{INT\_FAST32\_MAX@{INT\_FAST32\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST32\_MAX}{INT\_FAST32\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST32\+\_\+\+MAX~\+\_\+\+\_\+\+INT\+\_\+\+FAST32\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00068}{68}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ad93df1652ed0635513d5efe4f1219926}\label{stdint_8h_ad93df1652ed0635513d5efe4f1219926} 
+\index{stdint.h@{stdint.h}!INT\_FAST32\_MIN@{INT\_FAST32\_MIN}}
+\index{INT\_FAST32\_MIN@{INT\_FAST32\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST32\_MIN}{INT\_FAST32\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST32\+\_\+\+MIN~(-\/INT\+\_\+\+FAST32\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00069}{69}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a13c95cf9c209d8daacb36cbf0d5ba275}\label{stdint_8h_a13c95cf9c209d8daacb36cbf0d5ba275} 
+\index{stdint.h@{stdint.h}!INT\_FAST64\_MAX@{INT\_FAST64\_MAX}}
+\index{INT\_FAST64\_MAX@{INT\_FAST64\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST64\_MAX}{INT\_FAST64\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST64\+\_\+\+MAX~\+\_\+\+\_\+\+INT\+\_\+\+FAST64\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00089}{89}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a50f0fdcb00ea2500cec0f3d6d45c36f3}\label{stdint_8h_a50f0fdcb00ea2500cec0f3d6d45c36f3} 
+\index{stdint.h@{stdint.h}!INT\_FAST64\_MIN@{INT\_FAST64\_MIN}}
+\index{INT\_FAST64\_MIN@{INT\_FAST64\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST64\_MIN}{INT\_FAST64\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST64\+\_\+\+MIN~(-\/INT\+\_\+\+FAST64\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00090}{90}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_acbcdb3bee0f5f904da5df8de69a80ca3}\label{stdint_8h_acbcdb3bee0f5f904da5df8de69a80ca3} 
+\index{stdint.h@{stdint.h}!INT\_FAST8\_MAX@{INT\_FAST8\_MAX}}
+\index{INT\_FAST8\_MAX@{INT\_FAST8\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST8\_MAX}{INT\_FAST8\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST8\+\_\+\+MAX~\+\_\+\+\_\+\+INT\+\_\+\+FAST8\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00026}{26}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aad8fb982cb19143efd5ee9a1a7a89390}\label{stdint_8h_aad8fb982cb19143efd5ee9a1a7a89390} 
+\index{stdint.h@{stdint.h}!INT\_FAST8\_MIN@{INT\_FAST8\_MIN}}
+\index{INT\_FAST8\_MIN@{INT\_FAST8\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST8\_MIN}{INT\_FAST8\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST8\+\_\+\+MIN~(-\/INT\+\_\+\+FAST8\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00027}{27}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}\label{stdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa} 
+\index{stdint.h@{stdint.h}!INT\_LEAST16\_MAX@{INT\_LEAST16\_MAX}}
+\index{INT\_LEAST16\_MAX@{INT\_LEAST16\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST16\_MAX}{INT\_LEAST16\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST16\+\_\+\+MAX~INT16\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00045}{45}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}\label{stdint_8h_a1f91bfd5820c2f27af3d260fc75813e1} 
+\index{stdint.h@{stdint.h}!INT\_LEAST16\_MIN@{INT\_LEAST16\_MIN}}
+\index{INT\_LEAST16\_MIN@{INT\_LEAST16\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST16\_MIN}{INT\_LEAST16\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST16\+\_\+\+MIN~INT16\+\_\+\+MIN}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00046}{46}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a5618711a0a54f722190a3a1219e278c2}\label{stdint_8h_a5618711a0a54f722190a3a1219e278c2} 
+\index{stdint.h@{stdint.h}!INT\_LEAST32\_MAX@{INT\_LEAST32\_MAX}}
+\index{INT\_LEAST32\_MAX@{INT\_LEAST32\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST32\_MAX}{INT\_LEAST32\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST32\+\_\+\+MAX~INT32\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00066}{66}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2360a536116dd734820a6b5b3d560ce7}\label{stdint_8h_a2360a536116dd734820a6b5b3d560ce7} 
+\index{stdint.h@{stdint.h}!INT\_LEAST32\_MIN@{INT\_LEAST32\_MIN}}
+\index{INT\_LEAST32\_MIN@{INT\_LEAST32\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST32\_MIN}{INT\_LEAST32\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST32\+\_\+\+MIN~INT32\+\_\+\+MIN}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00067}{67}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a35d0f98a2e507fd1be779d49da92724e}\label{stdint_8h_a35d0f98a2e507fd1be779d49da92724e} 
+\index{stdint.h@{stdint.h}!INT\_LEAST64\_MAX@{INT\_LEAST64\_MAX}}
+\index{INT\_LEAST64\_MAX@{INT\_LEAST64\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST64\_MAX}{INT\_LEAST64\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST64\+\_\+\+MAX~INT64\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00087}{87}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ac12b4f6966b57ad82feb683b284b4060}\label{stdint_8h_ac12b4f6966b57ad82feb683b284b4060} 
+\index{stdint.h@{stdint.h}!INT\_LEAST64\_MIN@{INT\_LEAST64\_MIN}}
+\index{INT\_LEAST64\_MIN@{INT\_LEAST64\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST64\_MIN}{INT\_LEAST64\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST64\+\_\+\+MIN~INT64\+\_\+\+MIN}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00088}{88}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aa05109908fb2770f632d2b646b9f85bf}\label{stdint_8h_aa05109908fb2770f632d2b646b9f85bf} 
+\index{stdint.h@{stdint.h}!INT\_LEAST8\_MAX@{INT\_LEAST8\_MAX}}
+\index{INT\_LEAST8\_MAX@{INT\_LEAST8\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST8\_MAX}{INT\_LEAST8\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST8\+\_\+\+MAX~INT8\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00024}{24}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a3e986cad833f63f420962ff60eda87e5}\label{stdint_8h_a3e986cad833f63f420962ff60eda87e5} 
+\index{stdint.h@{stdint.h}!INT\_LEAST8\_MIN@{INT\_LEAST8\_MIN}}
+\index{INT\_LEAST8\_MIN@{INT\_LEAST8\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST8\_MIN}{INT\_LEAST8\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST8\+\_\+\+MIN~INT8\+\_\+\+MIN}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00025}{25}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a1b955596bdc3e4b6ef339f16e468d55f}\label{stdint_8h_a1b955596bdc3e4b6ef339f16e468d55f} 
+\index{stdint.h@{stdint.h}!INTMAX\_C@{INTMAX\_C}}
+\index{INTMAX\_C@{INTMAX\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INTMAX\_C}{INTMAX\_C}}
+{\footnotesize\ttfamily \#define INTMAX\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+INTMAX\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00115}{115}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a022b9b0a3564d786244a4631847c37a3}\label{stdint_8h_a022b9b0a3564d786244a4631847c37a3} 
+\index{stdint.h@{stdint.h}!INTMAX\_MAX@{INTMAX\_MAX}}
+\index{INTMAX\_MAX@{INTMAX\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INTMAX\_MAX}{INTMAX\_MAX}}
+{\footnotesize\ttfamily \#define INTMAX\+\_\+\+MAX~\+\_\+\+\_\+\+INTMAX\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00113}{113}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2b0a3edfc672154f606dc3ad26277b61}\label{stdint_8h_a2b0a3edfc672154f606dc3ad26277b61} 
+\index{stdint.h@{stdint.h}!INTMAX\_MIN@{INTMAX\_MIN}}
+\index{INTMAX\_MIN@{INTMAX\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INTMAX\_MIN}{INTMAX\_MIN}}
+{\footnotesize\ttfamily \#define INTMAX\+\_\+\+MIN~(-\/INTMAX\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00114}{114}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a9e5742f2bae4a5283431a3c03499e3a9}\label{stdint_8h_a9e5742f2bae4a5283431a3c03499e3a9} 
+\index{stdint.h@{stdint.h}!INTPTR\_MAX@{INTPTR\_MAX}}
+\index{INTPTR\_MAX@{INTPTR\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INTPTR\_MAX}{INTPTR\_MAX}}
+{\footnotesize\ttfamily \#define INTPTR\+\_\+\+MAX~\+\_\+\+\_\+\+INTPTR\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00104}{104}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2aaa6d3aa1d7d1e0e326955aa24db752}\label{stdint_8h_a2aaa6d3aa1d7d1e0e326955aa24db752} 
+\index{stdint.h@{stdint.h}!INTPTR\_MIN@{INTPTR\_MIN}}
+\index{INTPTR\_MIN@{INTPTR\_MIN}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{INTPTR\_MIN}{INTPTR\_MIN}}
+{\footnotesize\ttfamily \#define INTPTR\+\_\+\+MIN~(-\/INTPTR\+\_\+\+MAX -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00105}{105}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a3c75bb398badb69c7577b21486f9963f}\label{stdint_8h_a3c75bb398badb69c7577b21486f9963f} 
+\index{stdint.h@{stdint.h}!SIZE\_MAX@{SIZE\_MAX}}
+\index{SIZE\_MAX@{SIZE\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{SIZE\_MAX}{SIZE\_MAX}}
+{\footnotesize\ttfamily \#define SIZE\+\_\+\+MAX~\+\_\+\+\_\+\+SIZE\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00124}{124}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_af525dddf7f072ee85c953107123ff1f6}\label{stdint_8h_af525dddf7f072ee85c953107123ff1f6} 
+\index{stdint.h@{stdint.h}!UINT16\_C@{UINT16\_C}}
+\index{UINT16\_C@{UINT16\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT16\_C}{UINT16\_C}}
+{\footnotesize\ttfamily \#define UINT16\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+UINT16\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00058}{58}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}\label{stdint_8h_a3ea490c9b3617d4479bd80ef93cd5602} 
+\index{stdint.h@{stdint.h}!UINT16\_MAX@{UINT16\_MAX}}
+\index{UINT16\_MAX@{UINT16\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT16\_MAX}{UINT16\_MAX}}
+{\footnotesize\ttfamily \#define UINT16\+\_\+\+MAX~\+\_\+\+\_\+\+UINT16\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00055}{55}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a87b9ec7df1524edf020b074bbae32d6d}\label{stdint_8h_a87b9ec7df1524edf020b074bbae32d6d} 
+\index{stdint.h@{stdint.h}!UINT32\_C@{UINT32\_C}}
+\index{UINT32\_C@{UINT32\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT32\_C}{UINT32\_C}}
+{\footnotesize\ttfamily \#define UINT32\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+UINT32\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00079}{79}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}\label{stdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd} 
+\index{stdint.h@{stdint.h}!UINT32\_MAX@{UINT32\_MAX}}
+\index{UINT32\_MAX@{UINT32\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT32\_MAX}{UINT32\_MAX}}
+{\footnotesize\ttfamily \#define UINT32\+\_\+\+MAX~\+\_\+\+\_\+\+UINT32\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00076}{76}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a26a7bac63d90ef61175acb9f6fc4f2ca}\label{stdint_8h_a26a7bac63d90ef61175acb9f6fc4f2ca} 
+\index{stdint.h@{stdint.h}!UINT64\_C@{UINT64\_C}}
+\index{UINT64\_C@{UINT64\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT64\_C}{UINT64\_C}}
+{\footnotesize\ttfamily \#define UINT64\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+UINT64\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00100}{100}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a30654b4b67d97c42ca3f9b6052dda916}\label{stdint_8h_a30654b4b67d97c42ca3f9b6052dda916} 
+\index{stdint.h@{stdint.h}!UINT64\_MAX@{UINT64\_MAX}}
+\index{UINT64\_MAX@{UINT64\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT64\_MAX}{UINT64\_MAX}}
+{\footnotesize\ttfamily \#define UINT64\+\_\+\+MAX~\+\_\+\+\_\+\+UINT64\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00097}{97}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_af77373faf472a16283aad2014724192d}\label{stdint_8h_af77373faf472a16283aad2014724192d} 
+\index{stdint.h@{stdint.h}!UINT8\_C@{UINT8\_C}}
+\index{UINT8\_C@{UINT8\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT8\_C}{UINT8\_C}}
+{\footnotesize\ttfamily \#define UINT8\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+UINT8\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00037}{37}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aeb4e270a084ee26fe73e799861bd0252}\label{stdint_8h_aeb4e270a084ee26fe73e799861bd0252} 
+\index{stdint.h@{stdint.h}!UINT8\_MAX@{UINT8\_MAX}}
+\index{UINT8\_MAX@{UINT8\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT8\_MAX}{UINT8\_MAX}}
+{\footnotesize\ttfamily \#define UINT8\+\_\+\+MAX~\+\_\+\+\_\+\+UINT8\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00034}{34}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aed28ca63d9b222f6f1377358fe73a183}\label{stdint_8h_aed28ca63d9b222f6f1377358fe73a183} 
+\index{stdint.h@{stdint.h}!UINT\_FAST16\_MAX@{UINT\_FAST16\_MAX}}
+\index{UINT\_FAST16\_MAX@{UINT\_FAST16\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_FAST16\_MAX}{UINT\_FAST16\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+FAST16\+\_\+\+MAX~\+\_\+\+\_\+\+UINT\+\_\+\+FAST16\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00057}{57}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ad51246a178143208b2db3315efd21c45}\label{stdint_8h_ad51246a178143208b2db3315efd21c45} 
+\index{stdint.h@{stdint.h}!UINT\_FAST32\_MAX@{UINT\_FAST32\_MAX}}
+\index{UINT\_FAST32\_MAX@{UINT\_FAST32\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_FAST32\_MAX}{UINT\_FAST32\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+FAST32\+\_\+\+MAX~\+\_\+\+\_\+\+UINT\+\_\+\+FAST32\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00078}{78}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aeb74410af7781bc84b5f64ae7a8f4a17}\label{stdint_8h_aeb74410af7781bc84b5f64ae7a8f4a17} 
+\index{stdint.h@{stdint.h}!UINT\_FAST64\_MAX@{UINT\_FAST64\_MAX}}
+\index{UINT\_FAST64\_MAX@{UINT\_FAST64\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_FAST64\_MAX}{UINT\_FAST64\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+FAST64\+\_\+\+MAX~\+\_\+\+\_\+\+UINT\+\_\+\+FAST64\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00099}{99}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2c6f97ea2d76d0cf6260c84046cdb44e}\label{stdint_8h_a2c6f97ea2d76d0cf6260c84046cdb44e} 
+\index{stdint.h@{stdint.h}!UINT\_FAST8\_MAX@{UINT\_FAST8\_MAX}}
+\index{UINT\_FAST8\_MAX@{UINT\_FAST8\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_FAST8\_MAX}{UINT\_FAST8\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+FAST8\+\_\+\+MAX~\+\_\+\+\_\+\+UINT\+\_\+\+FAST8\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00036}{36}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}\label{stdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f} 
+\index{stdint.h@{stdint.h}!UINT\_LEAST16\_MAX@{UINT\_LEAST16\_MAX}}
+\index{UINT\_LEAST16\_MAX@{UINT\_LEAST16\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_LEAST16\_MAX}{UINT\_LEAST16\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+LEAST16\+\_\+\+MAX~UINT16\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00056}{56}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}\label{stdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571} 
+\index{stdint.h@{stdint.h}!UINT\_LEAST32\_MAX@{UINT\_LEAST32\_MAX}}
+\index{UINT\_LEAST32\_MAX@{UINT\_LEAST32\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_LEAST32\_MAX}{UINT\_LEAST32\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+LEAST32\+\_\+\+MAX~UINT32\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00077}{77}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aab530113fa96e280e49c3c138b0f917d}\label{stdint_8h_aab530113fa96e280e49c3c138b0f917d} 
+\index{stdint.h@{stdint.h}!UINT\_LEAST64\_MAX@{UINT\_LEAST64\_MAX}}
+\index{UINT\_LEAST64\_MAX@{UINT\_LEAST64\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_LEAST64\_MAX}{UINT\_LEAST64\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+LEAST64\+\_\+\+MAX~UINT64\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00098}{98}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}\label{stdint_8h_a2a80bde77ee1698d0f42f334adad4f2b} 
+\index{stdint.h@{stdint.h}!UINT\_LEAST8\_MAX@{UINT\_LEAST8\_MAX}}
+\index{UINT\_LEAST8\_MAX@{UINT\_LEAST8\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_LEAST8\_MAX}{UINT\_LEAST8\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+LEAST8\+\_\+\+MAX~UINT8\+\_\+\+MAX}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00035}{35}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a00d3f5dd8a8cbd9433d74390bfb2ecef}\label{stdint_8h_a00d3f5dd8a8cbd9433d74390bfb2ecef} 
+\index{stdint.h@{stdint.h}!UINTMAX\_C@{UINTMAX\_C}}
+\index{UINTMAX\_C@{UINTMAX\_C}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINTMAX\_C}{UINTMAX\_C}}
+{\footnotesize\ttfamily \#define UINTMAX\+\_\+C(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\+\_\+\+\_\+\+UINTMAX\+\_\+C(c)}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00120}{120}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aa54fd5210434219e9027bfa0f0e325c8}\label{stdint_8h_aa54fd5210434219e9027bfa0f0e325c8} 
+\index{stdint.h@{stdint.h}!UINTMAX\_MAX@{UINTMAX\_MAX}}
+\index{UINTMAX\_MAX@{UINTMAX\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINTMAX\_MAX}{UINTMAX\_MAX}}
+{\footnotesize\ttfamily \#define UINTMAX\+\_\+\+MAX~\+\_\+\+\_\+\+UINTMAX\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00119}{119}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ab2355300ea19395357e62d780f4dd073}\label{stdint_8h_ab2355300ea19395357e62d780f4dd073} 
+\index{stdint.h@{stdint.h}!UINTPTR\_MAX@{UINTPTR\_MAX}}
+\index{UINTPTR\_MAX@{UINTPTR\_MAX}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{UINTPTR\_MAX}{UINTPTR\_MAX}}
+{\footnotesize\ttfamily \#define UINTPTR\+\_\+\+MAX~\+\_\+\+\_\+\+UINTPTR\+\_\+\+MAX\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00109}{109}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{stdint_8h_afe270aee8d96ad7f279a4020b9d58bdf}\label{stdint_8h_afe270aee8d96ad7f279a4020b9d58bdf} 
+\index{stdint.h@{stdint.h}!int16\_t@{int16\_t}}
+\index{int16\_t@{int16\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int16\_t}{int16\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INT16\+\_\+\+TYPE\+\_\+\+\_\+ int16\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00040}{40}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a0c18914b3041c2f583aba76f418399c2}\label{stdint_8h_a0c18914b3041c2f583aba76f418399c2} 
+\index{stdint.h@{stdint.h}!int32\_t@{int32\_t}}
+\index{int32\_t@{int32\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int32\_t}{int32\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INT32\+\_\+\+TYPE\+\_\+\+\_\+ int32\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00061}{61}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ac714c0d2c1a4adb10e73cab29623314b}\label{stdint_8h_ac714c0d2c1a4adb10e73cab29623314b} 
+\index{stdint.h@{stdint.h}!int64\_t@{int64\_t}}
+\index{int64\_t@{int64\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int64\_t}{int64\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INT64\+\_\+\+TYPE\+\_\+\+\_\+ int64\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00082}{82}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a888269be199d49b7f40006aaafa5a350}\label{stdint_8h_a888269be199d49b7f40006aaafa5a350} 
+\index{stdint.h@{stdint.h}!int\_fast16\_t@{int\_fast16\_t}}
+\index{int\_fast16\_t@{int\_fast16\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_fast16\_t}{int\_fast16\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST16\+\_\+\+TYPE\+\_\+\+\_\+ int\+\_\+fast16\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00042}{42}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a530ba8ffc89f6393d2d0e2fb2db38b54}\label{stdint_8h_a530ba8ffc89f6393d2d0e2fb2db38b54} 
+\index{stdint.h@{stdint.h}!int\_fast32\_t@{int\_fast32\_t}}
+\index{int\_fast32\_t@{int\_fast32\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_fast32\_t}{int\_fast32\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST32\+\_\+\+TYPE\+\_\+\+\_\+ int\+\_\+fast32\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00063}{63}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_abcdb0a9f6e7d139ad4f521ab8f4efdc0}\label{stdint_8h_abcdb0a9f6e7d139ad4f521ab8f4efdc0} 
+\index{stdint.h@{stdint.h}!int\_fast64\_t@{int\_fast64\_t}}
+\index{int\_fast64\_t@{int\_fast64\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_fast64\_t}{int\_fast64\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST64\+\_\+\+TYPE\+\_\+\+\_\+ int\+\_\+fast64\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00084}{84}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a98f573ff8187ff09c9594a3f2af7be0d}\label{stdint_8h_a98f573ff8187ff09c9594a3f2af7be0d} 
+\index{stdint.h@{stdint.h}!int\_fast8\_t@{int\_fast8\_t}}
+\index{int\_fast8\_t@{int\_fast8\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_fast8\_t}{int\_fast8\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INT\+\_\+\+FAST8\+\_\+\+TYPE\+\_\+\+\_\+ int\+\_\+fast8\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00021}{21}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a17f379713bed2a28ac431760401253cd}\label{stdint_8h_a17f379713bed2a28ac431760401253cd} 
+\index{stdint.h@{stdint.h}!int\_least16\_t@{int\_least16\_t}}
+\index{int\_least16\_t@{int\_least16\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_least16\_t}{int\_least16\_t}}
+{\footnotesize\ttfamily typedef int16\+\_\+t int\+\_\+least16\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00041}{41}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2676b57a778795e5d0598970f1407f38}\label{stdint_8h_a2676b57a778795e5d0598970f1407f38} 
+\index{stdint.h@{stdint.h}!int\_least32\_t@{int\_least32\_t}}
+\index{int\_least32\_t@{int\_least32\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_least32\_t}{int\_least32\_t}}
+{\footnotesize\ttfamily typedef int32\+\_\+t int\+\_\+least32\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00062}{62}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2073b30b3170d509bc756bf5c7862caf}\label{stdint_8h_a2073b30b3170d509bc756bf5c7862caf} 
+\index{stdint.h@{stdint.h}!int\_least64\_t@{int\_least64\_t}}
+\index{int\_least64\_t@{int\_least64\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_least64\_t}{int\_least64\_t}}
+{\footnotesize\ttfamily typedef int64\+\_\+t int\+\_\+least64\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00083}{83}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aadfd725efbf565422ab13db91ccca53c}\label{stdint_8h_aadfd725efbf565422ab13db91ccca53c} 
+\index{stdint.h@{stdint.h}!int\_least8\_t@{int\_least8\_t}}
+\index{int\_least8\_t@{int\_least8\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_least8\_t}{int\_least8\_t}}
+{\footnotesize\ttfamily typedef int8\+\_\+t int\+\_\+least8\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00020}{20}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ae26fa513a7dfed63221f72d93de2a021}\label{stdint_8h_ae26fa513a7dfed63221f72d93de2a021} 
+\index{stdint.h@{stdint.h}!intmax\_t@{intmax\_t}}
+\index{intmax\_t@{intmax\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{intmax\_t}{intmax\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INTMAX\+\_\+\+TYPE\+\_\+\+\_\+ intmax\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00112}{112}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a0bd5dec00e345e69027427f8621d6a6c}\label{stdint_8h_a0bd5dec00e345e69027427f8621d6a6c} 
+\index{stdint.h@{stdint.h}!intptr\_t@{intptr\_t}}
+\index{intptr\_t@{intptr\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{intptr\_t}{intptr\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+INTPTR\+\_\+\+TYPE\+\_\+\+\_\+ intptr\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00103}{103}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a5debae8b2a1ec20a6694c0c443ee399e}\label{stdint_8h_a5debae8b2a1ec20a6694c0c443ee399e} 
+\index{stdint.h@{stdint.h}!uint16\_t@{uint16\_t}}
+\index{uint16\_t@{uint16\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint16\_t}{uint16\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT16\+\_\+\+TYPE\+\_\+\+\_\+ uint16\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00052}{52}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a0a8582351ac627ee8bde2973c825e47f}\label{stdint_8h_a0a8582351ac627ee8bde2973c825e47f} 
+\index{stdint.h@{stdint.h}!uint32\_t@{uint32\_t}}
+\index{uint32\_t@{uint32\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint32\_t}{uint32\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT32\+\_\+\+TYPE\+\_\+\+\_\+ uint32\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00073}{73}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2095b9bffea4b2656950c6c0419edbf1}\label{stdint_8h_a2095b9bffea4b2656950c6c0419edbf1} 
+\index{stdint.h@{stdint.h}!uint64\_t@{uint64\_t}}
+\index{uint64\_t@{uint64\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint64\_t}{uint64\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT64\+\_\+\+TYPE\+\_\+\+\_\+ uint64\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00094}{94}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d}\label{stdint_8h_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d} 
+\index{stdint.h@{stdint.h}!uint8\_t@{uint8\_t}}
+\index{uint8\_t@{uint8\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint8\_t}{uint8\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT8\+\_\+\+TYPE\+\_\+\+\_\+ uint8\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00031}{31}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aaabed6e034edb01c259c003894d7f7c8}\label{stdint_8h_aaabed6e034edb01c259c003894d7f7c8} 
+\index{stdint.h@{stdint.h}!uint\_fast16\_t@{uint\_fast16\_t}}
+\index{uint\_fast16\_t@{uint\_fast16\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_fast16\_t}{uint\_fast16\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST16\+\_\+\+TYPE\+\_\+\+\_\+ uint\+\_\+fast16\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00054}{54}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_aa44ff507c3d9a49e27fac64e9fadf062}\label{stdint_8h_aa44ff507c3d9a49e27fac64e9fadf062} 
+\index{stdint.h@{stdint.h}!uint\_fast32\_t@{uint\_fast32\_t}}
+\index{uint\_fast32\_t@{uint\_fast32\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_fast32\_t}{uint\_fast32\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST32\+\_\+\+TYPE\+\_\+\+\_\+ uint\+\_\+fast32\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00075}{75}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a62c711f66c6d29c81429aeafdc4bc592}\label{stdint_8h_a62c711f66c6d29c81429aeafdc4bc592} 
+\index{stdint.h@{stdint.h}!uint\_fast64\_t@{uint\_fast64\_t}}
+\index{uint\_fast64\_t@{uint\_fast64\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_fast64\_t}{uint\_fast64\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST64\+\_\+\+TYPE\+\_\+\+\_\+ uint\+\_\+fast64\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00096}{96}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a2464ed69ccd3fd2b3b4c93cb78f6fa20}\label{stdint_8h_a2464ed69ccd3fd2b3b4c93cb78f6fa20} 
+\index{stdint.h@{stdint.h}!uint\_fast8\_t@{uint\_fast8\_t}}
+\index{uint\_fast8\_t@{uint\_fast8\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_fast8\_t}{uint\_fast8\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINT\+\_\+\+FAST8\+\_\+\+TYPE\+\_\+\+\_\+ uint\+\_\+fast8\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00033}{33}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}\label{stdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb} 
+\index{stdint.h@{stdint.h}!uint\_least16\_t@{uint\_least16\_t}}
+\index{uint\_least16\_t@{uint\_least16\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_least16\_t}{uint\_least16\_t}}
+{\footnotesize\ttfamily typedef uint16\+\_\+t uint\+\_\+least16\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00053}{53}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ac0af81082969e5e3f4d939b1de7002ac}\label{stdint_8h_ac0af81082969e5e3f4d939b1de7002ac} 
+\index{stdint.h@{stdint.h}!uint\_least32\_t@{uint\_least32\_t}}
+\index{uint\_least32\_t@{uint\_least32\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_least32\_t}{uint\_least32\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t uint\+\_\+least32\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00074}{74}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ab604f73dd823867b43702ae88b4f4445}\label{stdint_8h_ab604f73dd823867b43702ae88b4f4445} 
+\index{stdint.h@{stdint.h}!uint\_least64\_t@{uint\_least64\_t}}
+\index{uint\_least64\_t@{uint\_least64\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_least64\_t}{uint\_least64\_t}}
+{\footnotesize\ttfamily typedef uint64\+\_\+t uint\+\_\+least64\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00095}{95}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_ac76e2383debd5a3b100514044828961a}\label{stdint_8h_ac76e2383debd5a3b100514044828961a} 
+\index{stdint.h@{stdint.h}!uint\_least8\_t@{uint\_least8\_t}}
+\index{uint\_least8\_t@{uint\_least8\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_least8\_t}{uint\_least8\_t}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t uint\+\_\+least8\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00032}{32}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a4e5632221b295f0fcdcb2233f3f60515}\label{stdint_8h_a4e5632221b295f0fcdcb2233f3f60515} 
+\index{stdint.h@{stdint.h}!uintmax\_t@{uintmax\_t}}
+\index{uintmax\_t@{uintmax\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uintmax\_t}{uintmax\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINTMAX\+\_\+\+TYPE\+\_\+\+\_\+ uintmax\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00118}{118}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+\Hypertarget{stdint_8h_a4788399d1d0b37ccf098a7da82254808}\label{stdint_8h_a4788399d1d0b37ccf098a7da82254808} 
+\index{stdint.h@{stdint.h}!uintptr\_t@{uintptr\_t}}
+\index{uintptr\_t@{uintptr\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{uintptr\_t}{uintptr\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+UINTPTR\+\_\+\+TYPE\+\_\+\+\_\+ uintptr\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00108}{108}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{stdint_8h_ab09203266e610c3fcec48c52849b5659}\label{stdint_8h_ab09203266e610c3fcec48c52849b5659} 
+\index{stdint.h@{stdint.h}!int8\_t@{int8\_t}}
+\index{int8\_t@{int8\_t}!stdint.h@{stdint.h}}
+\doxysubsubsection{\texorpdfstring{int8\_t}{int8\_t}}
+{\footnotesize\ttfamily CPP\+\_\+\+START typedef \+\_\+\+\_\+\+INT8\+\_\+\+TYPE\+\_\+\+\_\+ int8\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stdint_8h_source_l00019}{19}} of file \mbox{\hyperlink{stdint_8h_source}{stdint.\+h}}.
+

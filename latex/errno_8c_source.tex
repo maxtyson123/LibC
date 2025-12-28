@@ -1,0 +1,16 @@
+\doxysection{errno.\+c}
+\hypertarget{errno_8c_source}{}\label{errno_8c_source}\index{/home/runner/work/LibC/LibC/src/errno.c@{/home/runner/work/LibC/LibC/src/errno.c}}
+\mbox{\hyperlink{errno_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{errno_8h}{errno.h}}>}}
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00011}00011\ \textcolor{comment}{//\ Define\ the\ storage\ for\ errno}}
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00012}00012\ \textcolor{keywordtype}{int}\ \_\_errno\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00013}00013\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \_\_errno\_storage;}
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00015}00015\ \textcolor{keywordtype}{int}*\ \_\_errno\_location(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00016}00016\ \ \textcolor{keywordflow}{return}\ \&\_\_errno\_storage;}
+\DoxyCodeLine{\Hypertarget{errno_8c_source_l00017}00017\ \}}
+
+\end{DoxyCode}

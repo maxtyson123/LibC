@@ -1,0 +1,222 @@
+.TH "/home/runner/work/LibC/LibC/include/time.h" 3 "Version 0.3" "LibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/runner/work/LibC/LibC/include/time.h \- Defines the time types and functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <libc_common\&.h>\fP
+.br
+\fC#include <locale\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtm\fP"
+.br
+.RI "Defines a moment in time\&. "
+.ti -1c
+.RI "struct \fBtimespec\fP"
+.br
+.RI "Defines a precise moment in time\&. "
+.ti -1c
+.RI "struct \fBitimerspec\fP"
+.br
+.RI "Defines when an interval timer should fire\&. "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCLOCKS_PER_SEC\fP   1000000"
+.br
+.RI "Used to convert clocks into seconds\&. "
+.ti -1c
+.RI "#define \fBCLOCK_MONOTONIC\fP   1"
+.br
+.RI "Identifies a clock measuring realtime and cannot be set\&. "
+.ti -1c
+.RI "#define \fBCLOCK_PROCESS_CPUTIME_ID\fP   2"
+.br
+.RI "Identifies a clock that represents the amount of time taken by this process\&. "
+.ti -1c
+.RI "#define \fBCLOCK_REALTIME\fP   3"
+.br
+.RI "Identifies a clock measuring realtime\&. "
+.ti -1c
+.RI "#define \fBCLOCK_THREAD_CPUTIME_ID\fP   4"
+.br
+.RI "Identifies a clock that represents the amount of time taken by this thread\&. "
+.ti -1c
+.RI "#define \fBTIMER_ABSTIME\fP   1"
+.br
+.RI "Flag to treat the time as an absolute timestamp and not a relative duration\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBasctime\fP (const struct \fBtm\fP *)"
+.br
+.ti -1c
+.RI "char * \fBasctime_r\fP (const struct \fBtm\fP *restrict, char *restrict)"
+.br
+.ti -1c
+.RI "\fBclock_t\fP \fBclock\fP (void)"
+.br
+.ti -1c
+.RI "int \fBclock_getcpuclockid\fP (\fBpid_t\fP, \fBclockid_t\fP *)"
+.br
+.ti -1c
+.RI "int \fBclock_getres\fP (\fBclockid_t\fP, struct \fBtimespec\fP *)"
+.br
+.ti -1c
+.RI "int \fBclock_gettime\fP (\fBclockid_t\fP, struct \fBtimespec\fP *)"
+.br
+.ti -1c
+.RI "int \fBclock_nanosleep\fP (\fBclockid_t\fP, int, const struct \fBtimespec\fP *, struct \fBtimespec\fP *)"
+.br
+.ti -1c
+.RI "int \fBclock_settime\fP (\fBclockid_t\fP, const struct \fBtimespec\fP *)"
+.br
+.ti -1c
+.RI "char * \fBctime\fP (const \fBtime_t\fP *)"
+.br
+.ti -1c
+.RI "char * \fBctime_r\fP (const \fBtime_t\fP *, char *)"
+.br
+.ti -1c
+.RI "double \fBdifftime\fP (\fBtime_t\fP, \fBtime_t\fP)"
+.br
+.ti -1c
+.RI "struct \fBtm\fP * \fBgetdate\fP (const char *)"
+.br
+.ti -1c
+.RI "struct \fBtm\fP * \fBgmtime\fP (const \fBtime_t\fP *)"
+.br
+.ti -1c
+.RI "struct \fBtm\fP * \fBgmtime_r\fP (const \fBtime_t\fP *restrict, struct \fBtm\fP *restrict)"
+.br
+.ti -1c
+.RI "struct \fBtm\fP * \fBlocaltime\fP (const \fBtime_t\fP *)"
+.br
+.ti -1c
+.RI "struct \fBtm\fP * \fBlocaltime_r\fP (const \fBtime_t\fP *restrict, struct \fBtm\fP *restrict)"
+.br
+.ti -1c
+.RI "\fBtime_t\fP \fBmktime\fP (struct \fBtm\fP *)"
+.br
+.ti -1c
+.RI "int \fBnanosleep\fP (const struct \fBtimespec\fP *, struct \fBtimespec\fP *)"
+.br
+.ti -1c
+.RI "size_t \fBstrftime\fP (char *restrict, size_t, const char *restrict, const struct \fBtm\fP *restrict)"
+.br
+.ti -1c
+.RI "size_t \fBstrftime_l\fP (char *restrict, size_t, const char *restrict, const struct \fBtm\fP *restrict, \fBlocale_t\fP)"
+.br
+.ti -1c
+.RI "char * \fBstrptime\fP (const char *restrict, const char *restrict, struct \fBtm\fP *restrict)"
+.br
+.ti -1c
+.RI "\fBtime_t\fP \fBtime\fP (\fBtime_t\fP *)"
+.br
+.ti -1c
+.RI "int \fBtimer_create\fP (\fBclockid_t\fP, struct \fBsigevent\fP *restrict, \fBtimer_t\fP *restrict)"
+.br
+.ti -1c
+.RI "int \fBtimer_delete\fP (\fBtimer_t\fP)"
+.br
+.ti -1c
+.RI "int \fBtimer_getoverrun\fP (\fBtimer_t\fP)"
+.br
+.ti -1c
+.RI "int \fBtimer_gettime\fP (\fBtimer_t\fP, struct \fBitimerspec\fP *)"
+.br
+.ti -1c
+.RI "int \fBtimer_settime\fP (\fBtimer_t\fP, int, const struct \fBitimerspec\fP *restrict, struct \fBitimerspec\fP *restrict)"
+.br
+.ti -1c
+.RI "void \fBtzset\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBgetdate_err\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the time types and functions\&. 
+
+
+.PP
+\fBSee also\fP
+.RS 4
+https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/time.h.html
+.RE
+.PP
+\fBDate\fP
+.RS 4
+15 December 2025 
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+Max Tyson 
+.RE
+.PP
+
+.PP
+Definition in file \fBtime\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CLOCK_MONOTONIC   1"
+
+.PP
+Identifies a clock measuring realtime and cannot be set\&. 
+.PP
+Definition at line \fB62\fP of file \fBtime\&.h\fP\&.
+.SS "#define CLOCK_PROCESS_CPUTIME_ID   2"
+
+.PP
+Identifies a clock that represents the amount of time taken by this process\&. 
+.PP
+Definition at line \fB63\fP of file \fBtime\&.h\fP\&.
+.SS "#define CLOCK_REALTIME   3"
+
+.PP
+Identifies a clock measuring realtime\&. 
+.PP
+Definition at line \fB64\fP of file \fBtime\&.h\fP\&.
+.SS "#define CLOCK_THREAD_CPUTIME_ID   4"
+
+.PP
+Identifies a clock that represents the amount of time taken by this thread\&. 
+.PP
+Definition at line \fB65\fP of file \fBtime\&.h\fP\&.
+.SS "#define CLOCKS_PER_SEC   1000000"
+
+.PP
+Used to convert clocks into seconds\&. 
+.PP
+Definition at line \fB61\fP of file \fBtime\&.h\fP\&.
+.SS "#define TIMER_ABSTIME   1"
+
+.PP
+Flag to treat the time as an absolute timestamp and not a relative duration\&. 
+.PP
+Definition at line \fB66\fP of file \fBtime\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LibC from the source code\&.

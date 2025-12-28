@@ -1,0 +1,144 @@
+\doxysection{aiocb Struct Reference}
+\hypertarget{structaiocb}{}\label{structaiocb}\index{aiocb@{aiocb}}
+
+
+Defines an async I/O control block, the parameters that control an I/O operation.  
+
+
+
+
+{\ttfamily \#include $<$aio.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structaiocb_ad6b6e95e6e4a79487f7e6edaae26003f}{aio\+\_\+fildes}}
+\begin{DoxyCompactList}\small\item\em The descriptor of the file to write to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a2cb84cf5f02a29b7e8f237ff151a9225}{off\+\_\+t}} \mbox{\hyperlink{structaiocb_a1e74b350a9ca189fa7c25b61c5cede6c}{aio\+\_\+offset}}
+\begin{DoxyCompactList}\small\item\em Where in the file to write to. \end{DoxyCompactList}\item 
+volatile void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structaiocb_a60a966202034e1abde4ca3ea0965fa30}{aio\+\_\+buf}}
+\begin{DoxyCompactList}\small\item\em The data buffer to write from. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structaiocb_a6b4f8a1d05ed5444784389734d71cda7}{aio\+\_\+nbytes}}
+\begin{DoxyCompactList}\small\item\em Length in bytes of the buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structaiocb_a7a8f63c080c8602ebcacbb86e9f5547e}{aio\+\_\+reqprio}}
+\begin{DoxyCompactList}\small\item\em The priority of the operation (subtracted from the threads priority) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsigevent}{sigevent}} \mbox{\hyperlink{structaiocb_a7065f3086beb9cdffc525c1d09949268}{aio\+\_\+sigevent}}
+\begin{DoxyCompactList}\small\item\em Signal to notify the thread when the operation completes (. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structaiocb_a8a23597de7bfc422b58ec9816ced7d47}{aio\+\_\+lio\+\_\+opcode}}
+\begin{DoxyCompactList}\small\item\em The type of operation to preform (used only by lio\+\_\+listio) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines an async I/O control block, the parameters that control an I/O operation. 
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00020}{20}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structaiocb_a60a966202034e1abde4ca3ea0965fa30}\label{structaiocb_a60a966202034e1abde4ca3ea0965fa30} 
+\index{aiocb@{aiocb}!aio\_buf@{aio\_buf}}
+\index{aio\_buf@{aio\_buf}!aiocb@{aiocb}}
+\doxysubsubsection{\texorpdfstring{aio\_buf}{aio\_buf}}
+{\footnotesize\ttfamily volatile void\texorpdfstring{$\ast$}{*} aiocb\+::aio\+\_\+buf}
+
+
+
+The data buffer to write from. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00024}{24}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{structaiocb_ad6b6e95e6e4a79487f7e6edaae26003f}\label{structaiocb_ad6b6e95e6e4a79487f7e6edaae26003f} 
+\index{aiocb@{aiocb}!aio\_fildes@{aio\_fildes}}
+\index{aio\_fildes@{aio\_fildes}!aiocb@{aiocb}}
+\doxysubsubsection{\texorpdfstring{aio\_fildes}{aio\_fildes}}
+{\footnotesize\ttfamily int aiocb\+::aio\+\_\+fildes}
+
+
+
+The descriptor of the file to write to. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00022}{22}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{structaiocb_a8a23597de7bfc422b58ec9816ced7d47}\label{structaiocb_a8a23597de7bfc422b58ec9816ced7d47} 
+\index{aiocb@{aiocb}!aio\_lio\_opcode@{aio\_lio\_opcode}}
+\index{aio\_lio\_opcode@{aio\_lio\_opcode}!aiocb@{aiocb}}
+\doxysubsubsection{\texorpdfstring{aio\_lio\_opcode}{aio\_lio\_opcode}}
+{\footnotesize\ttfamily int aiocb\+::aio\+\_\+lio\+\_\+opcode}
+
+
+
+The type of operation to preform (used only by lio\+\_\+listio) 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00028}{28}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{structaiocb_a6b4f8a1d05ed5444784389734d71cda7}\label{structaiocb_a6b4f8a1d05ed5444784389734d71cda7} 
+\index{aiocb@{aiocb}!aio\_nbytes@{aio\_nbytes}}
+\index{aio\_nbytes@{aio\_nbytes}!aiocb@{aiocb}}
+\doxysubsubsection{\texorpdfstring{aio\_nbytes}{aio\_nbytes}}
+{\footnotesize\ttfamily size\+\_\+t aiocb\+::aio\+\_\+nbytes}
+
+
+
+Length in bytes of the buffer. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00025}{25}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{structaiocb_a1e74b350a9ca189fa7c25b61c5cede6c}\label{structaiocb_a1e74b350a9ca189fa7c25b61c5cede6c} 
+\index{aiocb@{aiocb}!aio\_offset@{aio\_offset}}
+\index{aio\_offset@{aio\_offset}!aiocb@{aiocb}}
+\doxysubsubsection{\texorpdfstring{aio\_offset}{aio\_offset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a2cb84cf5f02a29b7e8f237ff151a9225}{off\+\_\+t}} aiocb\+::aio\+\_\+offset}
+
+
+
+Where in the file to write to. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00023}{23}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{structaiocb_a7a8f63c080c8602ebcacbb86e9f5547e}\label{structaiocb_a7a8f63c080c8602ebcacbb86e9f5547e} 
+\index{aiocb@{aiocb}!aio\_reqprio@{aio\_reqprio}}
+\index{aio\_reqprio@{aio\_reqprio}!aiocb@{aiocb}}
+\doxysubsubsection{\texorpdfstring{aio\_reqprio}{aio\_reqprio}}
+{\footnotesize\ttfamily int aiocb\+::aio\+\_\+reqprio}
+
+
+
+The priority of the operation (subtracted from the threads priority) 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00026}{26}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{structaiocb_a7065f3086beb9cdffc525c1d09949268}\label{structaiocb_a7065f3086beb9cdffc525c1d09949268} 
+\index{aiocb@{aiocb}!aio\_sigevent@{aio\_sigevent}}
+\index{aio\_sigevent@{aio\_sigevent}!aiocb@{aiocb}}
+\doxysubsubsection{\texorpdfstring{aio\_sigevent}{aio\_sigevent}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structsigevent}{sigevent}} aiocb\+::aio\+\_\+sigevent}
+
+
+
+Signal to notify the thread when the operation completes (. 
+
+\begin{DoxySeeAlso}{See also}
+SIGEV\+\_\+\texorpdfstring{$\ast$}{*}) 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00027}{27}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Lib\+C/\+Lib\+C/include/\mbox{\hyperlink{aio_8h}{aio.\+h}}\end{DoxyCompactItemize}

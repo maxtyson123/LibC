@@ -1,0 +1,65 @@
+\doxysection{example.\+h}
+\hypertarget{example_8h_source}{}\label{example_8h_source}\index{/home/runner/work/LibC/LibC/include/\_platforms/example.h@{/home/runner/work/LibC/LibC/include/\_platforms/example.h}}
+\mbox{\hyperlink{example_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ LIBC\_PLATFORM\_EXAMPLE\_H}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00012}00012\ \textcolor{preprocessor}{\#define\ LIBC\_PLATFORM\_EXAMPLE\_H}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00014}00014\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00016}00016\ \textcolor{comment}{//\ Forward\ defs}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00017}00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstat}{stat}};}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00018}00018\ \textcolor{keyword}{struct\ }tms;}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00020}00020\ \textcolor{comment}{//\ Proccess}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00021}00021\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_ae1b63037a88382380096b2887a67ca33}{\_platform\_exit}}(\textcolor{keywordtype}{int}\ code);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00022}00022\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a1b534969e39e821c138d9ea2a4a63710}{\_platform\_execve}}(\textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{char}**\ argv,\ \textcolor{keywordtype}{char}**\ env);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00023}00023\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_aa4566ae5a72d24d705ac64404f550991}{\_platform\_fork}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00024}00024\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_affbc9aef4e1dd7a9e3c096d8a823ad16}{\_platform\_getpid}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00025}00025\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a157ea78ac249fb55b42e39bba030a953}{\_platform\_kill}}(\textcolor{keywordtype}{int}\ pid,\ \textcolor{keywordtype}{int}\ sig);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00026}00026\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a9c1fbc82b15e15585081195edcfb67e8}{\_platform\_times}}(\textcolor{keyword}{struct}\ tms*\ buf);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00027}00027\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a2fcb87a692312dff85e3b193f87691c7}{\_platform\_wait}}(\textcolor{keywordtype}{int}*\ status);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00029}00029\ \textcolor{comment}{//\ File}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00030}00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a3b75d86668922072a81913767577baa9}{\_platform\_close}}(\textcolor{keywordtype}{int}\ file);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00031}00031\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a227554b85a13993a03382978eee7369f}{\_platform\_fstat}}(\textcolor{keywordtype}{int}\ file,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structstat}{stat}}*\ st);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00032}00032\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a0d6522555e0c3221c3a3b6ac334ac44c}{\_platform\_isatty}}(\textcolor{keywordtype}{int}\ file);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00033}00033\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_ae225d06b2a9fcfd9748786227458cd87}{\_platform\_link}}(\textcolor{keywordtype}{char}*\ old,\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{new});}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00034}00034\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a5ba113706cb2f3e1ba7462180329201a}{\_platform\_lseek}}(\textcolor{keywordtype}{int}\ file,\ \textcolor{keywordtype}{int}\ ptr,\ \textcolor{keywordtype}{int}\ dir);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00035}00035\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_adc37e719bf0cf11b69ff75d3bdff3992}{\_platform\_open}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{int}\ mode);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00036}00036\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a145fb80b276359090e2560d598ce07c4}{\_platform\_read}}(\textcolor{keywordtype}{int}\ file,\ \textcolor{keywordtype}{char}*\ ptr,\ \textcolor{keywordtype}{int}\ len);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00037}00037\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_a746353f3eb589715fbfde3426b2b5496}{\_platform\_stat}}(\textcolor{keywordtype}{char}*\ file,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structstat}{stat}}*\ st);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00038}00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_addddeefe5b7e1900313ad3ac1b187070}{\_platform\_unlink}}(\textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00039}00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{example_8h_aed6272e5e1ef183d9d8e737e862e448c}{\_platform\_write}}(\textcolor{keywordtype}{int}\ file,\ \textcolor{keywordtype}{char}*\ ptr,\ \textcolor{keywordtype}{int}\ len);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00041}00041\ \textcolor{comment}{//\ Memory}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00042}00042\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{example_8h_aa208c563a4442d7c71385f9eecebef5e}{\_platform\_sbrk}}(\textcolor{keywordtype}{int}\ incr);}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00044}00044\ \textcolor{comment}{//\ Environment\ variables}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00045}00045\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{example_8h_a5428d66981cb84e60b899495874618b2}{\_\_env}}[1];\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00046}00046\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}**\ \mbox{\hyperlink{example_8h_aa006daaf11f1e2e45a6ababaf463212b}{environ}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00048}00048\ \textcolor{comment}{//\ CPU\ state\ for\ signals}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00049}\mbox{\hyperlink{struct__platform__mcontext}{00049}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__platform__mcontext}{\_platform\_mcontext}}\ \{}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//...}}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00051}00051\ \};}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00060}\mbox{\hyperlink{struct__struct__platform__locale}{00060}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__struct__platform__locale}{\_struct\_platform\_locale}}\ \{}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ collate;}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ctype;}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ messages;}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ monetary;}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ numeric;}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ time;}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00069}\mbox{\hyperlink{example_8h_a0c36e2d1c643e0a1c398628fd9601e5e}{00069}}\ \}\ \mbox{\hyperlink{example_8h_a0c36e2d1c643e0a1c398628fd9601e5e}{\_platform\_locale}};}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00071}00071\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{example_8h_source_l00073}00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_PLATFORM\_EXAMPLE\_H}}
+
+\end{DoxyCode}

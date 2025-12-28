@@ -1,0 +1,128 @@
+\doxysection{errno.\+h}
+\hypertarget{errno_8h_source}{}\label{errno_8h_source}\index{/home/runner/work/LibC/LibC/include/errno.h@{/home/runner/work/LibC/LibC/include/errno.h}}
+\mbox{\hyperlink{errno_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ LIBC\_ERRNO\_H}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00014}00014\ \textcolor{preprocessor}{\#define\ LIBC\_ERRNO\_H}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00016}00016\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00018}00018\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_errno;}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00019}00019\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ *\_\_errno\_location(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00020}00020\ \textcolor{preprocessor}{\#define\ errno\ (*\_\_errno\_location())}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00022}\mbox{\hyperlink{errno_8h_add669d31505a077f769cff8e66c780b3}{00022}}\ \textcolor{preprocessor}{\#define\ EPERM\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00023}\mbox{\hyperlink{errno_8h_a03e689f378f643d16ea7537918528a48}{00023}}\ \textcolor{preprocessor}{\#define\ ENOENT\ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00024}\mbox{\hyperlink{errno_8h_a462e47a8af6288232a5df548221ada4c}{00024}}\ \textcolor{preprocessor}{\#define\ ESRCH\ \ \ \ \ \ \ 3\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00025}\mbox{\hyperlink{errno_8h_a46b83d9f6c23b1b65a8cecfd775ddaed}{00025}}\ \textcolor{preprocessor}{\#define\ EINTR\ \ \ \ \ \ \ 4\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00026}\mbox{\hyperlink{errno_8h_a70979f50f9c83e5aebab3d6a1bd4cf35}{00026}}\ \textcolor{preprocessor}{\#define\ EIO\ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00027}\mbox{\hyperlink{errno_8h_a2b3884b11e4932bd372bb6d899d6fbfe}{00027}}\ \textcolor{preprocessor}{\#define\ ENXIO\ \ \ \ \ \ \ 6\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00028}\mbox{\hyperlink{errno_8h_aba8481985c201ff726f349d7f2d09895}{00028}}\ \textcolor{preprocessor}{\#define\ E2BIG\ \ \ \ \ \ \ 7\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00029}\mbox{\hyperlink{errno_8h_a4d0b1b435ec441e7d50a430b83df5832}{00029}}\ \textcolor{preprocessor}{\#define\ ENOEXEC\ \ \ \ \ 8\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00030}\mbox{\hyperlink{errno_8h_ac54507d66b43ad12f9356257323c0018}{00030}}\ \textcolor{preprocessor}{\#define\ EBADF\ \ \ \ \ \ \ 9\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00031}\mbox{\hyperlink{errno_8h_a47b42c351e0e011a048058d224205c0f}{00031}}\ \textcolor{preprocessor}{\#define\ ECHILD\ \ \ \ \ \ 10\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00032}\mbox{\hyperlink{errno_8h_af0fac1cea1165b4debec7f686edf3313}{00032}}\ \textcolor{preprocessor}{\#define\ EAGAIN\ \ \ \ \ \ 11\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00033}\mbox{\hyperlink{errno_8h_a6a05c923dad0c1208043e9c20a58c8e5}{00033}}\ \textcolor{preprocessor}{\#define\ ENOMEM\ \ \ \ \ \ 12\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00034}\mbox{\hyperlink{errno_8h_ac2a2e9fa555401f94478f74e01868032}{00034}}\ \textcolor{preprocessor}{\#define\ EACCES\ \ \ \ \ \ 13\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00035}\mbox{\hyperlink{errno_8h_a3f317946e043623f9d6b93dbf60e6316}{00035}}\ \textcolor{preprocessor}{\#define\ EFAULT\ \ \ \ \ \ 14\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00036}\mbox{\hyperlink{errno_8h_aa0a4b0e307e83f52be51099f01156936}{00036}}\ \textcolor{preprocessor}{\#define\ ENOTBLK\ \ \ \ \ 15\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00037}\mbox{\hyperlink{errno_8h_a8368025077a0385849d6817b2007c095}{00037}}\ \textcolor{preprocessor}{\#define\ EBUSY\ \ \ \ \ \ \ 16\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00038}\mbox{\hyperlink{errno_8h_a0a3bef9e5c47e42917692b5dae3b5498}{00038}}\ \textcolor{preprocessor}{\#define\ EEXIST\ \ \ \ \ \ 17\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00039}\mbox{\hyperlink{errno_8h_a3396cf9fb0ff5af3a18dd2a2bbdb21e1}{00039}}\ \textcolor{preprocessor}{\#define\ EXDEV\ \ \ \ \ \ \ 18\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00040}\mbox{\hyperlink{errno_8h_ab9b8cc17d1947160d13faaba7a18d6d1}{00040}}\ \textcolor{preprocessor}{\#define\ ENODEV\ \ \ \ \ \ 19\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00041}\mbox{\hyperlink{errno_8h_a9262fb92f7ef662d0bdd577912a5b101}{00041}}\ \textcolor{preprocessor}{\#define\ ENOTDIR\ \ \ \ \ 20\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00042}\mbox{\hyperlink{errno_8h_ae22c3a1e0a38f3896de238cc30d0e19b}{00042}}\ \textcolor{preprocessor}{\#define\ EISDIR\ \ \ \ \ \ 21\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00043}\mbox{\hyperlink{errno_8h_a2d1678d5a7cc8ce499643f3b8957def4}{00043}}\ \textcolor{preprocessor}{\#define\ EINVAL\ \ \ \ \ \ 22\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00044}\mbox{\hyperlink{errno_8h_a5554094b3fb4bb6ebeb0157cb3f82a55}{00044}}\ \textcolor{preprocessor}{\#define\ ENFILE\ \ \ \ \ \ 23\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00045}\mbox{\hyperlink{errno_8h_a64a75c174882ddbfa726c7fd040f87a1}{00045}}\ \textcolor{preprocessor}{\#define\ EMFILE\ \ \ \ \ \ 24\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00046}\mbox{\hyperlink{errno_8h_ac3daf409082bb528032f4452a81e1034}{00046}}\ \textcolor{preprocessor}{\#define\ ENOTTY\ \ \ \ \ \ 25\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00047}\mbox{\hyperlink{errno_8h_aaed12e82224923d599b6f1939c8e0971}{00047}}\ \textcolor{preprocessor}{\#define\ ETXTBSY\ \ \ \ \ 26\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00048}\mbox{\hyperlink{errno_8h_af5401a500939ed1812c04ca200b95eef}{00048}}\ \textcolor{preprocessor}{\#define\ EFBIG\ \ \ \ \ \ \ 27\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00049}\mbox{\hyperlink{errno_8h_a088abe8bad2df798edad3053d719b937}{00049}}\ \textcolor{preprocessor}{\#define\ ENOSPC\ \ \ \ \ \ 28\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00050}\mbox{\hyperlink{errno_8h_a0e42d4f9fecdcf5fcca2b333252173c3}{00050}}\ \textcolor{preprocessor}{\#define\ ESPIPE\ \ \ \ \ \ 29\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00051}\mbox{\hyperlink{errno_8h_acb02bb67dddd7ca8cf82634a0781d58d}{00051}}\ \textcolor{preprocessor}{\#define\ EROFS\ \ \ \ \ \ \ 30\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00052}\mbox{\hyperlink{errno_8h_a97f59fa1a5a2f61b792c1b9dfc218072}{00052}}\ \textcolor{preprocessor}{\#define\ EMLINK\ \ \ \ \ \ 31\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00053}\mbox{\hyperlink{errno_8h_a5f8d33deb08fa27c04897b278ac7f965}{00053}}\ \textcolor{preprocessor}{\#define\ EPIPE\ \ \ \ \ \ \ 32\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00054}\mbox{\hyperlink{errno_8h_a5fe247e079b591a68e0fdbf7caec5b70}{00054}}\ \textcolor{preprocessor}{\#define\ EDOM\ \ \ \ \ \ \ \ 33\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00055}\mbox{\hyperlink{errno_8h_aa1591a4f3a86360108de5b9ba34980ca}{00055}}\ \textcolor{preprocessor}{\#define\ ERANGE\ \ \ \ \ \ 34\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00056}\mbox{\hyperlink{errno_8h_ae40596feaa3f66f5440b485bf7c1c2d1}{00056}}\ \textcolor{preprocessor}{\#define\ ENOMSG\ \ \ \ \ \ 35\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00057}\mbox{\hyperlink{errno_8h_ad9913290fef890d46a6b7e8b4bfb1c29}{00057}}\ \textcolor{preprocessor}{\#define\ EIDRM\ \ \ \ \ \ \ 36\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00058}00058\ \textcolor{comment}{//\ 37-\/44\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00059}\mbox{\hyperlink{errno_8h_a55cc70ce0ba661298f3c412095dfeeb6}{00059}}\ \textcolor{preprocessor}{\#define\ EDEADLK\ \ \ \ \ 45\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00060}\mbox{\hyperlink{errno_8h_a65e1a7bda392be276a701988d0604e63}{00060}}\ \textcolor{preprocessor}{\#define\ ENOLCK\ \ \ \ \ \ 46\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00061}00061\ \textcolor{comment}{//\ 47-\/40\ Not\ used}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00062}00062\ \textcolor{comment}{//\ 50-\/57\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00063}00063\ \textcolor{comment}{//\ 58-\/59\ Not\ used}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00064}\mbox{\hyperlink{errno_8h_a7cea86ddbdacae0b391674e680f17bdb}{00064}}\ \textcolor{preprocessor}{\#define\ ENOSTR\ \ \ \ \ \ 60\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00065}\mbox{\hyperlink{errno_8h_a0030614bc864d1b24eaedd71585acc27}{00065}}\ \textcolor{preprocessor}{\#define\ ENODATA\ \ \ \ \ 61\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00066}\mbox{\hyperlink{errno_8h_ab59cf3c65eaf836d5c647fa2a24ca649}{00066}}\ \textcolor{preprocessor}{\#define\ ETIME\ \ \ \ \ \ \ 62\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00067}\mbox{\hyperlink{errno_8h_ad88bc6ea94ec1a5e91d3651677d85c00}{00067}}\ \textcolor{preprocessor}{\#define\ ENOSR\ \ \ \ \ \ \ 63\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00068}00068\ \textcolor{comment}{//\ 64-\/66\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00069}\mbox{\hyperlink{errno_8h_add4408349a756880be9d91efadb8aed0}{00069}}\ \textcolor{preprocessor}{\#define\ ENOLINK\ \ \ \ \ 67\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00070}00070\ \textcolor{comment}{//\ 68-\/70\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00071}\mbox{\hyperlink{errno_8h_a5a92de56e8ebe19cbd8a2ce8c80ad03e}{00071}}\ \textcolor{preprocessor}{\#define\ EPROTO\ \ \ \ \ \ 71\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00072}00072\ \textcolor{comment}{//\ 72-\/74\ Not\ used}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00073}00073\ \textcolor{comment}{//\ 75-\/76\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00074}\mbox{\hyperlink{errno_8h_a251e9b536ed96ccb16aa28ca2d5bd656}{00074}}\ \textcolor{preprocessor}{\#define\ EBADMSG\ \ \ \ \ 77\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00075}00075\ \textcolor{comment}{//\ 78-\/78\ Not\ used}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00076}\mbox{\hyperlink{errno_8h_a940ffe53c91c0b90f8188122ea1bdbf0}{00076}}\ \textcolor{preprocessor}{\#define\ EFTYPE\ \ \ \ \ \ 79\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00077}00077\ \textcolor{comment}{//\ 80-\/87\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00078}\mbox{\hyperlink{errno_8h_a43785b9969e0bd1af532dbde06c5540b}{00078}}\ \textcolor{preprocessor}{\#define\ ENOSYS\ \ \ \ \ \ 88\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00079}00079\ \textcolor{comment}{//\ 89-\/89\ Reserved\ for\ cgwin}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00080}\mbox{\hyperlink{errno_8h_aa0f602f3fd369a6fede82190710b9c5c}{00080}}\ \textcolor{preprocessor}{\#define\ ENOTEMPTY\ \ \ 90\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00081}\mbox{\hyperlink{errno_8h_a41d5ab3a8a05f9c5eab536c9cfba305b}{00081}}\ \textcolor{preprocessor}{\#define\ ENAMETOOLONG\ 91\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00082}\mbox{\hyperlink{errno_8h_a2f78c246352d2bf2f19dc5d43da2f0c9}{00082}}\ \textcolor{preprocessor}{\#define\ ELOOP\ \ \ \ \ \ \ 92\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00083}00083\ \textcolor{comment}{//\ 93-\/94\ Not\ used}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00084}\mbox{\hyperlink{errno_8h_a4b807895c74cea4d0302bf27725d4b9d}{00084}}\ \textcolor{preprocessor}{\#define\ EOPNOTSUPP\ \ 95\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00085}\mbox{\hyperlink{errno_8h_a871b9fabb281dbc2d3b81cb79c163c20}{00085}}\ \textcolor{preprocessor}{\#define\ EPFNOSUPPORT\ 96\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00086}00086\ \textcolor{comment}{//\ 97-\/103\ Not\ used}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00087}\mbox{\hyperlink{errno_8h_add4258b08af02fbe4590fbaae7260037}{00087}}\ \textcolor{preprocessor}{\#define\ ECONNRESET\ \ 104\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00088}\mbox{\hyperlink{errno_8h_a9e655f47bfd914a1174f281fc31cf63d}{00088}}\ \textcolor{preprocessor}{\#define\ ENOBUFS\ \ \ \ \ 105\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00089}\mbox{\hyperlink{errno_8h_a4c3a793b4d51cb7dd020af92e536fe21}{00089}}\ \textcolor{preprocessor}{\#define\ EAFNOSUPPORT\ 106\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00090}\mbox{\hyperlink{errno_8h_ae6014faa948366b8321d755204acf755}{00090}}\ \textcolor{preprocessor}{\#define\ EPROTOTYPE\ \ 107\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00091}\mbox{\hyperlink{errno_8h_ae34fa7a550ac1c415daa2e114a1c0f38}{00091}}\ \textcolor{preprocessor}{\#define\ ENOTSOCK\ \ \ \ 108\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00092}\mbox{\hyperlink{errno_8h_acd570f8ab92198653b4459773dc3bca3}{00092}}\ \textcolor{preprocessor}{\#define\ ENOPROTOOPT\ 109\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00093}00093\ \textcolor{comment}{//\ 110-\/110\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00094}\mbox{\hyperlink{errno_8h_aad88020b394ef1aa4af2f4ef9b4c8b39}{00094}}\ \textcolor{preprocessor}{\#define\ ECONNREFUSED\ 111\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00095}\mbox{\hyperlink{errno_8h_a61676e39b42371c65c3b960a91887b03}{00095}}\ \textcolor{preprocessor}{\#define\ EADDRINUSE\ \ 112\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00096}\mbox{\hyperlink{errno_8h_a45342991e001e28bbf87916d92b7e09a}{00096}}\ \textcolor{preprocessor}{\#define\ ECONNABORTED\ 113\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00097}\mbox{\hyperlink{errno_8h_a3f91f1ad503432783c7a5d1481b45419}{00097}}\ \textcolor{preprocessor}{\#define\ ENETUNREACH\ 114\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00098}\mbox{\hyperlink{errno_8h_aac51995026fa19cdd0ad84a272304af0}{00098}}\ \textcolor{preprocessor}{\#define\ ENETDOWN\ \ \ \ 115\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00099}\mbox{\hyperlink{errno_8h_a597718e59a8fc9c4d4ab63f5a34e28b1}{00099}}\ \textcolor{preprocessor}{\#define\ ETIMEDOUT\ \ \ 116\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00100}\mbox{\hyperlink{errno_8h_aa92bcaf70544db6998f4c503026359c5}{00100}}\ \textcolor{preprocessor}{\#define\ EHOSTDOWN\ \ \ 117\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00101}\mbox{\hyperlink{errno_8h_a53e186028fc992c3341ccb0d4d239b24}{00101}}\ \textcolor{preprocessor}{\#define\ EHOSTUNREACH\ 118\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00102}\mbox{\hyperlink{errno_8h_a6c045d5be06e715cc335784a7320714e}{00102}}\ \textcolor{preprocessor}{\#define\ EINPROGRESS\ 119\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00103}\mbox{\hyperlink{errno_8h_aa4ccb54aa806de3e41a8515f06db85d4}{00103}}\ \textcolor{preprocessor}{\#define\ EALREADY\ \ \ \ 120\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00104}\mbox{\hyperlink{errno_8h_a0e416d3478cf030e37e90c55d68ad97a}{00104}}\ \textcolor{preprocessor}{\#define\ EDESTADDRREQ\ 121\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00105}\mbox{\hyperlink{errno_8h_ae37becfaa095a9df5c5c788bce5aa06f}{00105}}\ \textcolor{preprocessor}{\#define\ EMSGSIZE\ \ \ \ 122\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00106}\mbox{\hyperlink{errno_8h_ad581c46fdd4dee9419f60eaff40415e7}{00106}}\ \textcolor{preprocessor}{\#define\ EPROTONOSUPPORT\ 123\ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00107}00107\ \textcolor{comment}{//\ 124-\/124\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00108}\mbox{\hyperlink{errno_8h_a556612e55358838192165684c971a44f}{00108}}\ \textcolor{preprocessor}{\#define\ EADDRNOTAVAIL\ 125\ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00109}\mbox{\hyperlink{errno_8h_a92750db73ff8e83591c977bbb3a5bea1}{00109}}\ \textcolor{preprocessor}{\#define\ ENETRESET\ \ \ 126\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00110}\mbox{\hyperlink{errno_8h_a164ca8549da7a385e2fe1cba823b9eaf}{00110}}\ \textcolor{preprocessor}{\#define\ EISCONN\ \ \ \ \ 127\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00111}\mbox{\hyperlink{errno_8h_af23e48762a0676f49d480db91cfd5e4b}{00111}}\ \textcolor{preprocessor}{\#define\ ENOTCONN\ \ \ \ 128\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00112}\mbox{\hyperlink{errno_8h_a10426080250efba47f4aaf254036ff00}{00112}}\ \textcolor{preprocessor}{\#define\ ETOOMANYREFS\ 129\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00113}00113\ \textcolor{comment}{//\ 130-\/131\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00114}\mbox{\hyperlink{errno_8h_aa5a48566b00cf9062d9deeeb0682cdaf}{00114}}\ \textcolor{preprocessor}{\#define\ EDQUOT\ \ \ \ \ \ 132\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00115}\mbox{\hyperlink{errno_8h_a09e189d2214d9fe2847d27bf270ca1d7}{00115}}\ \textcolor{preprocessor}{\#define\ ESTALE\ \ \ \ \ \ 133\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00116}\mbox{\hyperlink{errno_8h_a91457bbf35f0f1085619a99423bb1f33}{00116}}\ \textcolor{preprocessor}{\#define\ ENOTSUP\ \ \ \ \ 134\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00117}00117\ \textcolor{comment}{//\ 135-\/135\ Reserved\ for\ linux}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00118}00118\ \textcolor{comment}{//\ 136-\/137\ Not\ used}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00119}\mbox{\hyperlink{errno_8h_ac6c071293826a4e66a717bb38db7794d}{00119}}\ \textcolor{preprocessor}{\#define\ EILSEQ\ \ \ \ \ \ 138\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00120}\mbox{\hyperlink{errno_8h_a888552a5e3c78b5883904cf5d55244ab}{00120}}\ \textcolor{preprocessor}{\#define\ EOVERFLOW\ \ \ 139\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00121}\mbox{\hyperlink{errno_8h_a9532d840ef91fd8e1ecc5d7ca7cbf212}{00121}}\ \textcolor{preprocessor}{\#define\ ECANCELED\ \ \ 140\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00122}\mbox{\hyperlink{errno_8h_ac69acb8e9e296867cc3f9fdf4223d05d}{00122}}\ \textcolor{preprocessor}{\#define\ ENOTRECOVERABLE\ 141\ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00123}\mbox{\hyperlink{errno_8h_af3f021d87caf24b44761036578c7beae}{00123}}\ \textcolor{preprocessor}{\#define\ EOWNERDEAD\ \ 142\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00125}\mbox{\hyperlink{errno_8h_a4a3a0b3605fd3b2336455062ee8e25f0}{00125}}\ \textcolor{preprocessor}{\#define\ EWOULDBLOCK\ EAGAIN\ \ }}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00127}00127\ \textcolor{preprocessor}{\#define\ RETURN\_ERR(e)\ do\ \{\ errno\ =\ (e);\ return\ -\/1;\ \}\ while\ (0)}}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00129}00129\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{errno_8h_source_l00131}00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_ERRNO\_H}}
+
+\end{DoxyCode}

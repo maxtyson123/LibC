@@ -1,0 +1,781 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/src/\+\_\+platforms/example.c File Reference}
+\hypertarget{example_8c}{}\label{example_8c}\index{/home/runner/work/LibC/LibC/src/\_platforms/example.c@{/home/runner/work/LibC/LibC/src/\_platforms/example.c}}
+
+
+Example implementations of functions that are specific to an platform that this libc is compiled for.  
+
+
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$\+\_\+platforms/example.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{example_8c_ae1b63037a88382380096b2887a67ca33}{\+\_\+platform\+\_\+exit}} (int code)
+\begin{DoxyCompactList}\small\item\em Exit the current process without closing files. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a1b534969e39e821c138d9ea2a4a63710}{\+\_\+platform\+\_\+execve}} (char \texorpdfstring{$\ast$}{*}name, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}env)
+\begin{DoxyCompactList}\small\item\em Transfer execution to another process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_aa4566ae5a72d24d705ac64404f550991}{\+\_\+platform\+\_\+fork}} (void)
+\begin{DoxyCompactList}\small\item\em Create a copy of this process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_affbc9aef4e1dd7a9e3c096d8a823ad16}{\+\_\+platform\+\_\+getpid}} (void)
+\begin{DoxyCompactList}\small\item\em Get the ID of the executing process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a157ea78ac249fb55b42e39bba030a953}{\+\_\+platform\+\_\+kill}} (int pid, int sig)
+\begin{DoxyCompactList}\small\item\em Send a signal to a process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a9c1fbc82b15e15585081195edcfb67e8}{\+\_\+platform\+\_\+times}} (struct tms \texorpdfstring{$\ast$}{*}buf)
+\begin{DoxyCompactList}\small\item\em Get process times. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a2fcb87a692312dff85e3b193f87691c7}{\+\_\+platform\+\_\+wait}} (int \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em Wait for a child process to change state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a3b75d86668922072a81913767577baa9}{\+\_\+platform\+\_\+close}} (int file)
+\begin{DoxyCompactList}\small\item\em Close a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a227554b85a13993a03382978eee7369f}{\+\_\+platform\+\_\+fstat}} (int file, struct \mbox{\hyperlink{structstat}{stat}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Get the status of a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a0d6522555e0c3221c3a3b6ac334ac44c}{\+\_\+platform\+\_\+isatty}} (int file)
+\begin{DoxyCompactList}\small\item\em Determine if a file descriptor is a terminal. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_ae225d06b2a9fcfd9748786227458cd87}{\+\_\+platform\+\_\+link}} (char \texorpdfstring{$\ast$}{*}old, char \texorpdfstring{$\ast$}{*}new)
+\begin{DoxyCompactList}\small\item\em Create a new link (hard link) to an existing file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a5ba113706cb2f3e1ba7462180329201a}{\+\_\+platform\+\_\+lseek}} (int file, int ptr, int dir)
+\begin{DoxyCompactList}\small\item\em Reposition the read/write file offset. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_adc37e719bf0cf11b69ff75d3bdff3992}{\+\_\+platform\+\_\+open}} (const char \texorpdfstring{$\ast$}{*}name, int flags, int mode)
+\begin{DoxyCompactList}\small\item\em Open a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a145fb80b276359090e2560d598ce07c4}{\+\_\+platform\+\_\+read}} (int file, char \texorpdfstring{$\ast$}{*}ptr, int len)
+\begin{DoxyCompactList}\small\item\em Read from a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_a746353f3eb589715fbfde3426b2b5496}{\+\_\+platform\+\_\+stat}} (char \texorpdfstring{$\ast$}{*}file, struct \mbox{\hyperlink{structstat}{stat}} \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Get the status of a file by name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_addddeefe5b7e1900313ad3ac1b187070}{\+\_\+platform\+\_\+unlink}} (char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Remove a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{example_8c_aed6272e5e1ef183d9d8e737e862e448c}{\+\_\+platform\+\_\+write}} (int file, char \texorpdfstring{$\ast$}{*}ptr, int len)
+\begin{DoxyCompactList}\small\item\em Write to a file. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{example_8c_aa208c563a4442d7c71385f9eecebef5e}{\+\_\+platform\+\_\+sbrk}} (int incr)
+\begin{DoxyCompactList}\small\item\em Increment the program\textquotesingle{}s data space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{example_8c_a5428d66981cb84e60b899495874618b2}{\+\_\+\+\_\+env}} \mbox{[}1\mbox{]} = \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Platform specific storage for the environment variables. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{example_8c_aa006daaf11f1e2e45a6ababaf463212b}{environ}} = \mbox{\hyperlink{example_8h_a5428d66981cb84e60b899495874618b2}{\+\_\+\+\_\+env}}
+\begin{DoxyCompactList}\small\item\em Environment pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Example implementations of functions that are specific to an platform that this libc is compiled for. 
+
+\begin{DoxyDate}{Date}
+14 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson
+\end{DoxyAuthor}
+@credit \href{https://sourceware.org/newlib/libc.html}{\texttt{ https\+://sourceware.\+org/newlib/libc.\+html}} 
+
+Definition in file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{example_8c_a3b75d86668922072a81913767577baa9}\label{example_8c_a3b75d86668922072a81913767577baa9} 
+\index{example.c@{example.c}!\_platform\_close@{\_platform\_close}}
+\index{\_platform\_close@{\_platform\_close}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_close()}{\_platform\_close()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+close (\begin{DoxyParamCaption}\item[{int}]{file }\end{DoxyParamCaption})}
+
+
+
+Close a file. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Return -\/1 but no errno
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file descriptor for the file requesting to be closed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00110}{110}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}
+\Hypertarget{example_8c_a1b534969e39e821c138d9ea2a4a63710}\label{example_8c_a1b534969e39e821c138d9ea2a4a63710} 
+\index{example.c@{example.c}!\_platform\_execve@{\_platform\_execve}}
+\index{\_platform\_execve@{\_platform\_execve}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_execve()}{\_platform\_execve()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+execve (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{env }\end{DoxyParamCaption})}
+
+
+
+Transfer execution to another process. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Will error -\/ no memory
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The executable to transfer to \\
+\hline
+{\em argv} & The list of args to pass to the new process \\
+\hline
+{\em env} & The environment variables to pass to the new process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Won\textquotesingle{}t return on success otherwise -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00039}{39}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a6a05c923dad0c1208043e9c20a58c8e5}{ENOMEM}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00033}{ENOMEM}}.
+
+\Hypertarget{example_8c_ae1b63037a88382380096b2887a67ca33}\label{example_8c_ae1b63037a88382380096b2887a67ca33} 
+\index{example.c@{example.c}!\_platform\_exit@{\_platform\_exit}}
+\index{\_platform\_exit@{\_platform\_exit}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_exit()}{\_platform\_exit()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})}
+
+
+
+Exit the current process without closing files. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: will spin forever
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The outcome of the process (0 is success, fail otherwise) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing, error code if failed to close 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00022}{22}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Spin\ forever}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{asm}(\textcolor{stringliteral}{"{}nop"{}});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+\Hypertarget{example_8c_aa4566ae5a72d24d705ac64404f550991}\label{example_8c_aa4566ae5a72d24d705ac64404f550991} 
+\index{example.c@{example.c}!\_platform\_fork@{\_platform\_fork}}
+\index{\_platform\_fork@{\_platform\_fork}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_fork()}{\_platform\_fork()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+fork (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Create a copy of this process. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Will error -\/ resource unavailable
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 for parent (current), new PID for child (the copy) or -\/1 on an error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00050}{50}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_af0fac1cea1165b4debec7f686edf3313}{EAGAIN}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00032}{EAGAIN}}.
+
+\Hypertarget{example_8c_a227554b85a13993a03382978eee7369f}\label{example_8c_a227554b85a13993a03382978eee7369f} 
+\index{example.c@{example.c}!\_platform\_fstat@{\_platform\_fstat}}
+\index{\_platform\_fstat@{\_platform\_fstat}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_fstat()}{\_platform\_fstat()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+fstat (\begin{DoxyParamCaption}\item[{int}]{file,  }\item[{struct \mbox{\hyperlink{structstat}{stat}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Get the status of a file. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return character device
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file descriptor for the file requesting the stats of \\
+\hline
+{\em st} & The buffer to put the status information into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00122}{122}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ st-\/>\mbox{\hyperlink{structstat_a5cbdd829011af82ba61e83773bbcbc7d}{st\_mode}}\ =\ \mbox{\hyperlink{stat_8h_aef3a1d1ba22c83e30b5c834dd343b2a8}{S\_IFCHR}};}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{stat_8h_source_l00052}{S\+\_\+\+IFCHR}}, and \mbox{\hyperlink{stat_8h_source_l00031}{stat\+::st\+\_\+mode}}.
+
+\Hypertarget{example_8c_affbc9aef4e1dd7a9e3c096d8a823ad16}\label{example_8c_affbc9aef4e1dd7a9e3c096d8a823ad16} 
+\index{example.c@{example.c}!\_platform\_getpid@{\_platform\_getpid}}
+\index{\_platform\_getpid@{\_platform\_getpid}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_getpid()}{\_platform\_getpid()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+getpid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the ID of the executing process. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return 1
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The ID 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00061}{61}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{signal_8c_source_l00070}{raise()}}.
+
+\Hypertarget{example_8c_a0d6522555e0c3221c3a3b6ac334ac44c}\label{example_8c_a0d6522555e0c3221c3a3b6ac334ac44c} 
+\index{example.c@{example.c}!\_platform\_isatty@{\_platform\_isatty}}
+\index{\_platform\_isatty@{\_platform\_isatty}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_isatty()}{\_platform\_isatty()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+isatty (\begin{DoxyParamCaption}\item[{int}]{file }\end{DoxyParamCaption})}
+
+
+
+Determine if a file descriptor is a terminal. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return true
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file descriptor to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is a terminal, 0 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00134}{134}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00136\ \}}
+
+\end{DoxyCode}
+\Hypertarget{example_8c_a157ea78ac249fb55b42e39bba030a953}\label{example_8c_a157ea78ac249fb55b42e39bba030a953} 
+\index{example.c@{example.c}!\_platform\_kill@{\_platform\_kill}}
+\index{\_platform\_kill@{\_platform\_kill}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_kill()}{\_platform\_kill()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+kill (\begin{DoxyParamCaption}\item[{int}]{pid,  }\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Send a signal to a process. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return error invalid argument
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process ID to send the signal to \\
+\hline
+{\em sig} & The signal to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00074}{74}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a2d1678d5a7cc8ce499643f3b8957def4}{EINVAL}};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00043}{EINVAL}}.
+
+
+
+Referenced by \mbox{\hyperlink{signal_8c_source_l00021}{kill()}}.
+
+\Hypertarget{example_8c_ae225d06b2a9fcfd9748786227458cd87}\label{example_8c_ae225d06b2a9fcfd9748786227458cd87} 
+\index{example.c@{example.c}!\_platform\_link@{\_platform\_link}}
+\index{\_platform\_link@{\_platform\_link}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_link()}{\_platform\_link()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+link (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{old,  }\item[{char \texorpdfstring{$\ast$}{*}}]{new }\end{DoxyParamCaption})}
+
+
+
+Create a new link (hard link) to an existing file. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return error too many links
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em old} & The existing file \\
+\hline
+{\em new} & The new link to create \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00146}{146}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a97f59fa1a5a2f61b792c1b9dfc218072}{EMLINK}};}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00052}{EMLINK}}.
+
+\Hypertarget{example_8c_a5ba113706cb2f3e1ba7462180329201a}\label{example_8c_a5ba113706cb2f3e1ba7462180329201a} 
+\index{example.c@{example.c}!\_platform\_lseek@{\_platform\_lseek}}
+\index{\_platform\_lseek@{\_platform\_lseek}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_lseek()}{\_platform\_lseek()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+lseek (\begin{DoxyParamCaption}\item[{int}]{file,  }\item[{int}]{ptr,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+
+
+Reposition the read/write file offset. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Seeks to start of file always
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file descriptor to reposition \\
+\hline
+{\em ptr} & Where to reposition to \\
+\hline
+{\em dir} & How to reposition (SEEK\+\_\+\+SET, SEEK\+\_\+\+CUR, SEEK\+\_\+\+END) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new offset or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00160}{160}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00162\ \}}
+
+\end{DoxyCode}
+\Hypertarget{example_8c_adc37e719bf0cf11b69ff75d3bdff3992}\label{example_8c_adc37e719bf0cf11b69ff75d3bdff3992} 
+\index{example.c@{example.c}!\_platform\_open@{\_platform\_open}}
+\index{\_platform\_open@{\_platform\_open}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_open()}{\_platform\_open()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+open (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{flags,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+Open a file. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return error no such file or directory
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the file to open \\
+\hline
+{\em flags} & The flags for opening the file \\
+\hline
+{\em mode} & The mode to open the file with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file descriptor or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00173}{173}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a03e689f378f643d16ea7537918528a48}{ENOENT}};}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00177\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00023}{ENOENT}}.
+
+\Hypertarget{example_8c_a145fb80b276359090e2560d598ce07c4}\label{example_8c_a145fb80b276359090e2560d598ce07c4} 
+\index{example.c@{example.c}!\_platform\_read@{\_platform\_read}}
+\index{\_platform\_read@{\_platform\_read}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_read()}{\_platform\_read()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+read (\begin{DoxyParamCaption}\item[{int}]{file,  }\item[{char \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Read from a file. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return 0 bytes read (EOF)
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file descriptor to read from \\
+\hline
+{\em ptr} & The buffer to read into \\
+\hline
+{\em len} & The number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00188}{188}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00190\ \}}
+
+\end{DoxyCode}
+\Hypertarget{example_8c_aa208c563a4442d7c71385f9eecebef5e}\label{example_8c_aa208c563a4442d7c71385f9eecebef5e} 
+\index{example.c@{example.c}!\_platform\_sbrk@{\_platform\_sbrk}}
+\index{\_platform\_sbrk@{\_platform\_sbrk}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_sbrk()}{\_platform\_sbrk()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} \+\_\+platform\+\_\+sbrk (\begin{DoxyParamCaption}\item[{int}]{incr }\end{DoxyParamCaption})}
+
+
+
+Increment the program\textquotesingle{}s data space. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Returns -\/1 (no memory)
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em incr} & The amount to increase the data space by \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous end of data space or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00241}{241}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a6a05c923dad0c1208043e9c20a58c8e5}{ENOMEM}};}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{void}*)-\/1;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00033}{ENOMEM}}.
+
+\Hypertarget{example_8c_a746353f3eb589715fbfde3426b2b5496}\label{example_8c_a746353f3eb589715fbfde3426b2b5496} 
+\index{example.c@{example.c}!\_platform\_stat@{\_platform\_stat}}
+\index{\_platform\_stat@{\_platform\_stat}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_stat()}{\_platform\_stat()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+stat (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file,  }\item[{struct \mbox{\hyperlink{structstat}{stat}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Get the status of a file by name. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return character device
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The name of the file requesting the stats of \\
+\hline
+{\em st} & The buffer to put the status information into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00200}{200}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ st-\/>\mbox{\hyperlink{structstat_a5cbdd829011af82ba61e83773bbcbc7d}{st\_mode}}\ =\ \mbox{\hyperlink{stat_8h_aef3a1d1ba22c83e30b5c834dd343b2a8}{S\_IFCHR}};}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{stat_8h_source_l00052}{S\+\_\+\+IFCHR}}, and \mbox{\hyperlink{stat_8h_source_l00031}{stat\+::st\+\_\+mode}}.
+
+\Hypertarget{example_8c_a9c1fbc82b15e15585081195edcfb67e8}\label{example_8c_a9c1fbc82b15e15585081195edcfb67e8} 
+\index{example.c@{example.c}!\_platform\_times@{\_platform\_times}}
+\index{\_platform\_times@{\_platform\_times}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_times()}{\_platform\_times()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+times (\begin{DoxyParamCaption}\item[{struct tms \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+
+
+Get process times. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return error invalid argument
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The buffer to put the times into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The clock ticks or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00086}{86}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a2d1678d5a7cc8ce499643f3b8957def4}{EINVAL}};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00089\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00043}{EINVAL}}.
+
+\Hypertarget{example_8c_addddeefe5b7e1900313ad3ac1b187070}\label{example_8c_addddeefe5b7e1900313ad3ac1b187070} 
+\index{example.c@{example.c}!\_platform\_unlink@{\_platform\_unlink}}
+\index{\_platform\_unlink@{\_platform\_unlink}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_unlink()}{\_platform\_unlink()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+unlink (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Remove a file. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return error no such file or directory
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the file to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for success or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00214}{214}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a03e689f378f643d16ea7537918528a48}{ENOENT}};}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00023}{ENOENT}}.
+
+\Hypertarget{example_8c_a2fcb87a692312dff85e3b193f87691c7}\label{example_8c_a2fcb87a692312dff85e3b193f87691c7} 
+\index{example.c@{example.c}!\_platform\_wait@{\_platform\_wait}}
+\index{\_platform\_wait@{\_platform\_wait}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_wait()}{\_platform\_wait()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+wait (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{status }\end{DoxyParamCaption})}
+
+
+
+Wait for a child process to change state. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return error no child processes
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The buffer to put the status into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The PID of the child that changed state or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00098}{98}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ errno\ =\ \mbox{\hyperlink{errno_8h_a47b42c351e0e011a048058d224205c0f}{ECHILD}};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00031}{ECHILD}}.
+
+\Hypertarget{example_8c_aed6272e5e1ef183d9d8e737e862e448c}\label{example_8c_aed6272e5e1ef183d9d8e737e862e448c} 
+\index{example.c@{example.c}!\_platform\_write@{\_platform\_write}}
+\index{\_platform\_write@{\_platform\_write}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_platform\_write()}{\_platform\_write()}}
+{\footnotesize\ttfamily int \+\_\+platform\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{file,  }\item[{char \texorpdfstring{$\ast$}{*}}]{ptr,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Write to a file. 
+
+\begin{DoxyNote}{Note}
+Stub implementation\+: Always return len (all bytes written)
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file descriptor to write to \\
+\hline
+{\em ptr} & The buffer to write from \\
+\hline
+{\em len} & The number of bytes to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written or -\/1 on error 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00230}{230}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
+\DoxyCodeLine{00232\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{example_8c_a5428d66981cb84e60b899495874618b2}\label{example_8c_a5428d66981cb84e60b899495874618b2} 
+\index{example.c@{example.c}!\_\_env@{\_\_env}}
+\index{\_\_env@{\_\_env}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{\_\_env}{\_\_env}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+env\mbox{[}1\mbox{]} = \{ 0 \}}
+
+
+
+Platform specific storage for the environment variables. 
+
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00248}{248}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00248\ \{\ 0\ \};}
+
+\end{DoxyCode}
+\Hypertarget{example_8c_aa006daaf11f1e2e45a6ababaf463212b}\label{example_8c_aa006daaf11f1e2e45a6ababaf463212b} 
+\index{example.c@{example.c}!environ@{environ}}
+\index{environ@{environ}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{environ}{environ}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} environ = \mbox{\hyperlink{example_8h_a5428d66981cb84e60b899495874618b2}{\+\_\+\+\_\+env}}}
+
+
+
+Environment pointer. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]this isnt platform specific \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{example_8c_source_l00249}{249}} of file \mbox{\hyperlink{example_8c_source}{example.\+c}}.
+

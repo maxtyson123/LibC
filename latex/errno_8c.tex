@@ -1,0 +1,66 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/src/errno.c File Reference}
+\hypertarget{errno_8c}{}\label{errno_8c}\index{/home/runner/work/LibC/LibC/src/errno.c@{/home/runner/work/LibC/LibC/src/errno.c}}
+
+
+Implements where the error codes are stored.  
+
+
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{errno_8c_a4fd616e20294ce1318de576c5b8c1472}{\+\_\+\+\_\+errno\+\_\+location}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{errno_8c_a94d8ad7ff96db167bb283f705ed243b8}{\+\_\+\+\_\+errno}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements where the error codes are stored. 
+
+\begin{DoxyDate}{Date}
+14 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{errno_8c_source}{errno.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{errno_8c_a4fd616e20294ce1318de576c5b8c1472}\label{errno_8c_a4fd616e20294ce1318de576c5b8c1472} 
+\index{errno.c@{errno.c}!\_\_errno\_location@{\_\_errno\_location}}
+\index{\_\_errno\_location@{\_\_errno\_location}!errno.c@{errno.c}}
+\doxysubsubsection{\texorpdfstring{\_\_errno\_location()}{\_\_errno\_location()}}
+{\footnotesize\ttfamily int \texorpdfstring{$\ast$}{*} \+\_\+\+\_\+errno\+\_\+location (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{errno_8c_source_l00015}{15}} of file \mbox{\hyperlink{errno_8c_source}{errno.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \textcolor{keywordflow}{return}\ \&\_\_errno\_storage;}
+\DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{errno_8c_a94d8ad7ff96db167bb283f705ed243b8}\label{errno_8c_a94d8ad7ff96db167bb283f705ed243b8} 
+\index{errno.c@{errno.c}!\_\_errno@{\_\_errno}}
+\index{\_\_errno@{\_\_errno}!errno.c@{errno.c}}
+\doxysubsubsection{\texorpdfstring{\_\_errno}{\_\_errno}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+errno = 0}
+
+
+
+Definition at line \mbox{\hyperlink{errno_8c_source_l00012}{12}} of file \mbox{\hyperlink{errno_8c_source}{errno.\+c}}.
+

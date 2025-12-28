@@ -1,0 +1,98 @@
+\doxysection{sigaction Struct Reference}
+\hypertarget{structsigaction}{}\label{structsigaction}\index{sigaction@{sigaction}}
+
+
+Define what happens when receiving a specific signal.  
+
+
+
+
+{\ttfamily \#include $<$signal.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sighandler\+\_\+t \mbox{\hyperlink{structsigaction_a0087bff9c76e53abfe8b2a527add0241}{sa\+\_\+handler}}
+\begin{DoxyCompactList}\small\item\em Pointer to a signal-\/catching function or one of the SIG\+\_\+\+IGN or SIG\+\_\+\+DFL. \end{DoxyCompactList}\item 
+sigset\+\_\+t \mbox{\hyperlink{structsigaction_a684e70081d03d46ce70af097ea5cfd49}{sa\+\_\+mask}}
+\begin{DoxyCompactList}\small\item\em Set of signals to be blocked during execution of the signal handling function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structsigaction_aea0dabe7a03641c8b426521f4406b425}{sa\+\_\+flags}}
+\begin{DoxyCompactList}\small\item\em Special flags. \end{DoxyCompactList}\item 
+sigaction\+\_\+handler\+\_\+t \mbox{\hyperlink{structsigaction_ae01f5914e1e5f0529d799f8e66de94b5}{sa\+\_\+sigaction}}
+\begin{DoxyCompactList}\small\item\em Pointer to a signal-\/catching function. (legacy/fast) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define what happens when receiving a specific signal. 
+
+\begin{DoxyWarning}{Warning}
+Use either sa\+\_\+handler or sa\+\_\+sigaction NOT both 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00129}{129}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structsigaction_aea0dabe7a03641c8b426521f4406b425}\label{structsigaction_aea0dabe7a03641c8b426521f4406b425} 
+\index{sigaction@{sigaction}!sa\_flags@{sa\_flags}}
+\index{sa\_flags@{sa\_flags}!sigaction@{sigaction}}
+\doxysubsubsection{\texorpdfstring{sa\_flags}{sa\_flags}}
+{\footnotesize\ttfamily int sigaction\+::sa\+\_\+flags}
+
+
+
+Special flags. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00133}{133}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{structsigaction_a0087bff9c76e53abfe8b2a527add0241}\label{structsigaction_a0087bff9c76e53abfe8b2a527add0241} 
+\index{sigaction@{sigaction}!sa\_handler@{sa\_handler}}
+\index{sa\_handler@{sa\_handler}!sigaction@{sigaction}}
+\doxysubsubsection{\texorpdfstring{sa\_handler}{sa\_handler}}
+{\footnotesize\ttfamily sighandler\+\_\+t sigaction\+::sa\+\_\+handler}
+
+
+
+Pointer to a signal-\/catching function or one of the SIG\+\_\+\+IGN or SIG\+\_\+\+DFL. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00131}{131}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{structsigaction_a684e70081d03d46ce70af097ea5cfd49}\label{structsigaction_a684e70081d03d46ce70af097ea5cfd49} 
+\index{sigaction@{sigaction}!sa\_mask@{sa\_mask}}
+\index{sa\_mask@{sa\_mask}!sigaction@{sigaction}}
+\doxysubsubsection{\texorpdfstring{sa\_mask}{sa\_mask}}
+{\footnotesize\ttfamily sigset\+\_\+t sigaction\+::sa\+\_\+mask}
+
+
+
+Set of signals to be blocked during execution of the signal handling function. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00132}{132}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{structsigaction_ae01f5914e1e5f0529d799f8e66de94b5}\label{structsigaction_ae01f5914e1e5f0529d799f8e66de94b5} 
+\index{sigaction@{sigaction}!sa\_sigaction@{sa\_sigaction}}
+\index{sa\_sigaction@{sa\_sigaction}!sigaction@{sigaction}}
+\doxysubsubsection{\texorpdfstring{sa\_sigaction}{sa\_sigaction}}
+{\footnotesize\ttfamily sigaction\+\_\+handler\+\_\+t sigaction\+::sa\+\_\+sigaction}
+
+
+
+Pointer to a signal-\/catching function. (legacy/fast) 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00134}{134}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Lib\+C/\+Lib\+C/include/\mbox{\hyperlink{signal_8h}{signal.\+h}}\end{DoxyCompactItemize}

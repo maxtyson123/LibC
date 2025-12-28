@@ -1,0 +1,106 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/stddef.h File Reference}
+\hypertarget{stddef_8h}{}\label{stddef_8h}\index{/home/runner/work/LibC/LibC/include/stddef.h@{/home/runner/work/LibC/LibC/include/stddef.h}}
+
+
+Defines fundamental types and macros required by the C language.  
+
+
+{\ttfamily \#include $<$libc\+\_\+common.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stddef_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}~((void\texorpdfstring{$\ast$}{*})0)
+\begin{DoxyCompactList}\small\item\em Null pointer constant. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stddef_8h_afd049f7ad59dbe455f460807475c2841}{offsetof}}(type,  member)~((size\+\_\+t)( (char \texorpdfstring{$\ast$}{*})\&(((type \texorpdfstring{$\ast$}{*})0)-\/$>$member) -\/ (char \texorpdfstring{$\ast$}{*})0 ))
+\begin{DoxyCompactList}\small\item\em Offest in bytes of a member from the start of the struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \+\_\+\+\_\+\+PTRDIFF\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stddef_8h_a6d26a0475a6d6c897e655cdc5d8019d2}{ptrdiff\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+WCHAR\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stddef_8h_a5f245e933e58ed4d268146a5b1f116ca}{wchar\+\_\+t}}
+\item 
+typedef \+\_\+\+\_\+\+SIZE\+\_\+\+TYPE\+\_\+\+\_\+ \mbox{\hyperlink{stddef_8h_aa9d55e2f20e580b7445617d0d12fff6e}{size\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines fundamental types and macros required by the C language. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stddef.h.html}{\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/stddef.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+16 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{stddef_8h_source}{stddef.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{stddef_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}\label{stddef_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4} 
+\index{stddef.h@{stddef.h}!NULL@{NULL}}
+\index{NULL@{NULL}!stddef.h@{stddef.h}}
+\doxysubsubsection{\texorpdfstring{NULL}{NULL}}
+{\footnotesize\ttfamily \#define NULL~((void\texorpdfstring{$\ast$}{*})0)}
+
+
+
+Null pointer constant. 
+
+
+
+Definition at line \mbox{\hyperlink{stddef_8h_source_l00021}{21}} of file \mbox{\hyperlink{stddef_8h_source}{stddef.\+h}}.
+
+\Hypertarget{stddef_8h_afd049f7ad59dbe455f460807475c2841}\label{stddef_8h_afd049f7ad59dbe455f460807475c2841} 
+\index{stddef.h@{stddef.h}!offsetof@{offsetof}}
+\index{offsetof@{offsetof}!stddef.h@{stddef.h}}
+\doxysubsubsection{\texorpdfstring{offsetof}{offsetof}}
+{\footnotesize\ttfamily \#define offsetof(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{member }\end{DoxyParamCaption})~((size\+\_\+t)( (char \texorpdfstring{$\ast$}{*})\&(((type \texorpdfstring{$\ast$}{*})0)-\/$>$member) -\/ (char \texorpdfstring{$\ast$}{*})0 ))}
+
+
+
+Offest in bytes of a member from the start of the struct. 
+
+
+
+Definition at line \mbox{\hyperlink{stddef_8h_source_l00024}{24}} of file \mbox{\hyperlink{stddef_8h_source}{stddef.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{stddef_8h_a6d26a0475a6d6c897e655cdc5d8019d2}\label{stddef_8h_a6d26a0475a6d6c897e655cdc5d8019d2} 
+\index{stddef.h@{stddef.h}!ptrdiff\_t@{ptrdiff\_t}}
+\index{ptrdiff\_t@{ptrdiff\_t}!stddef.h@{stddef.h}}
+\doxysubsubsection{\texorpdfstring{ptrdiff\_t}{ptrdiff\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+PTRDIFF\+\_\+\+TYPE\+\_\+\+\_\+ ptrdiff\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stddef_8h_source_l00026}{26}} of file \mbox{\hyperlink{stddef_8h_source}{stddef.\+h}}.
+
+\Hypertarget{stddef_8h_aa9d55e2f20e580b7445617d0d12fff6e}\label{stddef_8h_aa9d55e2f20e580b7445617d0d12fff6e} 
+\index{stddef.h@{stddef.h}!size\_t@{size\_t}}
+\index{size\_t@{size\_t}!stddef.h@{stddef.h}}
+\doxysubsubsection{\texorpdfstring{size\_t}{size\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+SIZE\+\_\+\+TYPE\+\_\+\+\_\+ size\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stddef_8h_source_l00028}{28}} of file \mbox{\hyperlink{stddef_8h_source}{stddef.\+h}}.
+
+\Hypertarget{stddef_8h_a5f245e933e58ed4d268146a5b1f116ca}\label{stddef_8h_a5f245e933e58ed4d268146a5b1f116ca} 
+\index{stddef.h@{stddef.h}!wchar\_t@{wchar\_t}}
+\index{wchar\_t@{wchar\_t}!stddef.h@{stddef.h}}
+\doxysubsubsection{\texorpdfstring{wchar\_t}{wchar\_t}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+\+WCHAR\+\_\+\+TYPE\+\_\+\+\_\+ wchar\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{stddef_8h_source_l00027}{27}} of file \mbox{\hyperlink{stddef_8h_source}{stddef.\+h}}.
+

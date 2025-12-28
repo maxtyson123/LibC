@@ -1,0 +1,156 @@
+\doxysection{stdlib.\+h}
+\hypertarget{stdlib_8h_source}{}\label{stdlib_8h_source}\index{/home/runner/work/LibC/LibC/include/stdlib.h@{/home/runner/work/LibC/LibC/include/stdlib.h}}
+\mbox{\hyperlink{stdlib_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stddef_8h}{stddef.h}}>}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{wait_8h}{sys/wait.h}}>}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00014}00014\ \textcolor{comment}{//\ \#include\ <fcntl.h>}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00017}00017\ \textcolor{preprocessor}{\#ifndef\ LIBC\_STDLIB\_H}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00018}00018\ \textcolor{preprocessor}{\#define\ LIBC\_STDLIB\_H}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00020}00020\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00022}\mbox{\hyperlink{stdlib_8h_a73efe787c131b385070f25d18b7c9aa4}{00022}}\ \textcolor{preprocessor}{\#define\ EXIT\_FAILURE\ \ \ \ 1\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00023}\mbox{\hyperlink{stdlib_8h_a687984f47d8cce148d1b914d2b79612a}{00023}}\ \textcolor{preprocessor}{\#define\ EXIT\_SUCCESS\ \ \ \ 0\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00025}\mbox{\hyperlink{stdlib_8h_a690f251553b39fd4f31894826141b61a}{00025}}\ \textcolor{preprocessor}{\#define\ RAND\_MAX\ \ \ \ 0xFFFFFFFF\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00026}\mbox{\hyperlink{stdlib_8h_a5455b7a60d7e3087ec55dfe37a088bd1}{00026}}\ \textcolor{preprocessor}{\#define\ MB\_CUR\_MAX\ \ (\_\_mb\_cur\_max())\ \ }}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00027}00027\ \textcolor{keywordtype}{size\_t}\ \_\_mb\_cur\_max(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00036}\mbox{\hyperlink{struct__div}{00036}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__div}{\_div}}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00038}\mbox{\hyperlink{struct__div_a540848cea941067fcd8fa04a5bdb085d}{00038}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{struct__div_a540848cea941067fcd8fa04a5bdb085d}{quot}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00039}\mbox{\hyperlink{struct__div_a8bdbcb0bbdbf765a8f3bfd66dce99b27}{00039}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{struct__div_a8bdbcb0bbdbf765a8f3bfd66dce99b27}{rem}};\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00040}\mbox{\hyperlink{stdlib_8h_a5500c64d40d227603237f92ff22da88c}{00040}}\ \}\ \mbox{\hyperlink{stdlib_8h_a5500c64d40d227603237f92ff22da88c}{div\_t}};}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00049}\mbox{\hyperlink{struct__ldiv}{00049}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__ldiv}{\_ldiv}}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00051}\mbox{\hyperlink{struct__ldiv_a2a065b6018ed677da8ab7e11f2396538}{00051}}\ \ \ \ \ \textcolor{keywordtype}{long}\ \ \ \ \mbox{\hyperlink{struct__ldiv_a2a065b6018ed677da8ab7e11f2396538}{quot}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00052}\mbox{\hyperlink{struct__ldiv_ad19eeb09e74bea9e40a8702bc2272345}{00052}}\ \ \ \ \ \textcolor{keywordtype}{long}\ \ \ \ \mbox{\hyperlink{struct__ldiv_ad19eeb09e74bea9e40a8702bc2272345}{rem}};\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00053}\mbox{\hyperlink{stdlib_8h_ad44f01bd6b0f8584760645d18c9fbb9a}{00053}}\ \}\ \mbox{\hyperlink{stdlib_8h_ad44f01bd6b0f8584760645d18c9fbb9a}{ldiv\_t}};}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00062}\mbox{\hyperlink{struct__lldiv}{00062}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__lldiv}{\_lldiv}}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00064}\mbox{\hyperlink{struct__lldiv_aa30367819ae170460a0583f6501c5b1e}{00064}}\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ \ \mbox{\hyperlink{struct__lldiv_aa30367819ae170460a0583f6501c5b1e}{quot}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00065}\mbox{\hyperlink{struct__lldiv_ac41c1ccf75c0f80977f94c13aa04bbba}{00065}}\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ \ \mbox{\hyperlink{struct__lldiv_ac41c1ccf75c0f80977f94c13aa04bbba}{rem}};\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00066}\mbox{\hyperlink{stdlib_8h_ac3e4182ecf00f5533bd8eef4fc09f3e9}{00066}}\ \}\ \mbox{\hyperlink{stdlib_8h_ac3e4182ecf00f5533bd8eef4fc09f3e9}{lldiv\_t}};}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00068}00068\ \textcolor{comment}{//\ Function\ typedefs}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00069}00069\ \textcolor{keyword}{typedef}\ void\ \ \ \ (*exit\_func\_t)(void);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00070}00070\ \textcolor{keyword}{typedef}\ int\ \ \ \ \ (*bs\_func\_t)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00071}00071\ \textcolor{keyword}{typedef}\ int\ \ \ \ \ (*qsort\_func\_t)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00072}00072\ \textcolor{keyword}{typedef}\ int\ \ \ \ \ (*qsort\_r\_func\_t)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*,\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00074}00074\ \textcolor{comment}{//\ Process\ termination}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00075}00075\ \_Noreturn\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \_Exit(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00076}00076\ \_Noreturn\ \textcolor{keywordtype}{void}\ \ \ \ \ \ abort(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00077}00077\ \_Noreturn\ \textcolor{keywordtype}{void}\ \ \ \ \ \ exit(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00078}00078\ \_Noreturn\ \textcolor{keywordtype}{void}\ \ \ \ \ \ quick\_exit(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00079}00079\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atexit(exit\_func\_t);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00080}00080\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ at\_quick\_exit(exit\_func\_t);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00082}00082\ \textcolor{comment}{//\ Memory\ mangement}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00083}00083\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ malloc(\textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00084}00084\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calloc(\textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00085}00085\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ realloc(\textcolor{keywordtype}{void}*,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00086}00086\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reallocarray(\textcolor{keywordtype}{void}*,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00087}00087\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00088}00088\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aligned\_alloc(\textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00089}00089\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ posix\_memalign(\textcolor{keywordtype}{void}**,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00091}00091\ \textcolor{comment}{//\ Env\ variables}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00092}00092\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getenv(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00093}00093\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secure\_getenv(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00094}00094\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setenv(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00095}00095\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ unsetenv(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00096}00096\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ putenv(\textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00098}00098\ \textcolor{comment}{//\ String\ to\ number}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00099}00099\ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ atof(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00100}00100\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atoi(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00101}00101\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atol(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00102}00102\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ atoll(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00104}00104\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strtol(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00105}00105\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ strtoul(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00106}00106\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ strtoll(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00107}00107\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ strtoull(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00109}00109\ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ strtod(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00110}00110\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strtof(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00111}00111\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ strtold(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00113}00113\ \textcolor{comment}{//\ Abs\ value\ /\ Division}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00114}00114\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ abs(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00115}00115\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ labs(\textcolor{keywordtype}{long});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00116}00116\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ llabs(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00118}00118\ \mbox{\hyperlink{struct__div}{div\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ div(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00119}00119\ \mbox{\hyperlink{struct__ldiv}{ldiv\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ldiv(\textcolor{keywordtype}{long},\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00120}00120\ \mbox{\hyperlink{struct__lldiv}{lldiv\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ lldiv(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long},\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00122}00122\ \textcolor{comment}{//\ Searching\ /\ Sorting}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00123}00123\ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bsearch(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ bs\_func\_t);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00124}00124\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qsort(\textcolor{keywordtype}{void}*,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ qsort\_func\_t);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00125}00125\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qsort\_r(\textcolor{keywordtype}{void}*,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ qsort\_r\_func\_t,\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00127}00127\ \textcolor{comment}{//\ Random\ number\ generation}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00128}00128\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rand(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00129}00129\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ srand(\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00131}00131\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ random(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00132}00132\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ srandom(\textcolor{keywordtype}{unsigned});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00134}00134\ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ drand48(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00135}00135\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lrand48(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00136}00136\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mrand48(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00138}00138\ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \ \ \ erand48(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}[3]);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00139}00139\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jrand48(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}[3]);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00140}00140\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nrand48(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}[3]);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00142}00142\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ srand48(\textcolor{keywordtype}{long});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00143}00143\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*\ \ \ \ \ seed48(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}[3]);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00144}00144\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lcong48(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}[7]);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00146}00146\ \textcolor{comment}{//\ Locale\ /\ Character\ conversion}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00147}00147\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mblen(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00148}00148\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mbtowc(\textcolor{keywordtype}{wchar\_t}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00149}00149\ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ mbstowcs(\textcolor{keywordtype}{wchar\_t}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00151}00151\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wctomb(\textcolor{keywordtype}{char}*,\ \textcolor{keywordtype}{wchar\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00152}00152\ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ wcstombs(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ restrict,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00154}00154\ \textcolor{comment}{//\ Temp\ files\ /\ Terminals}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00155}00155\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mkdtemp(\textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00156}00156\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mkstemp(\textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00157}00157\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mkostemp(\textcolor{keywordtype}{char}*,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00159}00159\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grantpt(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00160}00160\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ posix\_openpt(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00161}00161\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ unlockpt(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00162}00162\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptsname(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00163}00163\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptsname\_r(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{char}*,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00165}00165\ \textcolor{comment}{//\ Encoding}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00166}00166\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initstate(\textcolor{keywordtype}{unsigned},\ \textcolor{keywordtype}{char}*,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00167}00167\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setstate(\textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00169}00169\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a64l(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00170}00170\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l64a(\textcolor{keywordtype}{long});}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00172}00172\ \textcolor{comment}{//\ Other}}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00173}00173\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ system(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00174}00174\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getsubopt(\textcolor{keywordtype}{char}**\ restrict,\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00175}00175\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setkey(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00176}00176\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ realpath(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00178}00178\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{stdlib_8h_source_l00180}00180\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_STDLIB\_H}}
+
+\end{DoxyCode}

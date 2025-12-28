@@ -1,0 +1,233 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/time.h File Reference}
+\hypertarget{time_8h}{}\label{time_8h}\index{/home/runner/work/LibC/LibC/include/time.h@{/home/runner/work/LibC/LibC/include/time.h}}
+
+
+Defines the time types and functions.  
+
+
+{\ttfamily \#include $<$libc\+\_\+common.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtm}{tm}}
+\begin{DoxyCompactList}\small\item\em Defines a moment in time. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtimespec}{timespec}}
+\begin{DoxyCompactList}\small\item\em Defines a precise moment in time. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structitimerspec}{itimerspec}}
+\begin{DoxyCompactList}\small\item\em Defines when an interval timer should fire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{time_8h_a3d9fc3c745d0880902fe3ea3d5d5f71e}{CLOCKS\+\_\+\+PER\+\_\+\+SEC}}~1000000
+\begin{DoxyCompactList}\small\item\em Used to convert clocks into seconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{time_8h_a6fb83f5e91e704391ff796553d5e0f46}{CLOCK\+\_\+\+MONOTONIC}}~1
+\begin{DoxyCompactList}\small\item\em Identifies a clock measuring realtime and cannot be set. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{time_8h_ae1c3939a1e7b7cd1e5a4a7fa601cc4e9}{CLOCK\+\_\+\+PROCESS\+\_\+\+CPUTIME\+\_\+\+ID}}~2
+\begin{DoxyCompactList}\small\item\em Identifies a clock that represents the amount of time taken by this process. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{time_8h_a922ce1ae64374c9410c8a999e25e82af}{CLOCK\+\_\+\+REALTIME}}~3
+\begin{DoxyCompactList}\small\item\em Identifies a clock measuring realtime. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{time_8h_a30114e19c18f57f83727bcaba2458f1e}{CLOCK\+\_\+\+THREAD\+\_\+\+CPUTIME\+\_\+\+ID}}~4
+\begin{DoxyCompactList}\small\item\em Identifies a clock that represents the amount of time taken by this thread. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{time_8h_adde83d9ea51f12d4149f016eededde54}{TIMER\+\_\+\+ABSTIME}}~1
+\begin{DoxyCompactList}\small\item\em Flag to treat the time as an absolute timestamp and not a relative duration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{time_8h_a3448ef4f73bcc616bce136884df6d776}\label{time_8h_a3448ef4f73bcc616bce136884df6d776} 
+char \texorpdfstring{$\ast$}{*} {\bfseries asctime} (const struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_aa9d5da4bebd74f12e2113824d759aee1}\label{time_8h_aa9d5da4bebd74f12e2113824d759aee1} 
+char \texorpdfstring{$\ast$}{*} {\bfseries asctime\+\_\+r} (const struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{time_8h_ade863cfcca9ee19f20ca95796f8ddc1e}\label{time_8h_ade863cfcca9ee19f20ca95796f8ddc1e} 
+\mbox{\hyperlink{types_8h_a0001c50514d27f51d408e051dc803ad4}{clock\+\_\+t}} {\bfseries clock} (void)
+\item 
+\Hypertarget{time_8h_a33fd679c513db1544b5128389d253fdd}\label{time_8h_a33fd679c513db1544b5128389d253fdd} 
+int {\bfseries clock\+\_\+getcpuclockid} (\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}}, \mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\+\_\+t}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_ac5e2ee954e55f9a4d03559f325ba2a44}\label{time_8h_ac5e2ee954e55f9a4d03559f325ba2a44} 
+int {\bfseries clock\+\_\+getres} (\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\+\_\+t}}, struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_aa46342e2a5493ca0f5c2e96ca91db98f}\label{time_8h_aa46342e2a5493ca0f5c2e96ca91db98f} 
+int {\bfseries clock\+\_\+gettime} (\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\+\_\+t}}, struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_aa6fba2322967038cac5f0d955a1ddab4}\label{time_8h_aa6fba2322967038cac5f0d955a1ddab4} 
+int {\bfseries clock\+\_\+nanosleep} (\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\+\_\+t}}, int, const struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*}, struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a2e4064caa5ad0fa78d774548787e4a71}\label{time_8h_a2e4064caa5ad0fa78d774548787e4a71} 
+int {\bfseries clock\+\_\+settime} (\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\+\_\+t}}, const struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a7590c028d2a4942072461107e4431373}\label{time_8h_a7590c028d2a4942072461107e4431373} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ctime} (const \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_aa01a49953d61296ba40b285f0f923e12}\label{time_8h_aa01a49953d61296ba40b285f0f923e12} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ctime\+\_\+r} (const \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a4af91d7bd026ff32025a9e1bbc59d4fb}\label{time_8h_a4af91d7bd026ff32025a9e1bbc59d4fb} 
+double {\bfseries difftime} (\mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}}, \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}})
+\item 
+\Hypertarget{time_8h_a841408f15b68b625a2da34636ccda6a8}\label{time_8h_a841408f15b68b625a2da34636ccda6a8} 
+struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*} {\bfseries getdate} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_adbf114f8e915a6b5037233a7b50574af}\label{time_8h_adbf114f8e915a6b5037233a7b50574af} 
+struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*} {\bfseries gmtime} (const \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_ab97b25d25f2da2688da8ef77422d892c}\label{time_8h_ab97b25d25f2da2688da8ef77422d892c} 
+struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*} {\bfseries gmtime\+\_\+r} (const \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{time_8h_ac830971554dcb93adfe019be780b4ce6}\label{time_8h_ac830971554dcb93adfe019be780b4ce6} 
+struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*} {\bfseries localtime} (const \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a2b5901a722cbb6bb7e8d0aac43608e52}\label{time_8h_a2b5901a722cbb6bb7e8d0aac43608e52} 
+struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*} {\bfseries localtime\+\_\+r} (const \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{time_8h_a5c80fed66ffd29864c2e0ac3084578f6}\label{time_8h_a5c80fed66ffd29864c2e0ac3084578f6} 
+\mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} {\bfseries mktime} (struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a86d827fe6994d9c491a35bd2c4639f44}\label{time_8h_a86d827fe6994d9c491a35bd2c4639f44} 
+int {\bfseries nanosleep} (const struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*}, struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a95ff92caa3ab6e9b6a7cdf0c4767483b}\label{time_8h_a95ff92caa3ab6e9b6a7cdf0c4767483b} 
+size\+\_\+t {\bfseries strftime} (char \texorpdfstring{$\ast$}{*}restrict, size\+\_\+t, const char \texorpdfstring{$\ast$}{*}restrict, const struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{time_8h_a0673f58c189f30a75c0660404883542a}\label{time_8h_a0673f58c189f30a75c0660404883542a} 
+size\+\_\+t {\bfseries strftime\+\_\+l} (char \texorpdfstring{$\ast$}{*}restrict, size\+\_\+t, const char \texorpdfstring{$\ast$}{*}restrict, const struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*}restrict, \mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}})
+\item 
+\Hypertarget{time_8h_a7ea154ef4251af1c9634ffbcdad6d9c0}\label{time_8h_a7ea154ef4251af1c9634ffbcdad6d9c0} 
+char \texorpdfstring{$\ast$}{*} {\bfseries strptime} (const char \texorpdfstring{$\ast$}{*}restrict, const char \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structtm}{tm}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{time_8h_aae026724f73c36340024c657f4f44dab}\label{time_8h_aae026724f73c36340024c657f4f44dab} 
+\mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} {\bfseries time} (\mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\+\_\+t}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a3f337de94239505fdb27ef713110e908}\label{time_8h_a3f337de94239505fdb27ef713110e908} 
+int {\bfseries timer\+\_\+create} (\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\+\_\+t}}, struct \mbox{\hyperlink{structsigevent}{sigevent}} \texorpdfstring{$\ast$}{*}restrict, \mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\+\_\+t}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{time_8h_afa0d1cecd4f6050f94101e23f93343d1}\label{time_8h_afa0d1cecd4f6050f94101e23f93343d1} 
+int {\bfseries timer\+\_\+delete} (\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\+\_\+t}})
+\item 
+\Hypertarget{time_8h_a81dd965d2adf0ab6598e88726455626d}\label{time_8h_a81dd965d2adf0ab6598e88726455626d} 
+int {\bfseries timer\+\_\+getoverrun} (\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\+\_\+t}})
+\item 
+\Hypertarget{time_8h_a862d2cf20358278b86251c127c7719ee}\label{time_8h_a862d2cf20358278b86251c127c7719ee} 
+int {\bfseries timer\+\_\+gettime} (\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\+\_\+t}}, struct \mbox{\hyperlink{structitimerspec}{itimerspec}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{time_8h_a979273fd6287c06ef53466027b06d335}\label{time_8h_a979273fd6287c06ef53466027b06d335} 
+int {\bfseries timer\+\_\+settime} (\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\+\_\+t}}, int, const struct \mbox{\hyperlink{structitimerspec}{itimerspec}} \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structitimerspec}{itimerspec}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{time_8h_a7089a565743ec7206aa9de50705b2041}\label{time_8h_a7089a565743ec7206aa9de50705b2041} 
+void {\bfseries tzset} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{time_8h_a81ac59e43c479d84382e6b5d4d040c78}\label{time_8h_a81ac59e43c479d84382e6b5d4d040c78} 
+int {\bfseries getdate\+\_\+err}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the time types and functions. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/time.h.html}{\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/time.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+15 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{time_8h_source}{time.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{time_8h_a6fb83f5e91e704391ff796553d5e0f46}\label{time_8h_a6fb83f5e91e704391ff796553d5e0f46} 
+\index{time.h@{time.h}!CLOCK\_MONOTONIC@{CLOCK\_MONOTONIC}}
+\index{CLOCK\_MONOTONIC@{CLOCK\_MONOTONIC}!time.h@{time.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_MONOTONIC}{CLOCK\_MONOTONIC}}
+{\footnotesize\ttfamily \#define CLOCK\+\_\+\+MONOTONIC~1}
+
+
+
+Identifies a clock measuring realtime and cannot be set. 
+
+
+
+Definition at line \mbox{\hyperlink{time_8h_source_l00062}{62}} of file \mbox{\hyperlink{time_8h_source}{time.\+h}}.
+
+\Hypertarget{time_8h_ae1c3939a1e7b7cd1e5a4a7fa601cc4e9}\label{time_8h_ae1c3939a1e7b7cd1e5a4a7fa601cc4e9} 
+\index{time.h@{time.h}!CLOCK\_PROCESS\_CPUTIME\_ID@{CLOCK\_PROCESS\_CPUTIME\_ID}}
+\index{CLOCK\_PROCESS\_CPUTIME\_ID@{CLOCK\_PROCESS\_CPUTIME\_ID}!time.h@{time.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_PROCESS\_CPUTIME\_ID}{CLOCK\_PROCESS\_CPUTIME\_ID}}
+{\footnotesize\ttfamily \#define CLOCK\+\_\+\+PROCESS\+\_\+\+CPUTIME\+\_\+\+ID~2}
+
+
+
+Identifies a clock that represents the amount of time taken by this process. 
+
+
+
+Definition at line \mbox{\hyperlink{time_8h_source_l00063}{63}} of file \mbox{\hyperlink{time_8h_source}{time.\+h}}.
+
+\Hypertarget{time_8h_a922ce1ae64374c9410c8a999e25e82af}\label{time_8h_a922ce1ae64374c9410c8a999e25e82af} 
+\index{time.h@{time.h}!CLOCK\_REALTIME@{CLOCK\_REALTIME}}
+\index{CLOCK\_REALTIME@{CLOCK\_REALTIME}!time.h@{time.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_REALTIME}{CLOCK\_REALTIME}}
+{\footnotesize\ttfamily \#define CLOCK\+\_\+\+REALTIME~3}
+
+
+
+Identifies a clock measuring realtime. 
+
+
+
+Definition at line \mbox{\hyperlink{time_8h_source_l00064}{64}} of file \mbox{\hyperlink{time_8h_source}{time.\+h}}.
+
+\Hypertarget{time_8h_a30114e19c18f57f83727bcaba2458f1e}\label{time_8h_a30114e19c18f57f83727bcaba2458f1e} 
+\index{time.h@{time.h}!CLOCK\_THREAD\_CPUTIME\_ID@{CLOCK\_THREAD\_CPUTIME\_ID}}
+\index{CLOCK\_THREAD\_CPUTIME\_ID@{CLOCK\_THREAD\_CPUTIME\_ID}!time.h@{time.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_THREAD\_CPUTIME\_ID}{CLOCK\_THREAD\_CPUTIME\_ID}}
+{\footnotesize\ttfamily \#define CLOCK\+\_\+\+THREAD\+\_\+\+CPUTIME\+\_\+\+ID~4}
+
+
+
+Identifies a clock that represents the amount of time taken by this thread. 
+
+
+
+Definition at line \mbox{\hyperlink{time_8h_source_l00065}{65}} of file \mbox{\hyperlink{time_8h_source}{time.\+h}}.
+
+\Hypertarget{time_8h_a3d9fc3c745d0880902fe3ea3d5d5f71e}\label{time_8h_a3d9fc3c745d0880902fe3ea3d5d5f71e} 
+\index{time.h@{time.h}!CLOCKS\_PER\_SEC@{CLOCKS\_PER\_SEC}}
+\index{CLOCKS\_PER\_SEC@{CLOCKS\_PER\_SEC}!time.h@{time.h}}
+\doxysubsubsection{\texorpdfstring{CLOCKS\_PER\_SEC}{CLOCKS\_PER\_SEC}}
+{\footnotesize\ttfamily \#define CLOCKS\+\_\+\+PER\+\_\+\+SEC~1000000}
+
+
+
+Used to convert clocks into seconds. 
+
+
+
+Definition at line \mbox{\hyperlink{time_8h_source_l00061}{61}} of file \mbox{\hyperlink{time_8h_source}{time.\+h}}.
+
+\Hypertarget{time_8h_adde83d9ea51f12d4149f016eededde54}\label{time_8h_adde83d9ea51f12d4149f016eededde54} 
+\index{time.h@{time.h}!TIMER\_ABSTIME@{TIMER\_ABSTIME}}
+\index{TIMER\_ABSTIME@{TIMER\_ABSTIME}!time.h@{time.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_ABSTIME}{TIMER\_ABSTIME}}
+{\footnotesize\ttfamily \#define TIMER\+\_\+\+ABSTIME~1}
+
+
+
+Flag to treat the time as an absolute timestamp and not a relative duration. 
+
+
+
+Definition at line \mbox{\hyperlink{time_8h_source_l00066}{66}} of file \mbox{\hyperlink{time_8h_source}{time.\+h}}.
+

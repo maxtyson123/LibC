@@ -1,0 +1,157 @@
+\doxysection{\+\_\+siginfo Struct Reference}
+\hypertarget{struct__siginfo}{}\label{struct__siginfo}\index{\_siginfo@{\_siginfo}}
+
+
+Defines the cause and origin of a signal.  
+
+
+
+
+{\ttfamily \#include $<$signal.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct__siginfo_aca1a2c089e702f59b517bd4235eec046}{si\+\_\+signo}}
+\begin{DoxyCompactList}\small\item\em Signal number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct__siginfo_a712040067e6412f06661fb433f68408d}{si\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em Signal code. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct__siginfo_ace9837233cfd1fdb6901edca76103bda}{si\+\_\+errno}}
+\begin{DoxyCompactList}\small\item\em If non-\/zero, an errno value associated with this signal, as described in \texorpdfstring{$<$}{<}\doxylink{errno_8h}{errno.\+h}\texorpdfstring{$>$}{>}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}} \mbox{\hyperlink{struct__siginfo_a8de69cc6ee1bf0c4c2453b3f3b575841}{si\+\_\+pid}}
+\begin{DoxyCompactList}\small\item\em Sending process ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{types_8h_ac3a43da508f85d45f051350c795555e9}{uid\+\_\+t}} \mbox{\hyperlink{struct__siginfo_aaa02d651f7dadfba3e7b4356ea8485d1}{si\+\_\+uid}}
+\begin{DoxyCompactList}\small\item\em User ID of sending process. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct__siginfo_a42e4e56ca2db6f1aca00fd7d1513f44d}{si\+\_\+addr}}
+\begin{DoxyCompactList}\small\item\em Address that caused fault. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct__siginfo_ab7dfa04386cc55ae4e0cc6bf0880bac1}{si\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em Exit value or signal. \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{unionsigval}{sigval}} \mbox{\hyperlink{struct__siginfo_ae6b597b93ca565b94ffaaf78e603808d}{si\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em Signal value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the cause and origin of a signal. 
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00109}{109}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct__siginfo_a42e4e56ca2db6f1aca00fd7d1513f44d}\label{struct__siginfo_a42e4e56ca2db6f1aca00fd7d1513f44d} 
+\index{\_siginfo@{\_siginfo}!si\_addr@{si\_addr}}
+\index{si\_addr@{si\_addr}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_addr}{si\_addr}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} \+\_\+siginfo\+::si\+\_\+addr}
+
+
+
+Address that caused fault. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00116}{116}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__siginfo_a712040067e6412f06661fb433f68408d}\label{struct__siginfo_a712040067e6412f06661fb433f68408d} 
+\index{\_siginfo@{\_siginfo}!si\_code@{si\_code}}
+\index{si\_code@{si\_code}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_code}{si\_code}}
+{\footnotesize\ttfamily int \+\_\+siginfo\+::si\+\_\+code}
+
+
+
+Signal code. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00112}{112}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__siginfo_ace9837233cfd1fdb6901edca76103bda}\label{struct__siginfo_ace9837233cfd1fdb6901edca76103bda} 
+\index{\_siginfo@{\_siginfo}!si\_errno@{si\_errno}}
+\index{si\_errno@{si\_errno}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_errno}{si\_errno}}
+{\footnotesize\ttfamily int \+\_\+siginfo\+::si\+\_\+errno}
+
+
+
+If non-\/zero, an errno value associated with this signal, as described in \texorpdfstring{$<$}{<}\doxylink{errno_8h}{errno.\+h}\texorpdfstring{$>$}{>}. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00113}{113}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__siginfo_a8de69cc6ee1bf0c4c2453b3f3b575841}\label{struct__siginfo_a8de69cc6ee1bf0c4c2453b3f3b575841} 
+\index{\_siginfo@{\_siginfo}!si\_pid@{si\_pid}}
+\index{si\_pid@{si\_pid}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_pid}{si\_pid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}} \+\_\+siginfo\+::si\+\_\+pid}
+
+
+
+Sending process ID. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00114}{114}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__siginfo_aca1a2c089e702f59b517bd4235eec046}\label{struct__siginfo_aca1a2c089e702f59b517bd4235eec046} 
+\index{\_siginfo@{\_siginfo}!si\_signo@{si\_signo}}
+\index{si\_signo@{si\_signo}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_signo}{si\_signo}}
+{\footnotesize\ttfamily int \+\_\+siginfo\+::si\+\_\+signo}
+
+
+
+Signal number. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00111}{111}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__siginfo_ab7dfa04386cc55ae4e0cc6bf0880bac1}\label{struct__siginfo_ab7dfa04386cc55ae4e0cc6bf0880bac1} 
+\index{\_siginfo@{\_siginfo}!si\_status@{si\_status}}
+\index{si\_status@{si\_status}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_status}{si\_status}}
+{\footnotesize\ttfamily int \+\_\+siginfo\+::si\+\_\+status}
+
+
+
+Exit value or signal. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00117}{117}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__siginfo_aaa02d651f7dadfba3e7b4356ea8485d1}\label{struct__siginfo_aaa02d651f7dadfba3e7b4356ea8485d1} 
+\index{\_siginfo@{\_siginfo}!si\_uid@{si\_uid}}
+\index{si\_uid@{si\_uid}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_uid}{si\_uid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_ac3a43da508f85d45f051350c795555e9}{uid\+\_\+t}} \+\_\+siginfo\+::si\+\_\+uid}
+
+
+
+User ID of sending process. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00115}{115}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__siginfo_ae6b597b93ca565b94ffaaf78e603808d}\label{struct__siginfo_ae6b597b93ca565b94ffaaf78e603808d} 
+\index{\_siginfo@{\_siginfo}!si\_value@{si\_value}}
+\index{si\_value@{si\_value}!\_siginfo@{\_siginfo}}
+\doxysubsubsection{\texorpdfstring{si\_value}{si\_value}}
+{\footnotesize\ttfamily union \mbox{\hyperlink{unionsigval}{sigval}} \+\_\+siginfo\+::si\+\_\+value}
+
+
+
+Signal value. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00118}{118}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Lib\+C/\+Lib\+C/include/\mbox{\hyperlink{signal_8h}{signal.\+h}}\end{DoxyCompactItemize}

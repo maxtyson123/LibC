@@ -1,0 +1,60 @@
+\doxysection{wait.\+h}
+\hypertarget{wait_8h_source}{}\label{wait_8h_source}\index{/home/runner/work/LibC/LibC/include/sys/wait.h@{/home/runner/work/LibC/LibC/include/sys/wait.h}}
+\mbox{\hyperlink{wait_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{types_8h}{sys/types.h}}>}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{signal.h}}>}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00017}00017\ \textcolor{preprocessor}{\#ifndef\ LIBC\_WAIT\_H}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00018}00018\ \textcolor{preprocessor}{\#define\ LIBC\_WAIT\_H}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00020}00020\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00022}00022\ \textcolor{comment}{//\ waitpid()\ flags}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00023}\mbox{\hyperlink{wait_8h_afcc090a70f53d677b748f4b1a4b896e6}{00023}}\ \textcolor{preprocessor}{\#define\ WCONTINUED\ \ \ \ \ \ (1\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00024}\mbox{\hyperlink{wait_8h_afa288d86b242c3005425a9c0f1682544}{00024}}\ \textcolor{preprocessor}{\#define\ WNOHANG\ \ \ \ \ \ \ \ \ (1\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00025}\mbox{\hyperlink{wait_8h_aecac6945e3b08baa2602557c684d6bfe}{00025}}\ \textcolor{preprocessor}{\#define\ WUNTRACED\ \ \ \ \ \ \ (1\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00027}00027\ \textcolor{comment}{//\ waittid()\ flags}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00028}\mbox{\hyperlink{wait_8h_a004990811e046790b928dbc7787ecfaa}{00028}}\ \textcolor{preprocessor}{\#define\ WEXITED\ \ \ \ \ \ \ \ \ (1\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00029}\mbox{\hyperlink{wait_8h_a68e8ee6dc7b0115ddc033d974792fa94}{00029}}\ \textcolor{preprocessor}{\#define\ WNOWAIT\ \ \ \ \ \ \ \ \ (1\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00030}\mbox{\hyperlink{wait_8h_a34c9a2f671a03d4523a4e7d9642f908f}{00030}}\ \textcolor{preprocessor}{\#define\ WSTOPPED\ \ \ \ \ \ \ \ (1\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00032}00032\ \textcolor{comment}{//\ Internal:\ status\ layout\ (signal\ |\ core\ |\ exit\ code)}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00033}\mbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{00033}}\ \textcolor{preprocessor}{\#define\ \_\_WSTATUS\_SIGNAL\_BITS\ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00034}\mbox{\hyperlink{wait_8h_abaa8849030b372083f4fd07ad3ebd942}{00034}}\ \textcolor{preprocessor}{\#define\ \_\_WSTATUS\_SIGNAL\_MASK\ \ \ \ \ \ \ ((1u\ <<\ \_\_WSTATUS\_SIGNAL\_BITS)\ -\/\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00035}\mbox{\hyperlink{wait_8h_a9998d9f29f40413b9a96cadb0a979404}{00035}}\ \textcolor{preprocessor}{\#define\ \_\_WSTATUS\_COREDUMP\_BIT\ \ \ \ \ \ \_\_WSTATUS\_SIGNAL\_BITS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00036}\mbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{00036}}\ \textcolor{preprocessor}{\#define\ \_\_WSTATUS\_LOW\_MASK\ \ \ \ \ \ \ \ \ \ ((1u\ <<\ 8)\ -\/\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00037}\mbox{\hyperlink{wait_8h_ac9e5d606cb3e28e6f8fa3d3408c0f7cc}{00037}}\ \textcolor{preprocessor}{\#define\ \_\_WSTATUS\_HIGH\_SHIFT\ \ \ \ \ \ \ \ (\_\_WSTATUS\_SIGNAL\_BITS\ +\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00038}\mbox{\hyperlink{wait_8h_a21e713563c84f0158d9c0087f5d6576b}{00038}}\ \textcolor{preprocessor}{\#define\ \_\_WSTATUS\_HIGH\_MASK\ \ \ \ \ \ \ \ \ 0xFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00039}\mbox{\hyperlink{wait_8h_a1ec60e6b424e2ead045e300e369ab410}{00039}}\ \textcolor{preprocessor}{\#define\ \_\_WSTATUS\_STOP\_MASK\ \ \ \ \ \ \ \ \ (\_\_WSTATUS\_LOW\_MASK\ \&\ \string~\_\_WSTATUS\_SIGNAL\_MASK)\ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00041}00041\ \textcolor{comment}{//\ Checkers}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00042}\mbox{\hyperlink{wait_8h_aa5fda3caf01a15f80a9f2542ccc67b94}{00042}}\ \textcolor{preprocessor}{\#define\ WIFEXITED(status)\ \ \ \ \ \ \ (((status)\ \&\ \_\_WSTATUS\_SIGNAL\_MASK)\ ==\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00043}\mbox{\hyperlink{wait_8h_add863a14eeaad9d01db1bae7e46aff1a}{00043}}\ \textcolor{preprocessor}{\#define\ WIFSIGNALED(status)\ \ \ \ \ (((status)\ \&\ \_\_WSTATUS\_SIGNAL\_MASK)\ !=\ 0\ \&\&\ !WIFSTOPPED(status))\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00044}\mbox{\hyperlink{wait_8h_aa2687811d048892a4fa1f14f74843767}{00044}}\ \textcolor{preprocessor}{\#define\ WIFSTOPPED(status)\ \ \ \ \ \ (((status)\ \&\ \_\_WSTATUS\_LOW\_MASK)\ ==\ \_\_WSTATUS\_STOP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00045}00045\ \textcolor{preprocessor}{\#define\ WIFCONTINUE(status)\ \ \ \ \ (((status)\ \&\ \_\_WSTATUS\_LOW\_MASK)\ ==\ \_\_WSTATUS\_LOW\_MASK\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((status)\ >>\ \_\_WSTATUS\_HIGH\_SHIFT)\ ==\ \_\_WSTATUS\_HIGH\_MASK)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00047}\mbox{\hyperlink{wait_8h_ad0f383987537eb00f5ed77e2e446a251}{00047}}\ \textcolor{comment}{//\ Extracters}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00048}00048\ \textcolor{preprocessor}{\#define\ WEXITSTATUS\ \ \ \ \ (((status)\ >>\ \_\_WSTATUS\_HIGH\_SHIFT)\ \&\ \_\_WSTATUS\_HIGH\_MASK)\ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00049}\mbox{\hyperlink{wait_8h_a994f3ec0987124479e11fcfb60f0d6ba}{00049}}\ \textcolor{preprocessor}{\#define\ WTERMSIG\ \ \ \ \ \ \ \ ((status)\ \&\ \_\_WSTATUS\_SIGNAL\_BITS)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00050}\mbox{\hyperlink{wait_8h_a4f052f78fa094f1bca94a783669bb756}{00050}}\ \textcolor{preprocessor}{\#define\ WSTOPSIG\ \ \ \ \ \ \ \ (((status)\ \&\ \_\_WSTATUS\_LOW\_MASK)\ ==\ \_\_WSTATUS\_STOP\_MASK)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00051}\mbox{\hyperlink{wait_8h_aa92e07a0d3579b31e516f96335889bc7}{00051}}\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00059}00059\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{wait_8h_adb908bb79198d5a464610bf8dd9acb78}{\_IDType}}}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00060}\mbox{\hyperlink{wait_8h_adb908bb79198d5a464610bf8dd9acb78}{00060}}\ \{}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00061}00061\ \ \ \ \ P\_ALL,}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00062}00062\ \ \ \ \ P\_PGID,}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00063}00063\ \ \ \ \ P\_PID}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00064}00064\ \}\ \mbox{\hyperlink{wait_8h_a0f6e7ffb9bfd4d17b665b16c3b1c2b1e}{idtype\_t}};}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00065}\mbox{\hyperlink{wait_8h_a0f6e7ffb9bfd4d17b665b16c3b1c2b1e}{00065}}\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00066}00066\ \mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\_t}}\ \ wait(\textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00067}00067\ \textcolor{keywordtype}{int}\ \ \ \ \ waitid(\mbox{\hyperlink{wait_8h_a0f6e7ffb9bfd4d17b665b16c3b1c2b1e}{idtype\_t}},\ \mbox{\hyperlink{types_8h_a513ee83176411bfc889c87bff2f5b6e4}{id\_t}},\ \mbox{\hyperlink{struct__siginfo}{siginfo\_t}}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00068}00068\ \mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\_t}}\ \ waitpid(\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\_t}},\ \textcolor{keywordtype}{int}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00070}00070\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{wait_8h_source_l00072}00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_WAIT\_H}}
+
+\end{DoxyCode}

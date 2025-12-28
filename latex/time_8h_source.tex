@@ -1,0 +1,95 @@
+\doxysection{time.\+h}
+\hypertarget{time_8h_source}{}\label{time_8h_source}\index{/home/runner/work/LibC/LibC/include/time.h@{/home/runner/work/LibC/LibC/include/time.h}}
+\mbox{\hyperlink{time_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{locale_8h}{locale.h}}>}}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{types_8h}{sys/types.h}}>}}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{signal.h}}>}}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00016}00016\ \textcolor{preprocessor}{\#ifndef\ LIBC\_TIME\_H}}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00017}00017\ \textcolor{preprocessor}{\#define\ LIBC\_TIME\_H}}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00019}00019\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00025}\mbox{\hyperlink{structtm}{00025}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtm}{tm}}\ \{}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00027}\mbox{\hyperlink{structtm_a4d098a9a5c03a00b2ee61e10851de81e}{00027}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_a4d098a9a5c03a00b2ee61e10851de81e}{tm\_sec}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00028}\mbox{\hyperlink{structtm_af414eb7c86cc3099595211eee4d4211b}{00028}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_af414eb7c86cc3099595211eee4d4211b}{tm\_min}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00029}\mbox{\hyperlink{structtm_a3e7ca4e37f1abcaf56b8a916c38eb9fe}{00029}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_a3e7ca4e37f1abcaf56b8a916c38eb9fe}{tm\_hour}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00030}\mbox{\hyperlink{structtm_ab8d8904bad43b0c8b96e61941c5b5310}{00030}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_ab8d8904bad43b0c8b96e61941c5b5310}{tm\_mday}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00031}\mbox{\hyperlink{structtm_a112ac36fa2f593777138a417cf031e17}{00031}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_a112ac36fa2f593777138a417cf031e17}{tm\_mon}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00032}\mbox{\hyperlink{structtm_a33adf78fd6476b2120ce3b9c4a852053}{00032}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_a33adf78fd6476b2120ce3b9c4a852053}{tm\_year}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00033}\mbox{\hyperlink{structtm_afe81a8c46f1c693c43f259b288859f4f}{00033}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_afe81a8c46f1c693c43f259b288859f4f}{tm\_wday}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00034}\mbox{\hyperlink{structtm_a93a0ba77cc23796df84405dcbcc57eb1}{00034}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_a93a0ba77cc23796df84405dcbcc57eb1}{tm\_yday}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00035}\mbox{\hyperlink{structtm_a5645ca0580c8ab2c24f6c2965d9c9f9c}{00035}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{structtm_a5645ca0580c8ab2c24f6c2965d9c9f9c}{tm\_isdst}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00037}00037\ \};}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00043}\mbox{\hyperlink{structtimespec}{00043}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtimespec}{timespec}}\ \{}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00045}\mbox{\hyperlink{structtimespec_afc3302668d7cb5952f590da69fdd4955}{00045}}\ \ \ \ \ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}\ \mbox{\hyperlink{structtimespec_afc3302668d7cb5952f590da69fdd4955}{tv\_sec}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00046}\mbox{\hyperlink{structtimespec_ae3c7510dafa8cbcaede866ed13c99683}{00046}}\ \ \ \ \ \textcolor{keywordtype}{long}\ \ \ \mbox{\hyperlink{structtimespec_ae3c7510dafa8cbcaede866ed13c99683}{tv\_nsec}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00054}\mbox{\hyperlink{structitimerspec}{00054}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structitimerspec}{itimerspec}}\ \{}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00056}\mbox{\hyperlink{structitimerspec_a27cedae552e2b2fe0993c1b2c4ff1889}{00056}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtimespec}{timespec}}\ \mbox{\hyperlink{structitimerspec_a27cedae552e2b2fe0993c1b2c4ff1889}{it\_interval}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00057}\mbox{\hyperlink{structitimerspec_a754dda918053251c24558b07571d6e8f}{00057}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtimespec}{timespec}}\ \mbox{\hyperlink{structitimerspec_a754dda918053251c24558b07571d6e8f}{it\_value}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00059}00059\ \};}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00061}\mbox{\hyperlink{time_8h_a3d9fc3c745d0880902fe3ea3d5d5f71e}{00061}}\ \textcolor{preprocessor}{\#define\ CLOCKS\_PER\_SEC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1000000\ }}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00062}\mbox{\hyperlink{time_8h_a6fb83f5e91e704391ff796553d5e0f46}{00062}}\ \textcolor{preprocessor}{\#define\ CLOCK\_MONOTONIC\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00063}\mbox{\hyperlink{time_8h_ae1c3939a1e7b7cd1e5a4a7fa601cc4e9}{00063}}\ \textcolor{preprocessor}{\#define\ CLOCK\_PROCESS\_CPUTIME\_ID\ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00064}\mbox{\hyperlink{time_8h_a922ce1ae64374c9410c8a999e25e82af}{00064}}\ \textcolor{preprocessor}{\#define\ CLOCK\_REALTIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00065}\mbox{\hyperlink{time_8h_a30114e19c18f57f83727bcaba2458f1e}{00065}}\ \textcolor{preprocessor}{\#define\ CLOCK\_THREAD\_CPUTIME\_ID\ \ \ \ \ 4\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00066}\mbox{\hyperlink{time_8h_adde83d9ea51f12d4149f016eededde54}{00066}}\ \textcolor{preprocessor}{\#define\ TIMER\_ABSTIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00068}00068\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ getdate\_err;}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00070}00070\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ asctime(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00071}00071\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ asctime\_r(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*\ restrict,\ \textcolor{keywordtype}{char}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00073}00073\ \mbox{\hyperlink{types_8h_a0001c50514d27f51d408e051dc803ad4}{clock\_t}}\ \ \ \ \ clock(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00074}00074\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ clock\_getcpuclockid(\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\_t}},\ \mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\_t}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00075}00075\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ clock\_getres(\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\_t}},\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtimespec}{timespec}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00076}00076\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ clock\_gettime(\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\_t}},\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtimespec}{timespec}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00077}00077\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ clock\_nanosleep(\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\_t}},\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtimespec}{timespec}}*,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtimespec}{timespec}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00078}00078\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ clock\_settime(\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\_t}},\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtimespec}{timespec}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00080}00080\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ ctime(\textcolor{keyword}{const}\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00081}00081\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ ctime\_r(\textcolor{keyword}{const}\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}*,\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00083}00083\ \textcolor{keywordtype}{double}\ \ \ \ \ \ difftime(\mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}},\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}});}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00084}00084\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtm}{tm}}*\ \ getdate(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00086}00086\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtm}{tm}}*\ \ gmtime(\textcolor{keyword}{const}\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00087}00087\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtm}{tm}}*\ \ gmtime\_r(\textcolor{keyword}{const}\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}*\ restrict,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00089}00089\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtm}{tm}}*\ \ localtime(\textcolor{keyword}{const}\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00090}00090\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtm}{tm}}*\ \ localtime\_r(\textcolor{keyword}{const}\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}*\ restrict,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00092}00092\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}\ \ \ \ \ \ mktime(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00093}00093\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ nanosleep(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtimespec}{timespec}}*,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtimespec}{timespec}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00095}00095\ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ strftime(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00096}00096\ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ strftime\_l(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*\ restrict,\ \mbox{\hyperlink{struct__struct__platform__locale}{locale\_t}});}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00097}00097\ \textcolor{keywordtype}{char}*\ \ \ \ \ \ \ strptime(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *restrict,\textcolor{keyword}{struct}\ \mbox{\hyperlink{structtm}{tm}}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00099}00099\ \mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}\ \ \ \ \ \ time(\mbox{\hyperlink{types_8h_a7f5991675a84025dc7c24754a9b257c0}{time\_t}}*);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00100}00100\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ timer\_create(\mbox{\hyperlink{types_8h_af509d60daf16ea1bc4dea76b031a9b9d}{clockid\_t}},\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structsigevent}{sigevent}}*\ restrict,\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\_t}}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00101}00101\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ timer\_delete(\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\_t}});}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00102}00102\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ timer\_getoverrun(\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\_t}});}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00103}00103\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ timer\_gettime(\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\_t}},\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structitimerspec}{itimerspec}}\ *);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00104}00104\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ timer\_settime(\mbox{\hyperlink{types_8h_a9dd0dacc783676cb738527412a5af622}{timer\_t}},\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structitimerspec}{itimerspec}}\ *restrict,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structitimerspec}{itimerspec}}\ *restrict);}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00106}00106\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ tzset(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00108}00108\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{time_8h_source_l00110}00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_TIME\_H}}
+
+\end{DoxyCode}

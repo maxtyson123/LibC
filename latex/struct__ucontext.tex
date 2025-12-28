@@ -1,0 +1,93 @@
+\doxysection{\+\_\+ucontext Struct Reference}
+\hypertarget{struct__ucontext}{}\label{struct__ucontext}\index{\_ucontext@{\_ucontext}}
+
+
+Defines the information needed to resume to a userspace context.  
+
+
+
+
+{\ttfamily \#include $<$signal.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__ucontext}{\+\_\+ucontext}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct__ucontext_a703c67f86822a956f83796a742c54634}{uc\+\_\+link}}
+\begin{DoxyCompactList}\small\item\em Pointer to the context that is resumed when this context returns. \end{DoxyCompactList}\item 
+sigset\+\_\+t \mbox{\hyperlink{struct__ucontext_a975bdb372ce3f8b45c1a87c435953bfa}{uc\+\_\+sigmask}}
+\begin{DoxyCompactList}\small\item\em The set of signals that are blocked when this context is active. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{signal_8h_aca51d9a1c3b1ac1b2b54ed9dd7c26981}{stack\+\_\+t}} \mbox{\hyperlink{struct__ucontext_ae216c93ca6c0716aee829d048987cb29}{uc\+\_\+stack}}
+\begin{DoxyCompactList}\small\item\em The stack used by this context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{signal_8h_ac7df60dc21a76ab73acc739e06f144b5}{mcontext\+\_\+t}} \mbox{\hyperlink{struct__ucontext_a619823b2c887e14745e496dbc8db255c}{uc\+\_\+mcontext}}
+\begin{DoxyCompactList}\small\item\em A machine-\/specific representation of the saved context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the information needed to resume to a userspace context. 
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00183}{183}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct__ucontext_a703c67f86822a956f83796a742c54634}\label{struct__ucontext_a703c67f86822a956f83796a742c54634} 
+\index{\_ucontext@{\_ucontext}!uc\_link@{uc\_link}}
+\index{uc\_link@{uc\_link}!\_ucontext@{\_ucontext}}
+\doxysubsubsection{\texorpdfstring{uc\_link}{uc\_link}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct__ucontext}{\+\_\+ucontext}}\texorpdfstring{$\ast$}{*} \+\_\+ucontext\+::uc\+\_\+link}
+
+
+
+Pointer to the context that is resumed when this context returns. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00185}{185}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__ucontext_a619823b2c887e14745e496dbc8db255c}\label{struct__ucontext_a619823b2c887e14745e496dbc8db255c} 
+\index{\_ucontext@{\_ucontext}!uc\_mcontext@{uc\_mcontext}}
+\index{uc\_mcontext@{uc\_mcontext}!\_ucontext@{\_ucontext}}
+\doxysubsubsection{\texorpdfstring{uc\_mcontext}{uc\_mcontext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{signal_8h_ac7df60dc21a76ab73acc739e06f144b5}{mcontext\+\_\+t}} \+\_\+ucontext\+::uc\+\_\+mcontext}
+
+
+
+A machine-\/specific representation of the saved context. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00188}{188}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__ucontext_a975bdb372ce3f8b45c1a87c435953bfa}\label{struct__ucontext_a975bdb372ce3f8b45c1a87c435953bfa} 
+\index{\_ucontext@{\_ucontext}!uc\_sigmask@{uc\_sigmask}}
+\index{uc\_sigmask@{uc\_sigmask}!\_ucontext@{\_ucontext}}
+\doxysubsubsection{\texorpdfstring{uc\_sigmask}{uc\_sigmask}}
+{\footnotesize\ttfamily sigset\+\_\+t \+\_\+ucontext\+::uc\+\_\+sigmask}
+
+
+
+The set of signals that are blocked when this context is active. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00186}{186}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{struct__ucontext_ae216c93ca6c0716aee829d048987cb29}\label{struct__ucontext_ae216c93ca6c0716aee829d048987cb29} 
+\index{\_ucontext@{\_ucontext}!uc\_stack@{uc\_stack}}
+\index{uc\_stack@{uc\_stack}!\_ucontext@{\_ucontext}}
+\doxysubsubsection{\texorpdfstring{uc\_stack}{uc\_stack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{signal_8h_aca51d9a1c3b1ac1b2b54ed9dd7c26981}{stack\+\_\+t}} \+\_\+ucontext\+::uc\+\_\+stack}
+
+
+
+The stack used by this context. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00187}{187}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Lib\+C/\+Lib\+C/include/\mbox{\hyperlink{signal_8h}{signal.\+h}}\end{DoxyCompactItemize}

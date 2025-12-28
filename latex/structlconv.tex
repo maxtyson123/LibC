@@ -1,0 +1,425 @@
+\doxysection{lconv Struct Reference}
+\hypertarget{structlconv}{}\label{structlconv}\index{lconv@{lconv}}
+
+
+Defines local specfic formating for numbers and money.  
+
+
+
+
+{\ttfamily \#include $<$locale.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_a445e27fc7f797c8cca97b381f062fb60}{decimal\+\_\+point}}
+\begin{DoxyCompactList}\small\item\em String used to separate the whole part of the number from the fraction part. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_aede8dfaac91d7b4e6b7fb0d96184d74d}{thousands\+\_\+sep}}
+\begin{DoxyCompactList}\small\item\em String used to separate digit groups. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_a46e468755a823be50de20f36be5ff2be}{grouping}}
+\begin{DoxyCompactList}\small\item\em How to group digits. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_af3657bb8bf2a83a868cdeb0b108ab921}{currency\+\_\+symbol}}
+\begin{DoxyCompactList}\small\item\em Local currency symbol (ie \textquotesingle{}\$\textquotesingle{}) \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_abaeeafb02b68ba58c549458b196b9325}{int\+\_\+curr\+\_\+symbol}}
+\begin{DoxyCompactList}\small\item\em 4 character international currency symbol (ISO 4217) \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_a1aa08afe707c1d5d40b4d01369176480}{mon\+\_\+decimal\+\_\+point}}
+\begin{DoxyCompactList}\small\item\em String used to separate the whole part of the monetary value from the fraction part. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_a4f04f4fd9ea670d21fc76fb5c77c032d}{mon\+\_\+thousands\+\_\+sep}}
+\begin{DoxyCompactList}\small\item\em String used to separate monetary digit groups. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_a12ecf5d2f7ceb0cfe0f66fd3200eef54}{mon\+\_\+grouping}}
+\begin{DoxyCompactList}\small\item\em How to group monetary digits. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_aa16e32ff4dcc95445742b5b165ffb071}{frac\+\_\+digits}}
+\begin{DoxyCompactList}\small\item\em How many digits does the local currency use for decimals. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_a6b652f28cafc3092258b47c8099fe905}{int\+\_\+frac\+\_\+digits}}
+\begin{DoxyCompactList}\small\item\em How many digits does the internation currency use for decimals. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_a74bf5f6f32624be629f7de0dabd58a96}{positive\+\_\+sign}}
+\begin{DoxyCompactList}\small\item\em String used to denote a positive value. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlconv_a40dbb1b1d7fdf4926145138f5d8f6f5f}{negative\+\_\+sign}}
+\begin{DoxyCompactList}\small\item\em String used to denote a negative value. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_af0651922c77fc926609bdd8746784e63}{p\+\_\+cs\+\_\+precedes}}
+\begin{DoxyCompactList}\small\item\em Where to place the currency symbol for a positive value (after = 0, before = 1) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_ad118b68a229527f7e96538ac875169ad}{n\+\_\+cs\+\_\+precedes}}
+\begin{DoxyCompactList}\small\item\em Where to place the currency symbol for a negative value (after = 0, before = 1) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_a3ae3cb36f4426158e4ab2ea6dc4278ad}{p\+\_\+sep\+\_\+by\+\_\+space}}
+\begin{DoxyCompactList}\small\item\em Whether to add a space between a positive value and the symbol (boolean) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_ab7ac20ce034900155183b32fc3c6d9a3}{n\+\_\+sep\+\_\+by\+\_\+space}}
+\begin{DoxyCompactList}\small\item\em Whether to add a space between a negative value and the symbol (boolean) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_a1a78cbc82f07601c2acb643f8dffdf64}{int\+\_\+p\+\_\+cs\+\_\+precedes}}
+\begin{DoxyCompactList}\small\item\em Where to place the currency symbol for a positive international value (after = 0, before = 1) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_a36121c68c5571e40145365dd1edecbb7}{int\+\_\+n\+\_\+cs\+\_\+precedes}}
+\begin{DoxyCompactList}\small\item\em Where to place the currency symbol for a negative international value (after = 0, before = 1) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_ae77e798ef92e86d58100b16fb8163443}{int\+\_\+p\+\_\+sep\+\_\+by\+\_\+space}}
+\begin{DoxyCompactList}\small\item\em Whether to add a space between a positive international value and the symbol (boolean) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_ad9cfa63e25f4a2aa02f6c7ca540177a2}{int\+\_\+n\+\_\+sep\+\_\+by\+\_\+space}}
+\begin{DoxyCompactList}\small\item\em Whether to add a space between a negative international value and the symbol (boolean) \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_a1fdead36abe5c2ca673142ea401478e8}{p\+\_\+sign\+\_\+posn}}
+\begin{DoxyCompactList}\small\item\em Where to place the positive sign (. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_ae0bbe6f545952daef5a8cbdd054a184e}{n\+\_\+sign\+\_\+posn}}
+\begin{DoxyCompactList}\small\item\em Where to place the negative sign (. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_a266ed42f4bb087d1efac551940c42f6f}{int\+\_\+p\+\_\+sign\+\_\+posn}}
+\begin{DoxyCompactList}\small\item\em Where to place the positive sign for an international value (. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structlconv_a642a9096f724fad40fe9f1711e92b323}{int\+\_\+n\+\_\+sign\+\_\+posn}}
+\begin{DoxyCompactList}\small\item\em Where to place the negative sign for an international value (. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines local specfic formating for numbers and money. 
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00038}{38}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structlconv_af3657bb8bf2a83a868cdeb0b108ab921}\label{structlconv_af3657bb8bf2a83a868cdeb0b108ab921} 
+\index{lconv@{lconv}!currency\_symbol@{currency\_symbol}}
+\index{currency\_symbol@{currency\_symbol}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{currency\_symbol}{currency\_symbol}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::currency\+\_\+symbol}
+
+
+
+Local currency symbol (ie \textquotesingle{}\$\textquotesingle{}) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00044}{44}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a445e27fc7f797c8cca97b381f062fb60}\label{structlconv_a445e27fc7f797c8cca97b381f062fb60} 
+\index{lconv@{lconv}!decimal\_point@{decimal\_point}}
+\index{decimal\_point@{decimal\_point}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{decimal\_point}{decimal\_point}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::decimal\+\_\+point}
+
+
+
+String used to separate the whole part of the number from the fraction part. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00040}{40}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_aa16e32ff4dcc95445742b5b165ffb071}\label{structlconv_aa16e32ff4dcc95445742b5b165ffb071} 
+\index{lconv@{lconv}!frac\_digits@{frac\_digits}}
+\index{frac\_digits@{frac\_digits}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{frac\_digits}{frac\_digits}}
+{\footnotesize\ttfamily char lconv\+::frac\+\_\+digits}
+
+
+
+How many digits does the local currency use for decimals. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00051}{51}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a46e468755a823be50de20f36be5ff2be}\label{structlconv_a46e468755a823be50de20f36be5ff2be} 
+\index{lconv@{lconv}!grouping@{grouping}}
+\index{grouping@{grouping}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{grouping}{grouping}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::grouping}
+
+
+
+How to group digits. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00042}{42}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_abaeeafb02b68ba58c549458b196b9325}\label{structlconv_abaeeafb02b68ba58c549458b196b9325} 
+\index{lconv@{lconv}!int\_curr\_symbol@{int\_curr\_symbol}}
+\index{int\_curr\_symbol@{int\_curr\_symbol}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_curr\_symbol}{int\_curr\_symbol}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::int\+\_\+curr\+\_\+symbol}
+
+
+
+4 character international currency symbol (ISO 4217) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00045}{45}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a6b652f28cafc3092258b47c8099fe905}\label{structlconv_a6b652f28cafc3092258b47c8099fe905} 
+\index{lconv@{lconv}!int\_frac\_digits@{int\_frac\_digits}}
+\index{int\_frac\_digits@{int\_frac\_digits}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_frac\_digits}{int\_frac\_digits}}
+{\footnotesize\ttfamily char lconv\+::int\+\_\+frac\+\_\+digits}
+
+
+
+How many digits does the internation currency use for decimals. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00052}{52}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a36121c68c5571e40145365dd1edecbb7}\label{structlconv_a36121c68c5571e40145365dd1edecbb7} 
+\index{lconv@{lconv}!int\_n\_cs\_precedes@{int\_n\_cs\_precedes}}
+\index{int\_n\_cs\_precedes@{int\_n\_cs\_precedes}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_n\_cs\_precedes}{int\_n\_cs\_precedes}}
+{\footnotesize\ttfamily char lconv\+::int\+\_\+n\+\_\+cs\+\_\+precedes}
+
+
+
+Where to place the currency symbol for a negative international value (after = 0, before = 1) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00063}{63}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_ad9cfa63e25f4a2aa02f6c7ca540177a2}\label{structlconv_ad9cfa63e25f4a2aa02f6c7ca540177a2} 
+\index{lconv@{lconv}!int\_n\_sep\_by\_space@{int\_n\_sep\_by\_space}}
+\index{int\_n\_sep\_by\_space@{int\_n\_sep\_by\_space}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_n\_sep\_by\_space}{int\_n\_sep\_by\_space}}
+{\footnotesize\ttfamily char lconv\+::int\+\_\+n\+\_\+sep\+\_\+by\+\_\+space}
+
+
+
+Whether to add a space between a negative international value and the symbol (boolean) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00065}{65}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a642a9096f724fad40fe9f1711e92b323}\label{structlconv_a642a9096f724fad40fe9f1711e92b323} 
+\index{lconv@{lconv}!int\_n\_sign\_posn@{int\_n\_sign\_posn}}
+\index{int\_n\_sign\_posn@{int\_n\_sign\_posn}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_n\_sign\_posn}{int\_n\_sign\_posn}}
+{\footnotesize\ttfamily char lconv\+::int\+\_\+n\+\_\+sign\+\_\+posn}
+
+
+
+Where to place the negative sign for an international value (. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{locale_8h_ac12b0ed65a68725efe51166ba71d4739}{Sign\+Position}) 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00071}{71}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a1a78cbc82f07601c2acb643f8dffdf64}\label{structlconv_a1a78cbc82f07601c2acb643f8dffdf64} 
+\index{lconv@{lconv}!int\_p\_cs\_precedes@{int\_p\_cs\_precedes}}
+\index{int\_p\_cs\_precedes@{int\_p\_cs\_precedes}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_p\_cs\_precedes}{int\_p\_cs\_precedes}}
+{\footnotesize\ttfamily char lconv\+::int\+\_\+p\+\_\+cs\+\_\+precedes}
+
+
+
+Where to place the currency symbol for a positive international value (after = 0, before = 1) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00062}{62}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_ae77e798ef92e86d58100b16fb8163443}\label{structlconv_ae77e798ef92e86d58100b16fb8163443} 
+\index{lconv@{lconv}!int\_p\_sep\_by\_space@{int\_p\_sep\_by\_space}}
+\index{int\_p\_sep\_by\_space@{int\_p\_sep\_by\_space}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_p\_sep\_by\_space}{int\_p\_sep\_by\_space}}
+{\footnotesize\ttfamily char lconv\+::int\+\_\+p\+\_\+sep\+\_\+by\+\_\+space}
+
+
+
+Whether to add a space between a positive international value and the symbol (boolean) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00064}{64}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a266ed42f4bb087d1efac551940c42f6f}\label{structlconv_a266ed42f4bb087d1efac551940c42f6f} 
+\index{lconv@{lconv}!int\_p\_sign\_posn@{int\_p\_sign\_posn}}
+\index{int\_p\_sign\_posn@{int\_p\_sign\_posn}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{int\_p\_sign\_posn}{int\_p\_sign\_posn}}
+{\footnotesize\ttfamily char lconv\+::int\+\_\+p\+\_\+sign\+\_\+posn}
+
+
+
+Where to place the positive sign for an international value (. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{locale_8h_ac12b0ed65a68725efe51166ba71d4739}{Sign\+Position}) 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00070}{70}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a1aa08afe707c1d5d40b4d01369176480}\label{structlconv_a1aa08afe707c1d5d40b4d01369176480} 
+\index{lconv@{lconv}!mon\_decimal\_point@{mon\_decimal\_point}}
+\index{mon\_decimal\_point@{mon\_decimal\_point}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{mon\_decimal\_point}{mon\_decimal\_point}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::mon\+\_\+decimal\+\_\+point}
+
+
+
+String used to separate the whole part of the monetary value from the fraction part. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00047}{47}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a12ecf5d2f7ceb0cfe0f66fd3200eef54}\label{structlconv_a12ecf5d2f7ceb0cfe0f66fd3200eef54} 
+\index{lconv@{lconv}!mon\_grouping@{mon\_grouping}}
+\index{mon\_grouping@{mon\_grouping}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{mon\_grouping}{mon\_grouping}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::mon\+\_\+grouping}
+
+
+
+How to group monetary digits. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00049}{49}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a4f04f4fd9ea670d21fc76fb5c77c032d}\label{structlconv_a4f04f4fd9ea670d21fc76fb5c77c032d} 
+\index{lconv@{lconv}!mon\_thousands\_sep@{mon\_thousands\_sep}}
+\index{mon\_thousands\_sep@{mon\_thousands\_sep}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{mon\_thousands\_sep}{mon\_thousands\_sep}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::mon\+\_\+thousands\+\_\+sep}
+
+
+
+String used to separate monetary digit groups. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00048}{48}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_ad118b68a229527f7e96538ac875169ad}\label{structlconv_ad118b68a229527f7e96538ac875169ad} 
+\index{lconv@{lconv}!n\_cs\_precedes@{n\_cs\_precedes}}
+\index{n\_cs\_precedes@{n\_cs\_precedes}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{n\_cs\_precedes}{n\_cs\_precedes}}
+{\footnotesize\ttfamily char lconv\+::n\+\_\+cs\+\_\+precedes}
+
+
+
+Where to place the currency symbol for a negative value (after = 0, before = 1) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00058}{58}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_ab7ac20ce034900155183b32fc3c6d9a3}\label{structlconv_ab7ac20ce034900155183b32fc3c6d9a3} 
+\index{lconv@{lconv}!n\_sep\_by\_space@{n\_sep\_by\_space}}
+\index{n\_sep\_by\_space@{n\_sep\_by\_space}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{n\_sep\_by\_space}{n\_sep\_by\_space}}
+{\footnotesize\ttfamily char lconv\+::n\+\_\+sep\+\_\+by\+\_\+space}
+
+
+
+Whether to add a space between a negative value and the symbol (boolean) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00060}{60}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_ae0bbe6f545952daef5a8cbdd054a184e}\label{structlconv_ae0bbe6f545952daef5a8cbdd054a184e} 
+\index{lconv@{lconv}!n\_sign\_posn@{n\_sign\_posn}}
+\index{n\_sign\_posn@{n\_sign\_posn}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{n\_sign\_posn}{n\_sign\_posn}}
+{\footnotesize\ttfamily char lconv\+::n\+\_\+sign\+\_\+posn}
+
+
+
+Where to place the negative sign (. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{locale_8h_ac12b0ed65a68725efe51166ba71d4739}{Sign\+Position}) 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00068}{68}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a40dbb1b1d7fdf4926145138f5d8f6f5f}\label{structlconv_a40dbb1b1d7fdf4926145138f5d8f6f5f} 
+\index{lconv@{lconv}!negative\_sign@{negative\_sign}}
+\index{negative\_sign@{negative\_sign}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{negative\_sign}{negative\_sign}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::negative\+\_\+sign}
+
+
+
+String used to denote a negative value. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00055}{55}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_af0651922c77fc926609bdd8746784e63}\label{structlconv_af0651922c77fc926609bdd8746784e63} 
+\index{lconv@{lconv}!p\_cs\_precedes@{p\_cs\_precedes}}
+\index{p\_cs\_precedes@{p\_cs\_precedes}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{p\_cs\_precedes}{p\_cs\_precedes}}
+{\footnotesize\ttfamily char lconv\+::p\+\_\+cs\+\_\+precedes}
+
+
+
+Where to place the currency symbol for a positive value (after = 0, before = 1) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00057}{57}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a3ae3cb36f4426158e4ab2ea6dc4278ad}\label{structlconv_a3ae3cb36f4426158e4ab2ea6dc4278ad} 
+\index{lconv@{lconv}!p\_sep\_by\_space@{p\_sep\_by\_space}}
+\index{p\_sep\_by\_space@{p\_sep\_by\_space}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{p\_sep\_by\_space}{p\_sep\_by\_space}}
+{\footnotesize\ttfamily char lconv\+::p\+\_\+sep\+\_\+by\+\_\+space}
+
+
+
+Whether to add a space between a positive value and the symbol (boolean) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00059}{59}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a1fdead36abe5c2ca673142ea401478e8}\label{structlconv_a1fdead36abe5c2ca673142ea401478e8} 
+\index{lconv@{lconv}!p\_sign\_posn@{p\_sign\_posn}}
+\index{p\_sign\_posn@{p\_sign\_posn}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{p\_sign\_posn}{p\_sign\_posn}}
+{\footnotesize\ttfamily char lconv\+::p\+\_\+sign\+\_\+posn}
+
+
+
+Where to place the positive sign (. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{locale_8h_ac12b0ed65a68725efe51166ba71d4739}{Sign\+Position}) 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00067}{67}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_a74bf5f6f32624be629f7de0dabd58a96}\label{structlconv_a74bf5f6f32624be629f7de0dabd58a96} 
+\index{lconv@{lconv}!positive\_sign@{positive\_sign}}
+\index{positive\_sign@{positive\_sign}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{positive\_sign}{positive\_sign}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::positive\+\_\+sign}
+
+
+
+String used to denote a positive value. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00054}{54}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{structlconv_aede8dfaac91d7b4e6b7fb0d96184d74d}\label{structlconv_aede8dfaac91d7b4e6b7fb0d96184d74d} 
+\index{lconv@{lconv}!thousands\_sep@{thousands\_sep}}
+\index{thousands\_sep@{thousands\_sep}!lconv@{lconv}}
+\doxysubsubsection{\texorpdfstring{thousands\_sep}{thousands\_sep}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} lconv\+::thousands\+\_\+sep}
+
+
+
+String used to separate digit groups. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00041}{41}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/\+Lib\+C/\+Lib\+C/include/\mbox{\hyperlink{locale_8h}{locale.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,364 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/locale.h File Reference}
+\hypertarget{locale_8h}{}\label{locale_8h}\index{/home/runner/work/LibC/LibC/include/locale.h@{/home/runner/work/LibC/LibC/include/locale.h}}
+
+
+Defines langauge and region specific behaviour.  
+
+
+{\ttfamily \#include $<$libc\+\_\+common.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlconv}{lconv}}
+\begin{DoxyCompactList}\small\item\em Defines local specfic formating for numbers and money. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{locale_8h_a9cc5213b5dca4f8e48e64586ee444c33}{LC\+\_\+\+ALL}}~0
+\begin{DoxyCompactList}\small\item\em Set or query all locale categories at once. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_aab9cf7b1a206fb75e5884934c8d676db}{LC\+\_\+\+COLLATE}}~1
+\begin{DoxyCompactList}\small\item\em String collation rules (sorting and comparison order) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_a07c66689961056725d7f50231d740ba9}{LC\+\_\+\+CTYPE}}~2
+\begin{DoxyCompactList}\small\item\em Character classification, case conversion, encoding. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_a7195d6f0a8d1b9d164a3988a1b8249e8}{LC\+\_\+\+MESSAGES}}~3
+\begin{DoxyCompactList}\small\item\em Language used for diagnostic and system messages. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_a6d033a83772ef6e6c10dbf13a6a58fb7}{LC\+\_\+\+MONETARY}}~4
+\begin{DoxyCompactList}\small\item\em Currency symbols, monetary formatting, sign placement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_a158abb82c565096465ade138c98970d0}{LC\+\_\+\+NUMERIC}}~5
+\begin{DoxyCompactList}\small\item\em Non-\/monetary numeric formatting (decimal point, grouping) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_aa652c62b53b6bf728d592bfbdc7d5852}{LC\+\_\+\+TIME}}~6
+\begin{DoxyCompactList}\small\item\em Date and time formatting (month/day names, formats) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_aa46b0b4c5a3e1d02408b17283b8d9286}{LC\+\_\+\+ALL\+\_\+\+MASK}}~(\mbox{\hyperlink{locale_8h_aa4b8e561df7b9f8044425523f39de1bd}{LC\+\_\+\+COLLATE\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_aaeba48d44b0d79e96eb6432ec7d3f244}{LC\+\_\+\+CTYPE\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_a2196becdb2da0dd7a8b2ccb9bb421c91}{LC\+\_\+\+MESSAGES\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_ab986d749a1ffcad0d10d15a274b42e64}{LC\+\_\+\+MONETARY\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_a44e5a695ca5f7909b69b8fa2f96d1219}{LC\+\_\+\+NUMERIC\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_aad9656f9d2787537136f289d977aa485}{LC\+\_\+\+TIME\+\_\+\+MASK}})
+\begin{DoxyCompactList}\small\item\em Set or query all locale categories at once. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_aa4b8e561df7b9f8044425523f39de1bd}{LC\+\_\+\+COLLATE\+\_\+\+MASK}}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em String collation (sorting, comparison) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_aaeba48d44b0d79e96eb6432ec7d3f244}{LC\+\_\+\+CTYPE\+\_\+\+MASK}}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Character classification and case mapping. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_a2196becdb2da0dd7a8b2ccb9bb421c91}{LC\+\_\+\+MESSAGES\+\_\+\+MASK}}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Language of diagnostic messages. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_ab986d749a1ffcad0d10d15a274b42e64}{LC\+\_\+\+MONETARY\+\_\+\+MASK}}~(1 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em Monetary formatting rules. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_a44e5a695ca5f7909b69b8fa2f96d1219}{LC\+\_\+\+NUMERIC\+\_\+\+MASK}}~(1 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Numeric formatting (decimal point, grouping) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_aad9656f9d2787537136f289d977aa485}{LC\+\_\+\+TIME\+\_\+\+MASK}}~(1 $<$$<$ 5)
+\begin{DoxyCompactList}\small\item\em Date and time formatting. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{locale_8h_a30c35e179a1346223ac650826472a704}{LC\+\_\+\+GLOBAL\+\_\+\+LOCALE}}~((\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}})0)
+\begin{DoxyCompactList}\small\item\em Identifier of the global local. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{example_8h_a0c36e2d1c643e0a1c398628fd9601e5e}{\+\_\+platform\+\_\+locale}} \mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Alais for the \+\_\+\+\_\+local struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{locale_8h_ac12b0ed65a68725efe51166ba71d4739}{Sign\+Position}} \{ \newline
+{\bfseries IMPLIED\+\_\+\+WITH\+\_\+\+PARENTHESES}
+, {\bfseries BEFORE\+\_\+\+VALUE\+\_\+\+AND\+\_\+\+SYMBOL}
+, {\bfseries AFTER\+\_\+\+VALUE\+\_\+\+AND\+\_\+\+SYMBOL}
+, {\bfseries BEFORE\+\_\+\+VALUE}
+, \newline
+{\bfseries AFTER\+\_\+\+VALUE}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines where a sign string should be placed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{locale_8h_a6ed7a822d48bbb011cd4b9a02843cf0a}\label{locale_8h_a6ed7a822d48bbb011cd4b9a02843cf0a} 
+\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}} {\bfseries duplocale} (\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}})
+\item 
+\Hypertarget{locale_8h_a94e8badf1e883c85718796f1f4875552}\label{locale_8h_a94e8badf1e883c85718796f1f4875552} 
+void {\bfseries freelocale} (\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}})
+\item 
+\Hypertarget{locale_8h_ac1dde34b0bd88caea4eedfbb153f501c}\label{locale_8h_ac1dde34b0bd88caea4eedfbb153f501c} 
+struct \mbox{\hyperlink{structlconv}{lconv}} \texorpdfstring{$\ast$}{*} {\bfseries localeconv} (void)
+\item 
+\Hypertarget{locale_8h_a4e2c8c67d7a5996798d988755749bb73}\label{locale_8h_a4e2c8c67d7a5996798d988755749bb73} 
+\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}} {\bfseries newlocale} (int, const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}})
+\item 
+\Hypertarget{locale_8h_a71c9b35bb07f7321d3ddd223d2c5f09d}\label{locale_8h_a71c9b35bb07f7321d3ddd223d2c5f09d} 
+char \texorpdfstring{$\ast$}{*} {\bfseries setlocale} (int, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{locale_8h_af221fef4f099c976ced50aec8fcae390}\label{locale_8h_af221fef4f099c976ced50aec8fcae390} 
+\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}} {\bfseries uselocale} (\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines langauge and region specific behaviour. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/locale.h.html}{\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/locale.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+15 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{locale_8h_a9cc5213b5dca4f8e48e64586ee444c33}\label{locale_8h_a9cc5213b5dca4f8e48e64586ee444c33} 
+\index{locale.h@{locale.h}!LC\_ALL@{LC\_ALL}}
+\index{LC\_ALL@{LC\_ALL}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_ALL}{LC\_ALL}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+ALL~0}
+
+
+
+Set or query all locale categories at once. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00075}{75}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_aa46b0b4c5a3e1d02408b17283b8d9286}\label{locale_8h_aa46b0b4c5a3e1d02408b17283b8d9286} 
+\index{locale.h@{locale.h}!LC\_ALL\_MASK@{LC\_ALL\_MASK}}
+\index{LC\_ALL\_MASK@{LC\_ALL\_MASK}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_ALL\_MASK}{LC\_ALL\_MASK}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+ALL\+\_\+\+MASK~(\mbox{\hyperlink{locale_8h_aa4b8e561df7b9f8044425523f39de1bd}{LC\+\_\+\+COLLATE\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_aaeba48d44b0d79e96eb6432ec7d3f244}{LC\+\_\+\+CTYPE\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_a2196becdb2da0dd7a8b2ccb9bb421c91}{LC\+\_\+\+MESSAGES\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_ab986d749a1ffcad0d10d15a274b42e64}{LC\+\_\+\+MONETARY\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_a44e5a695ca5f7909b69b8fa2f96d1219}{LC\+\_\+\+NUMERIC\+\_\+\+MASK}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{locale_8h_aad9656f9d2787537136f289d977aa485}{LC\+\_\+\+TIME\+\_\+\+MASK}})}
+
+
+
+Set or query all locale categories at once. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00083}{83}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_aab9cf7b1a206fb75e5884934c8d676db}\label{locale_8h_aab9cf7b1a206fb75e5884934c8d676db} 
+\index{locale.h@{locale.h}!LC\_COLLATE@{LC\_COLLATE}}
+\index{LC\_COLLATE@{LC\_COLLATE}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_COLLATE}{LC\_COLLATE}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+COLLATE~1}
+
+
+
+String collation rules (sorting and comparison order) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00076}{76}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_aa4b8e561df7b9f8044425523f39de1bd}\label{locale_8h_aa4b8e561df7b9f8044425523f39de1bd} 
+\index{locale.h@{locale.h}!LC\_COLLATE\_MASK@{LC\_COLLATE\_MASK}}
+\index{LC\_COLLATE\_MASK@{LC\_COLLATE\_MASK}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_COLLATE\_MASK}{LC\_COLLATE\_MASK}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+COLLATE\+\_\+\+MASK~(1 $<$$<$ 0)}
+
+
+
+String collation (sorting, comparison) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00084}{84}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_a07c66689961056725d7f50231d740ba9}\label{locale_8h_a07c66689961056725d7f50231d740ba9} 
+\index{locale.h@{locale.h}!LC\_CTYPE@{LC\_CTYPE}}
+\index{LC\_CTYPE@{LC\_CTYPE}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_CTYPE}{LC\_CTYPE}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+CTYPE~2}
+
+
+
+Character classification, case conversion, encoding. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00077}{77}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_aaeba48d44b0d79e96eb6432ec7d3f244}\label{locale_8h_aaeba48d44b0d79e96eb6432ec7d3f244} 
+\index{locale.h@{locale.h}!LC\_CTYPE\_MASK@{LC\_CTYPE\_MASK}}
+\index{LC\_CTYPE\_MASK@{LC\_CTYPE\_MASK}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_CTYPE\_MASK}{LC\_CTYPE\_MASK}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+CTYPE\+\_\+\+MASK~(1 $<$$<$ 1)}
+
+
+
+Character classification and case mapping. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00085}{85}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_a30c35e179a1346223ac650826472a704}\label{locale_8h_a30c35e179a1346223ac650826472a704} 
+\index{locale.h@{locale.h}!LC\_GLOBAL\_LOCALE@{LC\_GLOBAL\_LOCALE}}
+\index{LC\_GLOBAL\_LOCALE@{LC\_GLOBAL\_LOCALE}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_GLOBAL\_LOCALE}{LC\_GLOBAL\_LOCALE}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+GLOBAL\+\_\+\+LOCALE~((\mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}})0)}
+
+
+
+Identifier of the global local. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00091}{91}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_a7195d6f0a8d1b9d164a3988a1b8249e8}\label{locale_8h_a7195d6f0a8d1b9d164a3988a1b8249e8} 
+\index{locale.h@{locale.h}!LC\_MESSAGES@{LC\_MESSAGES}}
+\index{LC\_MESSAGES@{LC\_MESSAGES}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_MESSAGES}{LC\_MESSAGES}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+MESSAGES~3}
+
+
+
+Language used for diagnostic and system messages. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00078}{78}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_a2196becdb2da0dd7a8b2ccb9bb421c91}\label{locale_8h_a2196becdb2da0dd7a8b2ccb9bb421c91} 
+\index{locale.h@{locale.h}!LC\_MESSAGES\_MASK@{LC\_MESSAGES\_MASK}}
+\index{LC\_MESSAGES\_MASK@{LC\_MESSAGES\_MASK}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_MESSAGES\_MASK}{LC\_MESSAGES\_MASK}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+MESSAGES\+\_\+\+MASK~(1 $<$$<$ 2)}
+
+
+
+Language of diagnostic messages. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00086}{86}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_a6d033a83772ef6e6c10dbf13a6a58fb7}\label{locale_8h_a6d033a83772ef6e6c10dbf13a6a58fb7} 
+\index{locale.h@{locale.h}!LC\_MONETARY@{LC\_MONETARY}}
+\index{LC\_MONETARY@{LC\_MONETARY}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_MONETARY}{LC\_MONETARY}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+MONETARY~4}
+
+
+
+Currency symbols, monetary formatting, sign placement. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00079}{79}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_ab986d749a1ffcad0d10d15a274b42e64}\label{locale_8h_ab986d749a1ffcad0d10d15a274b42e64} 
+\index{locale.h@{locale.h}!LC\_MONETARY\_MASK@{LC\_MONETARY\_MASK}}
+\index{LC\_MONETARY\_MASK@{LC\_MONETARY\_MASK}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_MONETARY\_MASK}{LC\_MONETARY\_MASK}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+MONETARY\+\_\+\+MASK~(1 $<$$<$ 3)}
+
+
+
+Monetary formatting rules. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00087}{87}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_a158abb82c565096465ade138c98970d0}\label{locale_8h_a158abb82c565096465ade138c98970d0} 
+\index{locale.h@{locale.h}!LC\_NUMERIC@{LC\_NUMERIC}}
+\index{LC\_NUMERIC@{LC\_NUMERIC}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_NUMERIC}{LC\_NUMERIC}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+NUMERIC~5}
+
+
+
+Non-\/monetary numeric formatting (decimal point, grouping) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00080}{80}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_a44e5a695ca5f7909b69b8fa2f96d1219}\label{locale_8h_a44e5a695ca5f7909b69b8fa2f96d1219} 
+\index{locale.h@{locale.h}!LC\_NUMERIC\_MASK@{LC\_NUMERIC\_MASK}}
+\index{LC\_NUMERIC\_MASK@{LC\_NUMERIC\_MASK}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_NUMERIC\_MASK}{LC\_NUMERIC\_MASK}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+NUMERIC\+\_\+\+MASK~(1 $<$$<$ 4)}
+
+
+
+Numeric formatting (decimal point, grouping) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00088}{88}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_aa652c62b53b6bf728d592bfbdc7d5852}\label{locale_8h_aa652c62b53b6bf728d592bfbdc7d5852} 
+\index{locale.h@{locale.h}!LC\_TIME@{LC\_TIME}}
+\index{LC\_TIME@{LC\_TIME}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_TIME}{LC\_TIME}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+TIME~6}
+
+
+
+Date and time formatting (month/day names, formats) 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00081}{81}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+\Hypertarget{locale_8h_aad9656f9d2787537136f289d977aa485}\label{locale_8h_aad9656f9d2787537136f289d977aa485} 
+\index{locale.h@{locale.h}!LC\_TIME\_MASK@{LC\_TIME\_MASK}}
+\index{LC\_TIME\_MASK@{LC\_TIME\_MASK}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{LC\_TIME\_MASK}{LC\_TIME\_MASK}}
+{\footnotesize\ttfamily \#define LC\+\_\+\+TIME\+\_\+\+MASK~(1 $<$$<$ 5)}
+
+
+
+Date and time formatting. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00089}{89}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{locale_8h_a54ef5b9f1228b5c543201712de161003}\label{locale_8h_a54ef5b9f1228b5c543201712de161003} 
+\index{locale.h@{locale.h}!locale\_t@{locale\_t}}
+\index{locale\_t@{locale\_t}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{locale\_t}{locale\_t}}
+{\footnotesize\ttfamily \mbox{\hyperlink{locale_8h_a54ef5b9f1228b5c543201712de161003}{locale\+\_\+t}}}
+
+
+
+Alais for the \+\_\+\+\_\+local struct. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00100}{100}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{locale_8h_ac12b0ed65a68725efe51166ba71d4739}\label{locale_8h_ac12b0ed65a68725efe51166ba71d4739} 
+\index{locale.h@{locale.h}!SignPosition@{SignPosition}}
+\index{SignPosition@{SignPosition}!locale.h@{locale.h}}
+\doxysubsubsection{\texorpdfstring{SignPosition}{SignPosition}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{locale_8h_ac12b0ed65a68725efe51166ba71d4739}{Sign\+Position}}}
+
+
+
+Defines where a sign string should be placed. 
+
+
+
+Definition at line \mbox{\hyperlink{locale_8h_source_l00024}{24}} of file \mbox{\hyperlink{locale_8h_source}{locale.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ IMPLIED\_WITH\_PARENTHESES,}
+\DoxyCodeLine{00027\ \ \ \ \ BEFORE\_VALUE\_AND\_SYMBOL,}
+\DoxyCodeLine{00028\ \ \ \ \ AFTER\_VALUE\_AND\_SYMBOL,}
+\DoxyCodeLine{00029\ \ \ \ \ BEFORE\_VALUE,}
+\DoxyCodeLine{00030\ \ \ \ \ AFTER\_VALUE,}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \};}
+
+\end{DoxyCode}

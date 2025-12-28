@@ -1,0 +1,191 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/aio.h File Reference}
+\hypertarget{aio_8h}{}\label{aio_8h}\index{/home/runner/work/LibC/LibC/include/aio.h@{/home/runner/work/LibC/LibC/include/aio.h}}
+
+
+Defines functions to handle asynchronous input and output.  
+
+
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structaiocb}{aiocb}}
+\begin{DoxyCompactList}\small\item\em Defines an async I/O control block, the parameters that control an I/O operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{aio_8h_a96fdf4481a5be4289335752cdfe2d1d8}{AIO\+\_\+\+ALLDONE}}~0
+\begin{DoxyCompactList}\small\item\em None of the requested operations could cancel as they are all complete. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{aio_8h_ad025933a3c08268888f60a584d03961a}{AIO\+\_\+\+CANCELED}}~1
+\begin{DoxyCompactList}\small\item\em All the requested operations canceled successfully. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{aio_8h_aae60cf63600169228f13e661c8ca8256}{AIO\+\_\+\+NOTCANCELED}}~2
+\begin{DoxyCompactList}\small\item\em Some of the requested operations couldn\textquotesingle{}t cancel as they are in progress. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{aio_8h_a7e33ece0a2433714d7bf1ccf183a294e}{LIO\+\_\+\+NOP}}~0
+\begin{DoxyCompactList}\small\item\em This list item has no operation and can be skipped. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{aio_8h_a6e4b2bc060140597b36585a5568ce071}{LIO\+\_\+\+WRITE}}~1
+\begin{DoxyCompactList}\small\item\em This list item is a write operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{aio_8h_a72369fbe46a0e1632afb1eac1340ae76}{LIO\+\_\+\+READ}}~2
+\begin{DoxyCompactList}\small\item\em This list item is a read operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{aio_8h_a6643367cfb016dbacaef01c4ef3706b0}{LIO\+\_\+\+WAIT}}~0
+\begin{DoxyCompactList}\small\item\em Return once all operations are completed. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{aio_8h_aed8f2a06da21fad02bfc0e5749a8ecca}{LIO\+\_\+\+NOWAIT}}~1
+\begin{DoxyCompactList}\small\item\em Return once all operations are queued. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{aio_8h_ae47efb4b421769197021602df743e50e}\label{aio_8h_ae47efb4b421769197021602df743e50e} 
+int {\bfseries aio\+\_\+cancel} (int, struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{aio_8h_a9f2350a7a42c52fbe42c3c4671aee886}\label{aio_8h_a9f2350a7a42c52fbe42c3c4671aee886} 
+int {\bfseries aio\+\_\+error} (const struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{aio_8h_a6195da23e2822ea481239ee681d172f2}\label{aio_8h_a6195da23e2822ea481239ee681d172f2} 
+int {\bfseries aio\+\_\+fsync} (int, struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{aio_8h_a38c640c2976ffe50cf2761eb0c9c9aad}\label{aio_8h_a38c640c2976ffe50cf2761eb0c9c9aad} 
+int {\bfseries aio\+\_\+read} (struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{aio_8h_a1e447b3576dda4ce732fa05f3aa20985}\label{aio_8h_a1e447b3576dda4ce732fa05f3aa20985} 
+ssize\+\_\+t {\bfseries aio\+\_\+return} (struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{aio_8h_ae4d85203620b1c56739fb83b9ffbaa75}\label{aio_8h_ae4d85203620b1c56739fb83b9ffbaa75} 
+int {\bfseries aio\+\_\+suspend} (const struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*}const \mbox{[}$\,$\mbox{]}, int, const struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{aio_8h_aca1766007c6da4b0263b8ec14ddea340}\label{aio_8h_aca1766007c6da4b0263b8ec14ddea340} 
+int {\bfseries aio\+\_\+write} (struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{aio_8h_a107bfa20a4e2650243b651719b07622c}\label{aio_8h_a107bfa20a4e2650243b651719b07622c} 
+int {\bfseries lio\+\_\+listio} (int, struct \mbox{\hyperlink{structaiocb}{aiocb}} \texorpdfstring{$\ast$}{*}restrict const \mbox{[}restrict\mbox{]}, int, struct \mbox{\hyperlink{structsigevent}{sigevent}} \texorpdfstring{$\ast$}{*}restrict)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines functions to handle asynchronous input and output. 
+
+\begin{DoxyDate}{Date}
+28 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{aio_8h_a96fdf4481a5be4289335752cdfe2d1d8}\label{aio_8h_a96fdf4481a5be4289335752cdfe2d1d8} 
+\index{aio.h@{aio.h}!AIO\_ALLDONE@{AIO\_ALLDONE}}
+\index{AIO\_ALLDONE@{AIO\_ALLDONE}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{AIO\_ALLDONE}{AIO\_ALLDONE}}
+{\footnotesize\ttfamily \#define AIO\+\_\+\+ALLDONE~0}
+
+
+
+None of the requested operations could cancel as they are all complete. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00032}{32}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{aio_8h_ad025933a3c08268888f60a584d03961a}\label{aio_8h_ad025933a3c08268888f60a584d03961a} 
+\index{aio.h@{aio.h}!AIO\_CANCELED@{AIO\_CANCELED}}
+\index{AIO\_CANCELED@{AIO\_CANCELED}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{AIO\_CANCELED}{AIO\_CANCELED}}
+{\footnotesize\ttfamily \#define AIO\+\_\+\+CANCELED~1}
+
+
+
+All the requested operations canceled successfully. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00033}{33}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{aio_8h_aae60cf63600169228f13e661c8ca8256}\label{aio_8h_aae60cf63600169228f13e661c8ca8256} 
+\index{aio.h@{aio.h}!AIO\_NOTCANCELED@{AIO\_NOTCANCELED}}
+\index{AIO\_NOTCANCELED@{AIO\_NOTCANCELED}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{AIO\_NOTCANCELED}{AIO\_NOTCANCELED}}
+{\footnotesize\ttfamily \#define AIO\+\_\+\+NOTCANCELED~2}
+
+
+
+Some of the requested operations couldn\textquotesingle{}t cancel as they are in progress. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00034}{34}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{aio_8h_a7e33ece0a2433714d7bf1ccf183a294e}\label{aio_8h_a7e33ece0a2433714d7bf1ccf183a294e} 
+\index{aio.h@{aio.h}!LIO\_NOP@{LIO\_NOP}}
+\index{LIO\_NOP@{LIO\_NOP}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{LIO\_NOP}{LIO\_NOP}}
+{\footnotesize\ttfamily \#define LIO\+\_\+\+NOP~0}
+
+
+
+This list item has no operation and can be skipped. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00036}{36}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{aio_8h_aed8f2a06da21fad02bfc0e5749a8ecca}\label{aio_8h_aed8f2a06da21fad02bfc0e5749a8ecca} 
+\index{aio.h@{aio.h}!LIO\_NOWAIT@{LIO\_NOWAIT}}
+\index{LIO\_NOWAIT@{LIO\_NOWAIT}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{LIO\_NOWAIT}{LIO\_NOWAIT}}
+{\footnotesize\ttfamily \#define LIO\+\_\+\+NOWAIT~1}
+
+
+
+Return once all operations are queued. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00041}{41}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{aio_8h_a72369fbe46a0e1632afb1eac1340ae76}\label{aio_8h_a72369fbe46a0e1632afb1eac1340ae76} 
+\index{aio.h@{aio.h}!LIO\_READ@{LIO\_READ}}
+\index{LIO\_READ@{LIO\_READ}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{LIO\_READ}{LIO\_READ}}
+{\footnotesize\ttfamily \#define LIO\+\_\+\+READ~2}
+
+
+
+This list item is a read operation. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00038}{38}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{aio_8h_a6643367cfb016dbacaef01c4ef3706b0}\label{aio_8h_a6643367cfb016dbacaef01c4ef3706b0} 
+\index{aio.h@{aio.h}!LIO\_WAIT@{LIO\_WAIT}}
+\index{LIO\_WAIT@{LIO\_WAIT}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{LIO\_WAIT}{LIO\_WAIT}}
+{\footnotesize\ttfamily \#define LIO\+\_\+\+WAIT~0}
+
+
+
+Return once all operations are completed. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00040}{40}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+
+\Hypertarget{aio_8h_a6e4b2bc060140597b36585a5568ce071}\label{aio_8h_a6e4b2bc060140597b36585a5568ce071} 
+\index{aio.h@{aio.h}!LIO\_WRITE@{LIO\_WRITE}}
+\index{LIO\_WRITE@{LIO\_WRITE}!aio.h@{aio.h}}
+\doxysubsubsection{\texorpdfstring{LIO\_WRITE}{LIO\_WRITE}}
+{\footnotesize\ttfamily \#define LIO\+\_\+\+WRITE~1}
+
+
+
+This list item is a write operation. 
+
+
+
+Definition at line \mbox{\hyperlink{aio_8h_source_l00037}{37}} of file \mbox{\hyperlink{aio_8h_source}{aio.\+h}}.
+

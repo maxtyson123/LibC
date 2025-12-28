@@ -1,0 +1,412 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/sys/stat.h File Reference}
+\hypertarget{stat_8h}{}\label{stat_8h}\index{/home/runner/work/LibC/LibC/include/sys/stat.h@{/home/runner/work/LibC/LibC/include/sys/stat.h}}
+
+
+Defines the structure of the data returned by the fstat(), lstat(), and \doxylink{structstat}{stat()} functions.  
+
+
+{\ttfamily \#include $<$libc\+\_\+common.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstat}{stat}}
+\begin{DoxyCompactList}\small\item\em The status of file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stat_8h_ab5bee51e9ee68b83ab11d4b340f7200b}{S\+\_\+\+IFMT}}~(0x\+F000)
+\begin{DoxyCompactList}\small\item\em Bitmap mask to extract the file type from a mode\+\_\+t value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m)~((m) \& \mbox{\hyperlink{stat_8h_ab5bee51e9ee68b83ab11d4b340f7200b}{S\+\_\+\+IFMT}})
+\begin{DoxyCompactList}\small\item\em Extract the file type info from a given mode\+\_\+t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a4966f25d9f03a7a06bc47ac729fd86cf}{S\+\_\+\+IFIFO}}~(0x1000)
+\begin{DoxyCompactList}\small\item\em Named pipe (first in-\/out) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_aef3a1d1ba22c83e30b5c834dd343b2a8}{S\+\_\+\+IFCHR}}~(0x2000)
+\begin{DoxyCompactList}\small\item\em Character stream device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a11fb0652b963a735f3377eb1c9239f2d}{S\+\_\+\+IFDIR}}~(0x4000)
+\begin{DoxyCompactList}\small\item\em Directory. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}}~(0x6000)
+\begin{DoxyCompactList}\small\item\em Storage block device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a1aaa48b192a5dd3b6d7ee91fc98cd17d}{S\+\_\+\+IFREG}}~(0x8000)
+\begin{DoxyCompactList}\small\item\em File. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_afef163ce62372757e84bd9fc88c07aad}{S\+\_\+\+IFLNK}}~(0x\+A000)
+\begin{DoxyCompactList}\small\item\em Link to another file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}}~(0x\+C000)
+\begin{DoxyCompactList}\small\item\em IPC socket. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a777b706bbe9e7920c091aaa2b547b093}{S\+\_\+\+ISFIFO}}(m)~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a4966f25d9f03a7a06bc47ac729fd86cf}{S\+\_\+\+IFIFO}})
+\begin{DoxyCompactList}\small\item\em Test for a pipe or FIFO special file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a767b5d0691f435f8a9b7f5e0fa97a645}{S\+\_\+\+ISCHR}}(m)~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_aef3a1d1ba22c83e30b5c834dd343b2a8}{S\+\_\+\+IFCHR}})
+\begin{DoxyCompactList}\small\item\em Test for a character special file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a70b64ed67c0ab484b4ba09487da34e91}{S\+\_\+\+ISDIR}}(m)~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a11fb0652b963a735f3377eb1c9239f2d}{S\+\_\+\+IFDIR}})
+\begin{DoxyCompactList}\small\item\em Test for a directory. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a722eba7370eb3b0aafb3272182e08520}{S\+\_\+\+ISBLK}}(m)~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}})
+\begin{DoxyCompactList}\small\item\em Test for a block special file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_abf68371159fa46b5cc47d0f3ac9ab723}{S\+\_\+\+ISREG}}(m)~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a1aaa48b192a5dd3b6d7ee91fc98cd17d}{S\+\_\+\+IFREG}})
+\begin{DoxyCompactList}\small\item\em Test for a regular file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a835359614ec43fbd96f53993cde84ef2}{S\+\_\+\+ISLNK}}(m)~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_afef163ce62372757e84bd9fc88c07aad}{S\+\_\+\+IFLNK}})
+\begin{DoxyCompactList}\small\item\em Test for a symbolic link. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a765304585be8c05f7fa72495e6d5881f}{S\+\_\+\+ISSOCK}}(m)~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}})
+\begin{DoxyCompactList}\small\item\em Test for a socket. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a2ec90d83cf9b4cebb992bf7ae14834a9}{S\+\_\+\+TYPEISMQ}}(buf)~0
+\begin{DoxyCompactList}\small\item\em Test for a message queue. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_af8dc35c23764f873fe25a75e1d2af5fd}{S\+\_\+\+TYPEISSEM}}(buf)~0
+\begin{DoxyCompactList}\small\item\em Test for a semaphore. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_aaf2ff74931dd70e55c38e3c253fd0404}{S\+\_\+\+TYPEISSHM}}(buf)~0
+\begin{DoxyCompactList}\small\item\em Test for a shared memory object.\+s. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stat_8h_a4a7b21459dbe56d9a550da3df7d27fd4}{S\+\_\+\+TYPEISTMO}}(buf)~0
+\begin{DoxyCompactList}\small\item\em Test macro for a typed memory object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{stat_8h_a8cc8aedb61feb586f260f56c29984eee}\label{stat_8h_a8cc8aedb61feb586f260f56c29984eee} 
+int {\bfseries chmod} (const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_a5a14fe1dc09ddc908b3c97ecc682564d}\label{stat_8h_a5a14fe1dc09ddc908b3c97ecc682564d} 
+int {\bfseries fchmod} (int, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_a736660ab05f2319dc3c6db620155cdaa}\label{stat_8h_a736660ab05f2319dc3c6db620155cdaa} 
+int {\bfseries fchmodat} (int, const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}}, int)
+\item 
+\Hypertarget{stat_8h_a561d0e5568438e2834b502fa8c44724e}\label{stat_8h_a561d0e5568438e2834b502fa8c44724e} 
+int {\bfseries fstat} (int, struct \mbox{\hyperlink{structstat}{stat}})
+\item 
+\Hypertarget{stat_8h_a647638ffe0f99e6ed32731c5992569e8}\label{stat_8h_a647638ffe0f99e6ed32731c5992569e8} 
+int {\bfseries fstatat} (int, const char \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structstat}{stat}} \texorpdfstring{$\ast$}{*}restrict, int)
+\item 
+\Hypertarget{stat_8h_a9de5a151caa2b2ebd4102a56efdb80df}\label{stat_8h_a9de5a151caa2b2ebd4102a56efdb80df} 
+int {\bfseries lstat} (const char \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structstat}{stat}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{stat_8h_ae2b2bb2d3e866aa4424ea26ed11916ee}\label{stat_8h_ae2b2bb2d3e866aa4424ea26ed11916ee} 
+int {\bfseries stat} (const char \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structstat}{stat}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{stat_8h_a68cbe4de37e6e9d2d329247bf8e14cf8}\label{stat_8h_a68cbe4de37e6e9d2d329247bf8e14cf8} 
+int {\bfseries futimens} (int, const struct \mbox{\hyperlink{structtimespec}{timespec}}\mbox{[}2\mbox{]})
+\item 
+\Hypertarget{stat_8h_a3e7f7f318119c2c21c0a3e1496cd008c}\label{stat_8h_a3e7f7f318119c2c21c0a3e1496cd008c} 
+int {\bfseries utimensat} (int, const char \texorpdfstring{$\ast$}{*}, const struct \mbox{\hyperlink{structtimespec}{timespec}}\mbox{[}2\mbox{]}, int)
+\item 
+\Hypertarget{stat_8h_a0e4d98e96ec3fe1c329f5b8a445accfe}\label{stat_8h_a0e4d98e96ec3fe1c329f5b8a445accfe} 
+int {\bfseries mkdir} (const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_a83bf309a338a711b11cd2de06653238e}\label{stat_8h_a83bf309a338a711b11cd2de06653238e} 
+int {\bfseries mkdirat} (int, const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_aa9f3d08ed72181122013c7523861e469}\label{stat_8h_aa9f3d08ed72181122013c7523861e469} 
+int {\bfseries mkfifo} (const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_a0c42884860f235c6da32a33af2d8f371}\label{stat_8h_a0c42884860f235c6da32a33af2d8f371} 
+int {\bfseries mkfifoat} (int, const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_abf24acadd4646735da87716febc97962}\label{stat_8h_abf24acadd4646735da87716febc97962} 
+int {\bfseries mknod} (const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}}, \mbox{\hyperlink{types_8h_a25ab4acd63db23ce8ebc580b48d6c32f}{dev\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_a90a126b4d961f4f62388c15b767bfdee}\label{stat_8h_a90a126b4d961f4f62388c15b767bfdee} 
+int {\bfseries mknodat} (int, const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}}, \mbox{\hyperlink{types_8h_a25ab4acd63db23ce8ebc580b48d6c32f}{dev\+\_\+t}})
+\item 
+\Hypertarget{stat_8h_a4c668877ae0bc010d420c2cb9f72ee94}\label{stat_8h_a4c668877ae0bc010d420c2cb9f72ee94} 
+\mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}} {\bfseries umask} (\mbox{\hyperlink{types_8h_af8f4385bb42836d1e3ad4fea9d71d1b9}{mode\+\_\+t}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the structure of the data returned by the fstat(), lstat(), and \doxylink{structstat}{stat()} functions. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_stat.h.html}{\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/sys\+\_\+stat.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+15 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]S\+\_\+\+IFIFO etc are linux specific, move to platform (same for S\+\_\+\+TYPEISMQ) \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}\label{stat_8h_a2c5301de929ee95d2e7039e97c9213dd} 
+\index{stat.h@{stat.h}!\_S\_IFMTE@{\_S\_IFMTE}}
+\index{\_S\_IFMTE@{\_S\_IFMTE}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{\_S\_IFMTE}{\_S\_IFMTE}}
+{\footnotesize\ttfamily \#define \+\_\+\+S\+\_\+\+IFMTE(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~((m) \& \mbox{\hyperlink{stat_8h_ab5bee51e9ee68b83ab11d4b340f7200b}{S\+\_\+\+IFMT}})}
+
+
+
+Extract the file type info from a given mode\+\_\+t. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00049}{49}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a5c5b74a1cb1a1ae83572500b94e1938f}\label{stat_8h_a5c5b74a1cb1a1ae83572500b94e1938f} 
+\index{stat.h@{stat.h}!S\_IFBLK@{S\_IFBLK}}
+\index{S\_IFBLK@{S\_IFBLK}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFBLK}{S\_IFBLK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFBLK~(0x6000)}
+
+
+
+Storage block device. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00054}{54}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_aef3a1d1ba22c83e30b5c834dd343b2a8}\label{stat_8h_aef3a1d1ba22c83e30b5c834dd343b2a8} 
+\index{stat.h@{stat.h}!S\_IFCHR@{S\_IFCHR}}
+\index{S\_IFCHR@{S\_IFCHR}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFCHR}{S\_IFCHR}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFCHR~(0x2000)}
+
+
+
+Character stream device. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00052}{52}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a11fb0652b963a735f3377eb1c9239f2d}\label{stat_8h_a11fb0652b963a735f3377eb1c9239f2d} 
+\index{stat.h@{stat.h}!S\_IFDIR@{S\_IFDIR}}
+\index{S\_IFDIR@{S\_IFDIR}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFDIR}{S\_IFDIR}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFDIR~(0x4000)}
+
+
+
+Directory. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00053}{53}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a4966f25d9f03a7a06bc47ac729fd86cf}\label{stat_8h_a4966f25d9f03a7a06bc47ac729fd86cf} 
+\index{stat.h@{stat.h}!S\_IFIFO@{S\_IFIFO}}
+\index{S\_IFIFO@{S\_IFIFO}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFIFO}{S\_IFIFO}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFIFO~(0x1000)}
+
+
+
+Named pipe (first in-\/out) 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00051}{51}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_afef163ce62372757e84bd9fc88c07aad}\label{stat_8h_afef163ce62372757e84bd9fc88c07aad} 
+\index{stat.h@{stat.h}!S\_IFLNK@{S\_IFLNK}}
+\index{S\_IFLNK@{S\_IFLNK}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFLNK}{S\_IFLNK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFLNK~(0x\+A000)}
+
+
+
+Link to another file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00056}{56}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_ab5bee51e9ee68b83ab11d4b340f7200b}\label{stat_8h_ab5bee51e9ee68b83ab11d4b340f7200b} 
+\index{stat.h@{stat.h}!S\_IFMT@{S\_IFMT}}
+\index{S\_IFMT@{S\_IFMT}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFMT}{S\_IFMT}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFMT~(0x\+F000)}
+
+
+
+Bitmap mask to extract the file type from a mode\+\_\+t value. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00048}{48}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a1aaa48b192a5dd3b6d7ee91fc98cd17d}\label{stat_8h_a1aaa48b192a5dd3b6d7ee91fc98cd17d} 
+\index{stat.h@{stat.h}!S\_IFREG@{S\_IFREG}}
+\index{S\_IFREG@{S\_IFREG}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFREG}{S\_IFREG}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFREG~(0x8000)}
+
+
+
+File. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00055}{55}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a28e80cd43106882904be148b2a397d42}\label{stat_8h_a28e80cd43106882904be148b2a397d42} 
+\index{stat.h@{stat.h}!S\_IFSOCK@{S\_IFSOCK}}
+\index{S\_IFSOCK@{S\_IFSOCK}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFSOCK}{S\_IFSOCK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFSOCK~(0x\+C000)}
+
+
+
+IPC socket. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00057}{57}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a722eba7370eb3b0aafb3272182e08520}\label{stat_8h_a722eba7370eb3b0aafb3272182e08520} 
+\index{stat.h@{stat.h}!S\_ISBLK@{S\_ISBLK}}
+\index{S\_ISBLK@{S\_ISBLK}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISBLK}{S\_ISBLK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISBLK(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}})}
+
+
+
+Test for a block special file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00062}{62}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a767b5d0691f435f8a9b7f5e0fa97a645}\label{stat_8h_a767b5d0691f435f8a9b7f5e0fa97a645} 
+\index{stat.h@{stat.h}!S\_ISCHR@{S\_ISCHR}}
+\index{S\_ISCHR@{S\_ISCHR}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISCHR}{S\_ISCHR}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISCHR(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_aef3a1d1ba22c83e30b5c834dd343b2a8}{S\+\_\+\+IFCHR}})}
+
+
+
+Test for a character special file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00060}{60}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a70b64ed67c0ab484b4ba09487da34e91}\label{stat_8h_a70b64ed67c0ab484b4ba09487da34e91} 
+\index{stat.h@{stat.h}!S\_ISDIR@{S\_ISDIR}}
+\index{S\_ISDIR@{S\_ISDIR}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISDIR}{S\_ISDIR}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISDIR(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a11fb0652b963a735f3377eb1c9239f2d}{S\+\_\+\+IFDIR}})}
+
+
+
+Test for a directory. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00061}{61}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a777b706bbe9e7920c091aaa2b547b093}\label{stat_8h_a777b706bbe9e7920c091aaa2b547b093} 
+\index{stat.h@{stat.h}!S\_ISFIFO@{S\_ISFIFO}}
+\index{S\_ISFIFO@{S\_ISFIFO}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISFIFO}{S\_ISFIFO}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISFIFO(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a4966f25d9f03a7a06bc47ac729fd86cf}{S\+\_\+\+IFIFO}})}
+
+
+
+Test for a pipe or FIFO special file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00059}{59}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a835359614ec43fbd96f53993cde84ef2}\label{stat_8h_a835359614ec43fbd96f53993cde84ef2} 
+\index{stat.h@{stat.h}!S\_ISLNK@{S\_ISLNK}}
+\index{S\_ISLNK@{S\_ISLNK}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISLNK}{S\_ISLNK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISLNK(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_afef163ce62372757e84bd9fc88c07aad}{S\+\_\+\+IFLNK}})}
+
+
+
+Test for a symbolic link. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00064}{64}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_abf68371159fa46b5cc47d0f3ac9ab723}\label{stat_8h_abf68371159fa46b5cc47d0f3ac9ab723} 
+\index{stat.h@{stat.h}!S\_ISREG@{S\_ISREG}}
+\index{S\_ISREG@{S\_ISREG}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISREG}{S\_ISREG}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISREG(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a1aaa48b192a5dd3b6d7ee91fc98cd17d}{S\+\_\+\+IFREG}})}
+
+
+
+Test for a regular file. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00063}{63}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a765304585be8c05f7fa72495e6d5881f}\label{stat_8h_a765304585be8c05f7fa72495e6d5881f} 
+\index{stat.h@{stat.h}!S\_ISSOCK@{S\_ISSOCK}}
+\index{S\_ISSOCK@{S\_ISSOCK}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISSOCK}{S\_ISSOCK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISSOCK(\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})~(\mbox{\hyperlink{stat_8h_a2c5301de929ee95d2e7039e97c9213dd}{\+\_\+\+S\+\_\+\+IFMTE}}(m) == \mbox{\hyperlink{stat_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}})}
+
+
+
+Test for a socket. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00065}{65}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a2ec90d83cf9b4cebb992bf7ae14834a9}\label{stat_8h_a2ec90d83cf9b4cebb992bf7ae14834a9} 
+\index{stat.h@{stat.h}!S\_TYPEISMQ@{S\_TYPEISMQ}}
+\index{S\_TYPEISMQ@{S\_TYPEISMQ}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_TYPEISMQ}{S\_TYPEISMQ}}
+{\footnotesize\ttfamily \#define S\+\_\+\+TYPEISMQ(\begin{DoxyParamCaption}\item[{}]{buf }\end{DoxyParamCaption})~0}
+
+
+
+Test for a message queue. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00067}{67}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_af8dc35c23764f873fe25a75e1d2af5fd}\label{stat_8h_af8dc35c23764f873fe25a75e1d2af5fd} 
+\index{stat.h@{stat.h}!S\_TYPEISSEM@{S\_TYPEISSEM}}
+\index{S\_TYPEISSEM@{S\_TYPEISSEM}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_TYPEISSEM}{S\_TYPEISSEM}}
+{\footnotesize\ttfamily \#define S\+\_\+\+TYPEISSEM(\begin{DoxyParamCaption}\item[{}]{buf }\end{DoxyParamCaption})~0}
+
+
+
+Test for a semaphore. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00068}{68}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_aaf2ff74931dd70e55c38e3c253fd0404}\label{stat_8h_aaf2ff74931dd70e55c38e3c253fd0404} 
+\index{stat.h@{stat.h}!S\_TYPEISSHM@{S\_TYPEISSHM}}
+\index{S\_TYPEISSHM@{S\_TYPEISSHM}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_TYPEISSHM}{S\_TYPEISSHM}}
+{\footnotesize\ttfamily \#define S\+\_\+\+TYPEISSHM(\begin{DoxyParamCaption}\item[{}]{buf }\end{DoxyParamCaption})~0}
+
+
+
+Test for a shared memory object.\+s. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00069}{69}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+
+\Hypertarget{stat_8h_a4a7b21459dbe56d9a550da3df7d27fd4}\label{stat_8h_a4a7b21459dbe56d9a550da3df7d27fd4} 
+\index{stat.h@{stat.h}!S\_TYPEISTMO@{S\_TYPEISTMO}}
+\index{S\_TYPEISTMO@{S\_TYPEISTMO}!stat.h@{stat.h}}
+\doxysubsubsection{\texorpdfstring{S\_TYPEISTMO}{S\_TYPEISTMO}}
+{\footnotesize\ttfamily \#define S\+\_\+\+TYPEISTMO(\begin{DoxyParamCaption}\item[{}]{buf }\end{DoxyParamCaption})~0}
+
+
+
+Test macro for a typed memory object. 
+
+
+
+Definition at line \mbox{\hyperlink{stat_8h_source_l00070}{70}} of file \mbox{\hyperlink{stat_8h_source}{stat.\+h}}.
+

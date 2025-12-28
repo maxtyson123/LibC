@@ -1,0 +1,392 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/stdlib.h File Reference}
+\hypertarget{stdlib_8h}{}\label{stdlib_8h}\index{/home/runner/work/LibC/LibC/include/stdlib.h@{/home/runner/work/LibC/LibC/include/stdlib.h}}
+
+
+Defines fundamental functions that arent related to I/O, strings or maths.  
+
+
+{\ttfamily \#include $<$libc\+\_\+common.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__div}{\+\_\+div}}
+\begin{DoxyCompactList}\small\item\em Internal representation for the result of a div() call. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__ldiv}{\+\_\+ldiv}}
+\begin{DoxyCompactList}\small\item\em Internal representation for the result of a ldiv() call. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__lldiv}{\+\_\+lldiv}}
+\begin{DoxyCompactList}\small\item\em Internal representation for the result of a lldiv() call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stdlib_8h_a73efe787c131b385070f25d18b7c9aa4}{EXIT\+\_\+\+FAILURE}}~1
+\begin{DoxyCompactList}\small\item\em Unsuccessful termination for exit() \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stdlib_8h_a687984f47d8cce148d1b914d2b79612a}{EXIT\+\_\+\+SUCCESS}}~0
+\begin{DoxyCompactList}\small\item\em Successful termination for exit() \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stdlib_8h_a690f251553b39fd4f31894826141b61a}{RAND\+\_\+\+MAX}}~0x\+FFFFFFFF
+\begin{DoxyCompactList}\small\item\em Maximum value returned by rand() \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{stdlib_8h_a5455b7a60d7e3087ec55dfe37a088bd1}{MB\+\_\+\+CUR\+\_\+\+MAX}}~(\+\_\+\+\_\+mb\+\_\+cur\+\_\+max())
+\begin{DoxyCompactList}\small\item\em Maximum number of bytes in a character for the current locale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{stdlib_8h_a5500c64d40d227603237f92ff22da88c}\label{stdlib_8h_a5500c64d40d227603237f92ff22da88c} 
+typedef struct \mbox{\hyperlink{struct__div}{\+\_\+div}} {\bfseries div\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Public alais for \doxylink{struct__div}{\+\_\+div}. \end{DoxyCompactList}\item 
+\Hypertarget{stdlib_8h_ad44f01bd6b0f8584760645d18c9fbb9a}\label{stdlib_8h_ad44f01bd6b0f8584760645d18c9fbb9a} 
+typedef struct \mbox{\hyperlink{struct__ldiv}{\+\_\+ldiv}} {\bfseries ldiv\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Public alais for \doxylink{struct__ldiv}{\+\_\+ldiv}. \end{DoxyCompactList}\item 
+\Hypertarget{stdlib_8h_ac3e4182ecf00f5533bd8eef4fc09f3e9}\label{stdlib_8h_ac3e4182ecf00f5533bd8eef4fc09f3e9} 
+typedef struct \mbox{\hyperlink{struct__lldiv}{\+\_\+lldiv}} {\bfseries lldiv\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Public alais for \doxylink{struct__lldiv}{\+\_\+lldiv}. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stdlib_8h_a075b063ab79e6c5aeef211291c25b5cd}{exit\+\_\+func\+\_\+t}}) (void)
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stdlib_8h_a83ca72588dc1fe8c429a716b6a3548ff}{bs\+\_\+func\+\_\+t}}) (const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stdlib_8h_a5fbdcb5b98a0470198b548f7b9e53c22}{qsort\+\_\+func\+\_\+t}}) (const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})
+\item 
+typedef int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{stdlib_8h_adfd4f8398979b04e27e2b895d728e066}{qsort\+\_\+r\+\_\+func\+\_\+t}}) (const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{stdlib_8h_aa2cf790d0171f273294af26dc3be5d73}\label{stdlib_8h_aa2cf790d0171f273294af26dc3be5d73} 
+size\+\_\+t {\bfseries \+\_\+\+\_\+mb\+\_\+cur\+\_\+max} (void)
+\item 
+\Hypertarget{stdlib_8h_aa80aca4e07e1952e97c87aa06903c70c}\label{stdlib_8h_aa80aca4e07e1952e97c87aa06903c70c} 
+\+\_\+\+Noreturn void {\bfseries \+\_\+\+Exit} (int)
+\item 
+\Hypertarget{stdlib_8h_a7d78319026a43c0a5f942436ad3f09a1}\label{stdlib_8h_a7d78319026a43c0a5f942436ad3f09a1} 
+\+\_\+\+Noreturn void {\bfseries abort} (void)
+\item 
+\Hypertarget{stdlib_8h_a86fb884b93127b8fd485e4b321790a5c}\label{stdlib_8h_a86fb884b93127b8fd485e4b321790a5c} 
+\+\_\+\+Noreturn void {\bfseries exit} (int)
+\item 
+\Hypertarget{stdlib_8h_ad7b29045cf30a6a31410f773b552c42f}\label{stdlib_8h_ad7b29045cf30a6a31410f773b552c42f} 
+\+\_\+\+Noreturn void {\bfseries quick\+\_\+exit} (int)
+\item 
+\Hypertarget{stdlib_8h_a025b7070363d64e26bfd84ffae90940e}\label{stdlib_8h_a025b7070363d64e26bfd84ffae90940e} 
+int {\bfseries atexit} (exit\+\_\+func\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a3061f97c64006eca21bb569a65d2e87a}\label{stdlib_8h_a3061f97c64006eca21bb569a65d2e87a} 
+int {\bfseries at\+\_\+quick\+\_\+exit} (exit\+\_\+func\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a52abbdf8792edbd1e34d4ca8d061f840}\label{stdlib_8h_a52abbdf8792edbd1e34d4ca8d061f840} 
+void \texorpdfstring{$\ast$}{*} {\bfseries malloc} (size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a28b9a4c4420f811709173caf6d904ea0}\label{stdlib_8h_a28b9a4c4420f811709173caf6d904ea0} 
+void \texorpdfstring{$\ast$}{*} {\bfseries calloc} (size\+\_\+t, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a8e55c911b4eaf7b016df8ee752d72804}\label{stdlib_8h_a8e55c911b4eaf7b016df8ee752d72804} 
+void \texorpdfstring{$\ast$}{*} {\bfseries realloc} (void \texorpdfstring{$\ast$}{*}, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a4dafdac2fb220ced791bde59398da11b}\label{stdlib_8h_a4dafdac2fb220ced791bde59398da11b} 
+void \texorpdfstring{$\ast$}{*} {\bfseries reallocarray} (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_af07d89f5ceaea0c7c8252cc41fd75f37}\label{stdlib_8h_af07d89f5ceaea0c7c8252cc41fd75f37} 
+void {\bfseries free} (void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a156a1e11400cb25e0690e3dddf6c19d5}\label{stdlib_8h_a156a1e11400cb25e0690e3dddf6c19d5} 
+void \texorpdfstring{$\ast$}{*} {\bfseries aligned\+\_\+alloc} (size\+\_\+t, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a16835a2f0889fd0fece3f7a779ae53a6}\label{stdlib_8h_a16835a2f0889fd0fece3f7a779ae53a6} 
+int {\bfseries posix\+\_\+memalign} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_af7a35798497c81c66a20d35ad74c19e6}\label{stdlib_8h_af7a35798497c81c66a20d35ad74c19e6} 
+char \texorpdfstring{$\ast$}{*} {\bfseries getenv} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a0e1fb40ce96db1a06ef06d69f06e8a59}\label{stdlib_8h_a0e1fb40ce96db1a06ef06d69f06e8a59} 
+char \texorpdfstring{$\ast$}{*} {\bfseries secure\+\_\+getenv} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a4f163149d0e7590ff98d7c8bbd17583d}\label{stdlib_8h_a4f163149d0e7590ff98d7c8bbd17583d} 
+int {\bfseries setenv} (const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{stdlib_8h_a4f1e5944541aa8d1b18932a54158eb70}\label{stdlib_8h_a4f1e5944541aa8d1b18932a54158eb70} 
+int {\bfseries unsetenv} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a5dd0c329b734eeefd1909d15385f8b95}\label{stdlib_8h_a5dd0c329b734eeefd1909d15385f8b95} 
+int {\bfseries putenv} (char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a3c03a473fd58b46d02952cbb6f4a83af}\label{stdlib_8h_a3c03a473fd58b46d02952cbb6f4a83af} 
+double {\bfseries atof} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a4e157d18591ba54c92e4da99a3d1ccae}\label{stdlib_8h_a4e157d18591ba54c92e4da99a3d1ccae} 
+int {\bfseries atoi} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_abcc2e53ab0b26e5bbf55d597af030327}\label{stdlib_8h_abcc2e53ab0b26e5bbf55d597af030327} 
+long {\bfseries atol} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a4a184533926b5b5e4e595f52919df116}\label{stdlib_8h_a4a184533926b5b5e4e595f52919df116} 
+long long {\bfseries atoll} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a9bc81db43ac86489fd4f63158d980824}\label{stdlib_8h_a9bc81db43ac86489fd4f63158d980824} 
+long {\bfseries strtol} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict, int)
+\item 
+\Hypertarget{stdlib_8h_ae938461579a7c8e38d1c02319b8e9e3e}\label{stdlib_8h_ae938461579a7c8e38d1c02319b8e9e3e} 
+unsigned long {\bfseries strtoul} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict, int)
+\item 
+\Hypertarget{stdlib_8h_ab244d29d4085d656a6b53979a0011f49}\label{stdlib_8h_ab244d29d4085d656a6b53979a0011f49} 
+long long {\bfseries strtoll} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict, int)
+\item 
+\Hypertarget{stdlib_8h_a0ff125753c962cfc9f053ba56eaf7e73}\label{stdlib_8h_a0ff125753c962cfc9f053ba56eaf7e73} 
+unsigned long long {\bfseries strtoull} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict, int)
+\item 
+\Hypertarget{stdlib_8h_ac102953e1ec969337c2d582187ef07e7}\label{stdlib_8h_ac102953e1ec969337c2d582187ef07e7} 
+double {\bfseries strtod} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{stdlib_8h_a3e1083408e0b6388f704d62dc069c610}\label{stdlib_8h_a3e1083408e0b6388f704d62dc069c610} 
+float {\bfseries strtof} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{stdlib_8h_a339e1394ba4c3667b97e99e74f12e500}\label{stdlib_8h_a339e1394ba4c3667b97e99e74f12e500} 
+long double {\bfseries strtold} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{stdlib_8h_a2503bc813e76c9ff8b3523db10bdc06e}\label{stdlib_8h_a2503bc813e76c9ff8b3523db10bdc06e} 
+int {\bfseries abs} (int)
+\item 
+\Hypertarget{stdlib_8h_acef82b884418ad50ae51cadb8eb35069}\label{stdlib_8h_acef82b884418ad50ae51cadb8eb35069} 
+long {\bfseries labs} (long)
+\item 
+\Hypertarget{stdlib_8h_aed06afcfed16ae2e80a211efddbb7081}\label{stdlib_8h_aed06afcfed16ae2e80a211efddbb7081} 
+long long {\bfseries llabs} (long long)
+\item 
+\Hypertarget{stdlib_8h_ad17e77a41f50034681a0c419c664e721}\label{stdlib_8h_ad17e77a41f50034681a0c419c664e721} 
+\mbox{\hyperlink{stdlib_8h_a5500c64d40d227603237f92ff22da88c}{div\+\_\+t}} {\bfseries div} (int, int)
+\item 
+\Hypertarget{stdlib_8h_a9961db60c90864f8b8497073dd749d83}\label{stdlib_8h_a9961db60c90864f8b8497073dd749d83} 
+\mbox{\hyperlink{stdlib_8h_ad44f01bd6b0f8584760645d18c9fbb9a}{ldiv\+\_\+t}} {\bfseries ldiv} (long, long)
+\item 
+\Hypertarget{stdlib_8h_a1b9b0a37de5270109f0393520d75b30d}\label{stdlib_8h_a1b9b0a37de5270109f0393520d75b30d} 
+\mbox{\hyperlink{stdlib_8h_ac3e4182ecf00f5533bd8eef4fc09f3e9}{lldiv\+\_\+t}} {\bfseries lldiv} (long long, long long)
+\item 
+\Hypertarget{stdlib_8h_a61864ef32b30f2ef68ad13b71caaf338}\label{stdlib_8h_a61864ef32b30f2ef68ad13b71caaf338} 
+void \texorpdfstring{$\ast$}{*} {\bfseries bsearch} (const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, bs\+\_\+func\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a2a18f1e497a70b45dfd002ef1896e24a}\label{stdlib_8h_a2a18f1e497a70b45dfd002ef1896e24a} 
+void {\bfseries qsort} (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, qsort\+\_\+func\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_ad65603df7603fb549b44791ca084a47d}\label{stdlib_8h_ad65603df7603fb549b44791ca084a47d} 
+void {\bfseries qsort\+\_\+r} (void \texorpdfstring{$\ast$}{*}, size\+\_\+t, size\+\_\+t, qsort\+\_\+r\+\_\+func\+\_\+t, void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_ae23144bcbb8e3742b00eb687c36654d1}\label{stdlib_8h_ae23144bcbb8e3742b00eb687c36654d1} 
+int {\bfseries rand} (void)
+\item 
+\Hypertarget{stdlib_8h_aa7cb61cef6d19542fccc5cabf47f96eb}\label{stdlib_8h_aa7cb61cef6d19542fccc5cabf47f96eb} 
+void {\bfseries srand} (unsigned)
+\item 
+\Hypertarget{stdlib_8h_a114aeb1751119382aaf3340355b22cfd}\label{stdlib_8h_a114aeb1751119382aaf3340355b22cfd} 
+long {\bfseries random} (void)
+\item 
+\Hypertarget{stdlib_8h_a1b5213526e729a67240badfd8408a447}\label{stdlib_8h_a1b5213526e729a67240badfd8408a447} 
+void {\bfseries srandom} (unsigned)
+\item 
+\Hypertarget{stdlib_8h_af9329f9acef07ca14ea2256191c3ce74}\label{stdlib_8h_af9329f9acef07ca14ea2256191c3ce74} 
+double {\bfseries drand48} (void)
+\item 
+\Hypertarget{stdlib_8h_af728ead9279a6966bb00e16bb9844971}\label{stdlib_8h_af728ead9279a6966bb00e16bb9844971} 
+long {\bfseries lrand48} (void)
+\item 
+\Hypertarget{stdlib_8h_a9c450a7a3d4437e3d5f8def180f68103}\label{stdlib_8h_a9c450a7a3d4437e3d5f8def180f68103} 
+long {\bfseries mrand48} (void)
+\item 
+\Hypertarget{stdlib_8h_a60bc85574844ec3b1cc6b8ef9cdff5a0}\label{stdlib_8h_a60bc85574844ec3b1cc6b8ef9cdff5a0} 
+double {\bfseries erand48} (unsigned short\mbox{[}3\mbox{]})
+\item 
+\Hypertarget{stdlib_8h_afa05fdd1def4b6d226ff64c7976f529f}\label{stdlib_8h_afa05fdd1def4b6d226ff64c7976f529f} 
+long {\bfseries jrand48} (unsigned short\mbox{[}3\mbox{]})
+\item 
+\Hypertarget{stdlib_8h_aa5748234e4efec642d65dce6310596d5}\label{stdlib_8h_aa5748234e4efec642d65dce6310596d5} 
+long {\bfseries nrand48} (unsigned short\mbox{[}3\mbox{]})
+\item 
+\Hypertarget{stdlib_8h_a00f00795b1045ba8a8eba4cb8ac25366}\label{stdlib_8h_a00f00795b1045ba8a8eba4cb8ac25366} 
+void {\bfseries srand48} (long)
+\item 
+\Hypertarget{stdlib_8h_a4c6802e14e2dd1f233b06f34a8c60a9f}\label{stdlib_8h_a4c6802e14e2dd1f233b06f34a8c60a9f} 
+unsigned short \texorpdfstring{$\ast$}{*} {\bfseries seed48} (unsigned short\mbox{[}3\mbox{]})
+\item 
+\Hypertarget{stdlib_8h_aca17a192a51dd5ae17845615a45f3218}\label{stdlib_8h_aca17a192a51dd5ae17845615a45f3218} 
+void {\bfseries lcong48} (unsigned short\mbox{[}7\mbox{]})
+\item 
+\Hypertarget{stdlib_8h_ae650100e5bb658ce0ed1e25349f63123}\label{stdlib_8h_ae650100e5bb658ce0ed1e25349f63123} 
+int {\bfseries mblen} (const char \texorpdfstring{$\ast$}{*}, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a518b2677fda26df5c9c9eb31b2edee67}\label{stdlib_8h_a518b2677fda26df5c9c9eb31b2edee67} 
+int {\bfseries mbtowc} (wchar\+\_\+t \texorpdfstring{$\ast$}{*}restrict, const char \texorpdfstring{$\ast$}{*}restrict, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a918c5f7675fba519c224b1e4c5e20a6a}\label{stdlib_8h_a918c5f7675fba519c224b1e4c5e20a6a} 
+size\+\_\+t {\bfseries mbstowcs} (wchar\+\_\+t \texorpdfstring{$\ast$}{*}restrict, const char \texorpdfstring{$\ast$}{*}restrict, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a0eb3389011d8b4ed673f8d1676418f12}\label{stdlib_8h_a0eb3389011d8b4ed673f8d1676418f12} 
+int {\bfseries wctomb} (char \texorpdfstring{$\ast$}{*}, wchar\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a4ba2dbe4531f620c4a913e15d97a6d78}\label{stdlib_8h_a4ba2dbe4531f620c4a913e15d97a6d78} 
+size\+\_\+t {\bfseries wcstombs} (char \texorpdfstring{$\ast$}{*}restrict, const wchar\+\_\+t \texorpdfstring{$\ast$}{*}restrict, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a962b4fbaee662922ba7cd241ae00b0b0}\label{stdlib_8h_a962b4fbaee662922ba7cd241ae00b0b0} 
+char \texorpdfstring{$\ast$}{*} {\bfseries mkdtemp} (char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a567fc2c0116424fbecf9238ecf7c5fe4}\label{stdlib_8h_a567fc2c0116424fbecf9238ecf7c5fe4} 
+int {\bfseries mkstemp} (char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_abef283fd58f632584e95c82e00b89a2a}\label{stdlib_8h_abef283fd58f632584e95c82e00b89a2a} 
+int {\bfseries mkostemp} (char \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{stdlib_8h_ae09b28c5490741231182c52028a23165}\label{stdlib_8h_ae09b28c5490741231182c52028a23165} 
+int {\bfseries grantpt} (int)
+\item 
+\Hypertarget{stdlib_8h_ad0def01a79709ac43eb62ad48f4cf409}\label{stdlib_8h_ad0def01a79709ac43eb62ad48f4cf409} 
+int {\bfseries posix\+\_\+openpt} (int)
+\item 
+\Hypertarget{stdlib_8h_a47e0e6d6e941f2fb6508395ae84bc2bc}\label{stdlib_8h_a47e0e6d6e941f2fb6508395ae84bc2bc} 
+int {\bfseries unlockpt} (int)
+\item 
+\Hypertarget{stdlib_8h_a243cb7c3eb686518395750c67ae96355}\label{stdlib_8h_a243cb7c3eb686518395750c67ae96355} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ptsname} (int)
+\item 
+\Hypertarget{stdlib_8h_abdeadd9bf459032401efede953684f32}\label{stdlib_8h_abdeadd9bf459032401efede953684f32} 
+int {\bfseries ptsname\+\_\+r} (int, char \texorpdfstring{$\ast$}{*}, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_aaf3b182325740d1c6e08f608575fe835}\label{stdlib_8h_aaf3b182325740d1c6e08f608575fe835} 
+char \texorpdfstring{$\ast$}{*} {\bfseries initstate} (unsigned, char \texorpdfstring{$\ast$}{*}, size\+\_\+t)
+\item 
+\Hypertarget{stdlib_8h_a1a5abfe98a6800bbd0a77ba07bbc72b5}\label{stdlib_8h_a1a5abfe98a6800bbd0a77ba07bbc72b5} 
+char \texorpdfstring{$\ast$}{*} {\bfseries setstate} (char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a4f3f099a09a8b63257b3ef4e9954e848}\label{stdlib_8h_a4f3f099a09a8b63257b3ef4e9954e848} 
+long {\bfseries a64l} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a67556d3dbb39e00d1108216b8d3a2c1a}\label{stdlib_8h_a67556d3dbb39e00d1108216b8d3a2c1a} 
+char \texorpdfstring{$\ast$}{*} {\bfseries l64a} (long)
+\item 
+\Hypertarget{stdlib_8h_acc83831a3c113aad520e966b931821b4}\label{stdlib_8h_acc83831a3c113aad520e966b931821b4} 
+int {\bfseries system} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a19b689ec02a131d1240877af05fd65d5}\label{stdlib_8h_a19b689ec02a131d1240877af05fd65d5} 
+int {\bfseries getsubopt} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{stdlib_8h_ae25be82cf3e215cbb7493afee84d8e7f}\label{stdlib_8h_ae25be82cf3e215cbb7493afee84d8e7f} 
+void {\bfseries setkey} (const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{stdlib_8h_a77cde08b57420159315619f1e035c6c0}\label{stdlib_8h_a77cde08b57420159315619f1e035c6c0} 
+char \texorpdfstring{$\ast$}{*} {\bfseries realpath} (const char \texorpdfstring{$\ast$}{*}restrict, char \texorpdfstring{$\ast$}{*}restrict)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines fundamental functions that arent related to I/O, strings or maths. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdlib.h.html}{\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/stdlib.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+16 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{stdlib_8h_a73efe787c131b385070f25d18b7c9aa4}\label{stdlib_8h_a73efe787c131b385070f25d18b7c9aa4} 
+\index{stdlib.h@{stdlib.h}!EXIT\_FAILURE@{EXIT\_FAILURE}}
+\index{EXIT\_FAILURE@{EXIT\_FAILURE}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{EXIT\_FAILURE}{EXIT\_FAILURE}}
+{\footnotesize\ttfamily \#define EXIT\+\_\+\+FAILURE~1}
+
+
+
+Unsuccessful termination for exit() 
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00022}{22}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+\Hypertarget{stdlib_8h_a687984f47d8cce148d1b914d2b79612a}\label{stdlib_8h_a687984f47d8cce148d1b914d2b79612a} 
+\index{stdlib.h@{stdlib.h}!EXIT\_SUCCESS@{EXIT\_SUCCESS}}
+\index{EXIT\_SUCCESS@{EXIT\_SUCCESS}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{EXIT\_SUCCESS}{EXIT\_SUCCESS}}
+{\footnotesize\ttfamily \#define EXIT\+\_\+\+SUCCESS~0}
+
+
+
+Successful termination for exit() 
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00023}{23}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+\Hypertarget{stdlib_8h_a5455b7a60d7e3087ec55dfe37a088bd1}\label{stdlib_8h_a5455b7a60d7e3087ec55dfe37a088bd1} 
+\index{stdlib.h@{stdlib.h}!MB\_CUR\_MAX@{MB\_CUR\_MAX}}
+\index{MB\_CUR\_MAX@{MB\_CUR\_MAX}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{MB\_CUR\_MAX}{MB\_CUR\_MAX}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+CUR\+\_\+\+MAX~(\+\_\+\+\_\+mb\+\_\+cur\+\_\+max())}
+
+
+
+Maximum number of bytes in a character for the current locale. 
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00026}{26}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+\Hypertarget{stdlib_8h_a690f251553b39fd4f31894826141b61a}\label{stdlib_8h_a690f251553b39fd4f31894826141b61a} 
+\index{stdlib.h@{stdlib.h}!RAND\_MAX@{RAND\_MAX}}
+\index{RAND\_MAX@{RAND\_MAX}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{RAND\_MAX}{RAND\_MAX}}
+{\footnotesize\ttfamily \#define RAND\+\_\+\+MAX~0x\+FFFFFFFF}
+
+
+
+Maximum value returned by rand() 
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00025}{25}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{stdlib_8h_a83ca72588dc1fe8c429a716b6a3548ff}\label{stdlib_8h_a83ca72588dc1fe8c429a716b6a3548ff} 
+\index{stdlib.h@{stdlib.h}!bs\_func\_t@{bs\_func\_t}}
+\index{bs\_func\_t@{bs\_func\_t}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{bs\_func\_t}{bs\_func\_t}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} bs\+\_\+func\+\_\+t) (const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})}
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00070}{70}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+\Hypertarget{stdlib_8h_a075b063ab79e6c5aeef211291c25b5cd}\label{stdlib_8h_a075b063ab79e6c5aeef211291c25b5cd} 
+\index{stdlib.h@{stdlib.h}!exit\_func\_t@{exit\_func\_t}}
+\index{exit\_func\_t@{exit\_func\_t}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{exit\_func\_t}{exit\_func\_t}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} exit\+\_\+func\+\_\+t) (void)}
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00069}{69}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+\Hypertarget{stdlib_8h_a5fbdcb5b98a0470198b548f7b9e53c22}\label{stdlib_8h_a5fbdcb5b98a0470198b548f7b9e53c22} 
+\index{stdlib.h@{stdlib.h}!qsort\_func\_t@{qsort\_func\_t}}
+\index{qsort\_func\_t@{qsort\_func\_t}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{qsort\_func\_t}{qsort\_func\_t}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} qsort\+\_\+func\+\_\+t) (const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*})}
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00071}{71}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+
+\Hypertarget{stdlib_8h_adfd4f8398979b04e27e2b895d728e066}\label{stdlib_8h_adfd4f8398979b04e27e2b895d728e066} 
+\index{stdlib.h@{stdlib.h}!qsort\_r\_func\_t@{qsort\_r\_func\_t}}
+\index{qsort\_r\_func\_t@{qsort\_r\_func\_t}!stdlib.h@{stdlib.h}}
+\doxysubsubsection{\texorpdfstring{qsort\_r\_func\_t}{qsort\_r\_func\_t}}
+{\footnotesize\ttfamily typedef int(\texorpdfstring{$\ast$}{*} qsort\+\_\+r\+\_\+func\+\_\+t) (const void \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})}
+
+
+
+Definition at line \mbox{\hyperlink{stdlib_8h_source_l00072}{72}} of file \mbox{\hyperlink{stdlib_8h_source}{stdlib.\+h}}.
+

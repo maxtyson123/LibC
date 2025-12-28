@@ -1,0 +1,1754 @@
+\doxysection{/home/runner/work/\+Lib\+C/\+Lib\+C/include/signal.h File Reference}
+\hypertarget{signal_8h}{}\label{signal_8h}\index{/home/runner/work/LibC/LibC/include/signal.h@{/home/runner/work/LibC/LibC/include/signal.h}}
+
+
+Defines functions to handle async events in a proc.  
+
+
+{\ttfamily \#include $<$libc\+\_\+common.\+h$>$}\newline
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionsigval}{sigval}}
+\begin{DoxyCompactList}\small\item\em A payload to pass along with a signal. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsigevent}{sigevent}}
+\begin{DoxyCompactList}\small\item\em Define how to notify the process when an event is fired. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__siginfo}{\+\_\+siginfo}}
+\begin{DoxyCompactList}\small\item\em Defines the cause and origin of a signal. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsigaction}{sigaction}}
+\begin{DoxyCompactList}\small\item\em Define what happens when receiving a specific signal. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__stack}{\+\_\+stack}}
+\begin{DoxyCompactList}\small\item\em Provides information about a stack. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__ucontext}{\+\_\+ucontext}}
+\begin{DoxyCompactList}\small\item\em Defines the information needed to resume to a userspace context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{signal_8h_a27d5dc561093d6243542e6a2465bc0f8}{SIG\+\_\+\+DFL}}~1
+\begin{DoxyCompactList}\small\item\em Request default signal handling. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a3c330fbddd84bf34e65af370b11998d6}{SIG\+\_\+\+ERR}}~2
+\begin{DoxyCompactList}\small\item\em Call to signal() resulted in an error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_acf0e499b0ac946b366b4f47a3b3e8b9e}{SIG\+\_\+\+IGN}}~3
+\begin{DoxyCompactList}\small\item\em Ignore the signal. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aced9a66610d9d61756999ce4f103740e}{SIGEV\+\_\+\+NONE}}
+\begin{DoxyCompactList}\small\item\em Dont notify the process. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a06d5881eeb84e6ac35f5b801c380dbb6}{SIGEV\+\_\+\+SIGNAL}}
+\begin{DoxyCompactList}\small\item\em Queue a signal with a value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a29ccb6a17fa90a1357b478f62af7fca0}{SIGEV\+\_\+\+THREAD}}
+\begin{DoxyCompactList}\small\item\em Spin up a thread and call a function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a275020780cb70a8b0cba8db5accc5d19}{\+\_\+\+NSIG}}~64
+\begin{DoxyCompactList}\small\item\em How many signals this LibC supports. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ae89f9a1282bd2d1b2a2b310c12ea16a5}{SIGRTMIN}}~32
+\begin{DoxyCompactList}\small\item\em Lowest possible signal value (0-\/31 are reserved) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a5336d2c76af22b10373e3dd28fb3b0f0}{SIGRTMAX}}~(\mbox{\hyperlink{signal_8h_a275020780cb70a8b0cba8db5accc5d19}{\+\_\+\+NSIG}} -\/ 1)
+\begin{DoxyCompactList}\small\item\em Highest possible signal value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ad4476ae1915c2247f142ca344a407971}{SIG2\+STR\+\_\+\+MAX}}~32
+\begin{DoxyCompactList}\small\item\em The size of the buffer required to hold a string returned by sig2str() \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a136c64ec2d1306de745e39d6aee362ca}{SIGHUP}}~1
+\begin{DoxyCompactList}\small\item\em Hangup. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a487309e3e9e0527535644115204a639a}{SIGINT}}~2
+\begin{DoxyCompactList}\small\item\em Terminal interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a62045b465be11891160d53c10861b16c}{SIGQUIT}}~3
+\begin{DoxyCompactList}\small\item\em Terminal quit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a4c9c5284f8c8d146bd7a93d25017fc62}{SIGILL}}~4
+\begin{DoxyCompactList}\small\item\em Illegal instruction. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa2beb906ab1b46676e63823f4e773c38}{SIGTRAP}}~5
+\begin{DoxyCompactList}\small\item\em Trace/breakpoint trap. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa86c630133e5b5174ac970227b273446}{SIGABRT}}~6
+\begin{DoxyCompactList}\small\item\em Abort. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aead3d488474201acf18c4b63d91edc3c}{SIGBUS}}~7
+\begin{DoxyCompactList}\small\item\em Bus error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a7fbba29aec3e4a8daae12935299df92d}{SIGFPE}}~8
+\begin{DoxyCompactList}\small\item\em Erroneous arithmetic operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_addd8dcd406ce514ab3b4f576a5343d42}{SIGKILL}}~9
+\begin{DoxyCompactList}\small\item\em Kill (cannot be caught or ignored) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a944a8250e34bfd7991123abd3436d8c0}{SIGUSR1}}~10
+\begin{DoxyCompactList}\small\item\em User-\/defined signal 1. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ae20b4f7171a09516ea73c9d2745bd596}{SIGSEGV}}~11
+\begin{DoxyCompactList}\small\item\em Invalid memory reference. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_abaaa61abe503c43481e35e21b0b5a031}{SIGUSR2}}~12
+\begin{DoxyCompactList}\small\item\em User-\/defined signal 2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a57e9c8c5fa13bf86bc779a9f6f408b7c}{SIGPIPE}}~13
+\begin{DoxyCompactList}\small\item\em Write on pipe with no reader. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa6946723c6b7a86ec3c33caaf832840b}{SIGALRM}}~14
+\begin{DoxyCompactList}\small\item\em Alarm clock. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a682182a5e5f38fd61f4311501e9dac5d}{SIGTERM}}~15
+\begin{DoxyCompactList}\small\item\em Termination signal. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a0e63521a64cc8bc2b91d36a87d32c9f8}{SIGCHLD}}~17
+\begin{DoxyCompactList}\small\item\em Child stopped or terminated. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a024f43063003e753afc6cca1acd6e104}{SIGCONT}}~18
+\begin{DoxyCompactList}\small\item\em Continue if stopped. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a069e358bc9a864b7dc4fed2440eda14c}{SIGSTOP}}~19
+\begin{DoxyCompactList}\small\item\em Stop executing (cannot be caught or ignored) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_abe65c086e01f0d286b7a785a7e3cdd1a}{SIGTSTP}}~20
+\begin{DoxyCompactList}\small\item\em Terminal stop. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a2c146e34a6b5a78dfba41cded3331181}{SIGTTIN}}~21
+\begin{DoxyCompactList}\small\item\em Background read from terminal. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a782864287613e2c5c030411fa9c5e9b1}{SIGTTOU}}~22
+\begin{DoxyCompactList}\small\item\em Background write to terminal. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ad9ff13149e36144a4ea28788948c34dd}{SIGURG}}~23
+\begin{DoxyCompactList}\small\item\em Urgent condition on socket. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a7265cbba4972503c1c30a2e52a929874}{SIGXCPU}}~24
+\begin{DoxyCompactList}\small\item\em CPU time limit exceeded. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a75440a7aa885a1052dfd3b4393fd9baa}{SIGXFSZ}}~25
+\begin{DoxyCompactList}\small\item\em File size limit exceeded. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a71403d2f5240e409e213060ea3301851}{SIGVTALRM}}~26
+\begin{DoxyCompactList}\small\item\em Virtual timer expired. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ab6bd2a2ff7e58d45965ef257f96dfe65}{SIGPROF}}~27
+\begin{DoxyCompactList}\small\item\em Profiling timer expired. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a13ba0e7c4365813312eb4566907bce4f}{SIGWINCH}}~28
+\begin{DoxyCompactList}\small\item\em Window size change. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a8bacf9eb18fd539099c1bb4666c45d60}{SIGSYS}}~31
+\begin{DoxyCompactList}\small\item\em Bad system call. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a927f6ae16379576d638006c7498ac5d7}{SIG\+\_\+\+BLOCK}}~1
+\begin{DoxyCompactList}\small\item\em Add the signals to the block mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a5fcd73313a63dac2cc7eb3b654215250}{SIG\+\_\+\+UNBLOCK}}~2
+\begin{DoxyCompactList}\small\item\em Remove the signals from the block mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a37750b78b7ae75fe02ad26e70f6cc845}{SIG\+\_\+\+SETMASK}}~3
+\begin{DoxyCompactList}\small\item\em Replace the entire mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_af6a71c97263725437f59ceb16241fd32}{SA\+\_\+\+NOCLDSTOP}}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Do not generate SIGCHLD when children stop/continue. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a322c220e296393958ab4238145a0d273}{SA\+\_\+\+ONSTACK}}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Causes signal delivery to occur on an alternate stack. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a8d5fb4f35858d31035e7354c1d4048ea}{SA\+\_\+\+RESETHAND}}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Resets the signal’s handling behavior to the default action before the signal handler begins execution. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a74ef0a27afcf55b6cd6d35cf0fa5d427}{SA\+\_\+\+RESTART}}~(1 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em Automatically restart interrupted system calls. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a59b4c0774aace526b10b6d737075a790}{SA\+\_\+\+SIGINFO}}~(1 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em Deliver extended signal information to the handler. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ae4c1aad864ef72e4a2cce74b1b8a5a0b}{SA\+\_\+\+NOCLDWAIT}}~(1 $<$$<$ 5)
+\begin{DoxyCompactList}\small\item\em Prevent creation of child processes that have exited but are still waiting for their exit code to be read. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_abec4abd80d73397fc2f78f57f178565f}{SA\+\_\+\+NODEFER}}~(1 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em Do not block the signal while its handler runs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a17bcfefa3c6fafd5d3277d867bd723fb}{SS\+\_\+\+ONSTACK}}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Handler is executing on the alternate signal stack. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ac515f2efc91c54803f65de08d14d4566}{SS\+\_\+\+DISABLE}}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Disable the alternate signal stack. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aae6a742a8c5acf12caba1d148dd03f10}{MINSIGSTKSZ}}~2048
+\begin{DoxyCompactList}\small\item\em Minimum required size for a signal handler stack. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a8a433a10420a0c51355da26cfcab2131}{SIGSTKSZ}}~8192
+\begin{DoxyCompactList}\small\item\em Default size for the alternate signal stack. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a41705eedb4a32e5b0b9a3ef98f98599c}{ILL\+\_\+\+ILLOPC}}~1
+\begin{DoxyCompactList}\small\item\em Illegal opcode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_af5f5854f70f082160b7e0656907a4ced}{ILL\+\_\+\+ILLOPN}}~2
+\begin{DoxyCompactList}\small\item\em Illegal operand. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ab225825a0696d9341ea4569abdc954f0}{ILL\+\_\+\+ILLADR}}~3
+\begin{DoxyCompactList}\small\item\em Illegal addressing mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_adb1378440989b1b20f7ff358a91e3cb2}{ILL\+\_\+\+ILLTRP}}~4
+\begin{DoxyCompactList}\small\item\em Illegal trap. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_af7d4b4283e951ed0cb3cc33b2b451fd2}{ILL\+\_\+\+PRVOPC}}~5
+\begin{DoxyCompactList}\small\item\em Privileged opcode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa3bff56a3faabe1a3755fd77cda127b1}{ILL\+\_\+\+PRVREG}}~6
+\begin{DoxyCompactList}\small\item\em Privileged register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ae8aca6f3472a885fb6d3948f8e1a5fa9}{ILL\+\_\+\+COPROC}}~7
+\begin{DoxyCompactList}\small\item\em Coprocessor error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ad16edcc255b0df2dd3572fc9256ef180}{ILL\+\_\+\+BADSTK}}~8
+\begin{DoxyCompactList}\small\item\em Internal stack error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_abc24569f7a193eff6381dd2212464a0a}{FPE\+\_\+\+INTDIV}}~1
+\begin{DoxyCompactList}\small\item\em Integer div by zero. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa85ab73a55a64cf580afa3596c0d5a03}{FPE\+\_\+\+INTOVF}}~2
+\begin{DoxyCompactList}\small\item\em Integer overflow. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_af9bde83d81419c42660d5963159e3b12}{FPE\+\_\+\+FLTDIV}}~3
+\begin{DoxyCompactList}\small\item\em Float div by zero. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_adb3c2df5b8d0979b8b26f89096a513b9}{FPE\+\_\+\+FLTOVF}}~4
+\begin{DoxyCompactList}\small\item\em Float overflow. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa48a81252484098176287529607bd275}{FPE\+\_\+\+FLTUND}}~5
+\begin{DoxyCompactList}\small\item\em Float underflow. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_add5139f33bb657877bb88e2c2b2084ab}{FPE\+\_\+\+FLTRES}}~6
+\begin{DoxyCompactList}\small\item\em Float inexact result. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a4616f880b63120a93c1e4ac6a7aa3dae}{FPE\+\_\+\+FLTINV}}~7
+\begin{DoxyCompactList}\small\item\em Invalid float operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a72463f25ca7c74964873c79b4fc3009d}{FPE\+\_\+\+FLTSUB}}~8
+\begin{DoxyCompactList}\small\item\em Subscript out of range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a289e4151377c06f31fd4295061de78d9}{SEGV\+\_\+\+MAPERR}}~1
+\begin{DoxyCompactList}\small\item\em Address not mapped. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aba23f74fc8d8b7f8826f6275422a5648}{SEGV\+\_\+\+ACCERR}}~2
+\begin{DoxyCompactList}\small\item\em Invalid access permissions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a6ea334f3e9a67fbe0cce4c9738cc842a}{BUS\+\_\+\+ADRALN}}~1
+\begin{DoxyCompactList}\small\item\em Invalid address alignment. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a2343c7bb80913e6f8d69ae3cd7bd6273}{BUS\+\_\+\+ADRERR}}~2
+\begin{DoxyCompactList}\small\item\em Nonexistent physical address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a1b507e6736ff85de98cc1b0151f61d44}{BUS\+\_\+\+OBJERR}}~3
+\begin{DoxyCompactList}\small\item\em Object-\/specific hardware error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a79fcb87a23520cade78f77a4dd3142c6}{TRAP\+\_\+\+BRKPT}}~1
+\begin{DoxyCompactList}\small\item\em Process breakpoint. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a16042a25974d31a1aff6f09bb6a7358a}{TRAP\+\_\+\+TRACE}}~2
+\begin{DoxyCompactList}\small\item\em Process trace trap. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a3e6df4a3087d9aa8ba11c61c38c9218c}{CLD\+\_\+\+EXITED}}~1
+\begin{DoxyCompactList}\small\item\em Child exited normally. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a2d5941afd29bca8b8f74461cb97fe982}{CLD\+\_\+\+KILLED}}~2
+\begin{DoxyCompactList}\small\item\em Child killed. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_afe6e9bccf7df675f022a3e484a73461f}{CLD\+\_\+\+DUMPED}}~3
+\begin{DoxyCompactList}\small\item\em Child terminated and dumped core. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa679c19d95672068f1e4a4673a15ff1c}{CLD\+\_\+\+TRAPPED}}~4
+\begin{DoxyCompactList}\small\item\em Traced child trapped. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a1844847a22da24371fa347b959283916}{CLD\+\_\+\+STOPPED}}~5
+\begin{DoxyCompactList}\small\item\em Child stopped. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_afad5fd60fd725025f0682ec2697d1b45}{CLD\+\_\+\+CONTINUED}}~6
+\begin{DoxyCompactList}\small\item\em Stopped child continued. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_af9e4986b4f6bb9bd932b2fc8166301b9}{SI\+\_\+\+USER}}~1
+\begin{DoxyCompactList}\small\item\em Sent by \doxylink{signal_8h_a15f175029d9839bc5de63d726c0cc610}{kill()} \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_a4f23f53a46f88a96a0f28e23f7a9bad6}{SI\+\_\+\+QUEUE}}~2
+\begin{DoxyCompactList}\small\item\em Sent by sigqueue() \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_ab57ec52e57fbb49071f96f255bc7c31b}{SI\+\_\+\+TIMER}}~3
+\begin{DoxyCompactList}\small\item\em Timer expiration. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_aa8ff6c6d4af21cf9380de1e8fef9db4c}{SI\+\_\+\+ASYNCIO}}~4
+\begin{DoxyCompactList}\small\item\em Async I/O completion. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{signal_8h_afdf808efb3ebd166f67910156146c8fc}{SI\+\_\+\+MESGQ}}~5
+\begin{DoxyCompactList}\small\item\em Message queue arrival. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{signal_8h_a5d486213aa4f744f497959af6917e2a0}{sig\+\_\+atomic\+\_\+t}}
+\item 
+typedef unsigned long \mbox{\hyperlink{signal_8h_a9140a5882f847f67b8155c759ac6aa05}{sigset\+\_\+t}}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{signal_8h_a754cdc0bcfffe07baa426dc252c9101a}{sighandler\+\_\+t}}) (int)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{signal_8h_ad2e029633cdb7b9bbf853c87a8a277f1}{sigev\+\_\+notify\+\_\+function\+\_\+t}}) (union \mbox{\hyperlink{unionsigval}{sigval}})
+\item 
+\Hypertarget{signal_8h_a09e18f039ae28704db2431e9590e58da}\label{signal_8h_a09e18f039ae28704db2431e9590e58da} 
+typedef struct \mbox{\hyperlink{struct__siginfo}{\+\_\+siginfo}} {\bfseries siginfo\+\_\+t}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{signal_8h_a5577f7172a5a86ef850860b078a205c7}{sigaction\+\_\+handler\+\_\+t}}) (int, \mbox{\hyperlink{struct__siginfo}{siginfo\+\_\+t}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})
+\item 
+typedef struct \mbox{\hyperlink{struct__platform__mcontext}{\+\_\+platform\+\_\+mcontext}} \mbox{\hyperlink{signal_8h_ac7df60dc21a76ab73acc739e06f144b5}{mcontext\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Platform specific representation of the CPU context state (registers) \end{DoxyCompactList}\item 
+\Hypertarget{signal_8h_aca51d9a1c3b1ac1b2b54ed9dd7c26981}\label{signal_8h_aca51d9a1c3b1ac1b2b54ed9dd7c26981} 
+typedef struct \mbox{\hyperlink{struct__stack}{\+\_\+stack}} {\bfseries stack\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Public alais of \doxylink{struct__stack}{\+\_\+stack}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct__ucontext}{\+\_\+ucontext}} \mbox{\hyperlink{signal_8h_a69b75656171a47d0fa604a66afc97b3b}{ucontext\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Public alais of \doxylink{struct__siginfo}{\+\_\+siginfo}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{signal_8h_a15f175029d9839bc5de63d726c0cc610}{kill}} (\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}}, int)
+\begin{DoxyCompactList}\small\item\em Send a sig to a process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{signal_8h_ad58b5094e7a641d20eb1faa55c5a03f2}{killpg}} (\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}}, int)
+\begin{DoxyCompactList}\small\item\em Send a sig to a process group. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{signal_8h_ab01027d3834f9f9a5e7f245b4e2d8025}{pthread\+\_\+kill}} (\mbox{\hyperlink{types_8h_a5a968e6376296a133fae83572d4b2efc}{pthread\+\_\+t}}, int)
+\begin{DoxyCompactList}\small\item\em Send a sig to a thread. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{signal_8h_a3e2d42c4a71136a5b06d2c1abb8a8e5f}{raise}} (int)
+\begin{DoxyCompactList}\small\item\em Send a sig to the executing process. \end{DoxyCompactList}\item 
+\Hypertarget{signal_8h_a164bdea3d5f6e0dedab1b4509c8ea02d}\label{signal_8h_a164bdea3d5f6e0dedab1b4509c8ea02d} 
+int {\bfseries sigqueue} (\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}}, int, union \mbox{\hyperlink{unionsigval}{sigval}})
+\item 
+\Hypertarget{signal_8h_af0f8ed40d30773bdb68e858ef0139b58}\label{signal_8h_af0f8ed40d30773bdb68e858ef0139b58} 
+sighandler\+\_\+t {\bfseries signal} (int signum, sighandler\+\_\+t handler)
+\item 
+\Hypertarget{signal_8h_a69c1274f6056b4b5b2f05be3c6aa7055}\label{signal_8h_a69c1274f6056b4b5b2f05be3c6aa7055} 
+int {\bfseries sigaction} (int, const struct \mbox{\hyperlink{structsigaction}{sigaction}} \texorpdfstring{$\ast$}{*}restrict, struct \mbox{\hyperlink{structsigaction}{sigaction}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{signal_8h_a5612e7ea78f492c5531a094bd88cda98}\label{signal_8h_a5612e7ea78f492c5531a094bd88cda98} 
+int {\bfseries sigprocmask} (int, const sigset\+\_\+t \texorpdfstring{$\ast$}{*}restrict, sigset\+\_\+t \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{signal_8h_afb8c1a28864a5e4dd59ce444807b1435}\label{signal_8h_afb8c1a28864a5e4dd59ce444807b1435} 
+int {\bfseries pthread\+\_\+sigmask} (int, const sigset\+\_\+t \texorpdfstring{$\ast$}{*}restrict, sigset\+\_\+t \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{signal_8h_a4c57d9f08674da554970585b26548288}\label{signal_8h_a4c57d9f08674da554970585b26548288} 
+int {\bfseries sigemptyset} (sigset\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{signal_8h_a394047ea15f6327c6766f881209634c2}\label{signal_8h_a394047ea15f6327c6766f881209634c2} 
+int {\bfseries sigfillset} (sigset\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{signal_8h_aa3901cf4a92a6ece47129011c76d4516}\label{signal_8h_aa3901cf4a92a6ece47129011c76d4516} 
+int {\bfseries sigaddset} (sigset\+\_\+t \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{signal_8h_a4a034ed1c13446ed71959bf1c6d0d1cc}\label{signal_8h_a4a034ed1c13446ed71959bf1c6d0d1cc} 
+int {\bfseries sigdelset} (sigset\+\_\+t \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{signal_8h_a48e3a7917a41962c46b5e715b9e1d09f}\label{signal_8h_a48e3a7917a41962c46b5e715b9e1d09f} 
+int {\bfseries sigismember} (const sigset\+\_\+t \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{signal_8h_a09557fedb21522e430dc384d86ccd73d}\label{signal_8h_a09557fedb21522e430dc384d86ccd73d} 
+int {\bfseries sigpending} (sigset\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{signal_8h_a271f9551984e286249f88e90c86dd58f}\label{signal_8h_a271f9551984e286249f88e90c86dd58f} 
+int {\bfseries sigsuspend} (const sigset\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{signal_8h_a603ae960f7fae215313e49c30cb3a47b}\label{signal_8h_a603ae960f7fae215313e49c30cb3a47b} 
+int {\bfseries sigwait} (const sigset\+\_\+t \texorpdfstring{$\ast$}{*}restrict, int \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{signal_8h_a290f5bf26657e40ca6f191ca96f6cc08}\label{signal_8h_a290f5bf26657e40ca6f191ca96f6cc08} 
+int {\bfseries sigwaitinfo} (const sigset\+\_\+t \texorpdfstring{$\ast$}{*}restrict, \mbox{\hyperlink{struct__siginfo}{siginfo\+\_\+t}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{signal_8h_ace8fbe42572454326a4ff718494d1904}\label{signal_8h_ace8fbe42572454326a4ff718494d1904} 
+int {\bfseries sigtimedwait} (const sigset\+\_\+t \texorpdfstring{$\ast$}{*}restrict, \mbox{\hyperlink{struct__siginfo}{siginfo\+\_\+t}} \texorpdfstring{$\ast$}{*}restrict, const struct \mbox{\hyperlink{structtimespec}{timespec}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{signal_8h_adfcbe1ab224d03b45aede2252cae11d3}\label{signal_8h_adfcbe1ab224d03b45aede2252cae11d3} 
+int {\bfseries sigaltstack} (const \mbox{\hyperlink{signal_8h_aca51d9a1c3b1ac1b2b54ed9dd7c26981}{stack\+\_\+t}} \texorpdfstring{$\ast$}{*}restrict, \mbox{\hyperlink{signal_8h_aca51d9a1c3b1ac1b2b54ed9dd7c26981}{stack\+\_\+t}} \texorpdfstring{$\ast$}{*}restrict)
+\item 
+\Hypertarget{signal_8h_a576c934ca42d2b0467d2f1a48ba8b068}\label{signal_8h_a576c934ca42d2b0467d2f1a48ba8b068} 
+void {\bfseries psignal} (int, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{signal_8h_ab97de277439edfcfcf11c99a92a0bb06}\label{signal_8h_ab97de277439edfcfcf11c99a92a0bb06} 
+void {\bfseries psiginfo} (const \mbox{\hyperlink{struct__siginfo}{siginfo\+\_\+t}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{signal_8h_aa6d217faae5963bfed8e67b8e53e6ad4}\label{signal_8h_aa6d217faae5963bfed8e67b8e53e6ad4} 
+int {\bfseries sig2str} (int, char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{signal_8h_ae846d2769540af20d334f8eb9d200c06}\label{signal_8h_ae846d2769540af20d334f8eb9d200c06} 
+int {\bfseries str2sig} (const char \texorpdfstring{$\ast$}{*}restrict, int \texorpdfstring{$\ast$}{*}restrict)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines functions to handle async events in a proc. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/signal.h.html}{\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/9699919799/basedefs/signal.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+16 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{signal_8h_a275020780cb70a8b0cba8db5accc5d19}\label{signal_8h_a275020780cb70a8b0cba8db5accc5d19} 
+\index{signal.h@{signal.h}!\_NSIG@{\_NSIG}}
+\index{\_NSIG@{\_NSIG}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{\_NSIG}{\_NSIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+NSIG~64}
+
+
+
+How many signals this LibC supports. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00065}{65}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a6ea334f3e9a67fbe0cce4c9738cc842a}\label{signal_8h_a6ea334f3e9a67fbe0cce4c9738cc842a} 
+\index{signal.h@{signal.h}!BUS\_ADRALN@{BUS\_ADRALN}}
+\index{BUS\_ADRALN@{BUS\_ADRALN}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{BUS\_ADRALN}{BUS\_ADRALN}}
+{\footnotesize\ttfamily \#define BUS\+\_\+\+ADRALN~1}
+
+
+
+Invalid address alignment. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00217}{217}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a2343c7bb80913e6f8d69ae3cd7bd6273}\label{signal_8h_a2343c7bb80913e6f8d69ae3cd7bd6273} 
+\index{signal.h@{signal.h}!BUS\_ADRERR@{BUS\_ADRERR}}
+\index{BUS\_ADRERR@{BUS\_ADRERR}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{BUS\_ADRERR}{BUS\_ADRERR}}
+{\footnotesize\ttfamily \#define BUS\+\_\+\+ADRERR~2}
+
+
+
+Nonexistent physical address. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00218}{218}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a1b507e6736ff85de98cc1b0151f61d44}\label{signal_8h_a1b507e6736ff85de98cc1b0151f61d44} 
+\index{signal.h@{signal.h}!BUS\_OBJERR@{BUS\_OBJERR}}
+\index{BUS\_OBJERR@{BUS\_OBJERR}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{BUS\_OBJERR}{BUS\_OBJERR}}
+{\footnotesize\ttfamily \#define BUS\+\_\+\+OBJERR~3}
+
+
+
+Object-\/specific hardware error. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00219}{219}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_afad5fd60fd725025f0682ec2697d1b45}\label{signal_8h_afad5fd60fd725025f0682ec2697d1b45} 
+\index{signal.h@{signal.h}!CLD\_CONTINUED@{CLD\_CONTINUED}}
+\index{CLD\_CONTINUED@{CLD\_CONTINUED}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{CLD\_CONTINUED}{CLD\_CONTINUED}}
+{\footnotesize\ttfamily \#define CLD\+\_\+\+CONTINUED~6}
+
+
+
+Stopped child continued. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00231}{231}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_afe6e9bccf7df675f022a3e484a73461f}\label{signal_8h_afe6e9bccf7df675f022a3e484a73461f} 
+\index{signal.h@{signal.h}!CLD\_DUMPED@{CLD\_DUMPED}}
+\index{CLD\_DUMPED@{CLD\_DUMPED}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{CLD\_DUMPED}{CLD\_DUMPED}}
+{\footnotesize\ttfamily \#define CLD\+\_\+\+DUMPED~3}
+
+
+
+Child terminated and dumped core. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00228}{228}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a3e6df4a3087d9aa8ba11c61c38c9218c}\label{signal_8h_a3e6df4a3087d9aa8ba11c61c38c9218c} 
+\index{signal.h@{signal.h}!CLD\_EXITED@{CLD\_EXITED}}
+\index{CLD\_EXITED@{CLD\_EXITED}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{CLD\_EXITED}{CLD\_EXITED}}
+{\footnotesize\ttfamily \#define CLD\+\_\+\+EXITED~1}
+
+
+
+Child exited normally. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00226}{226}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a2d5941afd29bca8b8f74461cb97fe982}\label{signal_8h_a2d5941afd29bca8b8f74461cb97fe982} 
+\index{signal.h@{signal.h}!CLD\_KILLED@{CLD\_KILLED}}
+\index{CLD\_KILLED@{CLD\_KILLED}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{CLD\_KILLED}{CLD\_KILLED}}
+{\footnotesize\ttfamily \#define CLD\+\_\+\+KILLED~2}
+
+
+
+Child killed. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00227}{227}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a1844847a22da24371fa347b959283916}\label{signal_8h_a1844847a22da24371fa347b959283916} 
+\index{signal.h@{signal.h}!CLD\_STOPPED@{CLD\_STOPPED}}
+\index{CLD\_STOPPED@{CLD\_STOPPED}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{CLD\_STOPPED}{CLD\_STOPPED}}
+{\footnotesize\ttfamily \#define CLD\+\_\+\+STOPPED~5}
+
+
+
+Child stopped. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00230}{230}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa679c19d95672068f1e4a4673a15ff1c}\label{signal_8h_aa679c19d95672068f1e4a4673a15ff1c} 
+\index{signal.h@{signal.h}!CLD\_TRAPPED@{CLD\_TRAPPED}}
+\index{CLD\_TRAPPED@{CLD\_TRAPPED}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{CLD\_TRAPPED}{CLD\_TRAPPED}}
+{\footnotesize\ttfamily \#define CLD\+\_\+\+TRAPPED~4}
+
+
+
+Traced child trapped. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00229}{229}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_af9bde83d81419c42660d5963159e3b12}\label{signal_8h_af9bde83d81419c42660d5963159e3b12} 
+\index{signal.h@{signal.h}!FPE\_FLTDIV@{FPE\_FLTDIV}}
+\index{FPE\_FLTDIV@{FPE\_FLTDIV}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_FLTDIV}{FPE\_FLTDIV}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+FLTDIV~3}
+
+
+
+Float div by zero. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00205}{205}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a4616f880b63120a93c1e4ac6a7aa3dae}\label{signal_8h_a4616f880b63120a93c1e4ac6a7aa3dae} 
+\index{signal.h@{signal.h}!FPE\_FLTINV@{FPE\_FLTINV}}
+\index{FPE\_FLTINV@{FPE\_FLTINV}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_FLTINV}{FPE\_FLTINV}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+FLTINV~7}
+
+
+
+Invalid float operation. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00209}{209}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_adb3c2df5b8d0979b8b26f89096a513b9}\label{signal_8h_adb3c2df5b8d0979b8b26f89096a513b9} 
+\index{signal.h@{signal.h}!FPE\_FLTOVF@{FPE\_FLTOVF}}
+\index{FPE\_FLTOVF@{FPE\_FLTOVF}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_FLTOVF}{FPE\_FLTOVF}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+FLTOVF~4}
+
+
+
+Float overflow. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00206}{206}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_add5139f33bb657877bb88e2c2b2084ab}\label{signal_8h_add5139f33bb657877bb88e2c2b2084ab} 
+\index{signal.h@{signal.h}!FPE\_FLTRES@{FPE\_FLTRES}}
+\index{FPE\_FLTRES@{FPE\_FLTRES}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_FLTRES}{FPE\_FLTRES}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+FLTRES~6}
+
+
+
+Float inexact result. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00208}{208}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a72463f25ca7c74964873c79b4fc3009d}\label{signal_8h_a72463f25ca7c74964873c79b4fc3009d} 
+\index{signal.h@{signal.h}!FPE\_FLTSUB@{FPE\_FLTSUB}}
+\index{FPE\_FLTSUB@{FPE\_FLTSUB}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_FLTSUB}{FPE\_FLTSUB}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+FLTSUB~8}
+
+
+
+Subscript out of range. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00210}{210}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa48a81252484098176287529607bd275}\label{signal_8h_aa48a81252484098176287529607bd275} 
+\index{signal.h@{signal.h}!FPE\_FLTUND@{FPE\_FLTUND}}
+\index{FPE\_FLTUND@{FPE\_FLTUND}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_FLTUND}{FPE\_FLTUND}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+FLTUND~5}
+
+
+
+Float underflow. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00207}{207}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_abc24569f7a193eff6381dd2212464a0a}\label{signal_8h_abc24569f7a193eff6381dd2212464a0a} 
+\index{signal.h@{signal.h}!FPE\_INTDIV@{FPE\_INTDIV}}
+\index{FPE\_INTDIV@{FPE\_INTDIV}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_INTDIV}{FPE\_INTDIV}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+INTDIV~1}
+
+
+
+Integer div by zero. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00203}{203}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa85ab73a55a64cf580afa3596c0d5a03}\label{signal_8h_aa85ab73a55a64cf580afa3596c0d5a03} 
+\index{signal.h@{signal.h}!FPE\_INTOVF@{FPE\_INTOVF}}
+\index{FPE\_INTOVF@{FPE\_INTOVF}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{FPE\_INTOVF}{FPE\_INTOVF}}
+{\footnotesize\ttfamily \#define FPE\+\_\+\+INTOVF~2}
+
+
+
+Integer overflow. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00204}{204}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ad16edcc255b0df2dd3572fc9256ef180}\label{signal_8h_ad16edcc255b0df2dd3572fc9256ef180} 
+\index{signal.h@{signal.h}!ILL\_BADSTK@{ILL\_BADSTK}}
+\index{ILL\_BADSTK@{ILL\_BADSTK}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_BADSTK}{ILL\_BADSTK}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+BADSTK~8}
+
+
+
+Internal stack error. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00200}{200}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ae8aca6f3472a885fb6d3948f8e1a5fa9}\label{signal_8h_ae8aca6f3472a885fb6d3948f8e1a5fa9} 
+\index{signal.h@{signal.h}!ILL\_COPROC@{ILL\_COPROC}}
+\index{ILL\_COPROC@{ILL\_COPROC}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_COPROC}{ILL\_COPROC}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+COPROC~7}
+
+
+
+Coprocessor error. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00199}{199}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ab225825a0696d9341ea4569abdc954f0}\label{signal_8h_ab225825a0696d9341ea4569abdc954f0} 
+\index{signal.h@{signal.h}!ILL\_ILLADR@{ILL\_ILLADR}}
+\index{ILL\_ILLADR@{ILL\_ILLADR}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_ILLADR}{ILL\_ILLADR}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+ILLADR~3}
+
+
+
+Illegal addressing mode. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00195}{195}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a41705eedb4a32e5b0b9a3ef98f98599c}\label{signal_8h_a41705eedb4a32e5b0b9a3ef98f98599c} 
+\index{signal.h@{signal.h}!ILL\_ILLOPC@{ILL\_ILLOPC}}
+\index{ILL\_ILLOPC@{ILL\_ILLOPC}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_ILLOPC}{ILL\_ILLOPC}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+ILLOPC~1}
+
+
+
+Illegal opcode. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00193}{193}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_af5f5854f70f082160b7e0656907a4ced}\label{signal_8h_af5f5854f70f082160b7e0656907a4ced} 
+\index{signal.h@{signal.h}!ILL\_ILLOPN@{ILL\_ILLOPN}}
+\index{ILL\_ILLOPN@{ILL\_ILLOPN}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_ILLOPN}{ILL\_ILLOPN}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+ILLOPN~2}
+
+
+
+Illegal operand. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00194}{194}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_adb1378440989b1b20f7ff358a91e3cb2}\label{signal_8h_adb1378440989b1b20f7ff358a91e3cb2} 
+\index{signal.h@{signal.h}!ILL\_ILLTRP@{ILL\_ILLTRP}}
+\index{ILL\_ILLTRP@{ILL\_ILLTRP}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_ILLTRP}{ILL\_ILLTRP}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+ILLTRP~4}
+
+
+
+Illegal trap. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00196}{196}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_af7d4b4283e951ed0cb3cc33b2b451fd2}\label{signal_8h_af7d4b4283e951ed0cb3cc33b2b451fd2} 
+\index{signal.h@{signal.h}!ILL\_PRVOPC@{ILL\_PRVOPC}}
+\index{ILL\_PRVOPC@{ILL\_PRVOPC}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_PRVOPC}{ILL\_PRVOPC}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+PRVOPC~5}
+
+
+
+Privileged opcode. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00197}{197}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa3bff56a3faabe1a3755fd77cda127b1}\label{signal_8h_aa3bff56a3faabe1a3755fd77cda127b1} 
+\index{signal.h@{signal.h}!ILL\_PRVREG@{ILL\_PRVREG}}
+\index{ILL\_PRVREG@{ILL\_PRVREG}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ILL\_PRVREG}{ILL\_PRVREG}}
+{\footnotesize\ttfamily \#define ILL\+\_\+\+PRVREG~6}
+
+
+
+Privileged register. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00198}{198}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aae6a742a8c5acf12caba1d148dd03f10}\label{signal_8h_aae6a742a8c5acf12caba1d148dd03f10} 
+\index{signal.h@{signal.h}!MINSIGSTKSZ@{MINSIGSTKSZ}}
+\index{MINSIGSTKSZ@{MINSIGSTKSZ}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{MINSIGSTKSZ}{MINSIGSTKSZ}}
+{\footnotesize\ttfamily \#define MINSIGSTKSZ~2048}
+
+
+
+Minimum required size for a signal handler stack. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00155}{155}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_af6a71c97263725437f59ceb16241fd32}\label{signal_8h_af6a71c97263725437f59ceb16241fd32} 
+\index{signal.h@{signal.h}!SA\_NOCLDSTOP@{SA\_NOCLDSTOP}}
+\index{SA\_NOCLDSTOP@{SA\_NOCLDSTOP}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SA\_NOCLDSTOP}{SA\_NOCLDSTOP}}
+{\footnotesize\ttfamily \#define SA\+\_\+\+NOCLDSTOP~(1 $<$$<$ 0)}
+
+
+
+Do not generate SIGCHLD when children stop/continue. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00144}{144}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ae4c1aad864ef72e4a2cce74b1b8a5a0b}\label{signal_8h_ae4c1aad864ef72e4a2cce74b1b8a5a0b} 
+\index{signal.h@{signal.h}!SA\_NOCLDWAIT@{SA\_NOCLDWAIT}}
+\index{SA\_NOCLDWAIT@{SA\_NOCLDWAIT}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SA\_NOCLDWAIT}{SA\_NOCLDWAIT}}
+{\footnotesize\ttfamily \#define SA\+\_\+\+NOCLDWAIT~(1 $<$$<$ 5)}
+
+
+
+Prevent creation of child processes that have exited but are still waiting for their exit code to be read. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00149}{149}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_abec4abd80d73397fc2f78f57f178565f}\label{signal_8h_abec4abd80d73397fc2f78f57f178565f} 
+\index{signal.h@{signal.h}!SA\_NODEFER@{SA\_NODEFER}}
+\index{SA\_NODEFER@{SA\_NODEFER}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SA\_NODEFER}{SA\_NODEFER}}
+{\footnotesize\ttfamily \#define SA\+\_\+\+NODEFER~(1 $<$$<$ 6)}
+
+
+
+Do not block the signal while its handler runs. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00150}{150}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a322c220e296393958ab4238145a0d273}\label{signal_8h_a322c220e296393958ab4238145a0d273} 
+\index{signal.h@{signal.h}!SA\_ONSTACK@{SA\_ONSTACK}}
+\index{SA\_ONSTACK@{SA\_ONSTACK}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SA\_ONSTACK}{SA\_ONSTACK}}
+{\footnotesize\ttfamily \#define SA\+\_\+\+ONSTACK~(1 $<$$<$ 1)}
+
+
+
+Causes signal delivery to occur on an alternate stack. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00145}{145}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a8d5fb4f35858d31035e7354c1d4048ea}\label{signal_8h_a8d5fb4f35858d31035e7354c1d4048ea} 
+\index{signal.h@{signal.h}!SA\_RESETHAND@{SA\_RESETHAND}}
+\index{SA\_RESETHAND@{SA\_RESETHAND}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SA\_RESETHAND}{SA\_RESETHAND}}
+{\footnotesize\ttfamily \#define SA\+\_\+\+RESETHAND~(1 $<$$<$ 2)}
+
+
+
+Resets the signal’s handling behavior to the default action before the signal handler begins execution. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00146}{146}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a74ef0a27afcf55b6cd6d35cf0fa5d427}\label{signal_8h_a74ef0a27afcf55b6cd6d35cf0fa5d427} 
+\index{signal.h@{signal.h}!SA\_RESTART@{SA\_RESTART}}
+\index{SA\_RESTART@{SA\_RESTART}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SA\_RESTART}{SA\_RESTART}}
+{\footnotesize\ttfamily \#define SA\+\_\+\+RESTART~(1 $<$$<$ 3)}
+
+
+
+Automatically restart interrupted system calls. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00147}{147}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a59b4c0774aace526b10b6d737075a790}\label{signal_8h_a59b4c0774aace526b10b6d737075a790} 
+\index{signal.h@{signal.h}!SA\_SIGINFO@{SA\_SIGINFO}}
+\index{SA\_SIGINFO@{SA\_SIGINFO}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SA\_SIGINFO}{SA\_SIGINFO}}
+{\footnotesize\ttfamily \#define SA\+\_\+\+SIGINFO~(1 $<$$<$ 4)}
+
+
+
+Deliver extended signal information to the handler. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00148}{148}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aba23f74fc8d8b7f8826f6275422a5648}\label{signal_8h_aba23f74fc8d8b7f8826f6275422a5648} 
+\index{signal.h@{signal.h}!SEGV\_ACCERR@{SEGV\_ACCERR}}
+\index{SEGV\_ACCERR@{SEGV\_ACCERR}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SEGV\_ACCERR}{SEGV\_ACCERR}}
+{\footnotesize\ttfamily \#define SEGV\+\_\+\+ACCERR~2}
+
+
+
+Invalid access permissions. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00214}{214}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a289e4151377c06f31fd4295061de78d9}\label{signal_8h_a289e4151377c06f31fd4295061de78d9} 
+\index{signal.h@{signal.h}!SEGV\_MAPERR@{SEGV\_MAPERR}}
+\index{SEGV\_MAPERR@{SEGV\_MAPERR}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SEGV\_MAPERR}{SEGV\_MAPERR}}
+{\footnotesize\ttfamily \#define SEGV\+\_\+\+MAPERR~1}
+
+
+
+Address not mapped. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00213}{213}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa8ff6c6d4af21cf9380de1e8fef9db4c}\label{signal_8h_aa8ff6c6d4af21cf9380de1e8fef9db4c} 
+\index{signal.h@{signal.h}!SI\_ASYNCIO@{SI\_ASYNCIO}}
+\index{SI\_ASYNCIO@{SI\_ASYNCIO}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SI\_ASYNCIO}{SI\_ASYNCIO}}
+{\footnotesize\ttfamily \#define SI\+\_\+\+ASYNCIO~4}
+
+
+
+Async I/O completion. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00237}{237}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_afdf808efb3ebd166f67910156146c8fc}\label{signal_8h_afdf808efb3ebd166f67910156146c8fc} 
+\index{signal.h@{signal.h}!SI\_MESGQ@{SI\_MESGQ}}
+\index{SI\_MESGQ@{SI\_MESGQ}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SI\_MESGQ}{SI\_MESGQ}}
+{\footnotesize\ttfamily \#define SI\+\_\+\+MESGQ~5}
+
+
+
+Message queue arrival. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00238}{238}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a4f23f53a46f88a96a0f28e23f7a9bad6}\label{signal_8h_a4f23f53a46f88a96a0f28e23f7a9bad6} 
+\index{signal.h@{signal.h}!SI\_QUEUE@{SI\_QUEUE}}
+\index{SI\_QUEUE@{SI\_QUEUE}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SI\_QUEUE}{SI\_QUEUE}}
+{\footnotesize\ttfamily \#define SI\+\_\+\+QUEUE~2}
+
+
+
+Sent by sigqueue() 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00235}{235}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ab57ec52e57fbb49071f96f255bc7c31b}\label{signal_8h_ab57ec52e57fbb49071f96f255bc7c31b} 
+\index{signal.h@{signal.h}!SI\_TIMER@{SI\_TIMER}}
+\index{SI\_TIMER@{SI\_TIMER}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SI\_TIMER}{SI\_TIMER}}
+{\footnotesize\ttfamily \#define SI\+\_\+\+TIMER~3}
+
+
+
+Timer expiration. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00236}{236}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_af9e4986b4f6bb9bd932b2fc8166301b9}\label{signal_8h_af9e4986b4f6bb9bd932b2fc8166301b9} 
+\index{signal.h@{signal.h}!SI\_USER@{SI\_USER}}
+\index{SI\_USER@{SI\_USER}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SI\_USER}{SI\_USER}}
+{\footnotesize\ttfamily \#define SI\+\_\+\+USER~1}
+
+
+
+Sent by \doxylink{signal_8h_a15f175029d9839bc5de63d726c0cc610}{kill()} 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00234}{234}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ad4476ae1915c2247f142ca344a407971}\label{signal_8h_ad4476ae1915c2247f142ca344a407971} 
+\index{signal.h@{signal.h}!SIG2STR\_MAX@{SIG2STR\_MAX}}
+\index{SIG2STR\_MAX@{SIG2STR\_MAX}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIG2STR\_MAX}{SIG2STR\_MAX}}
+{\footnotesize\ttfamily \#define SIG2\+STR\+\_\+\+MAX~32}
+
+
+
+The size of the buffer required to hold a string returned by sig2str() 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00068}{68}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a927f6ae16379576d638006c7498ac5d7}\label{signal_8h_a927f6ae16379576d638006c7498ac5d7} 
+\index{signal.h@{signal.h}!SIG\_BLOCK@{SIG\_BLOCK}}
+\index{SIG\_BLOCK@{SIG\_BLOCK}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIG\_BLOCK}{SIG\_BLOCK}}
+{\footnotesize\ttfamily \#define SIG\+\_\+\+BLOCK~1}
+
+
+
+Add the signals to the block mask. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00140}{140}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a27d5dc561093d6243542e6a2465bc0f8}\label{signal_8h_a27d5dc561093d6243542e6a2465bc0f8} 
+\index{signal.h@{signal.h}!SIG\_DFL@{SIG\_DFL}}
+\index{SIG\_DFL@{SIG\_DFL}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIG\_DFL}{SIG\_DFL}}
+{\footnotesize\ttfamily \#define SIG\+\_\+\+DFL~1}
+
+
+
+Request default signal handling. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00021}{21}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a3c330fbddd84bf34e65af370b11998d6}\label{signal_8h_a3c330fbddd84bf34e65af370b11998d6} 
+\index{signal.h@{signal.h}!SIG\_ERR@{SIG\_ERR}}
+\index{SIG\_ERR@{SIG\_ERR}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIG\_ERR}{SIG\_ERR}}
+{\footnotesize\ttfamily \#define SIG\+\_\+\+ERR~2}
+
+
+
+Call to signal() resulted in an error. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00022}{22}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_acf0e499b0ac946b366b4f47a3b3e8b9e}\label{signal_8h_acf0e499b0ac946b366b4f47a3b3e8b9e} 
+\index{signal.h@{signal.h}!SIG\_IGN@{SIG\_IGN}}
+\index{SIG\_IGN@{SIG\_IGN}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIG\_IGN}{SIG\_IGN}}
+{\footnotesize\ttfamily \#define SIG\+\_\+\+IGN~3}
+
+
+
+Ignore the signal. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00023}{23}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a37750b78b7ae75fe02ad26e70f6cc845}\label{signal_8h_a37750b78b7ae75fe02ad26e70f6cc845} 
+\index{signal.h@{signal.h}!SIG\_SETMASK@{SIG\_SETMASK}}
+\index{SIG\_SETMASK@{SIG\_SETMASK}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIG\_SETMASK}{SIG\_SETMASK}}
+{\footnotesize\ttfamily \#define SIG\+\_\+\+SETMASK~3}
+
+
+
+Replace the entire mask. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00142}{142}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a5fcd73313a63dac2cc7eb3b654215250}\label{signal_8h_a5fcd73313a63dac2cc7eb3b654215250} 
+\index{signal.h@{signal.h}!SIG\_UNBLOCK@{SIG\_UNBLOCK}}
+\index{SIG\_UNBLOCK@{SIG\_UNBLOCK}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIG\_UNBLOCK}{SIG\_UNBLOCK}}
+{\footnotesize\ttfamily \#define SIG\+\_\+\+UNBLOCK~2}
+
+
+
+Remove the signals from the block mask. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00141}{141}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa86c630133e5b5174ac970227b273446}\label{signal_8h_aa86c630133e5b5174ac970227b273446} 
+\index{signal.h@{signal.h}!SIGABRT@{SIGABRT}}
+\index{SIGABRT@{SIGABRT}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGABRT}{SIGABRT}}
+{\footnotesize\ttfamily \#define SIGABRT~6}
+
+
+
+Abort. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00075}{75}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa6946723c6b7a86ec3c33caaf832840b}\label{signal_8h_aa6946723c6b7a86ec3c33caaf832840b} 
+\index{signal.h@{signal.h}!SIGALRM@{SIGALRM}}
+\index{SIGALRM@{SIGALRM}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGALRM}{SIGALRM}}
+{\footnotesize\ttfamily \#define SIGALRM~14}
+
+
+
+Alarm clock. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00083}{83}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aead3d488474201acf18c4b63d91edc3c}\label{signal_8h_aead3d488474201acf18c4b63d91edc3c} 
+\index{signal.h@{signal.h}!SIGBUS@{SIGBUS}}
+\index{SIGBUS@{SIGBUS}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGBUS}{SIGBUS}}
+{\footnotesize\ttfamily \#define SIGBUS~7}
+
+
+
+Bus error. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00076}{76}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a0e63521a64cc8bc2b91d36a87d32c9f8}\label{signal_8h_a0e63521a64cc8bc2b91d36a87d32c9f8} 
+\index{signal.h@{signal.h}!SIGCHLD@{SIGCHLD}}
+\index{SIGCHLD@{SIGCHLD}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGCHLD}{SIGCHLD}}
+{\footnotesize\ttfamily \#define SIGCHLD~17}
+
+
+
+Child stopped or terminated. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00086}{86}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a024f43063003e753afc6cca1acd6e104}\label{signal_8h_a024f43063003e753afc6cca1acd6e104} 
+\index{signal.h@{signal.h}!SIGCONT@{SIGCONT}}
+\index{SIGCONT@{SIGCONT}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGCONT}{SIGCONT}}
+{\footnotesize\ttfamily \#define SIGCONT~18}
+
+
+
+Continue if stopped. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00087}{87}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aced9a66610d9d61756999ce4f103740e}\label{signal_8h_aced9a66610d9d61756999ce4f103740e} 
+\index{signal.h@{signal.h}!SIGEV\_NONE@{SIGEV\_NONE}}
+\index{SIGEV\_NONE@{SIGEV\_NONE}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGEV\_NONE}{SIGEV\_NONE}}
+{\footnotesize\ttfamily \#define SIGEV\+\_\+\+NONE}
+
+
+
+Dont notify the process. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00061}{61}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a06d5881eeb84e6ac35f5b801c380dbb6}\label{signal_8h_a06d5881eeb84e6ac35f5b801c380dbb6} 
+\index{signal.h@{signal.h}!SIGEV\_SIGNAL@{SIGEV\_SIGNAL}}
+\index{SIGEV\_SIGNAL@{SIGEV\_SIGNAL}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGEV\_SIGNAL}{SIGEV\_SIGNAL}}
+{\footnotesize\ttfamily \#define SIGEV\+\_\+\+SIGNAL}
+
+
+
+Queue a signal with a value. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00062}{62}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a29ccb6a17fa90a1357b478f62af7fca0}\label{signal_8h_a29ccb6a17fa90a1357b478f62af7fca0} 
+\index{signal.h@{signal.h}!SIGEV\_THREAD@{SIGEV\_THREAD}}
+\index{SIGEV\_THREAD@{SIGEV\_THREAD}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGEV\_THREAD}{SIGEV\_THREAD}}
+{\footnotesize\ttfamily \#define SIGEV\+\_\+\+THREAD}
+
+
+
+Spin up a thread and call a function. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00063}{63}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a7fbba29aec3e4a8daae12935299df92d}\label{signal_8h_a7fbba29aec3e4a8daae12935299df92d} 
+\index{signal.h@{signal.h}!SIGFPE@{SIGFPE}}
+\index{SIGFPE@{SIGFPE}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGFPE}{SIGFPE}}
+{\footnotesize\ttfamily \#define SIGFPE~8}
+
+
+
+Erroneous arithmetic operation. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00077}{77}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a136c64ec2d1306de745e39d6aee362ca}\label{signal_8h_a136c64ec2d1306de745e39d6aee362ca} 
+\index{signal.h@{signal.h}!SIGHUP@{SIGHUP}}
+\index{SIGHUP@{SIGHUP}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGHUP}{SIGHUP}}
+{\footnotesize\ttfamily \#define SIGHUP~1}
+
+
+
+Hangup. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00070}{70}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a4c9c5284f8c8d146bd7a93d25017fc62}\label{signal_8h_a4c9c5284f8c8d146bd7a93d25017fc62} 
+\index{signal.h@{signal.h}!SIGILL@{SIGILL}}
+\index{SIGILL@{SIGILL}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGILL}{SIGILL}}
+{\footnotesize\ttfamily \#define SIGILL~4}
+
+
+
+Illegal instruction. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00073}{73}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a487309e3e9e0527535644115204a639a}\label{signal_8h_a487309e3e9e0527535644115204a639a} 
+\index{signal.h@{signal.h}!SIGINT@{SIGINT}}
+\index{SIGINT@{SIGINT}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGINT}{SIGINT}}
+{\footnotesize\ttfamily \#define SIGINT~2}
+
+
+
+Terminal interrupt. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00071}{71}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_addd8dcd406ce514ab3b4f576a5343d42}\label{signal_8h_addd8dcd406ce514ab3b4f576a5343d42} 
+\index{signal.h@{signal.h}!SIGKILL@{SIGKILL}}
+\index{SIGKILL@{SIGKILL}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGKILL}{SIGKILL}}
+{\footnotesize\ttfamily \#define SIGKILL~9}
+
+
+
+Kill (cannot be caught or ignored) 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00078}{78}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a57e9c8c5fa13bf86bc779a9f6f408b7c}\label{signal_8h_a57e9c8c5fa13bf86bc779a9f6f408b7c} 
+\index{signal.h@{signal.h}!SIGPIPE@{SIGPIPE}}
+\index{SIGPIPE@{SIGPIPE}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGPIPE}{SIGPIPE}}
+{\footnotesize\ttfamily \#define SIGPIPE~13}
+
+
+
+Write on pipe with no reader. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00082}{82}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ab6bd2a2ff7e58d45965ef257f96dfe65}\label{signal_8h_ab6bd2a2ff7e58d45965ef257f96dfe65} 
+\index{signal.h@{signal.h}!SIGPROF@{SIGPROF}}
+\index{SIGPROF@{SIGPROF}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGPROF}{SIGPROF}}
+{\footnotesize\ttfamily \#define SIGPROF~27}
+
+
+
+Profiling timer expired. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00097}{97}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a62045b465be11891160d53c10861b16c}\label{signal_8h_a62045b465be11891160d53c10861b16c} 
+\index{signal.h@{signal.h}!SIGQUIT@{SIGQUIT}}
+\index{SIGQUIT@{SIGQUIT}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGQUIT}{SIGQUIT}}
+{\footnotesize\ttfamily \#define SIGQUIT~3}
+
+
+
+Terminal quit. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00072}{72}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a5336d2c76af22b10373e3dd28fb3b0f0}\label{signal_8h_a5336d2c76af22b10373e3dd28fb3b0f0} 
+\index{signal.h@{signal.h}!SIGRTMAX@{SIGRTMAX}}
+\index{SIGRTMAX@{SIGRTMAX}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGRTMAX}{SIGRTMAX}}
+{\footnotesize\ttfamily \#define SIGRTMAX~(\mbox{\hyperlink{signal_8h_a275020780cb70a8b0cba8db5accc5d19}{\+\_\+\+NSIG}} -\/ 1)}
+
+
+
+Highest possible signal value. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00067}{67}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ae89f9a1282bd2d1b2a2b310c12ea16a5}\label{signal_8h_ae89f9a1282bd2d1b2a2b310c12ea16a5} 
+\index{signal.h@{signal.h}!SIGRTMIN@{SIGRTMIN}}
+\index{SIGRTMIN@{SIGRTMIN}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGRTMIN}{SIGRTMIN}}
+{\footnotesize\ttfamily \#define SIGRTMIN~32}
+
+
+
+Lowest possible signal value (0-\/31 are reserved) 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00066}{66}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ae20b4f7171a09516ea73c9d2745bd596}\label{signal_8h_ae20b4f7171a09516ea73c9d2745bd596} 
+\index{signal.h@{signal.h}!SIGSEGV@{SIGSEGV}}
+\index{SIGSEGV@{SIGSEGV}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGSEGV}{SIGSEGV}}
+{\footnotesize\ttfamily \#define SIGSEGV~11}
+
+
+
+Invalid memory reference. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00080}{80}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a8a433a10420a0c51355da26cfcab2131}\label{signal_8h_a8a433a10420a0c51355da26cfcab2131} 
+\index{signal.h@{signal.h}!SIGSTKSZ@{SIGSTKSZ}}
+\index{SIGSTKSZ@{SIGSTKSZ}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGSTKSZ}{SIGSTKSZ}}
+{\footnotesize\ttfamily \#define SIGSTKSZ~8192}
+
+
+
+Default size for the alternate signal stack. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00156}{156}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a069e358bc9a864b7dc4fed2440eda14c}\label{signal_8h_a069e358bc9a864b7dc4fed2440eda14c} 
+\index{signal.h@{signal.h}!SIGSTOP@{SIGSTOP}}
+\index{SIGSTOP@{SIGSTOP}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGSTOP}{SIGSTOP}}
+{\footnotesize\ttfamily \#define SIGSTOP~19}
+
+
+
+Stop executing (cannot be caught or ignored) 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00088}{88}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a8bacf9eb18fd539099c1bb4666c45d60}\label{signal_8h_a8bacf9eb18fd539099c1bb4666c45d60} 
+\index{signal.h@{signal.h}!SIGSYS@{SIGSYS}}
+\index{SIGSYS@{SIGSYS}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGSYS}{SIGSYS}}
+{\footnotesize\ttfamily \#define SIGSYS~31}
+
+
+
+Bad system call. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00099}{99}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a682182a5e5f38fd61f4311501e9dac5d}\label{signal_8h_a682182a5e5f38fd61f4311501e9dac5d} 
+\index{signal.h@{signal.h}!SIGTERM@{SIGTERM}}
+\index{SIGTERM@{SIGTERM}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGTERM}{SIGTERM}}
+{\footnotesize\ttfamily \#define SIGTERM~15}
+
+
+
+Termination signal. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00084}{84}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_aa2beb906ab1b46676e63823f4e773c38}\label{signal_8h_aa2beb906ab1b46676e63823f4e773c38} 
+\index{signal.h@{signal.h}!SIGTRAP@{SIGTRAP}}
+\index{SIGTRAP@{SIGTRAP}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGTRAP}{SIGTRAP}}
+{\footnotesize\ttfamily \#define SIGTRAP~5}
+
+
+
+Trace/breakpoint trap. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00074}{74}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_abe65c086e01f0d286b7a785a7e3cdd1a}\label{signal_8h_abe65c086e01f0d286b7a785a7e3cdd1a} 
+\index{signal.h@{signal.h}!SIGTSTP@{SIGTSTP}}
+\index{SIGTSTP@{SIGTSTP}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGTSTP}{SIGTSTP}}
+{\footnotesize\ttfamily \#define SIGTSTP~20}
+
+
+
+Terminal stop. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00089}{89}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a2c146e34a6b5a78dfba41cded3331181}\label{signal_8h_a2c146e34a6b5a78dfba41cded3331181} 
+\index{signal.h@{signal.h}!SIGTTIN@{SIGTTIN}}
+\index{SIGTTIN@{SIGTTIN}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGTTIN}{SIGTTIN}}
+{\footnotesize\ttfamily \#define SIGTTIN~21}
+
+
+
+Background read from terminal. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00090}{90}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a782864287613e2c5c030411fa9c5e9b1}\label{signal_8h_a782864287613e2c5c030411fa9c5e9b1} 
+\index{signal.h@{signal.h}!SIGTTOU@{SIGTTOU}}
+\index{SIGTTOU@{SIGTTOU}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGTTOU}{SIGTTOU}}
+{\footnotesize\ttfamily \#define SIGTTOU~22}
+
+
+
+Background write to terminal. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00091}{91}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ad9ff13149e36144a4ea28788948c34dd}\label{signal_8h_ad9ff13149e36144a4ea28788948c34dd} 
+\index{signal.h@{signal.h}!SIGURG@{SIGURG}}
+\index{SIGURG@{SIGURG}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGURG}{SIGURG}}
+{\footnotesize\ttfamily \#define SIGURG~23}
+
+
+
+Urgent condition on socket. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00093}{93}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a944a8250e34bfd7991123abd3436d8c0}\label{signal_8h_a944a8250e34bfd7991123abd3436d8c0} 
+\index{signal.h@{signal.h}!SIGUSR1@{SIGUSR1}}
+\index{SIGUSR1@{SIGUSR1}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGUSR1}{SIGUSR1}}
+{\footnotesize\ttfamily \#define SIGUSR1~10}
+
+
+
+User-\/defined signal 1. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00079}{79}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_abaaa61abe503c43481e35e21b0b5a031}\label{signal_8h_abaaa61abe503c43481e35e21b0b5a031} 
+\index{signal.h@{signal.h}!SIGUSR2@{SIGUSR2}}
+\index{SIGUSR2@{SIGUSR2}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGUSR2}{SIGUSR2}}
+{\footnotesize\ttfamily \#define SIGUSR2~12}
+
+
+
+User-\/defined signal 2. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00081}{81}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a71403d2f5240e409e213060ea3301851}\label{signal_8h_a71403d2f5240e409e213060ea3301851} 
+\index{signal.h@{signal.h}!SIGVTALRM@{SIGVTALRM}}
+\index{SIGVTALRM@{SIGVTALRM}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGVTALRM}{SIGVTALRM}}
+{\footnotesize\ttfamily \#define SIGVTALRM~26}
+
+
+
+Virtual timer expired. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00096}{96}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a13ba0e7c4365813312eb4566907bce4f}\label{signal_8h_a13ba0e7c4365813312eb4566907bce4f} 
+\index{signal.h@{signal.h}!SIGWINCH@{SIGWINCH}}
+\index{SIGWINCH@{SIGWINCH}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGWINCH}{SIGWINCH}}
+{\footnotesize\ttfamily \#define SIGWINCH~28}
+
+
+
+Window size change. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00098}{98}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a7265cbba4972503c1c30a2e52a929874}\label{signal_8h_a7265cbba4972503c1c30a2e52a929874} 
+\index{signal.h@{signal.h}!SIGXCPU@{SIGXCPU}}
+\index{SIGXCPU@{SIGXCPU}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGXCPU}{SIGXCPU}}
+{\footnotesize\ttfamily \#define SIGXCPU~24}
+
+
+
+CPU time limit exceeded. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00094}{94}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a75440a7aa885a1052dfd3b4393fd9baa}\label{signal_8h_a75440a7aa885a1052dfd3b4393fd9baa} 
+\index{signal.h@{signal.h}!SIGXFSZ@{SIGXFSZ}}
+\index{SIGXFSZ@{SIGXFSZ}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SIGXFSZ}{SIGXFSZ}}
+{\footnotesize\ttfamily \#define SIGXFSZ~25}
+
+
+
+File size limit exceeded. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00095}{95}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ac515f2efc91c54803f65de08d14d4566}\label{signal_8h_ac515f2efc91c54803f65de08d14d4566} 
+\index{signal.h@{signal.h}!SS\_DISABLE@{SS\_DISABLE}}
+\index{SS\_DISABLE@{SS\_DISABLE}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SS\_DISABLE}{SS\_DISABLE}}
+{\footnotesize\ttfamily \#define SS\+\_\+\+DISABLE~(1 $<$$<$ 1)}
+
+
+
+Disable the alternate signal stack. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00153}{153}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a17bcfefa3c6fafd5d3277d867bd723fb}\label{signal_8h_a17bcfefa3c6fafd5d3277d867bd723fb} 
+\index{signal.h@{signal.h}!SS\_ONSTACK@{SS\_ONSTACK}}
+\index{SS\_ONSTACK@{SS\_ONSTACK}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{SS\_ONSTACK}{SS\_ONSTACK}}
+{\footnotesize\ttfamily \#define SS\+\_\+\+ONSTACK~(1 $<$$<$ 0)}
+
+
+
+Handler is executing on the alternate signal stack. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00152}{152}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a79fcb87a23520cade78f77a4dd3142c6}\label{signal_8h_a79fcb87a23520cade78f77a4dd3142c6} 
+\index{signal.h@{signal.h}!TRAP\_BRKPT@{TRAP\_BRKPT}}
+\index{TRAP\_BRKPT@{TRAP\_BRKPT}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{TRAP\_BRKPT}{TRAP\_BRKPT}}
+{\footnotesize\ttfamily \#define TRAP\+\_\+\+BRKPT~1}
+
+
+
+Process breakpoint. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00222}{222}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a16042a25974d31a1aff6f09bb6a7358a}\label{signal_8h_a16042a25974d31a1aff6f09bb6a7358a} 
+\index{signal.h@{signal.h}!TRAP\_TRACE@{TRAP\_TRACE}}
+\index{TRAP\_TRACE@{TRAP\_TRACE}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{TRAP\_TRACE}{TRAP\_TRACE}}
+{\footnotesize\ttfamily \#define TRAP\+\_\+\+TRACE~2}
+
+
+
+Process trace trap. 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00223}{223}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{signal_8h_ac7df60dc21a76ab73acc739e06f144b5}\label{signal_8h_ac7df60dc21a76ab73acc739e06f144b5} 
+\index{signal.h@{signal.h}!mcontext\_t@{mcontext\_t}}
+\index{mcontext\_t@{mcontext\_t}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{mcontext\_t}{mcontext\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__platform__mcontext}{\+\_\+platform\+\_\+mcontext}} \mbox{\hyperlink{signal_8h_ac7df60dc21a76ab73acc739e06f144b5}{mcontext\+\_\+t}}}
+
+
+
+Platform specific representation of the CPU context state (registers) 
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00159}{159}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a5d486213aa4f744f497959af6917e2a0}\label{signal_8h_a5d486213aa4f744f497959af6917e2a0} 
+\index{signal.h@{signal.h}!sig\_atomic\_t@{sig\_atomic\_t}}
+\index{sig\_atomic\_t@{sig\_atomic\_t}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{sig\_atomic\_t}{sig\_atomic\_t}}
+{\footnotesize\ttfamily typedef int sig\+\_\+atomic\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00025}{25}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a5577f7172a5a86ef850860b078a205c7}\label{signal_8h_a5577f7172a5a86ef850860b078a205c7} 
+\index{signal.h@{signal.h}!sigaction\_handler\_t@{sigaction\_handler\_t}}
+\index{sigaction\_handler\_t@{sigaction\_handler\_t}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{sigaction\_handler\_t}{sigaction\_handler\_t}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} sigaction\+\_\+handler\+\_\+t) (int, \mbox{\hyperlink{struct__siginfo}{siginfo\+\_\+t}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})}
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00121}{121}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_ad2e029633cdb7b9bbf853c87a8a277f1}\label{signal_8h_ad2e029633cdb7b9bbf853c87a8a277f1} 
+\index{signal.h@{signal.h}!sigev\_notify\_function\_t@{sigev\_notify\_function\_t}}
+\index{sigev\_notify\_function\_t@{sigev\_notify\_function\_t}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{sigev\_notify\_function\_t}{sigev\_notify\_function\_t}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} sigev\+\_\+notify\+\_\+function\+\_\+t) (union \mbox{\hyperlink{unionsigval}{sigval}})}
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00045}{45}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a754cdc0bcfffe07baa426dc252c9101a}\label{signal_8h_a754cdc0bcfffe07baa426dc252c9101a} 
+\index{signal.h@{signal.h}!sighandler\_t@{sighandler\_t}}
+\index{sighandler\_t@{sighandler\_t}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{sighandler\_t}{sighandler\_t}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} sighandler\+\_\+t) (int)}
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00033}{33}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a9140a5882f847f67b8155c759ac6aa05}\label{signal_8h_a9140a5882f847f67b8155c759ac6aa05} 
+\index{signal.h@{signal.h}!sigset\_t@{sigset\_t}}
+\index{sigset\_t@{sigset\_t}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{sigset\_t}{sigset\_t}}
+{\footnotesize\ttfamily typedef unsigned long sigset\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{signal_8h_source_l00026}{26}} of file \mbox{\hyperlink{signal_8h_source}{signal.\+h}}.
+
+\Hypertarget{signal_8h_a69b75656171a47d0fa604a66afc97b3b}\label{signal_8h_a69b75656171a47d0fa604a66afc97b3b} 
+\index{signal.h@{signal.h}!ucontext\_t@{ucontext\_t}}
+\index{ucontext\_t@{ucontext\_t}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{ucontext\_t}{ucontext\_t}}
+{\footnotesize\ttfamily \mbox{\hyperlink{signal_8h_a69b75656171a47d0fa604a66afc97b3b}{ucontext\+\_\+t}}}
+
+
+
+Public alais of \doxylink{struct__siginfo}{\+\_\+siginfo}. 
+
+Public alais of \doxylink{struct__ucontext}{\+\_\+ucontext}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{signal_8h_a15f175029d9839bc5de63d726c0cc610}\label{signal_8h_a15f175029d9839bc5de63d726c0cc610} 
+\index{signal.h@{signal.h}!kill@{kill}}
+\index{kill@{kill}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{kill()}{kill()}}
+{\footnotesize\ttfamily int kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}}}]{pid,  }\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Send a sig to a process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The process (or process group if negative) to send the sig to \\
+\hline
+{\em sig} & The sig to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 with an errno 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{signal_8c_source_l00021}{21}} of file \mbox{\hyperlink{signal_8c_source}{signal.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Ensure\ a\ valid\ sig}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}(sig\ <\ 0\ ||\ sig\ >=\ \mbox{\hyperlink{signal_8h_a275020780cb70a8b0cba8db5accc5d19}{\_NSIG}})}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ RETURN\_ERR(\mbox{\hyperlink{errno_8h_a2d1678d5a7cc8ce499643f3b8957def4}{EINVAL}});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Send\ the\ kill\ sig\ (platform\ specific)}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{example_8h_a157ea78ac249fb55b42e39bba030a953}{\_platform\_kill}}(pid,sig);}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{signal_8h_source_l00065}{\+\_\+\+NSIG}}, \mbox{\hyperlink{example_8c_source_l00074}{\+\_\+platform\+\_\+kill()}}, and \mbox{\hyperlink{errno_8h_source_l00043}{EINVAL}}.
+
+
+
+Referenced by \mbox{\hyperlink{signal_8c_source_l00039}{killpg()}}, and \mbox{\hyperlink{signal_8c_source_l00070}{raise()}}.
+
+\Hypertarget{signal_8h_ad58b5094e7a641d20eb1faa55c5a03f2}\label{signal_8h_ad58b5094e7a641d20eb1faa55c5a03f2} 
+\index{signal.h@{signal.h}!killpg@{killpg}}
+\index{killpg@{killpg}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{killpg()}{killpg()}}
+{\footnotesize\ttfamily int killpg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}}}]{pgid,  }\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Send a sig to a process group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pgid} & The process group to send the sig to \\
+\hline
+{\em sig} & The sig to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 with an errno 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{signal_8c_source_l00039}{39}} of file \mbox{\hyperlink{signal_8c_source}{signal.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ IDs\ must\ be\ positive\ as\ platform\ expects\ negatives\ to\ represent\ a\ group\ which\ fails\ under\ -\/(-\/pgid)}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (pgid\ <\ 0)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ RETURN\_ERR(\mbox{\hyperlink{errno_8h_a2d1678d5a7cc8ce499643f3b8957def4}{EINVAL}});}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Send\ the\ kill\ sig\ and\ make\ it\ a\ group\ (platform\ specific)}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{signal_8c_a4539db972bcf3dd8c8b429af0dc3789d}{kill}}(-\/pgid,sig);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{errno_8h_source_l00043}{EINVAL}}, and \mbox{\hyperlink{signal_8c_source_l00021}{kill()}}.
+
+\Hypertarget{signal_8h_ab01027d3834f9f9a5e7f245b4e2d8025}\label{signal_8h_ab01027d3834f9f9a5e7f245b4e2d8025} 
+\index{signal.h@{signal.h}!pthread\_kill@{pthread\_kill}}
+\index{pthread\_kill@{pthread\_kill}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{pthread\_kill()}{pthread\_kill()}}
+{\footnotesize\ttfamily int pthread\+\_\+kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a5a968e6376296a133fae83572d4b2efc}{pthread\+\_\+t}}}]{thread,  }\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Send a sig to a thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & The destination thread to send the sig to \\
+\hline
+{\em sig} & The sig to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 with an errno 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{signal_8c_source_l00058}{58}} of file \mbox{\hyperlink{signal_8c_source}{signal.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ TODO:\ POSIX\ pthreads\ support}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+\Hypertarget{signal_8h_a3e2d42c4a71136a5b06d2c1abb8a8e5f}\label{signal_8h_a3e2d42c4a71136a5b06d2c1abb8a8e5f} 
+\index{signal.h@{signal.h}!raise@{raise}}
+\index{raise@{raise}!signal.h@{signal.h}}
+\doxysubsubsection{\texorpdfstring{raise()}{raise()}}
+{\footnotesize\ttfamily int raise (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Send a sig to the executing process. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, or -\/1 with an errno 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{signal_8c_source_l00070}{70}} of file \mbox{\hyperlink{signal_8c_source}{signal.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ Ensure\ a\ valid\ sig}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}(sig\ <\ 0\ ||\ sig\ >=\ \mbox{\hyperlink{signal_8h_a275020780cb70a8b0cba8db5accc5d19}{\_NSIG}})}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ RETURN\_ERR(\mbox{\hyperlink{errno_8h_a2d1678d5a7cc8ce499643f3b8957def4}{EINVAL}});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{signal_8c_a4539db972bcf3dd8c8b429af0dc3789d}{kill}}(\mbox{\hyperlink{example_8h_affbc9aef4e1dd7a9e3c096d8a823ad16}{\_platform\_getpid}}(),\ sig);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{signal_8h_source_l00065}{\+\_\+\+NSIG}}, \mbox{\hyperlink{example_8c_source_l00061}{\+\_\+platform\+\_\+getpid()}}, \mbox{\hyperlink{errno_8h_source_l00043}{EINVAL}}, and \mbox{\hyperlink{signal_8c_source_l00021}{kill()}}.
+
