@@ -41,7 +41,7 @@ TARGET_INCLUDE_DIRECTORIES(c
 
 # Set the flags
 TARGET_COMPILE_OPTIONS(c PRIVATE  -Wall)
-TARGET_COMPILE_OPTIONS(c PRIVATE -nostdlib -ffreestanding)
+TARGET_COMPILE_OPTIONS(c PRIVATE -nostdlib -ffreestanding -nostdinc)
 
 # Install
 INSTALL(

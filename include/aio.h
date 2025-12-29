@@ -13,6 +13,8 @@
 #include <time.h>
 #include <signal.h>
 
+CPP_START
+
 /**
  * @struct aiocb
  * @brief Defines an async I/O control block, the parameters that control an I/O operation
@@ -50,6 +52,6 @@ int      aio_write(struct aiocb*);
 
 int      lio_listio(int, struct aiocb* restrict const [restrict], int, struct sigevent* restrict);
 
-
+CPP_END
 
 #endif //LIBC_AIO_H
