@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('wait_8h_source.html',''); initResizabl
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="wait_8h.html#a68e8ee6dc7b0115ddc033d974792fa94">   29</a></span><span class="preprocessor">#define WNOWAIT         (1 &lt;&lt; 1)    </span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="wait_8h.html#a34c9a2f671a03d4523a4e7d9642f908f">   30</a></span><span class="preprocessor">#define WSTOPPED        (1 &lt;&lt; 2)    </span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// Internal: status layout (signal | core | exit code)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// Internal: status layout (signal | core | exit code) @todo: platform specific</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="wait_8h.html#affd21962b612827bfb2de8e398d3128f">   33</a></span><span class="preprocessor">#define __WSTATUS_SIGNAL_BITS       7                                               </span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="wait_8h.html#abaa8849030b372083f4fd07ad3ebd942">   34</a></span><span class="preprocessor">#define __WSTATUS_SIGNAL_MASK       ((1u &lt;&lt; __WSTATUS_SIGNAL_BITS) - 1)             </span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="wait_8h.html#a9998d9f29f40413b9a96cadb0a979404">   35</a></span><span class="preprocessor">#define __WSTATUS_COREDUMP_BIT      __WSTATUS_SIGNAL_BITS                           </span></div>
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('wait_8h_source.html',''); initResizabl
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>CPP_END</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">//LIBC_WAIT_H</span></div>
-<div class="ttc" id="alibc__common_8h_html"><div class="ttname"><a href="libc__common_8h.html">libc_common.h</a></div><div class="ttdoc">Functions and macros that are used often throughout this implmentaion of LibC.</div></div>
+<div class="ttc" id="alibc__common_8h_html"><div class="ttname"><a href="libc__common_8h.html">libc_common.h</a></div><div class="ttdoc">Functions and macros that are used often throughout this implementation of LibC.</div></div>
 <div class="ttc" id="asignal_8h_html"><div class="ttname"><a href="signal_8h.html">signal.h</a></div><div class="ttdoc">Defines functions to handle async events in a proc.</div></div>
 <div class="ttc" id="astruct__siginfo_html"><div class="ttname"><a href="struct__siginfo.html">_siginfo</a></div><div class="ttdoc">Defines the cause and origin of a signal.</div><div class="ttdef"><b>Definition</b> <a href="signal_8h_source.html#l00109">signal.h:110</a></div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Defines the common types used throughout libc.</div></div>

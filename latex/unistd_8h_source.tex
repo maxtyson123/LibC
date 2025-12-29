@@ -1,0 +1,112 @@
+\doxysection{unistd.\+h}
+\hypertarget{unistd_8h_source}{}\label{unistd_8h_source}\index{/home/runner/work/LibC/LibC/include/unistd.h@{/home/runner/work/LibC/LibC/include/unistd.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ LIBC\_UINSTD\_H}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ LIBC\_UINSTD\_H}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00015}00015\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00017}00017\ \textcolor{preprocessor}{\#define\ \_POSIX\_VERSION\ \ 202405L\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00018}00018\ \textcolor{preprocessor}{\#define\ \_POSIX2\_VERSION\ -\/1\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00019}00019\ \textcolor{preprocessor}{\#define\ \_XOPEN\_VERSION\ \ 800\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00021}00021\ \textcolor{comment}{//\ Optional\ features\ /\ groups}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00022}00022\ \textcolor{preprocessor}{\#define\ \_NOT\_IMPLEMENTED\ \ \ \ -\/1\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00023}00023\ \textcolor{preprocessor}{\#define\ \_ABI\_PRESENT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00024}00024\ \textcolor{preprocessor}{\#define\ \_PLATFORM\_SUPPORTED\ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00025}00025\ \textcolor{preprocessor}{\#define\ \_SPEC\_SUPPORTED\ \ \ \ \ 202405L\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00027}00027\ \textcolor{preprocessor}{\#define\ \_POSIX\_ADVISORY\_INFO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00028}00028\ \textcolor{preprocessor}{\#define\ \_POSIX\_ASYNCHRONOUS\_IO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ \_POSIX\_BARRIERS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00030}00030\ \textcolor{preprocessor}{\#define\ \_POSIX\_CHOWN\_RESTRICTED\ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00031}00031\ \textcolor{preprocessor}{\#define\ \_POSIX\_CLOCK\_SELECTION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00032}00032\ \textcolor{preprocessor}{\#define\ \_POSIX\_CPUTIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00033}00033\ \textcolor{preprocessor}{\#define\ \_POSIX\_DEVICE\_CONTROL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00034}00034\ \textcolor{preprocessor}{\#define\ \_POSIX\_FSYNC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ \_POSIX\_IPV6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00036}00036\ \textcolor{preprocessor}{\#define\ \_POSIX\_JOB\_CONTROL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00037}00037\ \textcolor{preprocessor}{\#define\ \_POSIX\_MAPPED\_FILES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00038}00038\ \textcolor{preprocessor}{\#define\ \_POSIX\_MEMLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00039}00039\ \textcolor{preprocessor}{\#define\ \_POSIX\_MEMLOCK\_RANGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00040}00040\ \textcolor{preprocessor}{\#define\ \_POSIX\_MEMORY\_PROTECTION\ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00041}00041\ \textcolor{preprocessor}{\#define\ \_POSIX\_MESSAGE\_PASSING\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00042}00042\ \textcolor{preprocessor}{\#define\ \_POSIX\_MONOTONIC\_CLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00043}00043\ \textcolor{preprocessor}{\#define\ \_POSIX\_NO\_TRUNC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00044}00044\ \textcolor{preprocessor}{\#define\ \_POSIX\_PRIORITIZED\_IO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00045}00045\ \textcolor{preprocessor}{\#define\ \_POSIX\_PRIORITY\_SCHEDULING\ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00046}00046\ \textcolor{preprocessor}{\#define\ \_POSIX\_RAW\_SOCKETS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00047}00047\ \textcolor{preprocessor}{\#define\ \_POSIX\_READER\_WRITER\_LOCKS\ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00048}00048\ \textcolor{preprocessor}{\#define\ \_POSIX\_REALTIME\_SIGNALS\ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00049}00049\ \textcolor{preprocessor}{\#define\ \_POSIX\_REGEXP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00050}00050\ \textcolor{preprocessor}{\#define\ \_POSIX\_SAVED\_IDS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00051}00051\ \textcolor{preprocessor}{\#define\ \_POSIX\_SEMAPHORES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00052}00052\ \textcolor{preprocessor}{\#define\ \_POSIX\_SHARED\_MEMORY\_OBJECTS\ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00053}00053\ \textcolor{preprocessor}{\#define\ \_POSIX\_SHELL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00054}00054\ \textcolor{preprocessor}{\#define\ \_POSIX\_SPAWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00055}00055\ \textcolor{preprocessor}{\#define\ \_POSIX\_SPIN\_LOCKS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00056}00056\ \textcolor{preprocessor}{\#define\ \_POSIX\_SPORADIC\_SERVER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00057}00057\ \textcolor{preprocessor}{\#define\ \_POSIX\_SYNCHRONIZED\_IO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00058}00058\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_ATTR\_STACKADDR\ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00059}00059\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_ATTR\_STACKSIZE\ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00060}00060\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_CPUTIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00061}00061\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_PRIO\_INHERIT\ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00062}00062\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_PRIO\_PROTECT\ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00063}00063\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_PRIORITY\_SCHEDULING\ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00064}00064\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_PROCESS\_SHARED\ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00065}00065\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_ROBUST\_PRIO\_INHERIT\ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00066}00066\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_ROBUST\_PRIO\_PROTECT\ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00067}00067\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_SAFE\_FUNCTIONS\ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00068}00068\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREAD\_SPORADIC\_SERVER\ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00069}00069\ \textcolor{preprocessor}{\#define\ \_POSIX\_THREADS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00070}00070\ \textcolor{preprocessor}{\#define\ \_POSIX\_TIMEOUTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00071}00071\ \textcolor{preprocessor}{\#define\ \_POSIX\_TIMERS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00072}00072\ \textcolor{preprocessor}{\#define\ \_POSIX\_TYPED\_MEMORY\_OBJECTS\ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00073}00073\ \textcolor{preprocessor}{\#define\ \_POSIX2\_C\_BIND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00074}00074\ \textcolor{preprocessor}{\#define\ \_POSIX2\_C\_DEV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00075}00075\ \textcolor{preprocessor}{\#define\ \_POSIX2\_CHAR\_TERM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00076}00076\ \textcolor{preprocessor}{\#define\ \_POSIX2\_FORT\_RUN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00077}00077\ \textcolor{preprocessor}{\#define\ \_POSIX2\_LOCALEDEF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00078}00078\ \textcolor{preprocessor}{\#define\ \_POSIX2\_SW\_DEV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00079}00079\ \textcolor{preprocessor}{\#define\ \_POSIX2\_UPE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00080}00080\ \textcolor{preprocessor}{\#define\ \_XOPEN\_CRYPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00081}00081\ \textcolor{preprocessor}{\#define\ \_XOPEN\_ENH\_I18N\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00082}00082\ \textcolor{preprocessor}{\#define\ \_XOPEN\_REALTIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00083}00083\ \textcolor{preprocessor}{\#define\ \_XOPEN\_REALTIME\_THREADS\ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00084}00084\ \textcolor{preprocessor}{\#define\ \_XOPEN\_SHM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00085}00085\ \textcolor{preprocessor}{\#define\ \_XOPEN\_UNIX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_SPEC\_SUPPORTED\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00086}00086\ \textcolor{preprocessor}{\#define\ \_XOPEN\_UUCP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_PLATFORM\_SUPPORTED\ }}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00088}00088\ \textcolor{comment}{//\ Type\ sizes}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00089}00089\ \textcolor{preprocessor}{\#if\ (\_\_SIZEOF\_INT\_\_\ ==\ 4)\ \&\&\ (\_\_SIZEOF\_LONG\_\_\ ==\ 4)\ \&\&\ (\_\_SIZEOF\_POINTER\_\_\ ==\ 4)}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00090}00090\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\_\_SIZEOF\_OFF\_T\_\_\ ==\ 4)}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00091}00091\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V7\_ILP32\_OFF32}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00092}00092\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V8\_ILP32\_OFF32}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00093}00093\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00094}00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V7\_ILP32\_OFFBIG}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00095}00095\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V8\_ILP32\_OFFBIG}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00096}00096\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00097}00097\ \textcolor{preprocessor}{\#elif\ (\_\_SIZEOF\_INT\_\_\ ==\ 4)\ \&\&\ (\_\_SIZEOF\_LONG\_\_\ ==\ 8)\ \&\&\ (\_\_SIZEOF\_POINTER\_\_\ ==\ 8)}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00098}00098\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\_\_SIZEOF\_OFF\_T\_\_\ ==\ 8)}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00099}00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V7\_LP64\_OFF64}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00100}00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V8\_LP64\_OFF64}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00101}00101\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00102}00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V7\_LPBIG\_OFFBIG}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00103}00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ \_POSIX\_V8\_LPBIG\_OFFBIG}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00104}00104\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00105}00105\ \textcolor{preprocessor}{\#elif\ (\_\_SIZEOF\_INT\_\_\ >=\ 4)\ \&\&\ (\_\_SIZEOF\_LONG\_\_\ >=\ 8)\ \&\&(\_\_SIZEOF\_POINTER\_\_\ >=\ 8)\ \&\&\ (\_\_SIZEOF\_OFF\_T\_\_\ >=\ 8)}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00106}00106\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_POSIX\_V7\_LPBIG\_OFFBIG}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00107}00107\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_POSIX\_V8\_LPBIG\_OFFBIG}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00108}00108\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00111}00111\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{unistd_8h_source_l00113}00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_UINSTD\_H}}
+
+\end{DoxyCode}
