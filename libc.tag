@@ -822,6 +822,415 @@
     </member>
   </compound>
   <compound kind="file">
+    <name>fcntl.h</name>
+    <path>/home/runner/work/LibC/LibC/include/</path>
+    <filename>fcntl_8h.html</filename>
+    <includes id="libc__common_8h" name="libc_common.h" local="no" import="no" module="no" objc="no">libc_common.h</includes>
+    <includes id="types_8h" name="types.h" local="no" import="no" module="no" objc="no">sys/types.h</includes>
+    <includes id="stat_8h" name="stat.h" local="no" import="no" module="no" objc="no">sys/stat.h</includes>
+    <class kind="struct">f_owner_ex</class>
+    <class kind="struct">flock</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_DUPFD</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ab93a8621587aba90181efd7d3aeea67e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_DUPFD_CLOEXEC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>af532232f0b65dc6296aedd2b60de7285</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_DUPFD_CLOFORK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a6ef080a3e6218fde5d2457dbd560f7f4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_GETFD</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>abc11141031604fb22b8e3a201155cbb3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_SETFD</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ad27227e8d87b844648f07d66da38bb3f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_GETFL</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a025fad21a889c79f02ec53abe3526c32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_SETFL</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>af2939853c650561d3495ed40f68f6249</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_GETLK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a2c3005e07f9aedb5d77856d13c3e40c4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_SETLK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a68a7fc570f2fc271acc5358a6418504e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_SETLKW</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>aabb866cd0cf7ed3544dfc335e0e360fd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_OFD_GETLK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a1564b73f59286bbf0999706304f87c6c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_OFD_SETLK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a4fc21528a6ce28d77a755f391568e1b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_OFD_SETLKW</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a1538d86465f1f7057703c9c5e7a0f5b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_GETOWN</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>aa76959dcf54457a81c4cdf7789ba73e4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_GETOWN_EX</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a93853ac9fe27cbd3b0f01a85aa757307</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_SETOWN</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a10e6ca002b56361c5adb1e66a8a4917d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_SETOWN_EX</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>adc1650d605443666b5301529250beaf8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>FD_CLOEXEC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a7e7a00c884ea124bb9f687b16cb5db9b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>FD_CLOFORK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a33f5960552a23f65499b00d963c5a4b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_RDLCK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a1dfb7f83dd3989782404c0204484655b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_UNLCK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a2ace36798dbaef59cf9c99a4bf14fb96</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_WRLCK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a708b81093fd9c80a2adc260b3e9ca623</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_OWNER_PID</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a0def4a47951ccbb2414661ee00ff96ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>F_OWNER_PGRP</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ad0a5636b8c5e66572f423f3cf4351cf8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_CLOEXEC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ad6d8fbe4e494b4dbe051612572d3f757</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_CLOFORK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a1783d59f495ce350c1ed3e1724265ed5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_CREAT</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a1cf6b1de1fffedaa1d26b189e9a8d2cc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_DIRECTORY</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a6afd3dd2f570069804b40e6aa24fc966</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_EXCL</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a9f5acfe79fafe14b6694447bd0e9f10b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_NOCTTY</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a2e375ab32c7ef4581b026be28e4cc116</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_NOFOLLOW</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a82d4d551b214905742c9e045185d352a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_TRUNC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ad1d67e453fb3031f40f8cd3403773813</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_TTY_INIT</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a0ee7b090d0fd09015039f6325118400f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_APPEND</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ae036f789407d21f07b211552d67b3214</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_DSYNC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>af63e33218e573b9461b5f17d0ea79f2a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_NONBLOCK</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a39d33ce33804efd4d52606d59071c6d8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_RSYNC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ac9cf617d7c8fba45a5062f1f7322e6f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_SYNC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>aae85139bfa94236d126bb1e3b772998f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_ACCMODE</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a4dc4d45e07d2abc899bcaf04b2846a87</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_EXEC</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a459542206659fbe295eb4183f8b8f06c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_RDONLY</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a7a68c9ffaac7dbcd652225dd7c06a54b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_RDWR</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>abb0586253488ee61072b73557eeb873b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_SEARCH</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ac7984b2eaa7166aea31f0c4f6c91fb2d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>O_WRONLY</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a11b644a8526139c4cc1850dac1271ced</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AT_FDCWD</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a301749b9aa4b9416c329bb8b19345216</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AT_EACCESS</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>afba18be015711a5c496d49a1387bd412</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AT_SYMLINK_NOFOLLOW</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>ad623014f05ffb83df42ba96900fcd62e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AT_SYMLINK_FOLLOW</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a0517ad09fa61307dd14718334b60f36e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AT_REMOVEDIR</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a18f47dae5e59e6683441ef49754fe068</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>POSIX_FADV_DONTNEED</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a088883d3ba2ef3135e249427b897c650</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>POSIX_FADV_NOREUSE</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a4e3faf88d9b26f7cff31148b4f484149</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>POSIX_FADV_NORMAL</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>afa2732611a1cf71fcf542361a97a4745</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>POSIX_FADV_RANDOM</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>aae17e2b1aa1265c588e04df5ec81c3d1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>POSIX_FADV_SEQUENTIAL</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a997e00c0569d307a3f01a2f21517ee84</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>POSIX_FADV_WILLNEED</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a4ba20512b0198da87b7d5176767ec29e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct f_owner_ex</type>
+      <name>f_owner_ex</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a29de8b02cbd84a7276cbfa830051eecb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct flock</type>
+      <name>flock_t</name>
+      <anchorfile>fcntl_8h.html</anchorfile>
+      <anchor>a6080528b263ea3225fa5eb894b076f24</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
     <name>libc_common.h</name>
     <path>/home/runner/work/LibC/LibC/include/</path>
     <filename>libc__common_8h.html</filename>
@@ -1621,6 +2030,12 @@
       <anchor>a3e2d42c4a71136a5b06d2c1abb8a8e5f</anchor>
       <arglist>(int)</arglist>
     </member>
+  </compound>
+  <compound kind="file">
+    <name>stdarg.h</name>
+    <path>/home/runner/work/LibC/LibC/include/</path>
+    <filename>stdarg_8h.html</filename>
+    <includes id="libc__common_8h" name="libc_common.h" local="no" import="no" module="no" objc="no">libc_common.h</includes>
   </compound>
   <compound kind="file">
     <name>stddef.h</name>
@@ -2743,6 +3158,63 @@
       <name>aio_lio_opcode</name>
       <anchorfile>structaiocb.html</anchorfile>
       <anchor>a8a23597de7bfc422b58ec9816ced7d47</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>f_owner_ex</name>
+    <filename>structf__owner__ex.html</filename>
+    <member kind="variable">
+      <type>int</type>
+      <name>type</name>
+      <anchorfile>structf__owner__ex.html</anchorfile>
+      <anchor>afd32d7286d5aba4fb1ba922d58591997</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>pid_t</type>
+      <name>pid</name>
+      <anchorfile>structf__owner__ex.html</anchorfile>
+      <anchor>af64f49cc3f3024dce2031477aa13d8f7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>flock</name>
+    <filename>structflock.html</filename>
+    <member kind="variable">
+      <type>short</type>
+      <name>l_type</name>
+      <anchorfile>structflock.html</anchorfile>
+      <anchor>a24ceb1a44b2a5912f6f8b50195ed7fbe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>short</type>
+      <name>l_whence</name>
+      <anchorfile>structflock.html</anchorfile>
+      <anchor>acea10bfe92ee06d519c4850739924198</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>off_t</type>
+      <name>l_start</name>
+      <anchorfile>structflock.html</anchorfile>
+      <anchor>a692ebc7782fe6a11c9de67d7fd20cc8f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>off_t</type>
+      <name>l_len</name>
+      <anchorfile>structflock.html</anchorfile>
+      <anchor>af5dc2da04cf2af6e5b77018f9cdce489</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>pid_t</type>
+      <name>l_pid</name>
+      <anchorfile>structflock.html</anchorfile>
+      <anchor>a5e84556aa660bd41cc8b8d862a547887</anchor>
       <arglist></arglist>
     </member>
   </compound>

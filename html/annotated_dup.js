@@ -10,6 +10,8 @@ var annotated_dup =
     [ "_struct_platform_locale", "struct__struct__platform__locale.html", null ],
     [ "_ucontext", "struct__ucontext.html", "struct__ucontext" ],
     [ "aiocb", "structaiocb.html", "structaiocb" ],
+    [ "f_owner_ex", "structf__owner__ex.html", "structf__owner__ex" ],
+    [ "flock", "structflock.html", "structflock" ],
     [ "itimerspec", "structitimerspec.html", "structitimerspec" ],
     [ "lconv", "structlconv.html", "structlconv" ],
     [ "sigaction", "structsigaction.html", "structsigaction" ],

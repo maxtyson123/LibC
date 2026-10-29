@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['n_5fcs_5fprecedes_0',['n_cs_precedes',['../structlconv.html#ad118b68a229527f7e96538ac875169ad',1,'lconv']]],
-  ['n_5fsep_5fby_5fspace_1',['n_sep_by_space',['../structlconv.html#ab7ac20ce034900155183b32fc3c6d9a3',1,'lconv']]],
-  ['n_5fsign_5fposn_2',['n_sign_posn',['../structlconv.html#ae0bbe6f545952daef5a8cbdd054a184e',1,'lconv']]],
-  ['negative_5fsign_3',['negative_sign',['../structlconv.html#a40dbb1b1d7fdf4926145138f5d8f6f5f',1,'lconv']]]
+  ['mon_5fdecimal_5fpoint_0',['mon_decimal_point',['../structlconv.html#a1aa08afe707c1d5d40b4d01369176480',1,'lconv']]],
+  ['mon_5fgrouping_1',['mon_grouping',['../structlconv.html#a12ecf5d2f7ceb0cfe0f66fd3200eef54',1,'lconv']]],
+  ['mon_5fthousands_5fsep_2',['mon_thousands_sep',['../structlconv.html#a4f04f4fd9ea670d21fc76fb5c77c032d',1,'lconv']]]
 ];

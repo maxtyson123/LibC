@@ -26,5 +26,6 @@ var searchData=
   ['trap_5ftrace_23',['TRAP_TRACE',['../signal_8h.html#a16042a25974d31a1aff6f09bb6a7358a',1,'signal.h']]],
   ['tv_5fnsec_24',['tv_nsec',['../structtimespec.html#ae3c7510dafa8cbcaede866ed13c99683',1,'timespec']]],
   ['tv_5fsec_25',['tv_sec',['../structtimespec.html#afc3302668d7cb5952f590da69fdd4955',1,'timespec']]],
-  ['types_2eh_26',['types.h',['../types_8h.html',1,'']]]
+  ['type_26',['type',['../structf__owner__ex.html#afd32d7286d5aba4fb1ba922d58591997',1,'f_owner_ex']]],
+  ['types_2eh_27',['types.h',['../types_8h.html',1,'']]]
 ];

@@ -1,0 +1,117 @@
+\doxysection{stdio.\+h}
+\hypertarget{stdio_8h_source}{}\label{stdio_8h_source}\index{/home/runner/work/LibC/LibC/include/stdio.h@{/home/runner/work/LibC/LibC/include/stdio.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{types_8h}{sys/types.h}}>}}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stddef_8h}{stddef.h}}>}}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stdarg_8h}{stdarg.h}}>}}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00017}00017\ \textcolor{preprocessor}{\#ifndef\ LIBC\_STDIO\_H}}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00018}00018\ \textcolor{preprocessor}{\#define\ LIBC\_STDIO\_H}}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00020}00020\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00026}00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\_\_stdio\_file\ FILE;}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00032}00032\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ fpos\_t;}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00034}00034\ \textcolor{preprocessor}{\#define\ BUFSIZ\ \ \ \ \ \ 8192\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ L\_ctermid\ \ \ 32\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00036}00036\ \textcolor{preprocessor}{\#define\ L\_tmpnam\ \ \ \ 32\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00038}00038\ \textcolor{preprocessor}{\#define\ \_IOFBF\ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00039}00039\ \textcolor{preprocessor}{\#define\ \_IOLBF\ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00040}00040\ \textcolor{preprocessor}{\#define\ \_IONBF\ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00042}00042\ \textcolor{preprocessor}{\#define\ SEEK\_SET\ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00043}00043\ \textcolor{preprocessor}{\#define\ SEEK\_CUR\ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00044}00044\ \textcolor{preprocessor}{\#define\ SEEK\_END\ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00046}00046\ \textcolor{preprocessor}{\#define\ FILENAME\_MAX\ \ \ \ 4096\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00047}00047\ \textcolor{preprocessor}{\#define\ FOPEN\_MAX\ \ \ \ \ \ \ 16\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00048}00048\ \textcolor{preprocessor}{\#define\ TMP\_MAX\ \ \ \ \ \ \ \ \ 25\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00050}00050\ \textcolor{preprocessor}{\#define\ EOF\ (-\/1)\ }}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00053}00053\ \textcolor{keyword}{extern}\ FILE\ *stderr;}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00056}00056\ \textcolor{keyword}{extern}\ FILE\ *stdin;}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00059}00059\ \textcolor{keyword}{extern}\ FILE\ *stdout;}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00061}00061\ \textcolor{keywordtype}{void}\ \ \ \ \ clearerr(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00062}00062\ \textcolor{keywordtype}{char}*\ \ \ \ ctermid(\textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00063}00063\ \textcolor{keywordtype}{int}\ \ \ \ \ \ dprintf(\textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00064}00064\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fclose(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00065}00065\ FILE*\ \ \ \ fdopen(\textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00066}00066\ \textcolor{keywordtype}{int}\ \ \ \ \ \ feof(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00067}00067\ \textcolor{keywordtype}{int}\ \ \ \ \ \ ferror(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00068}00068\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fflush(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00069}00069\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fgetc(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00070}00070\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fgetpos(FILE*\ restrict,\ fpos\_t*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00071}00071\ \textcolor{keywordtype}{char}*\ \ \ \ fgets(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{int},\ FILE*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00072}00072\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fileno(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00073}00073\ \textcolor{keywordtype}{void}\ \ \ \ \ flockfile(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00074}00074\ FILE*\ \ \ \ fmemopen(\textcolor{keywordtype}{void}*\ restrict,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00075}00075\ FILE*\ \ \ \ fopen(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00076}00076\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fprintf(FILE*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00077}00077\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fputc(\textcolor{keywordtype}{int},\ FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00078}00078\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fputs(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ FILE*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00079}00079\ \textcolor{keywordtype}{size\_t}\ \ \ fread(\textcolor{keywordtype}{void}*\ restrict,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ FILE*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00080}00080\ FILE*\ \ \ \ freopen(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ FILE*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00081}00081\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fscanf(FILE*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00082}00082\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fseek(FILE*\ ,\ \textcolor{keywordtype}{long},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00083}00083\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fseeko(FILE*\ ,\ \mbox{\hyperlink{types_8h_a2cb84cf5f02a29b7e8f237ff151a9225}{off\_t}},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00084}00084\ \textcolor{keywordtype}{int}\ \ \ \ \ \ fsetpos(FILE*\ ,\ \textcolor{keyword}{const}\ fpos\_t*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00085}00085\ \textcolor{keywordtype}{long}\ \ \ \ \ ftell(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00086}00086\ \mbox{\hyperlink{types_8h_a2cb84cf5f02a29b7e8f237ff151a9225}{off\_t}}\ \ \ \ ftello(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00087}00087\ \textcolor{keywordtype}{int}\ \ \ \ \ \ ftrylockfile(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00088}00088\ \textcolor{keywordtype}{void}\ \ \ \ \ funlockfile(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00089}00089\ \textcolor{keywordtype}{size\_t}\ \ \ fwrite(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ restrict,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ FILE*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00090}00090\ \textcolor{keywordtype}{int}\ \ \ \ \ \ getc(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00091}00091\ \textcolor{keywordtype}{int}\ \ \ \ \ \ getchar(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00092}00092\ \textcolor{keywordtype}{int}\ \ \ \ \ \ getc\_unlocked(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00093}00093\ \textcolor{keywordtype}{int}\ \ \ \ \ \ getchar\_unlocked(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00094}00094\ ssize\_t\ \ getdelim(\textcolor{keywordtype}{char}*\ *restrict,\ \textcolor{keywordtype}{size\_t}*\ restrict,\ \textcolor{keywordtype}{int},\ FILE*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00095}00095\ ssize\_t\ \ getline(\textcolor{keywordtype}{char}*\ *restrict,\ \textcolor{keywordtype}{size\_t}*\ restrict,\ FILE*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00096}00096\ FILE*\ \ \ \ open\_memstream(\textcolor{keywordtype}{char}*\ *,\ \textcolor{keywordtype}{size\_t}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00097}00097\ \textcolor{keywordtype}{int}\ \ \ \ \ \ pclose(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00098}00098\ \textcolor{keywordtype}{void}\ \ \ \ \ perror(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00099}00099\ FILE*\ \ \ \ popen(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00100}00100\ \textcolor{keywordtype}{int}\ \ \ \ \ \ printf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00101}00101\ \textcolor{keywordtype}{int}\ \ \ \ \ \ putc(\textcolor{keywordtype}{int},\ FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00102}00102\ \textcolor{keywordtype}{int}\ \ \ \ \ \ putchar(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00103}00103\ \textcolor{keywordtype}{int}\ \ \ \ \ \ putc\_unlocked(\textcolor{keywordtype}{int},\ FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00104}00104\ \textcolor{keywordtype}{int}\ \ \ \ \ \ putchar\_unlocked(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00105}00105\ \textcolor{keywordtype}{int}\ \ \ \ \ \ puts(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00106}00106\ \textcolor{keywordtype}{int}\ \ \ \ \ \ remove(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00107}00107\ \textcolor{keywordtype}{int}\ \ \ \ \ \ rename(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00108}00108\ \textcolor{keywordtype}{int}\ \ \ \ \ \ renameat(\textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ,\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00109}00109\ \textcolor{keywordtype}{void}\ \ \ \ \ rewind(FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00110}00110\ \textcolor{keywordtype}{int}\ \ \ \ \ \ scanf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00111}00111\ \textcolor{keywordtype}{void}\ \ \ \ \ setbuf(FILE*\ restrict,\ \textcolor{keywordtype}{char}*\ restrict);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00112}00112\ \textcolor{keywordtype}{int}\ \ \ \ \ \ setvbuf(FILE*\ restrict,\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00113}00113\ \textcolor{keywordtype}{int}\ \ \ \ \ \ snprintf(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00114}00114\ \textcolor{keywordtype}{int}\ \ \ \ \ \ sprintf(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00115}00115\ \textcolor{keywordtype}{int}\ \ \ \ \ \ sscanf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ ...);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00116}00116\ FILE*\ \ \ \ tmpfile(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00117}00117\ \textcolor{keywordtype}{char}*\ \ \ \ tmpnam(\textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00118}00118\ \textcolor{keywordtype}{int}\ \ \ \ \ \ ungetc(\textcolor{keywordtype}{int},\ FILE*);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00119}00119\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vdprintf(\textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00120}00120\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vfprintf(FILE*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00121}00121\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vfscanf(FILE*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00122}00122\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vprintf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00123}00123\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vscanf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00124}00124\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vsnprintf(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00125}00125\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vsprintf(\textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00126}00126\ \textcolor{keywordtype}{int}\ \ \ \ \ \ vsscanf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ va\_list);}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00129}00129\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{stdio_8h_source_l00131}00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_STDIO\_H}}
+
+\end{DoxyCode}
