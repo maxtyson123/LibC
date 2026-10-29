@@ -1,0 +1,227 @@
+\doxysection{inttypes.\+h}
+\hypertarget{inttypes_8h_source}{}\label{inttypes_8h_source}\index{/home/runner/work/LibC/LibC/include/inttypes.h@{/home/runner/work/LibC/LibC/include/inttypes.h}}
+\mbox{\hyperlink{inttypes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libc__common_8h}{libc\_common.h}}>}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stdint_8h}{stdint.h}}>}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stddef_8h}{stddef.h}}>}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00015}00015\ \textcolor{preprocessor}{\#ifndef\ LIBC\_INTTYPES\_H}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00016}00016\ \textcolor{preprocessor}{\#define\ LIBC\_INTTYPES\_H}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00018}00018\ CPP\_START}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00027}\mbox{\hyperlink{structIntegerMaxDivision}{00027}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structIntegerMaxDivision}{IntegerMaxDivision}}\{}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00028}00028\ \ \ \ \ intmax\_t\ quot;}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00029}00029\ \ \ \ \ intmax\_t\ rem;}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00030}\mbox{\hyperlink{inttypes_8h_a1d83f0151a31debb8b71a4e3996bf816}{00030}}\ \}\ \mbox{\hyperlink{inttypes_8h_a1d83f0151a31debb8b71a4e3996bf816}{imaxdiv\_t}};}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00032}00032\ \textcolor{comment}{//\ Exact\ width\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00033}00033\ \textcolor{preprocessor}{\#define\ PRId8\ \ \ \ \ \ \ \_\_INT8\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00034}00034\ \textcolor{preprocessor}{\#define\ PRIi8\ \ \ \ \ \ \ \_\_INT8\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ PRId16\ \ \ \ \ \ \_\_INT16\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00036}00036\ \textcolor{preprocessor}{\#define\ PRIi16\ \ \ \ \ \ \_\_INT16\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00037}00037\ \textcolor{preprocessor}{\#define\ PRId32\ \ \ \ \ \ \_\_INT32\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00038}00038\ \textcolor{preprocessor}{\#define\ PRIi32\ \ \ \ \ \ \_\_INT32\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00039}00039\ \textcolor{preprocessor}{\#define\ PRId64\ \ \ \ \ \ \_\_INT64\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00040}00040\ \textcolor{preprocessor}{\#define\ PRIi64\ \ \ \ \ \ \_\_INT64\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00042}00042\ \textcolor{comment}{//\ Least\ width\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00043}00043\ \textcolor{preprocessor}{\#define\ PRIdLEAST8\ \ \_\_INT\_LEAST8\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00044}00044\ \textcolor{preprocessor}{\#define\ PRIiLEAST8\ \ \_\_INT\_LEAST8\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00045}00045\ \textcolor{preprocessor}{\#define\ PRIdLEAST16\ \_\_INT\_LEAST16\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00046}00046\ \textcolor{preprocessor}{\#define\ PRIiLEAST16\ \_\_INT\_LEAST16\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00047}00047\ \textcolor{preprocessor}{\#define\ PRIdLEAST32\ \_\_INT\_LEAST32\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00048}00048\ \textcolor{preprocessor}{\#define\ PRIiLEAST32\ \_\_INT\_LEAST32\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00049}00049\ \textcolor{preprocessor}{\#define\ PRIdLEAST64\ \_\_INT\_LEAST64\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00050}00050\ \textcolor{preprocessor}{\#define\ PRIiLEAST64\ \_\_INT\_LEAST64\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00052}00052\ \textcolor{comment}{//\ Fast\ width\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00053}00053\ \textcolor{preprocessor}{\#define\ PRIdFAST8\ \ \ \_\_INT\_FAST8\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00054}00054\ \textcolor{preprocessor}{\#define\ PRIiFAST8\ \ \ \_\_INT\_FAST8\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00055}00055\ \textcolor{preprocessor}{\#define\ PRIdFAST16\ \ \_\_INT\_FAST16\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00056}00056\ \textcolor{preprocessor}{\#define\ PRIiFAST16\ \ \_\_INT\_FAST16\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00057}00057\ \textcolor{preprocessor}{\#define\ PRIdFAST32\ \ \_\_INT\_FAST32\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00058}00058\ \textcolor{preprocessor}{\#define\ PRIiFAST32\ \ \_\_INT\_FAST32\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00059}00059\ \textcolor{preprocessor}{\#define\ PRIdFAST64\ \ \_\_INT\_FAST64\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00060}00060\ \textcolor{preprocessor}{\#define\ PRIiFAST64\ \ \_\_INT\_FAST64\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00062}00062\ \textcolor{comment}{//\ Maximum\ width\ and\ pointer-\/sized\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00063}00063\ \textcolor{preprocessor}{\#define\ PRIdMAX\ \ \ \ \ \_\_INTMAX\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00064}00064\ \textcolor{preprocessor}{\#define\ PRIiMAX\ \ \ \ \ \_\_INTMAX\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00065}00065\ \textcolor{preprocessor}{\#define\ PRIdPTR\ \ \ \ \ \_\_INTPTR\_FMTd\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00066}00066\ \textcolor{preprocessor}{\#define\ PRIiPTR\ \ \ \ \ \_\_INTPTR\_FMTi\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00068}00068\ \textcolor{comment}{//\ Exact\ width\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00069}00069\ \textcolor{preprocessor}{\#define\ PRIo8\ \ \ \ \ \ \ \_\_UINT8\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00070}00070\ \textcolor{preprocessor}{\#define\ PRIu8\ \ \ \ \ \ \ \_\_UINT8\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00071}00071\ \textcolor{preprocessor}{\#define\ PRIx8\ \ \ \ \ \ \ \_\_UINT8\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00072}00072\ \textcolor{preprocessor}{\#define\ PRIX8\ \ \ \ \ \ \ \_\_UINT8\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00074}00074\ \textcolor{preprocessor}{\#define\ PRIo16\ \ \ \ \ \ \_\_UINT16\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00075}00075\ \textcolor{preprocessor}{\#define\ PRIu16\ \ \ \ \ \ \_\_UINT16\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00076}00076\ \textcolor{preprocessor}{\#define\ PRIx16\ \ \ \ \ \ \_\_UINT16\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00077}00077\ \textcolor{preprocessor}{\#define\ PRIX16\ \ \ \ \ \ \_\_UINT16\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00079}00079\ \textcolor{preprocessor}{\#define\ PRIo32\ \ \ \ \ \ \_\_UINT32\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00080}00080\ \textcolor{preprocessor}{\#define\ PRIu32\ \ \ \ \ \ \_\_UINT32\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00081}00081\ \textcolor{preprocessor}{\#define\ PRIx32\ \ \ \ \ \ \_\_UINT32\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00082}00082\ \textcolor{preprocessor}{\#define\ PRIX32\ \ \ \ \ \ \_\_UINT32\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00084}00084\ \textcolor{preprocessor}{\#define\ PRIo64\ \ \ \ \ \ \_\_UINT64\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00085}00085\ \textcolor{preprocessor}{\#define\ PRIu64\ \ \ \ \ \ \_\_UINT64\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00086}00086\ \textcolor{preprocessor}{\#define\ PRIx64\ \ \ \ \ \ \_\_UINT64\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00087}00087\ \textcolor{preprocessor}{\#define\ PRIX64\ \ \ \ \ \ \_\_UINT64\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00089}00089\ \textcolor{comment}{//\ Least\ width\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00090}00090\ \textcolor{preprocessor}{\#define\ PRIoLEAST8\ \ \_\_UINT\_LEAST8\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00091}00091\ \textcolor{preprocessor}{\#define\ PRIuLEAST8\ \ \_\_UINT\_LEAST8\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00092}00092\ \textcolor{preprocessor}{\#define\ PRIxLEAST8\ \ \_\_UINT\_LEAST8\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00093}00093\ \textcolor{preprocessor}{\#define\ PRIXLEAST8\ \ \_\_UINT\_LEAST8\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00095}00095\ \textcolor{preprocessor}{\#define\ PRIoLEAST16\ \_\_UINT\_LEAST16\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00096}00096\ \textcolor{preprocessor}{\#define\ PRIuLEAST16\ \_\_UINT\_LEAST16\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00097}00097\ \textcolor{preprocessor}{\#define\ PRIxLEAST16\ \_\_UINT\_LEAST16\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00098}00098\ \textcolor{preprocessor}{\#define\ PRIXLEAST16\ \_\_UINT\_LEAST16\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00100}00100\ \textcolor{preprocessor}{\#define\ PRIoLEAST32\ \_\_UINT\_LEAST32\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00101}00101\ \textcolor{preprocessor}{\#define\ PRIuLEAST32\ \_\_UINT\_LEAST32\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00102}00102\ \textcolor{preprocessor}{\#define\ PRIxLEAST32\ \_\_UINT\_LEAST32\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00103}00103\ \textcolor{preprocessor}{\#define\ PRIXLEAST32\ \_\_UINT\_LEAST32\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00105}00105\ \textcolor{preprocessor}{\#define\ PRIoLEAST64\ \_\_UINT\_LEAST64\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00106}00106\ \textcolor{preprocessor}{\#define\ PRIuLEAST64\ \_\_UINT\_LEAST64\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00107}00107\ \textcolor{preprocessor}{\#define\ PRIxLEAST64\ \_\_UINT\_LEAST64\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00108}00108\ \textcolor{preprocessor}{\#define\ PRIXLEAST64\ \_\_UINT\_LEAST64\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00110}00110\ \textcolor{comment}{//\ Fast\ width\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00111}00111\ \textcolor{preprocessor}{\#define\ PRIoFAST8\ \ \ \_\_UINT\_FAST8\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00112}00112\ \textcolor{preprocessor}{\#define\ PRIuFAST8\ \ \ \_\_UINT\_FAST8\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00113}00113\ \textcolor{preprocessor}{\#define\ PRIxFAST8\ \ \ \_\_UINT\_FAST8\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00114}00114\ \textcolor{preprocessor}{\#define\ PRIXFAST8\ \ \ \_\_UINT\_FAST8\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00116}00116\ \textcolor{preprocessor}{\#define\ PRIoFAST16\ \ \_\_UINT\_FAST16\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00117}00117\ \textcolor{preprocessor}{\#define\ PRIuFAST16\ \ \_\_UINT\_FAST16\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00118}00118\ \textcolor{preprocessor}{\#define\ PRIxFAST16\ \ \_\_UINT\_FAST16\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00119}00119\ \textcolor{preprocessor}{\#define\ PRIXFAST16\ \ \_\_UINT\_FAST16\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00121}00121\ \textcolor{preprocessor}{\#define\ PRIoFAST32\ \ \_\_UINT\_FAST32\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00122}00122\ \textcolor{preprocessor}{\#define\ PRIuFAST32\ \ \_\_UINT\_FAST32\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00123}00123\ \textcolor{preprocessor}{\#define\ PRIxFAST32\ \ \_\_UINT\_FAST32\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00124}00124\ \textcolor{preprocessor}{\#define\ PRIXFAST32\ \ \_\_UINT\_FAST32\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00126}00126\ \textcolor{preprocessor}{\#define\ PRIoFAST64\ \ \_\_UINT\_FAST64\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00127}00127\ \textcolor{preprocessor}{\#define\ PRIuFAST64\ \ \_\_UINT\_FAST64\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00128}00128\ \textcolor{preprocessor}{\#define\ PRIxFAST64\ \ \_\_UINT\_FAST64\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00129}00129\ \textcolor{preprocessor}{\#define\ PRIXFAST64\ \ \_\_UINT\_FAST64\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00131}00131\ \textcolor{comment}{//\ Maximum\ width\ and\ pointer-\/sized\ types\ for\ printf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00132}00132\ \textcolor{preprocessor}{\#define\ PRIoMAX\ \ \ \ \ \_\_UINTMAX\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00133}00133\ \textcolor{preprocessor}{\#define\ PRIuMAX\ \ \ \ \ \_\_UINTMAX\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00134}00134\ \textcolor{preprocessor}{\#define\ PRIxMAX\ \ \ \ \ \_\_UINTMAX\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00135}00135\ \textcolor{preprocessor}{\#define\ PRIXMAX\ \ \ \ \ \_\_UINTMAX\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00137}00137\ \textcolor{preprocessor}{\#define\ PRIoPTR\ \ \ \ \ \_\_UINTPTR\_FMTo\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00138}00138\ \textcolor{preprocessor}{\#define\ PRIuPTR\ \ \ \ \ \_\_UINTPTR\_FMTu\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00139}00139\ \textcolor{preprocessor}{\#define\ PRIxPTR\ \ \ \ \ \_\_UINTPTR\_FMTx\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00140}00140\ \textcolor{preprocessor}{\#define\ PRIXPTR\ \ \ \ \ \_\_UINTPTR\_FMTX\_\_}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00142}00142\ \textcolor{comment}{//\ Exact\ width\ signed\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00143}00143\ \textcolor{preprocessor}{\#define\ SCNd8\ \ \ \ \ \ \ PRId8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00144}00144\ \textcolor{preprocessor}{\#define\ SCNi8\ \ \ \ \ \ \ PRIi8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00145}00145\ \textcolor{preprocessor}{\#define\ SCNd16\ \ \ \ \ \ PRId16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00146}00146\ \textcolor{preprocessor}{\#define\ SCNi16\ \ \ \ \ \ PRIi16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00147}00147\ \textcolor{preprocessor}{\#define\ SCNd32\ \ \ \ \ \ PRId32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00148}00148\ \textcolor{preprocessor}{\#define\ SCNi32\ \ \ \ \ \ PRIi32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00149}00149\ \textcolor{preprocessor}{\#define\ SCNd64\ \ \ \ \ \ PRId64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00150}00150\ \textcolor{preprocessor}{\#define\ SCNi64\ \ \ \ \ \ PRIi64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00152}00152\ \textcolor{comment}{//\ Least\ width\ signed\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00153}00153\ \textcolor{preprocessor}{\#define\ SCNdLEAST8\ \ PRIdLEAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00154}00154\ \textcolor{preprocessor}{\#define\ SCNiLEAST8\ \ PRIiLEAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00155}00155\ \textcolor{preprocessor}{\#define\ SCNdLEAST16\ PRIdLEAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00156}00156\ \textcolor{preprocessor}{\#define\ SCNiLEAST16\ PRIiLEAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00157}00157\ \textcolor{preprocessor}{\#define\ SCNdLEAST32\ PRIdLEAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00158}00158\ \textcolor{preprocessor}{\#define\ SCNiLEAST32\ PRIiLEAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00159}00159\ \textcolor{preprocessor}{\#define\ SCNdLEAST64\ PRIdLEAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00160}00160\ \textcolor{preprocessor}{\#define\ SCNiLEAST64\ PRIiLEAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00162}00162\ \textcolor{comment}{//\ Fast\ width\ signed\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00163}00163\ \textcolor{preprocessor}{\#define\ SCNdFAST8\ \ \ PRIdFAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00164}00164\ \textcolor{preprocessor}{\#define\ SCNiFAST8\ \ \ PRIiFAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00165}00165\ \textcolor{preprocessor}{\#define\ SCNdFAST16\ \ PRIdFAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00166}00166\ \textcolor{preprocessor}{\#define\ SCNiFAST16\ \ PRIiFAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00167}00167\ \textcolor{preprocessor}{\#define\ SCNdFAST32\ \ PRIdFAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00168}00168\ \textcolor{preprocessor}{\#define\ SCNiFAST32\ \ PRIiFAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00169}00169\ \textcolor{preprocessor}{\#define\ SCNdFAST64\ \ PRIdFAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00170}00170\ \textcolor{preprocessor}{\#define\ SCNiFAST64\ \ PRIiFAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00172}00172\ \textcolor{comment}{//\ Maximum\ width\ and\ pointer-\/sized\ signed\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00173}00173\ \textcolor{preprocessor}{\#define\ SCNdMAX\ \ \ \ \ PRIdMAX}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00174}00174\ \textcolor{preprocessor}{\#define\ SCNiMAX\ \ \ \ \ PRIiMAX}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00175}00175\ \textcolor{preprocessor}{\#define\ SCNdPTR\ \ \ \ \ PRIdPTR}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00176}00176\ \textcolor{preprocessor}{\#define\ SCNiPTR\ \ \ \ \ PRIiPTR}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00178}00178\ \textcolor{comment}{//\ Exact\ width\ unsigned\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00179}00179\ \textcolor{preprocessor}{\#define\ SCNo8\ \ \ \ \ \ \ PRIo8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00180}00180\ \textcolor{preprocessor}{\#define\ SCNu8\ \ \ \ \ \ \ PRIu8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00181}00181\ \textcolor{preprocessor}{\#define\ SCNx8\ \ \ \ \ \ \ PRIx8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00182}00182\ \textcolor{preprocessor}{\#define\ SCNo16\ \ \ \ \ \ PRIo16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00183}00183\ \textcolor{preprocessor}{\#define\ SCNu16\ \ \ \ \ \ PRIu16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00184}00184\ \textcolor{preprocessor}{\#define\ SCNx16\ \ \ \ \ \ PRIx16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00185}00185\ \textcolor{preprocessor}{\#define\ SCNo32\ \ \ \ \ \ PRIo32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00186}00186\ \textcolor{preprocessor}{\#define\ SCNu32\ \ \ \ \ \ PRIu32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00187}00187\ \textcolor{preprocessor}{\#define\ SCNx32\ \ \ \ \ \ PRIx32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00188}00188\ \textcolor{preprocessor}{\#define\ SCNo64\ \ \ \ \ \ PRIo64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00189}00189\ \textcolor{preprocessor}{\#define\ SCNu64\ \ \ \ \ \ PRIu64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00190}00190\ \textcolor{preprocessor}{\#define\ SCNx64\ \ \ \ \ \ PRIx64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00192}00192\ \textcolor{comment}{//\ Least\ width\ unsigned\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00193}00193\ \textcolor{preprocessor}{\#define\ SCNoLEAST8\ \ PRIoLEAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00194}00194\ \textcolor{preprocessor}{\#define\ SCNuLEAST8\ \ PRIuLEAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00195}00195\ \textcolor{preprocessor}{\#define\ SCNxLEAST8\ \ PRIxLEAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00196}00196\ \textcolor{preprocessor}{\#define\ SCNoLEAST16\ PRIoLEAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00197}00197\ \textcolor{preprocessor}{\#define\ SCNuLEAST16\ PRIuLEAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00198}00198\ \textcolor{preprocessor}{\#define\ SCNxLEAST16\ PRIxLEAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00199}00199\ \textcolor{preprocessor}{\#define\ SCNoLEAST32\ PRIoLEAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00200}00200\ \textcolor{preprocessor}{\#define\ SCNuLEAST32\ PRIuLEAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00201}00201\ \textcolor{preprocessor}{\#define\ SCNxLEAST32\ PRIxLEAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00202}00202\ \textcolor{preprocessor}{\#define\ SCNoLEAST64\ PRIoLEAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00203}00203\ \textcolor{preprocessor}{\#define\ SCNuLEAST64\ PRIuLEAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00204}00204\ \textcolor{preprocessor}{\#define\ SCNxLEAST64\ PRIxLEAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00206}00206\ \textcolor{comment}{//\ Fast\ width\ unsigned\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00207}00207\ \textcolor{preprocessor}{\#define\ SCNoFAST8\ \ \ PRIoFAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00208}00208\ \textcolor{preprocessor}{\#define\ SCNuFAST8\ \ \ PRIuFAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00209}00209\ \textcolor{preprocessor}{\#define\ SCNxFAST8\ \ \ PRIxFAST8}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00210}00210\ \textcolor{preprocessor}{\#define\ SCNoFAST16\ \ PRIoFAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00211}00211\ \textcolor{preprocessor}{\#define\ SCNuFAST16\ \ PRIuFAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00212}00212\ \textcolor{preprocessor}{\#define\ SCNxFAST16\ \ PRIxFAST16}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00213}00213\ \textcolor{preprocessor}{\#define\ SCNoFAST32\ \ PRIoFAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00214}00214\ \textcolor{preprocessor}{\#define\ SCNuFAST32\ \ PRIuFAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00215}00215\ \textcolor{preprocessor}{\#define\ SCNxFAST32\ \ PRIxFAST32}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00216}00216\ \textcolor{preprocessor}{\#define\ SCNoFAST64\ \ PRIoFAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00217}00217\ \textcolor{preprocessor}{\#define\ SCNuFAST64\ \ PRIuFAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00218}00218\ \textcolor{preprocessor}{\#define\ SCNxFAST64\ \ PRIxFAST64}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00220}00220\ \textcolor{comment}{//\ Maximum\ width\ and\ pointer-\/sized\ unsigned\ types\ for\ scanf}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00221}00221\ \textcolor{preprocessor}{\#define\ SCNoMAX\ \ \ \ \ PRIoMAX}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00222}00222\ \textcolor{preprocessor}{\#define\ SCNuMAX\ \ \ \ \ PRIuMAX}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00223}00223\ \textcolor{preprocessor}{\#define\ SCNxMAX\ \ \ \ \ PRIxMAX}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00224}00224\ \textcolor{preprocessor}{\#define\ SCNoPTR\ \ \ \ \ PRIoPTR}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00225}00225\ \textcolor{preprocessor}{\#define\ SCNuPTR\ \ \ \ \ PRIuPTR}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00226}00226\ \textcolor{preprocessor}{\#define\ SCNxPTR\ \ \ \ \ PRIxPTR}}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00228}00228\ intmax\_t\ \ imaxabs(intmax\_t);}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00229}00229\ \mbox{\hyperlink{structIntegerMaxDivision}{imaxdiv\_t}}\ imaxdiv(intmax\_t,\ intmax\_t);}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00230}00230\ intmax\_t\ \ strtoimax(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00231}00231\ uintmax\_t\ strtoumax(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ restrict,\ \textcolor{keywordtype}{char}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00232}00232\ intmax\_t\ \ wcstoimax(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ restrict,\ \textcolor{keywordtype}{wchar\_t}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00233}00233\ uintmax\_t\ wcstoumax(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ restrict,\ \textcolor{keywordtype}{wchar\_t}**\ restrict,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00235}00235\ CPP\_END}
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{inttypes_8h_source_l00237}00237\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//LIBC\_INTTYPES\_H}}
+
+\end{DoxyCode}

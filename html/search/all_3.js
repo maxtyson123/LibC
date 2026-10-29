@@ -13,6 +13,15 @@ var searchData=
   ['clock_5fthread_5fcputime_5fid_10',['CLOCK_THREAD_CPUTIME_ID',['../time_8h.html#a30114e19c18f57f83727bcaba2458f1e',1,'time.h']]],
   ['clockid_5ft_11',['clockid_t',['../types_8h.html#af509d60daf16ea1bc4dea76b031a9b9d',1,'types.h']]],
   ['clocks_5fper_5fsec_12',['CLOCKS_PER_SEC',['../time_8h.html#a3d9fc3c745d0880902fe3ea3d5d5f71e',1,'time.h']]],
-  ['crt0_2ec_13',['crt0.c',['../crt0_8c.html',1,'']]],
-  ['currency_5fsymbol_14',['currency_symbol',['../structlconv.html#af3657bb8bf2a83a868cdeb0b108ab921',1,'lconv']]]
+  ['cmsg_5falign_13',['CMSG_ALIGN',['../socket_8h.html#a8ac2789826cd04c49c954e68707a26eb',1,'socket.h']]],
+  ['cmsg_5fdata_14',['CMSG_DATA',['../socket_8h.html#a5ab6d56e410ac0904107e84aeb1484cc',1,'socket.h']]],
+  ['cmsg_5ffirsthdr_15',['CMSG_FIRSTHDR',['../socket_8h.html#a326c46eb0fceb09b6ebb075804fd1e0c',1,'socket.h']]],
+  ['cmsg_5flen_16',['cmsg_len',['../socket_8h.html#adb36e4ff4fa9a0c6730321c4bfcf64bc',1,'CMSG_LEN:&#160;socket.h'],['../structAncillaryMessageHeader.html#a98c20534402621cb5ebf916dd27ea5de',1,'AncillaryMessageHeader::cmsg_len']]],
+  ['cmsg_5flevel_17',['cmsg_level',['../structAncillaryMessageHeader.html#a7c43b8d97a88678d1ce57e4c4d7519fd',1,'AncillaryMessageHeader']]],
+  ['cmsg_5fnxthdr_18',['CMSG_NXTHDR',['../socket_8h.html#a4f70853d9633fb80428189cd7bb292d0',1,'socket.h']]],
+  ['cmsg_5fspace_19',['CMSG_SPACE',['../socket_8h.html#a8db11d639dd07c723256f3bb5bc89044',1,'socket.h']]],
+  ['cmsg_5ftype_20',['cmsg_type',['../structAncillaryMessageHeader.html#a838e4b8a3b5c4a2cbab37488233a1c6f',1,'AncillaryMessageHeader']]],
+  ['cmsghdr_21',['cmsghdr',['../socket_8h.html#aec51141e8ce3bd08e5a735a1fda75fa9',1,'socket.h']]],
+  ['crt0_2ec_22',['crt0.c',['../crt0_8c.html',1,'']]],
+  ['currency_5fsymbol_23',['currency_symbol',['../structlconv.html#af3657bb8bf2a83a868cdeb0b108ab921',1,'lconv']]]
 ];

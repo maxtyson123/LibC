@@ -221,6 +221,15 @@
     </member>
   </compound>
   <compound kind="file">
+    <name>inet.h</name>
+    <path>/home/runner/work/LibC/LibC/include/arpa/</path>
+    <filename>inet_8h.html</filename>
+    <includes id="libc__common_8h" name="libc_common.h" local="no" import="no" module="no" objc="no">libc_common.h</includes>
+    <includes id="in_8h" name="in.h" local="no" import="no" module="no" objc="no">netinet/in.h</includes>
+    <includes id="socket_8h" name="socket.h" local="no" import="no" module="no" objc="no">sys/socket.h</includes>
+    <includes id="inttypes_8h" name="inttypes.h" local="no" import="no" module="no" objc="no">inttypes.h</includes>
+  </compound>
+  <compound kind="file">
     <name>errno.h</name>
     <path>/home/runner/work/LibC/LibC/include/</path>
     <filename>errno_8h.html</filename>
@@ -1231,6 +1240,22 @@
     </member>
   </compound>
   <compound kind="file">
+    <name>inttypes.h</name>
+    <path>/home/runner/work/LibC/LibC/include/</path>
+    <filename>inttypes_8h.html</filename>
+    <includes id="libc__common_8h" name="libc_common.h" local="no" import="no" module="no" objc="no">libc_common.h</includes>
+    <includes id="stdint_8h" name="stdint.h" local="no" import="no" module="no" objc="no">stdint.h</includes>
+    <includes id="stddef_8h" name="stddef.h" local="no" import="no" module="no" objc="no">stddef.h</includes>
+    <class kind="struct">IntegerMaxDivision</class>
+    <member kind="typedef">
+      <type>struct IntegerMaxDivision</type>
+      <name>imaxdiv_t</name>
+      <anchorfile>inttypes_8h.html</anchorfile>
+      <anchor>a1d83f0151a31debb8b71a4e3996bf816</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
     <name>libc_common.h</name>
     <path>/home/runner/work/LibC/LibC/include/</path>
     <filename>libc__common_8h.html</filename>
@@ -1364,6 +1389,278 @@
       <name>SignPosition</name>
       <anchorfile>locale_8h.html</anchorfile>
       <anchor>ac12b0ed65a68725efe51166ba71d4739</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>in.h</name>
+    <path>/home/runner/work/LibC/LibC/include/netinet/</path>
+    <filename>in_8h.html</filename>
+    <includes id="libc__common_8h" name="libc_common.h" local="no" import="no" module="no" objc="no">libc_common.h</includes>
+    <includes id="inttypes_8h" name="inttypes.h" local="no" import="no" module="no" objc="no">inttypes.h</includes>
+    <includes id="socket_8h" name="socket.h" local="no" import="no" module="no" objc="no">sys/socket.h</includes>
+    <class kind="struct">InternetAddress</class>
+    <class kind="struct">sockaddr_in</class>
+    <class kind="struct">in6_addr</class>
+    <class kind="struct">sockaddr_in6</class>
+    <class kind="struct">ipv6_mreq</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPPROTO_IP</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>abf96615d54d7d81630efc2e8f1770223</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPPROTO_IPV6</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a029fc3b9526146e54addf53ca297e629</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPPROTO_ICMP</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a98edd0af28e1b5f97c806c9cae442339</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPPROTO_RAW</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a0154c93d7a162b8576ee47e10be53239</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPPROTO_TCP</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a94f83c72c1e5e6ef453e47cf59885fb5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPPROTO_UDP</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ab332d40b15142f33a88d4fcb1d6a5920</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>INADDR_ANY</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a5d1940045dc2e7de552f3d4ff13a74ab</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>INADDR_BROADCAST</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a4a725f61ded23ce8a7dff8e82ed51986</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>INET_ADDRSTRLEN</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a93b37007689284fd9c4bde1a8f4b9199</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>INET6_ADDRSTRLEN</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>af776b22a727aae7c9f4d869d50df47e8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPV6_JOIN_GROUP</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a4ff6253432e91b991fc9f52243508724</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPV6_LEAVE_GROUP</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a646d950859a748ed739ab6677682ba01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPV6_MULTICAST_HOPS</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a90164de855aff723de64ac86be51efe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPV6_MULTICAST_IF</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>afcc32c29ac8987b2ad69411d0384a0e5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPV6_MULTICAST_LOOP</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a2e5d89b45fea8bd9ebc6bb781877adb0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPV6_UNICAST_HOPS</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a4ba4c2d2371787c5302580b03e6ad0c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IPV6_V6ONLY</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a48fb8bf5da186346125c2750265b0c65</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__LIBC_IN6_FIRST_4_ZERO</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a7d0b8b16d1d53ea57cde1f811feeaa48</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__LIBC_IN6_FIRST_8_ZERO</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ac9f43adebec94a10622317f8dc74d933</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__LIBC_IN6_FIRST_10_ZERO</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ab937c21868d64ea6a9c9409ba8656f59</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__LIBC_IN6_FIRST_12_ZERO</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a6ba6a9069491a16b7368738a0b104cfd</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_UNSPECIFIED</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a5852d804b063c14b5c89a44eea04e55c</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_LOOPBACK</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a605415cd66f57ff90ddab35af019a5c9</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_MULTICAST</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ae580f22a77158d9d336fcd4a9643c9ed</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_LINKLOCAL</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a4e1270776e869cc63ec5845d00b9354f</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_SITELOCAL</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ade46fdc77fed356268659a4b63242dee</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_V4MAPPED</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ad58766bc924435725a5d6144c2ed076c</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_V4COMPAT</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ad1e88a552427748a21a9abfc8c8c51b4</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_MC_NODELOCAL</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>af3128aa4a042c8d5b4dc9e5d3135fa12</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_MC_LINKLOCAL</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a56e98293625310e268bd3e94b233f458</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_MC_SITELOCAL</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>ab9b032ed17d275c26c9f7ce77bef11ad</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_MC_ORGLOCAL</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a7141af91cf3cd75eaa5a9054c05e971b</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>IN6_IS_ADDR_MC_GLOBAL</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>aab44c34675f8d59e3882a1fdc6c34d02</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="typedef">
+      <type>uint32_t</type>
+      <name>in_addr_t</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a5e957e4a96d123e676a6c3d8d375d1ab</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct InternetAddress</type>
+      <name>in_addr</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a67c159fc674a667e8b0e4e9243a01917</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const struct in6_addr</type>
+      <name>in6addr_any</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>af8c97553060738d9edd6bfeab13ef7c3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const struct in6_addr</type>
+      <name>in6addr_loopback</name>
+      <anchorfile>in_8h.html</anchorfile>
+      <anchor>a530365cf9892a8eb72d6585614327ce8</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -2120,6 +2417,418 @@
       <name>lldiv_t</name>
       <anchorfile>stdlib_8h.html</anchorfile>
       <anchor>ac3e4182ecf00f5533bd8eef4fc09f3e9</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>socket.h</name>
+    <path>/home/runner/work/LibC/LibC/include/sys/</path>
+    <filename>socket_8h.html</filename>
+    <includes id="libc__common_8h" name="libc_common.h" local="no" import="no" module="no" objc="no">libc_common.h</includes>
+    <includes id="stdint_8h" name="stdint.h" local="no" import="no" module="no" objc="no">stdint.h</includes>
+    <includes id="types_8h" name="types.h" local="no" import="no" module="no" objc="no">sys/types.h</includes>
+    <class kind="struct">SocketAddress</class>
+    <class kind="struct">SocketAddressStorage</class>
+    <class kind="struct">MessageHeader</class>
+    <class kind="struct">AncillaryMessageHeader</class>
+    <class kind="struct">Linger</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>SCM_RIGHTS</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a6d9c97ae285439adaf1b0a78a9c93d7f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CMSG_ALIGN</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a8ac2789826cd04c49c954e68707a26eb</anchor>
+      <arglist>(length)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CMSG_DATA</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a5ab6d56e410ac0904107e84aeb1484cc</anchor>
+      <arglist>(cmsg)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CMSG_NXTHDR</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a4f70853d9633fb80428189cd7bb292d0</anchor>
+      <arglist>(mhdr, cmsg)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CMSG_FIRSTHDR</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a326c46eb0fceb09b6ebb075804fd1e0c</anchor>
+      <arglist>(mhdr)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CMSG_SPACE</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a8db11d639dd07c723256f3bb5bc89044</anchor>
+      <arglist>(length)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CMSG_LEN</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>adb36e4ff4fa9a0c6730321c4bfcf64bc</anchor>
+      <arglist>(length)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOCK_DGRAM</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a4db8b9a846c67404db0b6f014f9a9fdf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOCK_RAW</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a346f84e37c42f88e91e7304c3d77fde8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOCK_SEQPACKET</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a4cc92c75bdef586063216b2b8a4df560</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOCK_STREAM</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a249394484f9410a2e3f8eba24657feb9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOCK_NONBLOCK</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>ae04efe05cb3dc3314c7710cfb8cd380a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOCK_CLOEXEC</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>ac337901f5606f0cf6f8e9867ef3fc1c4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOCK_CLOFORK</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>af60f2308bb40b45ab63a5b536538fa65</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOL_SOCKET</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a92d045f6ee2f343d6b28830a9fec082e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_ACCEPTCONN</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a4a86a7abccf8140410bf8a64c571bd6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_BROADCAST</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>ad05e5d66b4608d73747c4a10b802a737</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_DEBUG</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a9dbc641eb342d3ad19f1162305d268d6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_DOMAIN</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>af320236b2f835cdbee921bb51638ff04</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_DONTROUTE</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a4a6d9f7ea4bf046c50102c17ba1faf37</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_ERROR</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a040d4fd00495232970a03425bc00e77a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_KEEPALIVE</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a0691781c519eed3f9a634f8eb55cd258</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_LINGER</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a552d2cd8ffc1157c016299c5eba95b72</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_OOBINLINE</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a1ab39f351679dd0e32436f0e6c9890d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_PROTOCOL</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a8968d9591bf83026610314ce1c8736dc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_RCVBUF</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a0db12e960ac303030400d9fd95391b52</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_RCVLOWAT</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>ac750f0f8266f391654627fe3068f79c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_RCVTIMEO</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>af2d1ed6a34336a6f3df80fb518325846</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_REUSEADDR</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a5589f74fada0d0cd47bd6ea8741a58ee</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_SNDBUF</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>af618cbb85161ff3196d3bcdf7565ba64</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_SNDLOWAT</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a5b4707f0d55cfacf9cd25e5554975c8f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_SNDTIMEO</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>ab9d2f7ca5c94bd51cdab3e1913b66e2d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SO_TYPE</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a8ab1e00e94a92737d3a4b407f7fa90f1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SOMAXCONN</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a048a394e60b5bb89b8c3d8f9d2c4be38</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_CMSG_CLOEXEC</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>aa986e954543bb20abe6ed04ad6e513b9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_CMSG_CLOFORK</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a3d5e3dad8fbc65c7d616ea496ff7af35</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_CTRUNC</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>aa3261137c1a29fee864922e392f5c46f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_DONTROUTE</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a9643e949e179396230792b56fe7f6f06</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_EOR</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a8d5227476f1f0f6c2ca5c70239098bff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_OOB</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a99bc202592bac1adbd525f47b359b722</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_NOSIGNAL</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a9f55d0e90dc8cc6b2287312435cdde48</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_PEEK</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a60c35b1016d0d87fe1066ea817acad98</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_TRUNC</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a6a90f17f258e36353f09375263324f41</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MSG_WAITALL</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a0c0fac4635e91ca9d839e20a09d3989e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AF_UNSPEC</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>ae77ae24b14b7b7f294f3e04121173f12</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AF_INET</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a9930604d0e32588eae76f43ca38e7826</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AF_INET6</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>aa03706b2738b9a58d4985dfbe99e1bac</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>AF_UNIX</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a0fd8739854bc8b48d65f0b669fed3ffe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SHUT_RD</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>af1c8cf84ac37451afaef3bde9976b6e1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SHUT_RDWR</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a80c54d1399557c97a0c81a319d08e9db</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SHUT_WR</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>addb0a758e6fafdd89f5b7120f84738eb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>unsigned int</type>
+      <name>sa_family_t</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a0ab85ad997a18f2fcd70d3f3a372755e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct SocketAddress</type>
+      <name>sockaddr</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a502d98d83f992164997402998d8bb38a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct SocketAddressStorage</type>
+      <name>sockaddr_storage</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a7775e68737dce935f8e36bc5aabfb7ac</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct MessageHeader</type>
+      <name>msghdr</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a4601e28ccdfd9ab05aa0bc3f87afe6fa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct AncillaryMessageHeader</type>
+      <name>cmsghdr</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>aec51141e8ce3bd08e5a735a1fda75fa9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct Linger</type>
+      <name>linger</name>
+      <anchorfile>socket_8h.html</anchorfile>
+      <anchor>a1e2968d2bbde768fccfce1fc07e7be12</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -3162,6 +3871,31 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>AncillaryMessageHeader</name>
+    <filename>structAncillaryMessageHeader.html</filename>
+    <member kind="variable">
+      <type>socklen_t</type>
+      <name>cmsg_len</name>
+      <anchorfile>structAncillaryMessageHeader.html</anchorfile>
+      <anchor>a98c20534402621cb5ebf916dd27ea5de</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>cmsg_level</name>
+      <anchorfile>structAncillaryMessageHeader.html</anchorfile>
+      <anchor>a7c43b8d97a88678d1ce57e4c4d7519fd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>cmsg_type</name>
+      <anchorfile>structAncillaryMessageHeader.html</anchorfile>
+      <anchor>a838e4b8a3b5c4a2cbab37488233a1c6f</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>f_owner_ex</name>
     <filename>structf__owner__ex.html</filename>
     <member kind="variable">
@@ -3217,6 +3951,36 @@
       <anchor>a5e84556aa660bd41cc8b8d862a547887</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="struct">
+    <name>in6_addr</name>
+    <filename>structin6__addr.html</filename>
+    <member kind="variable">
+      <type>uint8_t</type>
+      <name>s6_addr</name>
+      <anchorfile>structin6__addr.html</anchorfile>
+      <anchor>aa1d600770ac35faa253a53aecd9b3786</anchor>
+      <arglist>[16]</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>IntegerMaxDivision</name>
+    <filename>structIntegerMaxDivision.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>InternetAddress</name>
+    <filename>structInternetAddress.html</filename>
+    <member kind="variable">
+      <type>in_addr_t</type>
+      <name>s_addr</name>
+      <anchorfile>structInternetAddress.html</anchorfile>
+      <anchor>af4802adbff665f6e97c44a5886dac8b7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>ipv6_mreq</name>
+    <filename>structipv6__mreq.html</filename>
   </compound>
   <compound kind="struct">
     <name>itimerspec</name>
@@ -3409,6 +4173,67 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>linger</name>
+    <filename>structlinger.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>Linger</name>
+    <filename>structLinger.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>MessageHeader</name>
+    <filename>structMessageHeader.html</filename>
+    <member kind="variable">
+      <type>void *</type>
+      <name>msg_name</name>
+      <anchorfile>structMessageHeader.html</anchorfile>
+      <anchor>a17bd7a59738df8695e36f8eaf9598374</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>socklen_t</type>
+      <name>msg_namelen</name>
+      <anchorfile>structMessageHeader.html</anchorfile>
+      <anchor>a91b3fa133101a951da3ee3e4099e8e7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>struct iovec *</type>
+      <name>msg_iov</name>
+      <anchorfile>structMessageHeader.html</anchorfile>
+      <anchor>ad6ef2c3f4ed3d717653f253cd8214fca</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>msg_iovlen</name>
+      <anchorfile>structMessageHeader.html</anchorfile>
+      <anchor>a6d797965777635741c81d34219a2b729</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>void *</type>
+      <name>msg_control</name>
+      <anchorfile>structMessageHeader.html</anchorfile>
+      <anchor>a3fb2a26ca2f8e9be958eaf07bbb5e0f2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>socklen_t</type>
+      <name>msg_controllen</name>
+      <anchorfile>structMessageHeader.html</anchorfile>
+      <anchor>a98d1c4319dd309b4d5ef354b428b7842</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>msg_flags</name>
+      <anchorfile>structMessageHeader.html</anchorfile>
+      <anchor>a09eaf502bc70500be8a2cc5efa2aa3ec</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>sigaction</name>
     <filename>structsigaction.html</filename>
     <member kind="variable">
@@ -3482,6 +4307,92 @@
   <compound kind="union">
     <name>sigval</name>
     <filename>unionsigval.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>sockaddr_in</name>
+    <filename>structsockaddr__in.html</filename>
+    <member kind="variable">
+      <type>sa_family_t</type>
+      <name>sin_family</name>
+      <anchorfile>structsockaddr__in.html</anchorfile>
+      <anchor>a9a7d98bb8e18f4a06a021c32d6cc7117</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>in_port_t</type>
+      <name>sin_port</name>
+      <anchorfile>structsockaddr__in.html</anchorfile>
+      <anchor>ae89eef5c2b45ce0a177379755edecafa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>in_addr</type>
+      <name>sin_addr</name>
+      <anchorfile>structsockaddr__in.html</anchorfile>
+      <anchor>a30c6a5a4acce80d162371161077946b6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>sockaddr_in6</name>
+    <filename>structsockaddr__in6.html</filename>
+    <member kind="variable">
+      <type>sa_family_t</type>
+      <name>sin6_family</name>
+      <anchorfile>structsockaddr__in6.html</anchorfile>
+      <anchor>aefa41e43be9c615f8cfd6266c0ed1687</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>in_port_t</type>
+      <name>sin6_port</name>
+      <anchorfile>structsockaddr__in6.html</anchorfile>
+      <anchor>a1a1aec2c794e1b8d2fd8705fc20c881b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>uint32_t</type>
+      <name>sin6_flowinfo</name>
+      <anchorfile>structsockaddr__in6.html</anchorfile>
+      <anchor>a4faf8571dc08f1ed214acfe06941954e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>struct in6_addr</type>
+      <name>sin6_addr</name>
+      <anchorfile>structsockaddr__in6.html</anchorfile>
+      <anchor>a219e7f3ecd6d7dcf8fc2465475be490f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>uint32_t</type>
+      <name>sin6_scope_id</name>
+      <anchorfile>structsockaddr__in6.html</anchorfile>
+      <anchor>a90915190af45ba4f62e57ea662840f39</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>SocketAddress</name>
+    <filename>structSocketAddress.html</filename>
+    <member kind="variable">
+      <type>sa_family_t</type>
+      <name>sa_family</name>
+      <anchorfile>structSocketAddress.html</anchorfile>
+      <anchor>af379ad488e3b9c438fb8cb2ad7c6244c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>char</type>
+      <name>sa_data</name>
+      <anchorfile>structSocketAddress.html</anchorfile>
+      <anchor>aacb4147be74905a66d630885902f766c</anchor>
+      <arglist>[]</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>SocketAddressStorage</name>
+    <filename>structSocketAddressStorage.html</filename>
   </compound>
   <compound kind="struct">
     <name>stat</name>
