@@ -71,7 +71,7 @@
 
 ## About The Project
 
-[![MaxOS][product-screenshot]](#)
+![MaxOS](docs/Screenshots/LibC.png)
 
 LibC is my implementation of the C standard library, compliant with [The Open Group Standard Base Specifications's 
 POSIX.1-2024 (IEEE Std 1003.1)](https://pubs.opengroup.org/onlinepubs/9799919799/) specification. This LibC is designed 
