@@ -168,12 +168,13 @@ var searchData=
   ['st_5fsize_165',['st_size',['../structstat.html#a040e19c8b9766f841fde8786ce9297bf',1,'stat']]],
   ['st_5fuid_166',['st_uid',['../structstat.html#a4a8708a3d18be60ee7b2f06c4cab0c70',1,'stat']]],
   ['stack_5ft_167',['stack_t',['../signal_8h.html#aca51d9a1c3b1ac1b2b54ed9dd7c26981',1,'signal.h']]],
-  ['stat_168',['stat',['../structstat.html',1,'']]],
-  ['stat_2ec_169',['stat.c',['../stat_8c.html',1,'']]],
-  ['stat_2eh_170',['stat.h',['../stat_8h.html',1,'']]],
-  ['stdarg_2eh_171',['stdarg.h',['../stdarg_8h.html',1,'']]],
-  ['stddef_2eh_172',['stddef.h',['../stddef_8h.html',1,'']]],
-  ['stdint_2eh_173',['stdint.h',['../stdint_8h.html',1,'']]],
-  ['stdlib_2eh_174',['stdlib.h',['../stdlib_8h.html',1,'']]],
-  ['suseconds_5ft_175',['suseconds_t',['../types_8h.html#a9689b50d0507478638692894336b075a',1,'types.h']]]
+  ['started_168',['Getting Started',['../index.html#autotoc_md1',1,'']]],
+  ['stat_169',['stat',['../structstat.html',1,'']]],
+  ['stat_2ec_170',['stat.c',['../stat_8c.html',1,'']]],
+  ['stat_2eh_171',['stat.h',['../stat_8h.html',1,'']]],
+  ['stdarg_2eh_172',['stdarg.h',['../stdarg_8h.html',1,'']]],
+  ['stddef_2eh_173',['stddef.h',['../stddef_8h.html',1,'']]],
+  ['stdint_2eh_174',['stdint.h',['../stdint_8h.html',1,'']]],
+  ['stdlib_2eh_175',['stdlib.h',['../stdlib_8h.html',1,'']]],
+  ['suseconds_5ft_176',['suseconds_t',['../types_8h.html#a9689b50d0507478638692894336b075a',1,'types.h']]]
 ];

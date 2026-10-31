@@ -27,6 +27,16 @@ var NAVTREE =
   [ "LibC", "index.html", [
     [ "Todo List", "todo.html", null ],
     [ "Classes", "annotated.html", [
+      [ "About The Project", "index.html#autotoc_md0", null ],
+      [ "Getting Started", "index.html#autotoc_md1", [
+        [ "Prerequisites", "index.html#autotoc_md2", null ],
+        [ "Build", "index.html#autotoc_md3", null ]
+      ] ],
+      [ "Usage", "index.html#autotoc_md4", null ],
+      [ "Add your own platform", "index.html#autotoc_md5", null ],
+      [ "Contributing", "index.html#autotoc_md6", null ],
+      [ "License", "index.html#autotoc_md7", null ],
+      [ "Acknowledgments", "index.html#autotoc_md8", null ],
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
@@ -52,8 +62,8 @@ var NAVTREEINDEX =
 [
 "aio_8c.html",
 "globals_k.html",
-"socket_8h_source.html",
-"wait_8h.html#ad0f383987537eb00f5ed77e2e446a251"
+"socket_8h.html#addb0a758e6fafdd89f5b7120f84738eb",
+"wait_8h.html#a4f052f78fa094f1bca94a783669bb756"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

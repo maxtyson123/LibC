@@ -5,5 +5,6 @@ var searchData=
   ['uc_5fsigmask_2',['uc_sigmask',['../struct__ucontext.html#a975bdb372ce3f8b45c1a87c435953bfa',1,'_ucontext']]],
   ['uc_5fstack_3',['uc_stack',['../struct__ucontext.html#ae216c93ca6c0716aee829d048987cb29',1,'_ucontext']]],
   ['ucontext_5ft_4',['ucontext_t',['../signal_8h.html#a69b75656171a47d0fa604a66afc97b3b',1,'signal.h']]],
-  ['uid_5ft_5',['uid_t',['../types_8h.html#ac3a43da508f85d45f051350c795555e9',1,'types.h']]]
+  ['uid_5ft_5',['uid_t',['../types_8h.html#ac3a43da508f85d45f051350c795555e9',1,'types.h']]],
+  ['usage_6',['Usage',['../index.html#autotoc_md4',1,'']]]
 ];

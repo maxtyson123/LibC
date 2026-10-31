@@ -22,6 +22,7 @@ var searchData=
   ['cmsg_5fspace_19',['CMSG_SPACE',['../socket_8h.html#a8db11d639dd07c723256f3bb5bc89044',1,'socket.h']]],
   ['cmsg_5ftype_20',['cmsg_type',['../structAncillaryMessageHeader.html#a838e4b8a3b5c4a2cbab37488233a1c6f',1,'AncillaryMessageHeader']]],
   ['cmsghdr_21',['cmsghdr',['../socket_8h.html#aec51141e8ce3bd08e5a735a1fda75fa9',1,'socket.h']]],
-  ['crt0_2ec_22',['crt0.c',['../crt0_8c.html',1,'']]],
-  ['currency_5fsymbol_23',['currency_symbol',['../structlconv.html#af3657bb8bf2a83a868cdeb0b108ab921',1,'lconv']]]
+  ['contributing_22',['Contributing',['../index.html#autotoc_md6',1,'']]],
+  ['crt0_2ec_23',['crt0.c',['../crt0_8c.html',1,'']]],
+  ['currency_5fsymbol_24',['currency_symbol',['../structlconv.html#af3657bb8bf2a83a868cdeb0b108ab921',1,'lconv']]]
 ];
