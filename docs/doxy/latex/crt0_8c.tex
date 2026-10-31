@@ -1,0 +1,77 @@
+\doxysection{/\+\+Users/\+maxrtson123/\+projects/\+\+Max\+OS/\+libraries/\+libc/\+src/\+crt0.c File Reference}
+\hypertarget{crt0_8c}{}\label{crt0_8c}\index{/Users/maxrtson123/projects/MaxOS/libraries/libc/src/crt0.c@{/Users/maxrtson123/projects/MaxOS/libraries/libc/src/crt0.c}}
+
+
+Defines the \+\_\+start symbol, where all C,C++ programs enter, sets up the process and runs it.  
+
+
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{crt0_8c_ae867ea66194fc0112526615a67b773cf}{main}} (int, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Defined by the program, must exist to link. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{crt0_8c_a72803e35c480a408b3e5f653eaa5fb25}{\+\_\+start}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+, char \texorpdfstring{$\ast$}{*}env\+[$\,$]\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \+\_\+start symbol, where all C,C++ programs enter, sets up the process and runs it. 
+
+\begin{DoxyDate}{Date}
+14th December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson 
+\end{DoxyAuthor}
+
+
+Definition in file \doxymbox{\hyperlink{crt0_8c_source}{crt0.\+c}}.
+
+
+
+\label{crt0_8c_doc-func-members}
+\Hypertarget{crt0_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{crt0_8c_a72803e35c480a408b3e5f653eaa5fb25}\index{crt0.c@{crt0.c}!\_start@{\_start}}
+\index{\_start@{\_start}!crt0.c@{crt0.c}}
+\doxysubsubsection{\texorpdfstring{\_start()}{\_start()}}
+{\footnotesize\ttfamily \label{crt0_8c_a72803e35c480a408b3e5f653eaa5fb25} 
+int \+\_\+start (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$], }\item[{char \texorpdfstring{$\ast$}{*}}]{env}{\+[$\,$]}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{crt0_8c_source_l00014}{14}} of file \doxymbox{\hyperlink{crt0_8c_source}{crt0.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Execute\ the\ program\ and\ exit\ with\ the\ exit\ code}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ ret\ =\ \doxymbox{\hyperlink{crt0_8c_ae867ea66194fc0112526615a67b773cf}{main}}(argc,\ argv,\ env);}
+\DoxyCodeLine{00019\ \ \ \ \ exit(ret);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Failed\ to\ exit}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\Hypertarget{crt0_8c_ae867ea66194fc0112526615a67b773cf}\index{crt0.c@{crt0.c}!main@{main}}
+\index{main@{main}!crt0.c@{crt0.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{crt0_8c_ae867ea66194fc0112526615a67b773cf} 
+int main (\begin{DoxyParamCaption}\item[{int}]{}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})}
+
+
+
+Defined by the program, must exist to link. 
+
+
+
+References \doxymbox{\hyperlink{crt0_8c_ae867ea66194fc0112526615a67b773cf}{main()}}.
+
+
+
+Referenced by \doxymbox{\hyperlink{crt0_8c_ae867ea66194fc0112526615a67b773cf}{main()}}.
+

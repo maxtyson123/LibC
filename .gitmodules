@@ -1,0 +1,4 @@
+[submodule "toolchain/shared"]
+	path = toolchain/shared
+	url = https://github.com/MaxOS-64/toolchain.git
+	branch = main

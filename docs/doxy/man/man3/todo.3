@@ -1,0 +1,30 @@
+.TH "todo" 3 "Version 0.3" "LibC" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+todo \- Todo List 
+.PP
+
+
+.PP
+.IP "\fBMember \fBenviron\fP 
+.IP "" 1c
+this isnt platform specific  
+
+.PP
+.IP "\fBFile \fBerrno\&.h\fP 
+.IP "" 1c
+Linux port / remove specifics  
+
+.PP
+.IP "\fBFile \fBstat\&.h\fP 
+.IP "" 1c
+S_IFIFO etc are linux specific, move to platform (same for S_TYPEISMQ)  
+
+.PP
+.IP "\fBFile \fBwait\&.h\fP 
+.IP "" 1c
+status layout is linux specific, fix 
+
+.PP
+

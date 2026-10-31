@@ -1,0 +1,433 @@
+\doxysection{/\+\+Users/\+maxrtson123/\+projects/\+\+Max\+OS/\+libraries/\+libc/\+include/\+sys/\+wait.h File Reference}
+\hypertarget{wait_8h}{}\label{wait_8h}\index{/Users/maxrtson123/projects/MaxOS/libraries/libc/include/sys/wait.h@{/Users/maxrtson123/projects/MaxOS/libraries/libc/include/sys/wait.h}}
+
+
+Defines fundamental functions that arent related to I/\+O, strings or maths.  
+
+
+{\ttfamily \+\#include $<$libc\+\_\+common.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+types.\+h$>$}\newline
+{\ttfamily \+\#include $<$signal.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_afcc090a70f53d677b748f4b1a4b896e6}{WCONTINUED}}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Report continued children. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_afa288d86b242c3005425a9c0f1682544}{WNOHANG}}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em If no child has changed state, return immediately. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_aecac6945e3b08baa2602557c684d6bfe}{WUNTRACED}}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Report stopped children (that arent being traced). \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a004990811e046790b928dbc7787ecfaa}{WEXITED}}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em Report children that exited normally. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a68e8ee6dc7b0115ddc033d974792fa94}{WNOWAIT}}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em Peek the child status. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a34c9a2f671a03d4523a4e7d9642f908f}{WSTOPPED}}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em Report children that were stopped. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}}~7
+\begin{DoxyCompactList}\small\item\em How many bits allocated for the sumbol. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_abaa8849030b372083f4fd07ad3ebd942}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+MASK}}~((1u $<$$<$ \doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}}) -\/ 1)
+\begin{DoxyCompactList}\small\item\em Masks the low bites to get the signal. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a9998d9f29f40413b9a96cadb0a979404}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+COREDUMP\+\_\+\+BIT}}~\doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}}
+\begin{DoxyCompactList}\small\item\em Bit index for the core dump. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+LOW\+\_\+\+MASK}}~((1u $<$$<$ 8) -\/ 1)
+\begin{DoxyCompactList}\small\item\em Masks the whole low bite. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_ac9e5d606cb3e28e6f8fa3d3408c0f7cc}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+SHIFT}}~(\doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}} + 1)
+\begin{DoxyCompactList}\small\item\em Bit shift to get the high byte. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a21e713563c84f0158d9c0087f5d6576b}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+MASK}}~0x\+FF
+\begin{DoxyCompactList}\small\item\em Masks the high bite (exit code). \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a1ec60e6b424e2ead045e300e369ab410}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+STOP\+\_\+\+MASK}}~(\doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+LOW\+\_\+\+MASK}} \& \texorpdfstring{$\sim$}{\string~}\doxymbox{\hyperlink{wait_8h_abaa8849030b372083f4fd07ad3ebd942}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+MASK}})
+\begin{DoxyCompactList}\small\item\em Stopped is all low bits except core. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_aa5fda3caf01a15f80a9f2542ccc67b94}{WIFEXITED}}(status)
+\begin{DoxyCompactList}\small\item\em Process exited normally (can use WEXITSTATUS). \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_add863a14eeaad9d01db1bae7e46aff1a}{WIFSIGNALED}}(status)
+\begin{DoxyCompactList}\small\item\em Terminated by a signal (can use). \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_aa2687811d048892a4fa1f14f74843767}{WIFSTOPPED}}(status)
+\begin{DoxyCompactList}\small\item\em Process didnt handle a stop signal. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_ad0f383987537eb00f5ed77e2e446a251}{WIFCONTINUE}}(status)
+\begin{DoxyCompactList}\small\item\em Process was stopped but now continued. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a994f3ec0987124479e11fcfb60f0d6ba}{WEXITSTATUS}}~(((status) $>$$>$ \doxymbox{\hyperlink{wait_8h_ac9e5d606cb3e28e6f8fa3d3408c0f7cc}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+SHIFT}}) \& \doxymbox{\hyperlink{wait_8h_a21e713563c84f0158d9c0087f5d6576b}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+MASK}})
+\begin{DoxyCompactList}\small\item\em Get the status bits from the returned status. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_a4f052f78fa094f1bca94a783669bb756}{WTERMSIG}}~((status) \& \doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}})
+\begin{DoxyCompactList}\small\item\em Get the signal that terminated the process. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{wait_8h_aa92e07a0d3579b31e516f96335889bc7}{WSTOPSIG}}~(((status) \& \doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+LOW\+\_\+\+MASK}}) == \doxymbox{\hyperlink{wait_8h_a1ec60e6b424e2ead045e300e369ab410}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+STOP\+\_\+\+MASK}})
+\begin{DoxyCompactList}\small\item\em Get the signal that stopped the process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{wait_8h_a6c54c310149980ca3bbf089e66cfd240}\label{wait_8h_a6c54c310149980ca3bbf089e66cfd240} 
+typedef enum \doxymbox{\hyperlink{wait_8h_adb908bb79198d5a464610bf8dd9acb78}{\+\_\+\+IDType}} {\bfseries idtype\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Public alais of \doxylink{wait_8h_adb908bb79198d5a464610bf8dd9acb78}{\+\_\+\+IDType}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{wait_8h_adb908bb79198d5a464610bf8dd9acb78}{\+\_\+\+IDType}} \{ {\bfseries P\+\_\+\+ALL}
+, {\bfseries P\+\_\+\+PGID}
+, {\bfseries P\+\_\+\+PID}
+ \}
+\begin{DoxyCompactList}\small\item\em Internal representation of how an ID should be interpreted for an waitid() call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{wait_8h_afd903b913d63d3ec3a6b3ceb4a29bb80}\label{wait_8h_afd903b913d63d3ec3a6b3ceb4a29bb80} 
+\doxymbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}} {\bfseries wait} (int \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{wait_8h_aa9543526d710d98acd8289a10fb3bf59}\label{wait_8h_aa9543526d710d98acd8289a10fb3bf59} 
+int {\bfseries waitid} (\doxymbox{\hyperlink{wait_8h_a6c54c310149980ca3bbf089e66cfd240}{idtype\+\_\+t}}, \doxymbox{\hyperlink{types_8h_a513ee83176411bfc889c87bff2f5b6e4}{id\+\_\+t}}, siginfo\+\_\+t \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{wait_8h_ab8d5ab79c86c6b396f3cebe1b2bff585}\label{wait_8h_ab8d5ab79c86c6b396f3cebe1b2bff585} 
+\doxymbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}} {\bfseries waitpid} (\doxymbox{\hyperlink{types_8h_a4da13e794717e169a75d9705a62b6f41}{pid\+\_\+t}}, int \texorpdfstring{$\ast$}{*}, int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines fundamental functions that arent related to I/\+O, strings or maths. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_wait.h.html}{\texttt{https:\+/\+/\+pubs.\+opengroup.\+org/\+onlinepubs/\+9699919799/\+basedefs/\+sys\+\_\+wait.\+h.\+html}}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+16 December 2025 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Max Tyson
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Todo}
+\item[\doxymbox{\hyperlink{todo__todo000004}{Todo}}]status layout is linux specific, fix \end{DoxyRefDesc}
+
+
+Definition in file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+
+
+\label{wait_8h_doc-define-members}
+\Hypertarget{wait_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{wait_8h_a9998d9f29f40413b9a96cadb0a979404}\index{wait.h@{wait.h}!\_\_WSTATUS\_COREDUMP\_BIT@{\_\_WSTATUS\_COREDUMP\_BIT}}
+\index{\_\_WSTATUS\_COREDUMP\_BIT@{\_\_WSTATUS\_COREDUMP\_BIT}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_\_WSTATUS\_COREDUMP\_BIT}{\_\_WSTATUS\_COREDUMP\_BIT}}
+{\footnotesize\ttfamily \label{wait_8h_a9998d9f29f40413b9a96cadb0a979404} 
+\+\#define \+\_\+\+\_\+\+WSTATUS\+\_\+\+COREDUMP\+\_\+\+BIT~\doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}}}
+
+
+
+Bit index for the core dump. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00035}{35}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a21e713563c84f0158d9c0087f5d6576b}\index{wait.h@{wait.h}!\_\_WSTATUS\_HIGH\_MASK@{\_\_WSTATUS\_HIGH\_MASK}}
+\index{\_\_WSTATUS\_HIGH\_MASK@{\_\_WSTATUS\_HIGH\_MASK}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_\_WSTATUS\_HIGH\_MASK}{\_\_WSTATUS\_HIGH\_MASK}}
+{\footnotesize\ttfamily \label{wait_8h_a21e713563c84f0158d9c0087f5d6576b} 
+\+\#define \+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+MASK~0x\+FF}
+
+
+
+Masks the high bite (exit code). 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00038}{38}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_ac9e5d606cb3e28e6f8fa3d3408c0f7cc}\index{wait.h@{wait.h}!\_\_WSTATUS\_HIGH\_SHIFT@{\_\_WSTATUS\_HIGH\_SHIFT}}
+\index{\_\_WSTATUS\_HIGH\_SHIFT@{\_\_WSTATUS\_HIGH\_SHIFT}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_\_WSTATUS\_HIGH\_SHIFT}{\_\_WSTATUS\_HIGH\_SHIFT}}
+{\footnotesize\ttfamily \label{wait_8h_ac9e5d606cb3e28e6f8fa3d3408c0f7cc} 
+\+\#define \+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+SHIFT~(\doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}} + 1)}
+
+
+
+Bit shift to get the high byte. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00037}{37}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}\index{wait.h@{wait.h}!\_\_WSTATUS\_LOW\_MASK@{\_\_WSTATUS\_LOW\_MASK}}
+\index{\_\_WSTATUS\_LOW\_MASK@{\_\_WSTATUS\_LOW\_MASK}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_\_WSTATUS\_LOW\_MASK}{\_\_WSTATUS\_LOW\_MASK}}
+{\footnotesize\ttfamily \label{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2} 
+\+\#define \+\_\+\+\_\+\+WSTATUS\+\_\+\+LOW\+\_\+\+MASK~((1u $<$$<$ 8) -\/ 1)}
+
+
+
+Masks the whole low bite. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00036}{36}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_affd21962b612827bfb2de8e398d3128f}\index{wait.h@{wait.h}!\_\_WSTATUS\_SIGNAL\_BITS@{\_\_WSTATUS\_SIGNAL\_BITS}}
+\index{\_\_WSTATUS\_SIGNAL\_BITS@{\_\_WSTATUS\_SIGNAL\_BITS}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_\_WSTATUS\_SIGNAL\_BITS}{\_\_WSTATUS\_SIGNAL\_BITS}}
+{\footnotesize\ttfamily \label{wait_8h_affd21962b612827bfb2de8e398d3128f} 
+\+\#define \+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS~7}
+
+
+
+How many bits allocated for the sumbol. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00033}{33}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_abaa8849030b372083f4fd07ad3ebd942}\index{wait.h@{wait.h}!\_\_WSTATUS\_SIGNAL\_MASK@{\_\_WSTATUS\_SIGNAL\_MASK}}
+\index{\_\_WSTATUS\_SIGNAL\_MASK@{\_\_WSTATUS\_SIGNAL\_MASK}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_\_WSTATUS\_SIGNAL\_MASK}{\_\_WSTATUS\_SIGNAL\_MASK}}
+{\footnotesize\ttfamily \label{wait_8h_abaa8849030b372083f4fd07ad3ebd942} 
+\+\#define \+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+MASK~((1u $<$$<$ \doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}}) -\/ 1)}
+
+
+
+Masks the low bites to get the signal. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00034}{34}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a1ec60e6b424e2ead045e300e369ab410}\index{wait.h@{wait.h}!\_\_WSTATUS\_STOP\_MASK@{\_\_WSTATUS\_STOP\_MASK}}
+\index{\_\_WSTATUS\_STOP\_MASK@{\_\_WSTATUS\_STOP\_MASK}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_\_WSTATUS\_STOP\_MASK}{\_\_WSTATUS\_STOP\_MASK}}
+{\footnotesize\ttfamily \label{wait_8h_a1ec60e6b424e2ead045e300e369ab410} 
+\+\#define \+\_\+\+\_\+\+WSTATUS\+\_\+\+STOP\+\_\+\+MASK~(\doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+LOW\+\_\+\+MASK}} \& \texorpdfstring{$\sim$}{\string~}\doxymbox{\hyperlink{wait_8h_abaa8849030b372083f4fd07ad3ebd942}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+MASK}})}
+
+
+
+Stopped is all low bits except core. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00039}{39}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_afcc090a70f53d677b748f4b1a4b896e6}\index{wait.h@{wait.h}!WCONTINUED@{WCONTINUED}}
+\index{WCONTINUED@{WCONTINUED}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WCONTINUED}{WCONTINUED}}
+{\footnotesize\ttfamily \label{wait_8h_afcc090a70f53d677b748f4b1a4b896e6} 
+\+\#define WCONTINUED~(1 $<$$<$ 0)}
+
+
+
+Report continued children. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00023}{23}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a004990811e046790b928dbc7787ecfaa}\index{wait.h@{wait.h}!WEXITED@{WEXITED}}
+\index{WEXITED@{WEXITED}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WEXITED}{WEXITED}}
+{\footnotesize\ttfamily \label{wait_8h_a004990811e046790b928dbc7787ecfaa} 
+\+\#define WEXITED~(1 $<$$<$ 0)}
+
+
+
+Report children that exited normally. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a994f3ec0987124479e11fcfb60f0d6ba}\index{wait.h@{wait.h}!WEXITSTATUS@{WEXITSTATUS}}
+\index{WEXITSTATUS@{WEXITSTATUS}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WEXITSTATUS}{WEXITSTATUS}}
+{\footnotesize\ttfamily \label{wait_8h_a994f3ec0987124479e11fcfb60f0d6ba} 
+\+\#define WEXITSTATUS~(((status) $>$$>$ \doxymbox{\hyperlink{wait_8h_ac9e5d606cb3e28e6f8fa3d3408c0f7cc}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+SHIFT}}) \& \doxymbox{\hyperlink{wait_8h_a21e713563c84f0158d9c0087f5d6576b}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+HIGH\+\_\+\+MASK}})}
+
+
+
+Get the status bits from the returned status. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00048}{48}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_ad0f383987537eb00f5ed77e2e446a251}\index{wait.h@{wait.h}!WIFCONTINUE@{WIFCONTINUE}}
+\index{WIFCONTINUE@{WIFCONTINUE}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WIFCONTINUE}{WIFCONTINUE}}
+{\footnotesize\ttfamily \label{wait_8h_ad0f383987537eb00f5ed77e2e446a251} 
+\+\#define WIFCONTINUE(\begin{DoxyParamCaption}\item[{}]{status}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((status)\ \&\ \doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\_\_WSTATUS\_LOW\_MASK}})\ ==\ \doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\_\_WSTATUS\_LOW\_MASK}}\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{((status)\ >>\ \doxymbox{\hyperlink{wait_8h_ac9e5d606cb3e28e6f8fa3d3408c0f7cc}{\_\_WSTATUS\_HIGH\_SHIFT}})\ ==\ \doxymbox{\hyperlink{wait_8h_a21e713563c84f0158d9c0087f5d6576b}{\_\_WSTATUS\_HIGH\_MASK}})}
+
+\end{DoxyCode}
+
+
+Process was stopped but now continued. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00045}{45}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_aa5fda3caf01a15f80a9f2542ccc67b94}\index{wait.h@{wait.h}!WIFEXITED@{WIFEXITED}}
+\index{WIFEXITED@{WIFEXITED}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WIFEXITED}{WIFEXITED}}
+{\footnotesize\ttfamily \label{wait_8h_aa5fda3caf01a15f80a9f2542ccc67b94} 
+\+\#define WIFEXITED(\begin{DoxyParamCaption}\item[{}]{status}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((status)\ \&\ \doxymbox{\hyperlink{wait_8h_abaa8849030b372083f4fd07ad3ebd942}{\_\_WSTATUS\_SIGNAL\_MASK}})\ ==\ 0)}
+
+\end{DoxyCode}
+
+
+Process exited normally (can use WEXITSTATUS). 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00042}{42}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_add863a14eeaad9d01db1bae7e46aff1a}\index{wait.h@{wait.h}!WIFSIGNALED@{WIFSIGNALED}}
+\index{WIFSIGNALED@{WIFSIGNALED}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WIFSIGNALED}{WIFSIGNALED}}
+{\footnotesize\ttfamily \label{wait_8h_add863a14eeaad9d01db1bae7e46aff1a} 
+\+\#define WIFSIGNALED(\begin{DoxyParamCaption}\item[{}]{status}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((status)\ \&\ \doxymbox{\hyperlink{wait_8h_abaa8849030b372083f4fd07ad3ebd942}{\_\_WSTATUS\_SIGNAL\_MASK}})\ !=\ 0\ \&\&\ !\doxymbox{\hyperlink{wait_8h_aa2687811d048892a4fa1f14f74843767}{WIFSTOPPED}}(status))}
+
+\end{DoxyCode}
+
+
+Terminated by a signal (can use). 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00043}{43}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_aa2687811d048892a4fa1f14f74843767}\index{wait.h@{wait.h}!WIFSTOPPED@{WIFSTOPPED}}
+\index{WIFSTOPPED@{WIFSTOPPED}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WIFSTOPPED}{WIFSTOPPED}}
+{\footnotesize\ttfamily \label{wait_8h_aa2687811d048892a4fa1f14f74843767} 
+\+\#define WIFSTOPPED(\begin{DoxyParamCaption}\item[{}]{status}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((status)\ \&\ \doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\_\_WSTATUS\_LOW\_MASK}})\ ==\ \doxymbox{\hyperlink{wait_8h_a1ec60e6b424e2ead045e300e369ab410}{\_\_WSTATUS\_STOP\_MASK}})}
+
+\end{DoxyCode}
+
+
+Process didnt handle a stop signal. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00044}{44}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_afa288d86b242c3005425a9c0f1682544}\index{wait.h@{wait.h}!WNOHANG@{WNOHANG}}
+\index{WNOHANG@{WNOHANG}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WNOHANG}{WNOHANG}}
+{\footnotesize\ttfamily \label{wait_8h_afa288d86b242c3005425a9c0f1682544} 
+\+\#define WNOHANG~(1 $<$$<$ 1)}
+
+
+
+If no child has changed state, return immediately. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00024}{24}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a68e8ee6dc7b0115ddc033d974792fa94}\index{wait.h@{wait.h}!WNOWAIT@{WNOWAIT}}
+\index{WNOWAIT@{WNOWAIT}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WNOWAIT}{WNOWAIT}}
+{\footnotesize\ttfamily \label{wait_8h_a68e8ee6dc7b0115ddc033d974792fa94} 
+\+\#define WNOWAIT~(1 $<$$<$ 1)}
+
+
+
+Peek the child status. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00029}{29}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a34c9a2f671a03d4523a4e7d9642f908f}\index{wait.h@{wait.h}!WSTOPPED@{WSTOPPED}}
+\index{WSTOPPED@{WSTOPPED}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WSTOPPED}{WSTOPPED}}
+{\footnotesize\ttfamily \label{wait_8h_a34c9a2f671a03d4523a4e7d9642f908f} 
+\+\#define WSTOPPED~(1 $<$$<$ 2)}
+
+
+
+Report children that were stopped. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_aa92e07a0d3579b31e516f96335889bc7}\index{wait.h@{wait.h}!WSTOPSIG@{WSTOPSIG}}
+\index{WSTOPSIG@{WSTOPSIG}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WSTOPSIG}{WSTOPSIG}}
+{\footnotesize\ttfamily \label{wait_8h_aa92e07a0d3579b31e516f96335889bc7} 
+\+\#define WSTOPSIG~(((status) \& \doxymbox{\hyperlink{wait_8h_a33d0efe02415e12c0d713c6c2d20f8c2}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+LOW\+\_\+\+MASK}}) == \doxymbox{\hyperlink{wait_8h_a1ec60e6b424e2ead045e300e369ab410}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+STOP\+\_\+\+MASK}})}
+
+
+
+Get the signal that stopped the process. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00050}{50}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_a4f052f78fa094f1bca94a783669bb756}\index{wait.h@{wait.h}!WTERMSIG@{WTERMSIG}}
+\index{WTERMSIG@{WTERMSIG}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WTERMSIG}{WTERMSIG}}
+{\footnotesize\ttfamily \label{wait_8h_a4f052f78fa094f1bca94a783669bb756} 
+\+\#define WTERMSIG~((status) \& \doxymbox{\hyperlink{wait_8h_affd21962b612827bfb2de8e398d3128f}{\+\_\+\+\_\+\+WSTATUS\+\_\+\+SIGNAL\+\_\+\+BITS}})}
+
+
+
+Get the signal that terminated the process. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00049}{49}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+\Hypertarget{wait_8h_aecac6945e3b08baa2602557c684d6bfe}\index{wait.h@{wait.h}!WUNTRACED@{WUNTRACED}}
+\index{WUNTRACED@{WUNTRACED}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{WUNTRACED}{WUNTRACED}}
+{\footnotesize\ttfamily \label{wait_8h_aecac6945e3b08baa2602557c684d6bfe} 
+\+\#define WUNTRACED~(1 $<$$<$ 2)}
+
+
+
+Report stopped children (that arent being traced). 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00025}{25}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+
+
+\label{wait_8h_doc-enum-members}
+\Hypertarget{wait_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{wait_8h_adb908bb79198d5a464610bf8dd9acb78}\index{wait.h@{wait.h}!\_IDType@{\_IDType}}
+\index{\_IDType@{\_IDType}!wait.h@{wait.h}}
+\doxysubsubsection{\texorpdfstring{\_IDType}{\_IDType}}
+{\footnotesize\ttfamily \label{wait_8h_adb908bb79198d5a464610bf8dd9acb78} 
+enum \doxymbox{\hyperlink{wait_8h_adb908bb79198d5a464610bf8dd9acb78}{\+\_\+\+IDType}}}
+
+
+
+Internal representation of how an ID should be interpreted for an waitid() call. 
+
+
+
+Definition at line \doxymbox{\hyperlink{wait_8h_source_l00059}{59}} of file \doxymbox{\hyperlink{wait_8h_source}{wait.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ P\_ALL,}
+\DoxyCodeLine{00062\ \ \ \ \ P\_PGID,}
+\DoxyCodeLine{00063\ \ \ \ \ P\_PID}
+\DoxyCodeLine{00064\ \}\ \doxymbox{\hyperlink{wait_8h_a6c54c310149980ca3bbf089e66cfd240}{idtype\_t}};}
+
+\end{DoxyCode}
