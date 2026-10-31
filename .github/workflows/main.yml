@@ -61,19 +61,15 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
 
-      - name: Install epstopdf
-        run: sudo apt-get update && sudo apt-get install -y texlive-font-utils
+      - name: Install doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen
 
       - name: Generate Docs
-        run: |
-          cd toolchain
-          ls
-          ls ../
-          ls ../docs
-          ls ../docs/doxy
-          ./make_documentation.sh
+        run: toolchain/make_documentation.sh
 
       - name: Update Progress
         run: |
@@ -85,6 +81,11 @@ jobs:
           cd toolchain
           ./lines.sh
 
+      - name: Stage site
+        run: |
+          mkdir -p build/docs/metrics
+          cp -R docs/doxy/metrics/. build/docs/metrics/
+
       - name: Upload to branch
 
         # Only upload if this is not a pull request (i.e., it's a push to main)
@@ -93,6 +94,6 @@ jobs:
         env:
           REPO: self
           BRANCH: docs
-          FOLDER: docs/doxy
+          FOLDER: build/docs
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
